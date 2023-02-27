@@ -19,8 +19,8 @@ const element = <h3>TEST-Element</h3>;
 //     {/*<App />*/}
 //   </React.StrictMode>
 // );
-React.createElement('div', null, 'Simple div with text'); // dont work?
-React.createElement('input', {className: 'just-class'}); // создание компонентов react без jsx
+// React.createElement('div', null, 'Simple div with text'); // dont work?
+// React.createElement('input', {className: 'just-class'}); // создание компонентов react без jsx
 
 ReactDOM.render(element, document.getElementById('root'));
 ReactDOM.render(<Lesson />, document.getElementById('root'));

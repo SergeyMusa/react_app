@@ -22,4 +22,32 @@ function Lesson() {
         </div>
         )
 }
+
+// Old
+class CounterButton extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            counter: 0,
+        }
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick() {
+
+    }
+};
+
+//Modern
+class CounterButton extends Component {
+    state = {
+        counter: 0,
+    }
+    handleClick = () => {
+
+    }
+}
+
+
 export default Lesson;
