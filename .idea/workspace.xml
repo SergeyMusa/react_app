@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="add_#1 = Route-ok">
-      <change afterPath="$PROJECT_DIR$/src/components/store/counter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/store/test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Lesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lesson.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/counter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Counter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <workItem from="1677451153566" duration="2846000" />
       <workItem from="1677454416527" duration="915000" />
       <workItem from="1677492338098" duration="30000" />
-      <workItem from="1677492369471" duration="25255000" />
+      <workItem from="1677492369471" duration="29145000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>

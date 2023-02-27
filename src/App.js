@@ -6,6 +6,7 @@ import Home  from "./components/pages/Home";
 import Posts from "./components/pages/Posts";
 import About from "./components/About";
 import Lesson from "./components/Lesson";
+import counter from "./components/store/Counter";
 // import LoginPage from "./components/auth/login";
 // import logo from './logo.svg';
 
@@ -46,6 +47,15 @@ function App() {
                 {/*<Route path="login" element={<LoginPage />}/>*/}
             </Routes>
 
+            {/*<div>*/}
+            {/*    <div className="counter">*/}
+            {/*        {"Count = " + counter.count}*/}
+            {/*        <div className="btns">*/}
+            {/*            <buttons className="btn">  +++  </buttons>*/}
+            {/*            <buttons className="btn">  ---   </buttons>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
     </div>
   );

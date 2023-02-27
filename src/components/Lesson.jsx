@@ -1,5 +1,9 @@
 // import React from "react";   //import React
 import React, {Component} from "react"; // import component
+// import Counter from "./store/Counter";
+import counter from "./store/Counter";
+import {observe} from "mobx";
+import {observer} from "mobx-react";
 
 
 function Welcome() {
@@ -21,6 +25,26 @@ function Lesson() {
         </div>
     )
 }
+
+const CounterDo = observer( () => {
+    return (
+        <div className="counter">
+            {"Count = " + counter.count}
+            <div className="btns">
+                <button className="btn" onClick={() => {
+                    counter.increment()
+                }}> +++
+                </button>
+                <button className="btn" onClick={() => {
+                    counter.decrement()
+                }}> ---
+                </button>
+            </div>
+        </div>
+    );
+})
+// CounterDo();
+
 
 setTimeout(function () {
     console.log('hello');
@@ -61,7 +85,8 @@ class CounterButton extends Component {
             <div>
                 <div>{counter}</div>
                 <Counter counter={counter}
-                         func={() => {}}
+                         func={() => {
+                         }}
                          nimber={1}
                          string="str"
                 />
@@ -71,6 +96,7 @@ class CounterButton extends Component {
     }
 }
 
-export default CounterButton;
+// export default CounterButton;
+export default CounterDo;
 
 // export default Lesson;
