@@ -1,6 +1,7 @@
 import React from 'react';
 // import ReactDOM from 'react-dom/client';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from "react-router-dom";
 
 import Lesson from "./Components/Lesson";
 import './index.css';
@@ -10,15 +11,17 @@ import reportWebVitals from './reportWebVitals';
 
 const element = <h3>TEST-Element</h3>;
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//
-//   <React.StrictMode>
-//       <h1>HI</h1>
-//       element
-//     {/*<App />*/}
-//   </React.StrictMode>
-// );
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+
+  <React.StrictMode>
+      <BrowserRouter>
+          <h1>HI</h1>
+          element
+        <App />
+  </BrowserRouter>
+  </React.StrictMode>
+);
 // React.createElement('div', null, 'Simple div with text'); // dont work?
 // React.createElement('input', {className: 'just-class'}); // создание компонентов react без jsx
 
