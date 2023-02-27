@@ -8,7 +8,6 @@ function Welcome() {
 
 // class SuperWelcome extends React.Component { // str.1
 class SuperWelcome extends Component {
-
     render() {
         return <h1>Hello world 2</h1>
     }
@@ -17,10 +16,10 @@ class SuperWelcome extends Component {
 function Lesson() {
     return (
         <div>
-            <Welcome />
-            <SuperWelcome />
+            <Welcome/>
+            <SuperWelcome/>
         </div>
-        )
+    )
 }
 
 setTimeout(function () {
@@ -35,7 +34,12 @@ let user = {
 }
 setTimeout(user.sayHi.bind(user), 1000);
 
+//--------------------------------------------
 
+const Counter = ({counter, func, nimber, string}) => {
+    console.log(counter, func, nimber, string);
+    return <h1>{`Counter component. Count = ${counter}`}</h1>
+}
 
 //Modern
 class CounterButton extends Component {
@@ -47,19 +51,26 @@ class CounterButton extends Component {
         //     counter: ++prevState.counter,
         this.setState(({counter}) => ({
             counter: ++counter,
-    }))
-}
+        }))
+    }
+
     render() {
-        const { counter } = this.state;
+        const {counter} = this.state;
 
         return (
             <div>
-                <div>{ counter }</div>
-                <buttton onClick={this.handleClick}>+1</buttton>
+                <div>{counter}</div>
+                <Counter counter={counter}
+                         func={() => {}}
+                         nimber={1}
+                         string="str"
+                />
+                <button onClick={this.handleClick}>+1</button>
             </div>
         );
     }
 }
+
 export default CounterButton;
 
 // export default Lesson;
