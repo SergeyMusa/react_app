@@ -1,15 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+
+import Lesson from "./Components/Lesson";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+
+const element = <h3>TEST-Element</h3>;
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//
+//   <React.StrictMode>
+//       <h1>HI</h1>
+//       element
+//     {/*<App />*/}
+//   </React.StrictMode>
+// );
+
+ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(<Lesson />, document.getElementById('root'));
+
+// registerServiceWorker();
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
