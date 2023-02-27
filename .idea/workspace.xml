@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="Lesson-2-State _old &amp; _new">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="Lesson-2- привязка bind">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Lesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lesson.jsx" afterDir="false" />
     </list>
@@ -75,7 +75,7 @@
       <workItem from="1677451153566" duration="2846000" />
       <workItem from="1677454416527" duration="915000" />
       <workItem from="1677492338098" duration="30000" />
-      <workItem from="1677492369471" duration="5276000" />
+      <workItem from="1677492369471" duration="7293000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -98,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677496197305</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Lesson-2- привязка bind">
+      <created>1677499380136</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677499380136</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +130,7 @@
     <MESSAGE value="Lesson-1-Components&amp;function/class" />
     <MESSAGE value="Lesson-1-Components_end" />
     <MESSAGE value="Lesson-2-State _old &amp; _new" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson-2-State _old &amp; _new" />
+    <MESSAGE value="Lesson-2- привязка bind" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson-2- привязка bind" />
   </component>
 </project>

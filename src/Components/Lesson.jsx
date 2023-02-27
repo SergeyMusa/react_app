@@ -35,12 +35,7 @@ let user = {
 }
 setTimeout(user.sayHi.bind(user), 1000);
 
-function f(a, b) {
-    console.log(this);
-    console.log(a+b);
-}
-let g = f.bind('Context');
-g(1,2);
+
 
 //Modern
 class CounterButton extends Component {
@@ -48,9 +43,23 @@ class CounterButton extends Component {
         counter: 0,
     }
     handleClick = () => {
+        // this.setState(prevState => ({
+        //     counter: ++prevState.counter,
+        this.setState(({counter}) => ({
+            counter: ++counter,
+    }))
+}
+    render() {
+        const { counter } = this.state;
 
+        return (
+            <div>
+                <div>{ counter }</div>
+                <buttton onClick={this.handleClick}>+1</buttton>
+            </div>
+        );
     }
 }
+export default CounterButton;
 
-
-export default Lesson;
+// export default Lesson;
