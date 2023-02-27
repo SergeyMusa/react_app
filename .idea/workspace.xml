@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="Lesson-1-Components_end">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="Lesson-2-State _old &amp; _new">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Lesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Lesson.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,7 @@
       <workItem from="1677451153566" duration="2846000" />
       <workItem from="1677454416527" duration="915000" />
       <workItem from="1677492338098" duration="30000" />
-      <workItem from="1677492369471" duration="3746000" />
+      <workItem from="1677492369471" duration="5276000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -92,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677495564960</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Lesson-2-State _old &amp; _new">
+      <created>1677496197305</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677496197305</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +122,7 @@
     </ignored-roots>
     <MESSAGE value="Lesson-1-Components&amp;function/class" />
     <MESSAGE value="Lesson-1-Components_end" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson-1-Components_end" />
+    <MESSAGE value="Lesson-2-State _old &amp; _new" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson-2-State _old &amp; _new" />
   </component>
 </project>

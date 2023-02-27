@@ -23,21 +23,24 @@ function Lesson() {
         )
 }
 
-// Old
-class CounterButton extends Component {
-    constructor(props) {
-        super(props);
+setTimeout(function () {
+    console.log('hello');
+}, 1000);
 
-        this.state = {
-            counter: 0,
-        }
-
-        this.handleClick = this.handleClick.bind(this);
+let user = {
+    username: "Jack",
+    sayHi: function () {
+        console.log(this.username);
     }
-    handleClick() {
+}
+setTimeout(user.sayHi.bind(user), 1000);
 
-    }
-};
+function f(a, b) {
+    console.log(this);
+    console.log(a+b);
+}
+let g = f.bind('Context');
+g(1,2);
 
 //Modern
 class CounterButton extends Component {
