@@ -1,10 +1,13 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,14 +16,27 @@
   }
 }
 
+body{
+  margin: 20px 50px ;
+}
+.poke a {
+  margin:  auto 20px;
+
+  /*padding: 10px;*/
+}
+.poke a:visited{
+  color:white;
+}
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: darkslateblue;
+  /*min-height: 100vh;*/
+  /*padding-top: -20px;*/
+  min-height: 14vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: white;
 }
 
