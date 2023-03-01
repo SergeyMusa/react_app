@@ -1,24 +1,22 @@
 import React from 'react';
 // import ReactDOM from 'react-dom/client';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import {BrowserRouter} from "react-router-dom";
 // import {HashRouter} from "react-router-dom"; // роутер для статики
 import './index.css';
 import App from './App';
 import * as ReactDOMClient from 'react-dom/client';
-
+import {Footer} from "./components/pages/Footer";
 // import reportWebVitals from './reportWebVitals';
-
-const header = <h3>TEST-Element</h3>;
 
 const root = ReactDOMClient.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <BrowserRouter>
-          {header}
           <App />
       </BrowserRouter>
-      <h1>Hi -in /src/index.js</h1>
+      <Footer />
+      {/*<h4> -in /src/index.js</h4>*/}
   </React.StrictMode>
 );
 

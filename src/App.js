@@ -5,35 +5,19 @@ import {Route, Routes, Link} from "react-router-dom";
 import Home  from "./components/pages/Home";
 import Posts from "./components/pages/Posts";
 import About from "./components/About";
-import Lesson from "./components/Lesson";
-import counter from "./components/store/Counter";
-// import LoginPage from "./components/auth/login";
-// import logo from './logo.svg';
-
+import {Lesson} from "./components/Lesson";
+// import counter from "./components/store/Counter";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
           <h1>In God We Trust</h1>
-        {/*<img src={logo} className="App-logo" alt="logo" />*/}
-        {/*<p>*/}
-        {/*  Edit <code>src/App.js</code> HERE.*/}
-        {/*</p>*/}
-        {/*<a*/}
-        {/*  className="App-link"*/}
-        {/*  href="#https://reactjs.org"*/}
-        {/*  target="_blank"*/}
-        {/*  rel="noopener noreferrer"*/}
-        {/*>*/}
-        {/*</a>*/}
           <div className="poke">
               <Link to="/">Home</Link>
               <Link to="/posts">Posts</Link>
               <Link to="/about">About</Link>
               <Link to="/Lesson">Lesson</Link>
-
           </div>
-
       </header>
         <div className="App-top">
 
@@ -47,15 +31,6 @@ function App() {
                 {/*<Route path="login" element={<LoginPage />}/>*/}
             </Routes>
 
-            {/*<div>*/}
-            {/*    <div className="counter">*/}
-            {/*        {"Count = " + counter.count}*/}
-            {/*        <div className="btns">*/}
-            {/*            <buttons className="btn">  +++  </buttons>*/}
-            {/*            <buttons className="btn">  ---   </buttons>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
         </div>
     </div>
   );
