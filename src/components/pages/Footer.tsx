@@ -1,5 +1,5 @@
 import React from "react";
-import debounce from "lodash/debounce";
+// import debounce from "lodash/debounce";
 
 // let footer = document.querySelector('[role="footer"]');
 //
@@ -18,7 +18,6 @@ import debounce from "lodash/debounce";
 // export default setFooter;
 
 
-// export class Footer extends React.Component<> {
 export class Footer extends React.Component {
     public render () {
         return (
@@ -28,6 +27,3 @@ export class Footer extends React.Component {
         )
     }
 }
-
-{/*// return <span className="menu navigation-menu">Menu</span>*/}
-

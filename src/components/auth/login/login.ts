@@ -2,10 +2,8 @@
 
 const LoginPage = () => {
     return (
-        <div>
-            <h1>Login_Page</h1>
-        </div>
-    );
+       parent
+    )
 };
 
 export default LoginPage;
