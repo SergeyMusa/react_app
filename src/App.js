@@ -3,7 +3,7 @@ import './App.css';
 import {Route, Routes, Link} from "react-router-dom";
 
 import {Posts} from "./components/pages/Posts";
-import Table from "./components/pages/Table";
+import {Table} from "./components/pages/Table";
 import {Lesson} from "./components/pages/Lesson";
 import {Home} from "./components/pages/Home";
 // import counter from "./components/store/Counter";

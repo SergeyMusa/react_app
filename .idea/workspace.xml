@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="add_#2 = begin api">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="add_#2-ok- = api, work but other">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Table.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/store/Loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/store/Tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/Loader.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Lesson.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Counter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Counter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Table2.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +29,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="TypeScript File" />
         <option value="HTML File" />
         <option value="SCSS File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -68,8 +74,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/home",
-    "list.type.of.created.stylesheet": "SCSS",
+    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,17 +83,19 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/home/musa/GIT/react_app/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/pages" />
       <recent name="$PROJECT_DIR$/src/components/home" />
       <recent name="$PROJECT_DIR$/src/Components/home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/store" />
       <recent name="$PROJECT_DIR$/src/styles" />
       <recent name="$PROJECT_DIR$/src/components/pages" />
       <recent name="$PROJECT_DIR$/src/components" />
@@ -113,7 +121,7 @@
       <workItem from="1677492369471" duration="42851000" />
       <workItem from="1677678907763" duration="3873000" />
       <workItem from="1677682880418" duration="668000" />
-      <workItem from="1677683561237" duration="26672000" />
+      <workItem from="1677683561237" duration="39926000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -192,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677705458816</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add_#2+ = api, work in network">
+      <created>1677746985796</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677746985796</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +241,8 @@
     <MESSAGE value="add_#1+ = add component &gt; footer" />
     <MESSAGE value="add_#1+ = edit tsconfig.json" />
     <MESSAGE value="add_#2 = begin api" />
-    <option name="LAST_COMMIT_MESSAGE" value="add_#2 = begin api" />
+    <MESSAGE value="add_#2+ = api, work in network" />
+    <MESSAGE value="add_#2-ok- = api, work but other" />
+    <option name="LAST_COMMIT_MESSAGE" value="add_#2-ok- = api, work but other" />
   </component>
 </project>
