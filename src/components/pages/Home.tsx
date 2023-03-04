@@ -1,6 +1,7 @@
 // import React from 'react';
 // import {Component} from "react"; // import component
 import React, {Component} from "react";
+// import Button from '@mui/material/Button';
 
 const header = <h3>TEST-Element</h3>;
 
@@ -27,6 +28,7 @@ function Welcome2 () {
     return (
         <div>
             <SuperWelcome/>
+            {/*<Button variant="contained">Hello World</Button>*/}
         </div>
     )
 }

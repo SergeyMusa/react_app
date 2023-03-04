@@ -7,16 +7,19 @@ import './index.css';
 import App from './App';
 import * as ReactDOMClient from 'react-dom/client';
 import {Footer} from "./components/pages/Footer";
+// import Button from '@mui/material/Button';
+
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOMClient.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
       <BrowserRouter>
           <App />
       </BrowserRouter>
       <Footer />
-      {/*<h4> -in /src/index.js</h4>*/}
+      {/*<h4> -in /src/index.jsx</h4>*/}
   </React.StrictMode>
 );
 

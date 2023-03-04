@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 // import styles from '.src/styles/Table.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 // import {render} from "react-dom";
 import Loader from "../store/Loader";
 import Tab from "../store/Tab";

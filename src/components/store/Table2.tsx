@@ -1,7 +1,5 @@
 import React from "react";
 // import styles from '.src/styles/Table.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
@@ -16,22 +14,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 interface tableProps {
     isLoaded: boolean;
-    err: any;
+    err: any;v
     items: Array<any>;
 }
 
 export default class Table2 extends React.Component< tableProps > { //
-
-
-    constructor(props) {
-        super(props);
-        this.state = {
+            state = {
             err : '',
             isLoaded: false,
             items: [],
         };
-    }
-    componentDidMount() {
+    componentDidMount = () => {
         // fetch('https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,DASH&tsyms=BTC,USD,EUR&api_key=be8e1361d9e8e83cbdd0723b8e3792826ef753bbf8f8813ed8cf5d34dae7d07e')
 
         fetch("https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD")
@@ -52,24 +45,31 @@ export default class Table2 extends React.Component< tableProps > { //
                 }
             )
     }
-
+    handleClick = () => {
+        this.setState({isLoader: false})
+    }
     // public render () {
     render () {
-        const { err, isLoaded, items} = this.props; //this.state
+        const { err, isLoaded, items} = this.props //this.state;
         if (err) {
-            return <p> Error {err.message} </p>
-        } else if (!isLoaded) {
+            // return <p> Error {err.message} </p>
+            return <p> Error {typeof (err)} {err}</p>
+        } else if (isLoaded) { //!
             return <p> Loading... </p>
         } else {
             return (
-                <ul>
-                    {items.map(item => (
-                        <li key={item.name}>
-                            {item.CoinInfo} //
-                            <img width={50} height={50} src={item.ImageUrl} alt=""/>
-                        </li>
-                    ))}
-                </ul>
+                <div>
+                    <button onClick={this.handleClick}>-Update-</button>
+                    <ul>
+                        {items.map(item => (
+                            <li key={item.items}>
+                                {item.CoinInfo} //
+                                <img width={50} height={50} src={item.ImageUrl} alt=""/>
+                            </li>
+                        ))}
+                    </ul>
+
+                </div>
             // table {}
             // td {}
 

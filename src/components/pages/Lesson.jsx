@@ -1,6 +1,6 @@
 import React, {Component} from "react"; // import component
 // import Counter from "./store/Counter";
-import {PropTypes} from "prop-types"; //mobx-react"
+// import {PropTypes} from "prop-types"; //mobx-react"
 
 
 //--------------------------------------------
