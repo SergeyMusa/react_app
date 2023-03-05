@@ -15,16 +15,15 @@ export default props => (
         </thead>
         <tbody>
 
-        {/*{ props.data.forEach(item) => (console.log('item', item)) }*/}
-        {/*    { props.data.map(item =>(*/}
-        {/*        <tr key={item.data.Data.CoinInfo.Id}>*/}
-        {/*            <td>{item.data.Data.CoinInfo}</td>*/}
-        {/*            <td>{item.data.Data.Id}</td>*/}
-        {/*            <td>{item.data.CoinInfo.Id}</td>*/}
-        {/*            <td>{item.data.Data.Id}</td>*/}
-        {/*            <td>{item.Url}</td>*/}
-        {/*        </tr>*/}
-            {/*))}*/}
+        { props.data.map(item =>(
+            <tr key={item.CoinInfo.Id}>
+                <td>{item.id}</td>
+                <td>{item.firstName}</td>
+                <td>{item.lastName}</td>
+                <td>{item.email}</td>
+                <td>{item.phone}</td>
+            </tr>
+        ))}
 
         </tbody>
     </table>

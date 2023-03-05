@@ -5,6 +5,7 @@ import Loader from "../../store/Loader/Loader";
 import Tab from "../..//store/Loader/Tab";
 import {CryptoCard} from "../../store/CryptoCard";
 import EmployersList from "./EmployersList";
+// import styles from './EmployersListItem.css';
 
 let dataData = [];
 
@@ -18,8 +19,6 @@ let dataData = [];
 //         </div>
 //     )
 // }
-
-
 
 // function WhoIsWho ({name, surn}) { //(props) //props.name\/
 //     return (
@@ -46,44 +45,36 @@ export class Table extends React.Component {
         const data = await response.json()
 
         dataData = data.Data;
-        // console.log('dataData',dataData) // obj
-        // const dataData1 = data.Data.forEach((value, index) => {
-        //     console.log('2', value, index);
-        // });
-        // console.log('1',dataData1);
 
         this.setState({
             isLoading: false,
-            data,
-            // dataData,
+            // data,
+            dataData,
         })
 
-        // console.log('cry.Data',cry.Data);
-        // console.log('data.Data',data.Data);
-        // console.log('cry.Data-id-1',data.Data[1].CoinInfo.Id, data.Data[1].CoinInfo.Name);
-    }
+        // const dataX=data.data;
+        // const x =
 
+        // dataData.forEach(function (item, i, arr) {
+        //     <EmployersList data={this.state.dataData}/>
+        // })
+    }
     render() {
         return (
             <div className="container">
-                {/*<EmployersList keyX={+0} dataX={dataData}/>*/}
                 {/*<EmployersList keyX={1} dataX={dataData}/>*/}
-                {/*<EmployersList keyX={2}/>*/}
-
                 {/*<WhoIsWho name={{fname:'Vova'}} surn='Pupkin'/>*/}
-                {/*<WhoIsWho name={{fname:'Serg'}} surn='Musa'/>*/}
 
-                <CryptoCard props={'test'}/>
+
                 {
                     this.state.isLoading
                         ? <Loader/>
                         // : <Tab data={this.state.dataData} />
-                        : <EmployersList keyX={3} dataX={dataData}/>
+                        // : <EmployersList keyX={3} dataX={dataData}/>
+                        : <EmployersList data={this.state.dataData}/>
+                        // : <CryptoCard data={this.state.dataData}/>
                 }
-
             </div>
         )
     }
 }
-
-

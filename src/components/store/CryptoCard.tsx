@@ -9,6 +9,7 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import {AttachMoney} from "@mui/icons-material";
 
 interface ExpandMoreProps extends IconButtonProps {
     expand: boolean;
@@ -26,16 +27,23 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 // export class Table extends React.Component {
-export function CryptoCard(props) {
-    const [expanded, setExpanded] = React.useState(false);
 
+// const EmployersListItem = ({id, cryName, raw, display, imageUrl}) => {
+export function CryptoCard<id, cryName, raw, display, imageUrl>() {
+    const [expanded, setExpanded] = React.useState(false);
+    let imageUrlOk = "https://www.cryptocompare.com/";//+this.imageUrl;
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-    // console.log(props)
+    // console.log('>>>',this.id, this.cryName, this.raw, this.display, this.imageUrl)
     return (
         <div>
         {/*<h5>{props}</h5>*/}
+        {/*    <div>*/}
+                {/*<h2>id = {id} </h2>*/}
+                {/*<h2> 1 '{display}'({cryName}) = {raw} <AttachMoney fontSize="medium" color="#98FB98" />  </h2>*/}
+                {/*<img src={imageUrlOk} alt={cryName} width={50} height={50}/>*/}
+            {/*</div>*/}
         <Card sx={{ maxWidth: 345 }}>
             <CardHeader
                 avatar={
@@ -54,14 +62,12 @@ export function CryptoCard(props) {
             <CardMedia
                 component="img"
                 height="194"
-                image="/static/images/cards/paella.jpg"
-                alt="Paella dish"
+                image={imageUrlOk} //"/static/images/cards/paella.jpg"
+                alt={this.id}
             />
             <CardContent>
                 <Typography variant="body2" color="text.secondary">
-                    This impressive paella is a perfect party dish and a fun meal to cook
-                    together with your guests. Add 1 cup of frozen peas along with the mussels,
-                    if you like.
+                    1 '{this.display}'({this.cryName}) = {this.raw} <AttachMoney fontSize="medium" />
                 </Typography>
             </CardContent>
 
