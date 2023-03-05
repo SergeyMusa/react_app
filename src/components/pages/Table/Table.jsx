@@ -4,7 +4,7 @@ import React from "react"; //, {Component}
 import Loader from "../../store/Loader/Loader";
 import Tab from "../..//store/Loader/Tab";
 import {CryptoCard} from "../../store/CryptoCard";
-import EmployersListItem from "./EmployersListItem";
+import EmployersList from "./EmployersList";
 
 let dataData = [];
 
@@ -18,89 +18,7 @@ let dataData = [];
 //         </div>
 //     )
 // }
-const cry = {       // { a,b,c, Data[ { {CoinInfo:{}, RAW:{USD{}}, DISPLAY:{USD{}} },.. {} ] }
-    Message: "Success",
-    Type: 100,
-    MetaData: {
-        Count: 3314
-    },
-    SponsoredData: [ ],
-    Data: [
-        {
-            CoinInfo: {
-                Id: "1182",
-                Name: "BTC",
-                FullName: "Bitcoin",
-                ImageUrl: "/media/37746251/btc.png",
-                // https://www.cryptocompare.com/media/37746251/btc.png?width=200
-                Url: "/coins/btc/overview",
-                Algorithm: "SHA-256",
-                Rating: {
-                    Weiss: {
-                        Rating: "B+",
-                        TechnologyAdoptionRating: "A-",
-                        MarketPerformanceRating: "D"
-                    }
-                },
-                NetHashesPerSecond: 329239491201069800000,
-            },
-            RAW: {
-                USD: {
-                    PRICE: 22434.72,
-                }
-            },
-            DISPLAY: {
-                USD: {
-                    FROMSYMBOL: "Ƀ",
-                }
-            },
-        },
-        {
-            CoinInfo: {
-                Id: "7605",
-                Name: "ETH",
-                FullName: "Ethereum",
-                ImageUrl: "/media/37746238/eth.png",
-                Url: "/coins/eth/overview",
-                Algorithm: "Ethash",
-                NetHashesPerSecond: 0,
-            },
-            RAW: {
-                USD: {
-                    PRICE: "$ 1,570.55",
-                }
-            },
-            DISPLAY: {
-                USD: {
-                    FROMSYMBOL: "Ξ",
-                }
-            }
-        }
-    ]
-}
 
-function EmployersList ({keyX}) {
-    console.log('key', keyX, typeof(keyX))
-    // console.log('Table.dataData', Table.dataData, typeof(Table.dataData))
-    // console.log('Table.data.Data', Table.data.Data)
-    // console.log('dataData[keyX]', Table.dataData[keyX] )
-    return (
-        <ul className={"app-list"}>
-            <EmployersListItem
-                id={ cry.Data[keyX].CoinInfo.Id }
-                cryName={ cry.Data[keyX].CoinInfo.Name }
-                raw={cry.Data[keyX].RAW.USD.PRICE}
-                display={cry.Data[keyX].DISPLAY.USD.FROMSYMBOL}
-                imageUrl={ cry.Data[keyX].CoinInfo.ImageUrl }
-                cryFullName={ cry.Data[keyX].CoinInfo.FullName }
-                cryUrl={ cry.Data[keyX].CoinInfo.Url }
-                cryNetHashesPerSecond={ cry.Data[keyX].CoinInfo.NetHashesPerSecond }
-            />
-            {/*<EmployersListItem name='Piter' salary={700}/>*/}
-        </ul>
-    )
-}
-export default EmployersList;
 
 
 // function WhoIsWho ({name, surn}) { //(props) //props.name\/
@@ -116,7 +34,7 @@ export class Table extends React.Component {
     state = {
         isLoading: true,
         data: [],
-        dataData:[],
+        // dataData:[],
         dataCoinInfo: {},
     }
 
@@ -128,11 +46,11 @@ export class Table extends React.Component {
         const data = await response.json()
 
         dataData = data.Data;
-        console.log('dataData',dataData)
-        const dataData1 = data.Data.forEach((value, index) => {
-            console.log('2', value, index);
-        });
-        console.log('1',dataData1);
+        // console.log('dataData',dataData) // obj
+        // const dataData1 = data.Data.forEach((value, index) => {
+        //     console.log('2', value, index);
+        // });
+        // console.log('1',dataData1);
 
         this.setState({
             isLoading: false,
@@ -148,8 +66,9 @@ export class Table extends React.Component {
     render() {
         return (
             <div className="container">
-                <EmployersList keyX={+0}/>
-                <EmployersList keyX={1}/>
+                {/*<EmployersList keyX={+0} dataX={dataData}/>*/}
+                {/*<EmployersList keyX={1} dataX={dataData}/>*/}
+                {/*<EmployersList keyX={2}/>*/}
 
                 {/*<WhoIsWho name={{fname:'Vova'}} surn='Pupkin'/>*/}
                 {/*<WhoIsWho name={{fname:'Serg'}} surn='Musa'/>*/}
@@ -158,9 +77,8 @@ export class Table extends React.Component {
                 {
                     this.state.isLoading
                         ? <Loader/>
-                        : <Tab
-                            data={this.state.dataData}
-                        />
+                        // : <Tab data={this.state.dataData} />
+                        : <EmployersList keyX={3} dataX={dataData}/>
                 }
 
             </div>

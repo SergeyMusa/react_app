@@ -32,7 +32,7 @@ export function CryptoCard(props) {
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-    console.log(props)
+    // console.log(props)
     return (
         <div>
         {/*<h5>{props}</h5>*/}
