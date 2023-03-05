@@ -1,11 +1,9 @@
 import React from "react"; //, {Component}
-// import styles from '.src/styles/Table.css';
-// import {render} from "react-dom";
+// import styles from './Table.css';
 import Loader from "../../store/Loader/Loader";
-import Tab from "../..//store/Loader/Tab";
+import Tab from "./Tab";
 import {CryptoCard} from "../../store/CryptoCard";
 import EmployersList from "./EmployersList";
-// import styles from './EmployersListItem.css';
 
 let dataData = [];
 
@@ -69,9 +67,9 @@ export class Table extends React.Component {
                 {
                     this.state.isLoading
                         ? <Loader/>
-                        // : <Tab data={this.state.dataData} />
-                        // : <EmployersList keyX={3} dataX={dataData}/>
-                        : <EmployersList data={this.state.dataData}/>
+                        : <Tab data={this.state.dataData} />
+                        // : <EmployersList data={this.state.dataData}/>
+
                         // : <CryptoCard data={this.state.dataData}/>
                 }
             </div>

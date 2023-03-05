@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step_#2-api = wip">
-      <change afterPath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.css" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step_#2-api = work">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Table/Tab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/CryptoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/CryptoCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Loader/Tab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Tab.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,9 +94,9 @@
       <recent name="$PROJECT_DIR$/src/Components/home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/pages/Table" />
       <recent name="$PROJECT_DIR$/src/components/store/Loader" />
       <recent name="$PROJECT_DIR$/src/components/store" />
-      <recent name="$PROJECT_DIR$/src/components/pages/Table" />
       <recent name="$PROJECT_DIR$/src/components/pages" />
       <recent name="$PROJECT_DIR$/src/images" />
     </key>
@@ -123,7 +122,7 @@
       <workItem from="1677678907763" duration="3873000" />
       <workItem from="1677682880418" duration="668000" />
       <workItem from="1677683561237" duration="39926000" />
-      <workItem from="1677949063474" duration="42473000" />
+      <workItem from="1677949063474" duration="43603000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -230,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678035540055</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="step_#2-api = work">
+      <created>1678047209906</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1678047209906</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +275,7 @@
     <MESSAGE value="return all back" />
     <MESSAGE value="step_#2-api = ok, begin mui, begin table" />
     <MESSAGE value="step_#2-api = wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="step_#2-api = wip" />
+    <MESSAGE value="step_#2-api = work" />
+    <option name="LAST_COMMIT_MESSAGE" value="step_#2-api = work" />
   </component>
 </project>
