@@ -4,14 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="add_#2-ok- = api, work but other">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="return all back">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Table/EmployersListItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/store/CryptoCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/store/Search.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Lesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Lesson.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Posts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Lesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Lesson.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Loader/Loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Loader/Tab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Loader/Loader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +43,7 @@
         <option value="HTML File" />
         <option value="SCSS File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -37,6 +51,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -65,27 +80,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/components/pages&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/home/musa/GIT/react_app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/pages" />
@@ -93,11 +108,11 @@
       <recent name="$PROJECT_DIR$/src/Components/home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/store/Loader" />
+      <recent name="$PROJECT_DIR$/src/components/store" />
+      <recent name="$PROJECT_DIR$/src/components/pages/Table" />
       <recent name="$PROJECT_DIR$/src/components/pages" />
       <recent name="$PROJECT_DIR$/src/images" />
-      <recent name="$PROJECT_DIR$/src/components/store" />
-      <recent name="$PROJECT_DIR$/src/styles" />
-      <recent name="$PROJECT_DIR$/src/components" />
     </key>
   </component>
   <component name="RunManager">
@@ -121,6 +136,7 @@
       <workItem from="1677678907763" duration="3873000" />
       <workItem from="1677682880418" duration="668000" />
       <workItem from="1677683561237" duration="39926000" />
+      <workItem from="1677949063474" duration="29565000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -206,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677746985796</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="return all back">
+      <created>1677936749149</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677936749149</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +265,7 @@
     <MESSAGE value="add_#2 = begin api" />
     <MESSAGE value="add_#2+ = api, work in network" />
     <MESSAGE value="add_#2-ok- = api, work but other" />
-    <option name="LAST_COMMIT_MESSAGE" value="add_#2-ok- = api, work but other" />
+    <MESSAGE value="return all back" />
+    <option name="LAST_COMMIT_MESSAGE" value="return all back" />
   </component>
 </project>

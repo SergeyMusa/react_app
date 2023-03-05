@@ -1,6 +1,7 @@
 import React, {Component} from "react"; // import component
 // import Counter from "./store/Counter";
 // import {PropTypes} from "prop-types"; //mobx-react"
+import Search from "../store/Search";
 
 
 //--------------------------------------------
@@ -50,7 +51,12 @@ export class Lesson extends Component {
         const {children, child} = this.props;
 
         return (
+
             <div>
+                <Search
+                    // value={search}
+                    // onChange={handleChange}
+                ></Search>
                 <div>{counter}</div>
                 {child}
                 {children}

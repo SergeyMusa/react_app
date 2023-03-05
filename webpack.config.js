@@ -51,15 +51,6 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: ['babel-loader'],
             },
-                // {
-                //     test: /\.m?js$/,
-                //     loader: "babel-loader",
-                //     exclude: [/node_modules/, /public/],
-                //     query: {
-                //         // plugins: ['transform-runtime'],
-                //         presets: ['es2015', 'react']//, 'stage-0'
-                //     }
-                // },
             // {
             //     test: /\.jsx?$/,
             //     loader: "babel-loader",
