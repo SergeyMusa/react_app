@@ -1,9 +1,9 @@
 import React from "react"; //, {Component}
 // import styles from './Table.css';
 import Loader from "../../store/Loader/Loader";
-import Tab from "./Tab";
-import {CryptoCard} from "../../store/CryptoCard";
-import EmployersList from "./EmployersList";
+// import Tab from "./Tab";
+// import {CryptoCard} from "../../store/CryptoCard";
+import {EmployersList} from "./EmployersList";
 
 let dataData = [];
 
@@ -32,7 +32,7 @@ export class Table extends React.Component {
         isLoading: true,
         data: [],
         // dataData:[],
-        dataCoinInfo: {},
+        // dataCoinInfo: {},
     }
 
     async componentDidMount() {
