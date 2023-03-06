@@ -10,19 +10,29 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-const EmployersListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
 
-    let classNames='priceColor ',
-        newPrice = RAW.USD.PRICE,
-        oldPrice = RAW.USD.PRICE; // !!! думать как запоминать, может через локал сторадж
-    if (newPrice < oldPrice) {
-        classNames += ' red';
-    } else if (newPrice > oldPrice) {
-        classNames += ' green';
-    } else {
-        classNames += ' normalColor';
+// const EmployersListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
+export class EmployersListItem extends React.Component {
+    classNames = 'priceColor normalColor';
+    // newPrice = this.props.RAW.USD.PRICE ;
+    // oldPrice = RAW.USD.PRICE ;
+    // !!! думать как запоминать, может через локал сторадж
+    constructor(props) {
+        super(props);
+        this.state ={
+            time: 1
+        }
     }
 
+    // if( this.newPrice < this.oldPrice) {
+    //     this.classNames += ' red';
+    // } else if (newPrice > oldPrice) {
+    //     this.classNames += ' green';
+    // } else {
+    //     this.classNames += ' normalColor';
+    // }
+  render() {
+        const {CoinInfo, DISPLAY, RAW} = this.props
     return (
         // <div>
         //     <h2>id = {id} </h2>
@@ -31,21 +41,21 @@ const EmployersListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, d
         // </div>
         <ul>
             <div className='EmployersList'>
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{maxWidth: 345}}>
                     <CardHeader
                         avatar={
-                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                            <Avatar sx={{bgcolor: red[500]}} aria-label="recipe">
                                 {DISPLAY.USD.FROMSYMBOL}
                             </Avatar>
                         }
                         action={
                             <IconButton aria-label="settings">
-                                <MoreVertIcon />
+                                <MoreVertIcon/>
                             </IconButton>
                         }
                         title={"id: " + CoinInfo.Id}
                         // subheader="September 14, 2016"
-                        className={classNames} // ??? будеам менять цвет при повышении или понижении .red .green
+                        className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green
                     />
                     <CardMedia
                         component="img"
@@ -55,7 +65,8 @@ const EmployersListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, d
                     />
                     <CardContent>
                         <Typography variant="body2" color="text.secondary">
-                            1 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE} <AttachMoney fontSize="small" />
+                            1 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE} <AttachMoney
+                            fontSize="small"/>
                         </Typography>
                     </CardContent>
                 </Card>
@@ -76,9 +87,10 @@ const EmployersListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, d
             </div>
         </ul>
     )
+  }
 }
 // sx={{ color: green[500] }}>add_circle</Icon>
 // <Icon fontSize="small">add_circle</Icon>
 //#66CC00
 //https://get-color.ru/green/
-export default EmployersListItem;
+// export default EmployersListItem;

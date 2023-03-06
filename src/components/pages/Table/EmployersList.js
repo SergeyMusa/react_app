@@ -1,4 +1,4 @@
-import EmployersListItem from "./EmployersListItem";
+import {EmployersListItem} from "./EmployersListItem";
 import React from "react";
 import styles from './EmployersList.css';
 import Search from "../../store/Search";
@@ -64,26 +64,32 @@ import Search from "../../store/Search";
 //     ]
 // }
 
-
-// export class EmployersList<data> extends React.Component {
 // export function EmployersList<data>() {
 const EmployersList = (data) => {
+// export class EmployersList extends React.Component {
+//     constructor(data) {
+//         super(data);
+//     }
+
     // let imageUrlOk = "https://www.cryptocompare.com/";//+this.imageUrl;
 
     const elements = data.data.map(item => {
         const {id=item.CoinInfo.Id, ...itemProps} = item;
         // console.log('id',id)
-      return (
-          <EmployersListItem key={id} { ...itemProps } /> //iteration: false
-      )
-    })
-  // public render () {
-    return (
-            <div className={"app-list"}>
-                <Search />
-                {elements}
+        return (
+            <div>
+                <EmployersListItem key={id} { ...itemProps } />
+                {/*//iteration: false*/}
             </div>
+        )
+    })
+    // public render () {
+    return (
+        <div className={"app-list"}>
+            <Search />
+            {elements}
+        </div>
     )
-  // }
+    // }
 }
 export default EmployersList;
