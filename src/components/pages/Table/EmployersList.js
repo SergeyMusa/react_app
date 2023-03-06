@@ -10,7 +10,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import {AttachMoney} from "@mui/icons-material";
 import Card from "@mui/material/Card";
-import styles from './EmployersList.css';
+// import styles from './EmployersList.css';
 
 // const cry = {       // { a,b,c, Data[ { {CoinInfo:{}, RAW:{USD{}}, DISPLAY:{USD{}} },.. {} ] }
 //     Message: "Success",
@@ -73,13 +73,14 @@ import styles from './EmployersList.css';
 //     ]
 // }
 
-// function EmployersList (data) { //({keyX, dataX})
-export default data => (
+
+// export class EmployersList<data> extends React.Component {
+// export function EmployersList<data>() {
+const EmployersList = (data) => {
     // let imageUrlOk = "https://www.cryptocompare.com/";//+this.imageUrl;
-    <div className='EmployersList'>
-{
-    data.data.map(item => (
-        <div>
+    const elements = data.data.map(item => {
+      return (
+        <div className='EmployersList'>
             <Card sx={{ maxWidth: 345 }}>
                 <CardHeader
                     avatar={
@@ -98,12 +99,9 @@ export default data => (
                 <CardMedia
                     component="img"
                     height="190"
-                    // width="50"
                     image={"https://www.cryptocompare.com/" + item.CoinInfo.ImageUrl}
                     alt={item.CoinInfo.Id}
                 />
-                {/*{item.CoinInfo.ImageUrl}*/}
-                {/* //"/static/images/cards/paella.jpg"   */}
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
                         1 '{item.DISPLAY.USD.FROMSYMBOL}'({item.CoinInfo.Name}) = {item.RAW.USD.PRICE} <AttachMoney fontSize="medium" />
@@ -111,41 +109,28 @@ export default data => (
                 </CardContent>
             </Card>
 
-        {/*<ul className={"app-list"}>*/}
-        {/*    <EmployersListItem*/}
-        {/*        id={item.CoinInfo.Id}*/}
-        {/*        cryName={item.CoinInfo.Name}*/}
-        {/*        raw={item.RAW.USD.PRICE}*/}
-        {/*        display={item.DISPLAY.USD.FROMSYMBOL}*/}
-        {/*        imageUrl={item.CoinInfo.ImageUrl}*/}
-        {/*        cryFullName={item.CoinInfo.FullName}*/}
-        {/*        cryUrl={item.CoinInfo.Url}*/}
-        {/*        // cryUrl={ dataX[keyX].CoinInfo.Url }*/}
-        {/*        // cryNetHashesPerSecond={ cry.Data[keyX].CoinInfo.NetHashesPerSecond }*/}
-        {/*    />*/}
-        {/*</ul>*/}
+            {/*<ul className={"app-list"}>*/}
+            {/*    <EmployersListItem*/}
+            {/*        id={item.CoinInfo.Id}*/}
+            {/*        cryName={item.CoinInfo.Name}*/}
+            {/*        raw={item.RAW.USD.PRICE}*/}
+            {/*        display={item.DISPLAY.USD.FROMSYMBOL}*/}
+            {/*        imageUrl={item.CoinInfo.ImageUrl}*/}
+            {/*        cryFullName={item.CoinInfo.FullName}*/}
+            {/*        cryUrl={item.CoinInfo.Url}*/}
+            {/*        // cryUrl={ dataX[keyX].CoinInfo.Url }*/}
+            {/*        // cryNetHashesPerSecond={ cry.Data[keyX].CoinInfo.NetHashesPerSecond }*/}
+            {/*    />*/}
+            {/*</ul>*/}
         </div>
-    ))
+      )
+    })
+  // public render () {
+    return (
+        <ul className={"app-list"}>
+            {elements}
+        </ul>
+    )
+  // }
 }
-    </div>
-)
-    // }
-        // );
-    // return (
-    //     <ul className={"app-list"}>
-    //         <EmployersListItem
-    //             id={ item.CoinInfo.Id }
-    //             // id={ dataX[keyX].CoinInfo.Id }
-    //             cryName={ item.CoinInfo.Name }
-    //             raw={ item.RAW.USD.PRICE}
-    //             display={ item.DISPLAY.USD.FROMSYMBOL}
-    //             imageUrl={ item.CoinInfo.ImageUrl }
-    //             cryFullName={ item.CoinInfo.FullName }
-    //             cryUrl={ item.CoinInfo.Url }
-    //             // cryUrl={ dataX[keyX].CoinInfo.Url }
-    //             // cryNetHashesPerSecond={ cry.Data[keyX].CoinInfo.NetHashesPerSecond }
-    //         />
-    //     </ul>
-    // )
-// }
-// export default EmployersList;
+export default EmployersList;
