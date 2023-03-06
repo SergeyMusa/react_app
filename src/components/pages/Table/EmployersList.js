@@ -80,15 +80,17 @@ const EmployersList = (data) => {
     // let imageUrlOk = "https://www.cryptocompare.com/";//+this.imageUrl;
 
     const elements = data.data.map(item => {
+        const {id=item.CoinInfo.Id, ...itemProps} = item;
+        // console.log('id',id)
       return (
-          <EmployersListItem { ...item } /> //iteration: false
+          <EmployersListItem key={id} { ...itemProps } /> //iteration: false
       )
     })
   // public render () {
     return (
-            <ul className={"app-list"}>
+            <div className={"app-list"}>
                 {elements}
-            </ul>
+            </div>
     )
   // }
 }
