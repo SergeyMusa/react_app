@@ -1,16 +1,7 @@
 import EmployersListItem from "./EmployersListItem";
 import React from "react";
-import CardHeader from "@mui/material/CardHeader";
-import Avatar from "@mui/material/Avatar";
-import {red} from "@mui/material/colors";
-import IconButton from "@mui/material/IconButton";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import {AttachMoney} from "@mui/icons-material";
-import Card from "@mui/material/Card";
 import styles from './EmployersList.css';
+import Search from "../../store/Search";
 
 // const cry = {       // { a,b,c, Data[ { {CoinInfo:{}, RAW:{USD{}}, DISPLAY:{USD{}} },.. {} ] }
 //     Message: "Success",
@@ -89,6 +80,7 @@ const EmployersList = (data) => {
   // public render () {
     return (
             <div className={"app-list"}>
+                <Search />
                 {elements}
             </div>
     )
