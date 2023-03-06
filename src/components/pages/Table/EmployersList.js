@@ -10,7 +10,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import {AttachMoney} from "@mui/icons-material";
 import Card from "@mui/material/Card";
-// import styles from './EmployersList.css';
+import styles from './EmployersList.css';
 
 // const cry = {       // { a,b,c, Data[ { {CoinInfo:{}, RAW:{USD{}}, DISPLAY:{USD{}} },.. {} ] }
 //     Message: "Success",
@@ -78,58 +78,17 @@ import Card from "@mui/material/Card";
 // export function EmployersList<data>() {
 const EmployersList = (data) => {
     // let imageUrlOk = "https://www.cryptocompare.com/";//+this.imageUrl;
+
     const elements = data.data.map(item => {
       return (
-        <div className='EmployersList'>
-            <Card sx={{ maxWidth: 345 }}>
-                <CardHeader
-                    avatar={
-                        <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                            R
-                        </Avatar>
-                    }
-                    action={
-                        <IconButton aria-label="settings">
-                            <MoreVertIcon />
-                        </IconButton>
-                    }
-                    title={"id: " + item.CoinInfo.Id}
-                    // subheader="September 14, 2016"
-                />
-                <CardMedia
-                    component="img"
-                    height="190"
-                    image={"https://www.cryptocompare.com/" + item.CoinInfo.ImageUrl}
-                    alt={item.CoinInfo.Id}
-                />
-                <CardContent>
-                    <Typography variant="body2" color="text.secondary">
-                        1 '{item.DISPLAY.USD.FROMSYMBOL}'({item.CoinInfo.Name}) = {item.RAW.USD.PRICE} <AttachMoney fontSize="medium" />
-                    </Typography>
-                </CardContent>
-            </Card>
-
-            {/*<ul className={"app-list"}>*/}
-            {/*    <EmployersListItem*/}
-            {/*        id={item.CoinInfo.Id}*/}
-            {/*        cryName={item.CoinInfo.Name}*/}
-            {/*        raw={item.RAW.USD.PRICE}*/}
-            {/*        display={item.DISPLAY.USD.FROMSYMBOL}*/}
-            {/*        imageUrl={item.CoinInfo.ImageUrl}*/}
-            {/*        cryFullName={item.CoinInfo.FullName}*/}
-            {/*        cryUrl={item.CoinInfo.Url}*/}
-            {/*        // cryUrl={ dataX[keyX].CoinInfo.Url }*/}
-            {/*        // cryNetHashesPerSecond={ cry.Data[keyX].CoinInfo.NetHashesPerSecond }*/}
-            {/*    />*/}
-            {/*</ul>*/}
-        </div>
+          <EmployersListItem { ...item } /> //iteration: false
       )
     })
   // public render () {
     return (
-        <ul className={"app-list"}>
-            {elements}
-        </ul>
+            <ul className={"app-list"}>
+                {elements}
+            </ul>
     )
   // }
 }

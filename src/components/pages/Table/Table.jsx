@@ -67,8 +67,8 @@ export class Table extends React.Component {
                 {
                     this.state.isLoading
                         ? <Loader/>
-                        : <Tab data={this.state.dataData} />
-                        // : <EmployersList data={this.state.dataData}/>
+                        // : <Tab data={this.state.dataData} />
+                        : <EmployersList data={this.state.dataData}/>
 
                         // : <CryptoCard data={this.state.dataData}/>
                 }
