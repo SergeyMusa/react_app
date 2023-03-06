@@ -14,7 +14,7 @@ import Typography from "@mui/material/Typography";
 // const EmployersListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
 export class EmployersListItem extends React.Component {
     classNames = 'priceColor normalColor';
-    // newPrice = this.props.RAW.USD.PRICE ;
+    newPrice = this.props.RAW.USD.PRICE ;
     // oldPrice = RAW.USD.PRICE ;
     // !!! думать как запоминать, может через локал сторадж
     constructor(props) {
@@ -23,22 +23,32 @@ export class EmployersListItem extends React.Component {
             time: 1
         }
     }
+    changeTime = () => {
+        console.log('changeTime')
+    }
+    changeClassName = () => {
+        console.log('newPrice',this.newPrice);
+        this.setState(state => ({
+            time: state.time + 1
+        }))
+        // console.log('time', this.state.time);
 
-    // if( this.newPrice < this.oldPrice) {
-    //     this.classNames += ' red';
-    // } else if (newPrice > oldPrice) {
-    //     this.classNames += ' green';
-    // } else {
-    //     this.classNames += ' normalColor';
-    // }
+        // if( this.newPrice < this.oldPrice) {
+        //     this.classNames += ' red';
+        // } else if (newPrice > oldPrice) {
+        //     this.classNames += ' green';
+        // } else {
+        //     this.classNames += ' normalColor';
+        // }
+    }
+
   render() {
         const {CoinInfo, DISPLAY, RAW} = this.props
     return (
-        // <div>
-        //     <h2>id = {id} </h2>
-        //     <h2> 1 '{display}'({cryName}) = {raw} <AttachMoney fontSize="medium" color="#98FB98" />  </h2>
         //     <img src={"https://www.cryptocompare.com/"+imageUrl} alt={cryName} width={50} height={50}/>
-        // </div>
+        <div>
+            <h3>{this.state.time}</h3>
+            <button onClick={this.changeClassName}> [+++] </button>
         <ul>
             <div className='EmployersList'>
                 <Card sx={{maxWidth: 345}}>
@@ -59,8 +69,8 @@ export class EmployersListItem extends React.Component {
                     />
                     <CardMedia
                         component="img"
-                        height="190"
-                        image={"https://www.cryptocompare.com/" + CoinInfo.ImageUrl}
+                        height='180'
+                        image={"https://www.cryptocompare.com/" + CoinInfo.ImageUrl} // !!! + " width={50} height={50}"
                         alt={CoinInfo.Id}
                     />
                     <CardContent>
@@ -86,6 +96,7 @@ export class EmployersListItem extends React.Component {
                 {/*</ul>*/}
             </div>
         </ul>
+        </div>
     )
   }
 }
