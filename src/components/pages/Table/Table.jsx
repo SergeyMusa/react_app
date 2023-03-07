@@ -31,7 +31,6 @@ export class Table extends React.Component {
     state = {
         isLoading: true,
         data: [],
-        // dataData:[],
         // dataCoinInfo: {},
     }
 

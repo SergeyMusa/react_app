@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 import {Posts} from "./components/pages/Posts";
 import {Table} from "./components/pages/Table/Table";
-import {Lesson} from "./components/pages/Lesson";
+import Lesson2 from "./components/pages/Lesson";
 import {Home} from "./components/pages/Home";
 import './styles/main.scss'
 import {Header} from "./components/pages/Header";
@@ -36,7 +36,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home/>}/>
                         <Route path="/Table" element={<Table/>}/>
-                        <Route path="/Lesson" element={<Lesson/>}/>
+                        <Route path="/Lesson" element={<Lesson2/>}/>
                         <Route path="*" element={<Posts/>}/>
                         {/*<Route path="login" element={<LoginPage />}/>*/}
                     </Routes>

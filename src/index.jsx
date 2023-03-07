@@ -21,16 +21,18 @@ const theme = createTheme({
 const root = ReactDOMClient.createRoot(document.getElementById('root'));
 root.render(
 
-    <React.StrictMode>
-      {/*<Header />*/}
-        <ThemeProvider theme={theme}>
-          <BrowserRouter>
-              <App />
-          </BrowserRouter>
-        </ThemeProvider>
-      {/*<Footer />*/}
-      {/*<h4> -in /src/index.jsx</h4>*/}
-  </React.StrictMode>
+    <ThemeProvider theme={theme}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </ThemeProvider>
+
+    // <React.StrictMode>
+    //   {/*<Header />*/}
+    //
+    //   {/*<Footer />*/}
+    //   {/*<h4> -in /src/index.jsx</h4>*/}
+  // </React.StrictMode>
 );
 
 // ReactDOM.render(element, document.getElementById('root'));

@@ -2,8 +2,10 @@
 // return number+1
 // late add id.counter
 import {observer} from "mobx-react";
-import counter from "../store/Counter";
+// import {Counter} from "../store/counter";
 import React, {Component} from "react"; // import component
+
+let count = 0;
 
 function Count() {
     try {
@@ -14,7 +16,7 @@ function Count() {
             }
             console.log(this.i)
             return this.i;
-        };
+        }
     } catch (e) {
         console.log("input not number", e)
     }
@@ -24,14 +26,14 @@ function Count() {
 const CounterDo = observer( () => {
     return (
         <div className="counter">
-            {"Count = " + counter.count}
+            {/*{"Count = " + counter.count}*/}
             <div className="btns">
     <button className="btn" onClick={() => {
-        counter.increment()
+        // counter.increment()
     }}> +++
         </button>
     <button className="btn" onClick={() => {
-        counter.decrement()
+        // counter.decrement()
     }}> ---
         </button>
     </div>

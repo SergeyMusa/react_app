@@ -2,7 +2,7 @@ import React from "react";
 import {AccessTime} from "@mui/icons-material";
 import {AppBar, Toolbar, IconButton, Typography, TextField} from "@mui/material";
 import Search from "../store/Search";
-import TimerSlider from "../store/TimerSlider";
+import TimerSlider2 from "../store/TimerSlider2";
 
 export class Header extends React.Component {
     public render () {
@@ -21,7 +21,7 @@ export class Header extends React.Component {
                         <IconButton
                             color={'inherit'}
                         >
-                            <TimerSlider />
+                            <TimerSlider2 />
                             {/*<AccessTime />*/}
                         </IconButton>
                    </Toolbar>
