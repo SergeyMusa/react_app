@@ -6,6 +6,7 @@ import Loader from "../../store/Loader/Loader";
 import {EmployersList} from "./EmployersList";
 import Search from "../../store/Search";
 import {Timer} from "../../store/Timer";
+import Timer2 from "../../store/Timer2";
 
 let dataData = [];
 
@@ -65,6 +66,7 @@ export class Table extends React.Component {
                 <button onClick={this.componentDidMount}> LOAD </button>
                 <Search />
                 <Timer timerProps={5000}/>
+                <Timer2 />
                 {
                     this.state.isLoading
                         ? <Loader/>
