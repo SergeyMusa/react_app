@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import * as ReactDOMClient from 'react-dom/client';
 import {createTheme, ThemeProvider} from "@mui/material";
+// import Devools
 
 const theme = createTheme({
     palette: {
@@ -17,28 +18,17 @@ const theme = createTheme({
     }
 })
 
-
 const root = ReactDOMClient.createRoot(document.getElementById('root'));
 root.render(
-
+    <React.StrictMode>
     <ThemeProvider theme={theme}>
+        {/*<DevTools />*/}
         <BrowserRouter>
             <App />
         </BrowserRouter>
     </ThemeProvider>
-
-    // <React.StrictMode>
-    //   {/*<Header />*/}
-    //
-    //   {/*<Footer />*/}
-    //   {/*<h4> -in /src/index.jsx</h4>*/}
-  // </React.StrictMode>
+    </React.StrictMode>
 );
 
 // ReactDOM.render(element, document.getElementById('root'));
-// ReactDOM.render(<Lesson />, document.getElementById('root'));
-
-// registerServiceWorker();
-
-// reportWebVitals();
 

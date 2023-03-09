@@ -19,7 +19,7 @@
     "lorem-ipsum": "^2.0.8",
     "mobx": "^6.8.0",
     "mobx-react": "^7.6.0",
-    "mobx-react-lite": "^3.4.0",
+    "mobx-utils": "^6.0.5",
     "node-modules": "^0.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -59,6 +59,7 @@
   "devDependencies": {
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.0",
+    "@babel/plugin-proposal-decorators": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
     "css-loader": "^6.7.3",
     "sass": "^1.58.3",

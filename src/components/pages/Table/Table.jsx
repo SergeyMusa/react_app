@@ -4,6 +4,8 @@ import Loader from "../../store/Loader/Loader";
 // import Tab from "./Tab";
 // import {CryptoCard} from "../../store/CryptoCard";
 import {EmployersList} from "./EmployersList";
+import Search from "../../store/Search";
+import {Timer} from "../../store/Timer";
 
 let dataData = [];
 
@@ -60,15 +62,14 @@ export class Table extends React.Component {
         return (
             <div className="container">
                 {/*<EmployersList keyX={1} dataX={dataData}/>*/}
-                {/*<WhoIsWho name={{fname:'Vova'}} surn='Pupkin'/>*/}
-
-
+                <button onClick={this.componentDidMount}> LOAD </button>
+                <Search />
+                <Timer timerProps={5000}/>
                 {
                     this.state.isLoading
                         ? <Loader/>
                         // : <Tab data={this.state.dataData} />
                         : <EmployersList data={this.state.dataData}/>
-
                         // : <CryptoCard data={this.state.dataData}/>
                 }
             </div>

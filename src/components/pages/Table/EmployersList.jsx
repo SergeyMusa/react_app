@@ -1,7 +1,7 @@
 import {EmployersListItem} from "./EmployersListItem";
 import React from "react";
 import styles from './EmployersList.css';
-import Search from "../../store/Search";
+// import Search from "../../store/Search";
 
 export class EmployersList extends React.Component {
 
@@ -20,7 +20,7 @@ export class EmployersList extends React.Component {
   render () {
     return (
         <div className={"app-list"}>
-            <Search />
+            {/*<Search />*/}
             {this.elements()}
         </div>
     )

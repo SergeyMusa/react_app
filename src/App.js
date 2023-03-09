@@ -12,9 +12,18 @@ import {Header} from "./components/pages/Header";
 import Footer from "./components/pages/Footer";
 import {Container} from "@mui/material"; //, createTheme
 
-// import counter from "./components/store/Counter";
 
 function App() {
+
+        function handleOnClick () {
+            console.log('push btn')
+        return (
+            <Link id="one" to="/Home"></Link>
+        )
+
+            // this.props.history.push('/')
+        };
+
     return (
         <div className="App">
             <Header/>
@@ -24,24 +33,26 @@ function App() {
                 <header className="App-header">
                     <h1>In God We Trust</h1>
                     <div className="poke">
-                        <Link to="/">Home</Link>
-                        <Link to="/Table">Table</Link>
+                        <Link id="one" to="/Home">Home</Link>
+                        <Link id="one" to="/">Table</Link>
 
-                        <Link to="/posts">Posts</Link>
-                        <Link to="/Lesson">Lesson</Link>
+                        <Link id="one" to="/posts">Posts</Link>
+                        <Link id="one" to="/Lesson">Lesson</Link>
                     </div>
                 </header>
                 <div className="App-top">
                     <br/>
                     <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/Table" element={<Table/>}/>
+                        <Route path="/Home" element={<Home/>}/>
+                        <Route path="/" element={<Table/>}/>
                         <Route path="/Lesson" element={<Lesson2/>}/>
                         <Route path="*" element={<Posts/>}/>
                         {/*<Route path="login" element={<LoginPage />}/>*/}
                     </Routes>
                     {/*'Lorem ipsum dolor sit amet.'*/}
+                    {/*<Button variant="contained" onClick={handleOnClick}>go home</Button>*/}
                     <Button variant="contained" href="/">go home</Button>
+                    {/*  */}
                     {/*<h4> ... go <Link to="/">home</Link></h4>*/}
                 </div>
                 </Container>

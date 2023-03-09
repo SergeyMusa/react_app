@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step_#2-api+ = wip+">
-      <change afterPath="$PROJECT_DIR$/src/components/store/TimerSlider.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/store/TimerSlider2.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/store/counter.js" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step_#3-timer = begin, disable React.StrictMode">
+      <change afterPath="$PROJECT_DIR$/src/components/store/TestStore.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/store/Timer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/store/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Lesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Lesson.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Posts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Lesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Lesson.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Counter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/CryptoCard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Table2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table2.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/TimerSlider.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/Count.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Count.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +30,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="HTML File" />
         <option value="SCSS File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
+        <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -133,7 +130,7 @@
       <workItem from="1677678907763" duration="3873000" />
       <workItem from="1677682880418" duration="668000" />
       <workItem from="1677683561237" duration="39926000" />
-      <workItem from="1677949063474" duration="86790000" />
+      <workItem from="1677949063474" duration="119335000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -303,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678118162639</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="step_#3-timer = begin, disable React.StrictMode">
+      <created>1678196612262</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1678196612262</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +329,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Lesson-1-Components&amp;function/class" />
     <MESSAGE value="Lesson-1-Components_end" />
     <MESSAGE value="Lesson-2-State _old &amp; _new" />
     <MESSAGE value="Lesson-2- привязка bind" />
@@ -350,6 +353,7 @@
     <MESSAGE value="step_#2-api+ = wip, remade on class EmployersListItem" />
     <MESSAGE value="step_#2-api+ = wip, with state" />
     <MESSAGE value="step_#2-api+ = wip+" />
-    <option name="LAST_COMMIT_MESSAGE" value="step_#2-api+ = wip+" />
+    <MESSAGE value="step_#3-timer = begin, disable React.StrictMode" />
+    <option name="LAST_COMMIT_MESSAGE" value="step_#3-timer = begin, disable React.StrictMode" />
   </component>
 </project>
