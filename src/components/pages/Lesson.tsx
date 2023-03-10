@@ -47,7 +47,7 @@ import {number} from "prop-types";
       render (){
         // this.setState(TestData.timerTestData=32);
         //   console.log('timerTestData',this.timerTestData);
-        //   console.log('Store', Store)
+        //   console.log('Store', Store.timerTestData)
         return (
             <div>
                 <h3>Lesson</h3>

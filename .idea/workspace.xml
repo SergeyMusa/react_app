@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step_#3-timer = crash Table? not errors">
-      <change afterPath="$PROJECT_DIR$/src/components/store/Store.ts" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip">
+      <change afterPath="$PROJECT_DIR$/src/components/store/Store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Lesson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Lesson.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/TestStore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/TestStore.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Store__.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/Timer3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer3.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/TimerSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/TimerSlider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/store.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +125,7 @@
       <workItem from="1677678907763" duration="3873000" />
       <workItem from="1677682880418" duration="668000" />
       <workItem from="1677683561237" duration="39926000" />
-      <workItem from="1677949063474" duration="152637000" />
+      <workItem from="1677949063474" duration="158357000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -332,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678465556764</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="wip">
+      <created>1678474387896</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1678474387896</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +359,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Lesson-4-destructurisation" />
     <MESSAGE value="add_#1 = Route" />
     <MESSAGE value="add_#1 = Route-ok" />
     <MESSAGE value="add_#1+ = add ts and mobx, begin makeAutoObservable" />
@@ -379,6 +383,7 @@
     <MESSAGE value="step_#3-timer = add second" />
     <MESSAGE value="step_#3-timer = ui ok" />
     <MESSAGE value="step_#3-timer = crash Table? not errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="step_#3-timer = crash Table? not errors" />
+    <MESSAGE value="wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip" />
   </component>
 </project>

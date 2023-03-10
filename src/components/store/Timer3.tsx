@@ -13,6 +13,8 @@ import Avatar from "@mui/material/Avatar";
 import { deepOrange, deepPurple } from '@mui/material/colors';
 import { makeObservable, observable, computed, action } from "mobx"
 import { observer } from "mobx-react-lite"
+import Store from "./Store";
+import Counter from "./Counter";
 
 // export default function SwitchLabels() {
 //     return (
@@ -26,8 +28,8 @@ import { observer } from "mobx-react-lite"
 function Timer3() {
     const [count, setCount] = React.useState(1);
     // @observable
-    let counter3 = 15;
-        // counterTemp = counter3;
+    let counter3 = Store.timeUpdate;
+        // counterTemp = counter3; //Store.timerTemp
     const [counterTemp = counter3, setCounter] = React.useState(counter3);
     let isRepeat = counterTemp,
         timer = 0, // пока пустая переменная
@@ -35,32 +37,44 @@ function Timer3() {
 
     const incCount = () => {
         counter3 = counter3 < 99 ? counter3 + 1 : 99 ;
-        console.log('counter3', counter3)
+        Store.timeUpdate = counter3;
+        // console.log('counter3', counter3)
     }
     const decCount = () => {
         // setCount(Math.max(counter3 - 1, 0));
         counter3 = counter3 > 0 ? counter3 - 1 : 0 ;
-        console.log('counter3', counter3)
+        Store.timeUpdate = counter3;
+        // console.log('counter3', counter3)
     }
     // const onClickReset = () => {
     //     clearTimer(getDeadTime());
     // }
     const onClickStop = () => {
         setCounter(timer=0);
-        // console.log('onClickStop')
         clearInterval(timer);
+        Store.timerTemp = 0;
+        Store.reset();
+        // console.log('onClickStop')
     }
     const onClickStart = () => {
-        setCounter(timer=counter3) ;
+        setCounter(timer=Store.timeUpdate) ;
         // console.log('onClickStart')
     }
     const onClickPause = () => {
-        // setCounter(timer=0);
-        console.log('onClickPause')
+        Store.timerTemp = counterTemp;
+        Store.timerTemp = counterTemp;
+        setCounter(timer=0);
+        // console.log('Store.timerTemp', Store.timerTemp);
+        // console.log('onClickPause')
+        clearInterval(timer);
     }
     const onClickResume = () => {
         // setCounter(timer=0);
-        console.log('onClickResume')
+        // console.log('Store.timerTemp', Store.timerTemp);
+        // console.log('Store.timeUpdate', Store.timeUpdate);
+        setCounter(timer=Store.timerTemp) ;
+        // console.log('onClickResume');
+        // Store.timerTemp = 0;
     }
 
     const checkSwitch = event => {
@@ -74,7 +88,7 @@ function Timer3() {
     // First Attempts
     React.useEffect( () => {
         const one = () => {
-            console.log(' Timer3 ', isRepeat, counterTemp );
+            // console.log(' Timer3 ', isRepeat, counterTemp );
             // tik--;
         };
         const callbackTimeout =() => {
@@ -90,31 +104,36 @@ function Timer3() {
         return () => clearInterval(timer);
     }, [counterTemp]);
 
+    // console.log('Store', Store.timerTestData);
+
     return (
         <div className="Timer3">
-
+            <h1>{counter3}</h1>
+            <button onClick={() => Store.increment()}>+++</button>
             <Paper elevation={3} >
                 {/*<h4>{counter3} : [ {counterTemp} ]</h4>*/}
                 {/*<Avatar sx={{ bgcolor: deepPurple[500], width: 36, height: 36 }}>15</Avatar>*/}
-                <span>{counter3}</span>
+                <span>[ {Store.timeUpdate} ]</span>
+
                 <Badge badgeContent={counterTemp} color="primary">
                     <AccessTime color="action" />
                 </Badge>
+                <span>[ {Store.timerTemp} ]</span>
                 {/*<Badge badgeContent={counterTemp} color="error">*/}
 
                 <ButtonGroup >
                     {/*//variant="contained"*/}
                     <Button
-                        aria-label="reduce"
-                        onClick={decCount}
-                    >
-                        <RemoveIcon fontSize="small" />
-                    </Button>
-                    <Button
                         aria-label="increase"
-                        onClick={incCount}
+                        onClick={() => Store.increment()}
                     >
                         <AddIcon fontSize="small" />
+                    </Button>
+                    <Button
+                        aria-label="reduce"
+                        onClick={() => Store.decrement()}
+                    >
+                        <RemoveIcon fontSize="small" />
                     </Button>
                 </ButtonGroup>
                 <FormControlLabel control={<Switch defaultChecked />}
