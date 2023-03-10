@@ -5,8 +5,9 @@ import Loader from "../../store/Loader/Loader";
 // import {CryptoCard} from "../../store/CryptoCard";
 import {EmployersList} from "./EmployersList";
 import Search from "../../store/Search";
-import {Timer} from "../../store/Timer";
+import {Timer1} from "../../store/Timer1";
 import Timer2 from "../../store/Timer2";
+import Timer3 from "../../store/Timer3";
 
 let dataData = [];
 
@@ -35,38 +36,36 @@ export class Table extends React.Component {
         isLoading: true,
         data: [],
         // dataCoinInfo: {},
+        componentDidMount() {
+            this.loadData() }
     }
 
-    async componentDidMount() {
-// export default class Table extends React.Component{ //< tableProps >
-//         fetch("https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD")
-//         const response = await fetch(` http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`)
-        const response = await fetch(`https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`)
-        const data = await response.json()
-
-        dataData = data.Data;
-
-        this.setState({
-            isLoading: false,
-            // data,
-            dataData,
-        })
-
-        // const dataX=data.data;
-        // const x =
-
-        // dataData.forEach(function (item, i, arr) {
-        //     <EmployersList data={this.state.dataData}/>
-        // })
+    // intervalCall: setInterval(this.loadData(), 30000);
+    // return (clearInterval(this.intervalCall)) // clean up
+    async loadData() {
+        this.setState({ Interval(this.loadData, 30000);
+        try {
+                //         fetch("https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD")
+            const response = await fetch(`https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`)
+            const data = await response.json()
+            dataData = data.Data;
+            this.setState({
+                isLoading: false,
+                dataData, // data,
+                })
+            console.log('load_api');
+        } catch (e) {
+            console.log(e);
+        }
     }
+
     render() {
         return (
             <div className="container">
                 {/*<EmployersList keyX={1} dataX={dataData}/>*/}
                 <button onClick={this.componentDidMount}> LOAD </button>
                 <Search />
-                <Timer timerProps={5000}/>
-                <Timer2 />
+
                 {
                     this.state.isLoading
                         ? <Loader/>
@@ -77,4 +76,5 @@ export class Table extends React.Component {
             </div>
         )
     }
+
 }

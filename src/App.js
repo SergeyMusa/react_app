@@ -3,7 +3,7 @@ import './App.css';
 import {Route, Routes, Link} from "react-router-dom";
 import Button from '@mui/material/Button';
 
-import {Posts} from "./components/pages/Posts";
+import {Timers} from "./components/pages/Timers";
 import {Table} from "./components/pages/Table/Table";
 import Lesson2 from "./components/pages/Lesson";
 import {Home} from "./components/pages/Home";
@@ -36,7 +36,7 @@ function App() {
                         <Link id="one" to="/Home">Home</Link>
                         <Link id="one" to="/">Table</Link>
 
-                        <Link id="one" to="/posts">Posts</Link>
+                        <Link id="one" to="/Timers">Timers</Link>
                         <Link id="one" to="/Lesson">Lesson</Link>
                     </div>
                 </header>
@@ -46,7 +46,7 @@ function App() {
                         <Route path="/Home" element={<Home/>}/>
                         <Route path="/" element={<Table/>}/>
                         <Route path="/Lesson" element={<Lesson2/>}/>
-                        <Route path="*" element={<Posts/>}/>
+                        <Route path="*" element={<Timers/>}/>
                         {/*<Route path="login" element={<LoginPage />}/>*/}
                     </Routes>
                     {/*'Lorem ipsum dolor sit amet.'*/}

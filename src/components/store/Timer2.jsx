@@ -40,12 +40,12 @@ const Timer2 = () => {
         // If you adjust it you should also need to
         // adjust the Endtime formula we are about
         // to code next
-        setTimer('00:00:30');
+        setTimer('23:59:59');
 
         // If you try to remove this line the
         // updating of timer Variable will be
         // after 1000ms or 1sec
-        if (Ref.current) clearInterval(Ref.current);
+       if (Ref.current) clearInterval(Ref.current);
         const id = setInterval(() => {
             startTimer(e);
         }, 1000)
@@ -58,7 +58,7 @@ const Timer2 = () => {
 
         // This is where you need to adjust if
         // you entend to add more time
-        deadline.setSeconds(deadline.getSeconds() + 10);
+        deadline.setSeconds(deadline.getSeconds() + 90);
         return deadline;
     }
 
@@ -78,11 +78,14 @@ const Timer2 = () => {
     const onClickReset = () => {
         clearTimer(getDeadTime());
     }
-
+    const onClickStop = () => {
+        clearTimer();
+    }
     return (
         <div className="Timer2">
             <h2>{timer}</h2>
-            <button onClick={onClickReset}>Reset</button>
+            <button onClick={onClickReset}>Start 90sec</button>
+            <button onClick={onClickStop}>Stop</button>
         </div>
     )
 }
