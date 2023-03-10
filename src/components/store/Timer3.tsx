@@ -11,7 +11,8 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import Badge from '@mui/material/Badge';
 import Avatar from "@mui/material/Avatar";
 import { deepOrange, deepPurple } from '@mui/material/colors';
-
+import { makeObservable, observable, computed, action } from "mobx"
+import { observer } from "mobx-react-lite"
 
 // export default function SwitchLabels() {
 //     return (
@@ -21,8 +22,10 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
 //     );
 // }
 
+// @observer
 function Timer3() {
     const [count, setCount] = React.useState(1);
+    // @observable
     let counter3 = 15;
         // counterTemp = counter3;
     const [counterTemp = counter3, setCounter] = React.useState(counter3);

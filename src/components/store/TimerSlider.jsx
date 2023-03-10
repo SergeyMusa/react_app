@@ -7,7 +7,7 @@ import Slider from '@mui/material/Slider';
 import MuiInput from '@mui/material/Input';
 import AccessTime from '@mui/icons-material/AccessTime';
 import {makeAutoObservable, makeObservable} from "mobx";
-import counter from "./counter";
+import counter from "./Counter";
 import {observer} from "mobx-react-lite";
 
 const Input = styled(MuiInput)`

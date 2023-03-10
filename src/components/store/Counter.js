@@ -1,17 +1,16 @@
-// importScripts()
-import {makeAutoObservable, makeObservable} from "mobx";
+import {makeAutoObservable, makeObservable, observable} from "mobx";
 import React from "react";
+import {observer} from "mobx-react";
 
-// export class Counter extends React.Component {
-class Counter { // extends React.Component
-    count1 = 0;
+class Counter { //extends React.Component{ //
+// @observable
+count1 = 0;
     constructor() { //props
             // super(props); //{counter}
             // makeObservable(this)
             makeAutoObservable(this) // don`t work with props
-
             this.state = {
-                count3: 42
+                count3: 43
             }
     }
     state = {
@@ -47,4 +46,5 @@ class Counter { // extends React.Component
   //   )
   // }
 }
-export default new Counter()
+export default new Counter();//
+// export default Counter;//new Counter()

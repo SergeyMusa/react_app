@@ -2,12 +2,11 @@ import React, {Component} from "react"; // import component
 import Search from "../store/Search";
 // import {observer} from "mobx-react-lite";
 import {observer} from "mobx-react";
-import {action, observable} from "mobx";
+import {action, computed, observable, makeObservable, makeAutoObservable} from "mobx";
 // import {observe} from 'mobx-decorators';
 //--------------------------------------------
-// import Counter from "../store/counter";
-import counter from "../store/counter";
-import store from "../store/Search";
+import Counter from "../store/Counter";
+import Store from "../store/Store";
 import TestStore from "../store/TestStore";
 import {number} from "prop-types";
 
@@ -29,27 +28,39 @@ import {number} from "prop-types";
     //     timerTestData: number,
     //     testProps: string,
     // };
-    timerTestData: number
-    constructor(props) {
-        super(props);
-
-        this.timerTestData = 22;
-        // TestData.testProps = 'www';
+    @observable timerTestData: number = 42
+    value: number
+    double: any
+    increment:any
+    constructor(value) {
+        super(value);
+        // makeObservable(this,
+        //     {
+        //     value : observable,
+        //     double: computed,
+        //     increment: action,
+        //     // TestData.testProps = 'www';
+        // })
+        // this.value = value
     }
+
       render (){
         // this.setState(TestData.timerTestData=32);
+        //   console.log('timerTestData',this.timerTestData);
+        //   console.log('Store', Store)
         return (
             <div>
+                <h3>Lesson</h3>
                 <h1> <TestStore pprops={this.timerTestData}/> </h1>
                 {/*    */}
                 {/*<h3>{`countZ = ${this.TimerSet.timeUpdate}`}h</h3>*/}
                 {/*<button onClick={() => this.incCountZ()}>+++</button>*/}
-                <h3>{"Counter = " + counter.count1}</h3>
+                <h3>{"Counter = " + Counter.count1}</h3>
                 {/*<h3>{"Counter1 = "+ counter.count1 }</h3>*/}
                 {/*<h3>{"Counter2 = "+ counter.count3 }</h3>*/}
-                <button onClick={() => counter.increment()}>+++</button>
-                <button onClick={() => counter.decrement()}>---</button>
-                <button onClick={() => counter.reset()}>=zero=</button>
+                <button onClick={() => Counter.increment()}>+++</button>
+                <button onClick={() => Counter.decrement()}>---</button>
+                <button onClick={() => Counter.reset()}>=zero=</button>
             </div>
         )
         // }
