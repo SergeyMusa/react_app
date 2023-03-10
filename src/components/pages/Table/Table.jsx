@@ -43,7 +43,7 @@ export class Table extends React.Component {
     // intervalCall: setInterval(this.loadData(), 30000);
     // return (clearInterval(this.intervalCall)) // clean up
     async loadData() {
-        this.setState({ Interval(this.loadData, 30000);
+        setInterval(this.loadData, 30000);
         try {
                 //         fetch("https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD")
             const response = await fetch(`https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`)

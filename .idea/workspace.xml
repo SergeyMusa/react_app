@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step_#3-timer = add second">
-      <change afterPath="$PROJECT_DIR$/src/components/store/Timer3.tsx" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step_#3-timer = ui ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer1.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer2.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +121,7 @@
       <workItem from="1677678907763" duration="3873000" />
       <workItem from="1677682880418" duration="668000" />
       <workItem from="1677683561237" duration="39926000" />
-      <workItem from="1677949063474" duration="142562000" />
+      <workItem from="1677949063474" duration="144381000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -317,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678388282837</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="step_#3-timer = ui ok">
+      <created>1678463010766</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1678463010766</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +341,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Lesson-2- привязка bind" />
     <MESSAGE value="Lesson-3-end" />
     <MESSAGE value="Lesson-4-destructurisation" />
     <MESSAGE value="add_#1 = Route" />
@@ -364,6 +365,7 @@
     <MESSAGE value="step_#3-timer = begin, disable React.StrictMode" />
     <MESSAGE value="step_#3-timer = begin, enable React.StrictMode" />
     <MESSAGE value="step_#3-timer = add second" />
-    <option name="LAST_COMMIT_MESSAGE" value="step_#3-timer = add second" />
+    <MESSAGE value="step_#3-timer = ui ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="step_#3-timer = ui ok" />
   </component>
 </project>
