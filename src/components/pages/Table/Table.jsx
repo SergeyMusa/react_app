@@ -8,6 +8,8 @@ import Search from "../../store/Search";
 import {Timer1} from "../../store/Timer1";
 import Timer2 from "../../store/Timer2";
 import Timer3 from "../../store/Timer3";
+import Store from "../../store/Store";
+import StoreCoins from "../../store/StoreCoins";
 
 let dataData = [];
 
@@ -40,18 +42,21 @@ export class Table extends React.Component {
             this.loadData() }
     }
 
-    // intervalCall: setInterval(this.loadData(), 30000);
-    // return (clearInterval(this.intervalCall)) // clean up
-    async loadData() {
-        setInterval(this.loadData, 30000);
+    async componentDidMount() { //loadData
+        setInterval(this.loadData, Store.timeUpdate); //30000
+        console.log('timeUpdate', Store.timeUpdate);
         try {
                 //         fetch("https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD")
             const response = await fetch(`https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`)
             const data = await response.json()
             dataData = data.Data;
-            this.setState({
+            console.log('dataData', dataData)
+            StoreCoins.CoinsTemp = dataData;
+            StoreCoins.show();
+                this.setState({
                 isLoading: false,
                 dataData, // data,
+
                 })
             console.log('load_api');
         } catch (e) {
@@ -63,7 +68,7 @@ export class Table extends React.Component {
         return (
             <div className="container">
                 {/*<EmployersList keyX={1} dataX={dataData}/>*/}
-                <button onClick={this.componentDidMount}> LOAD </button>
+                <button onClick={() => this.componentDidMount()}> LOAD </button>
                 <Search />
 
                 {
