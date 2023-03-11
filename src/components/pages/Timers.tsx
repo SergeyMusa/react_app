@@ -1,13 +1,14 @@
 import React from "react";
-import {Timer1} from "../store/Timer1";
+// import {Timer1} from "../store/Timer1";
 import Timer2 from "../store/Timer2";
 import Timer3 from "../store/Timer3";
 // import Button from '@material-ui/core/Button';
 // import Lesson, {CounterX} from "./Lesson";
-
+// import {observer} from "mobx-react";
 
 // export class Footer extends React.Component<props> {
 
+// @observer
 export class Timers extends React.Component {
         public render () {
                 return (

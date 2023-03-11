@@ -9,7 +9,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-
+import { deepPurple } from '@mui/material/colors';
 
 // const EmployersListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
 export class EmployersListItem extends React.Component {
@@ -54,7 +54,8 @@ export class EmployersListItem extends React.Component {
                 <Card sx={{maxWidth: 345}}>
                     <CardHeader
                         avatar={
-                            <Avatar sx={{bgcolor: red[500]}} aria-label="recipe">
+                            <Avatar  aria-label="recipe">
+                                {/* sx={{bgcolor: deepPurple[500]}} */}
                                 {DISPLAY.USD.FROMSYMBOL}
                             </Avatar>
                         }
@@ -70,7 +71,7 @@ export class EmployersListItem extends React.Component {
                     <CardMedia
                         component="img"
                         height='180'
-                        image={"https://www.cryptocompare.com/" + CoinInfo.ImageUrl} // !!! + " width={50} height={50}"
+                        image={"https://www.cryptocompare.com/" + CoinInfo.ImageUrl}
                         alt={CoinInfo.Id}
                     />
                     <CardContent>

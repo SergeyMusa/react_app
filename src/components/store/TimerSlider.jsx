@@ -6,9 +6,7 @@ import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import MuiInput from '@mui/material/Input';
 import AccessTime from '@mui/icons-material/AccessTime';
-import {makeAutoObservable, makeObservable} from "mobx";
-import counter from "./Counter";
-import {observer} from "mobx-react-lite";
+import {makeAutoObservable} from "mobx";
 
 const Input = styled(MuiInput)`
   width: 42px;
@@ -40,10 +38,10 @@ export class TimerSlider extends React.Component {
             this.setValue=(60);
         }
     }
-    incr = () => {
-        // return this.value = newValue;
-        // console.log('this.setValue',this.setValue)
-    }
+    // incr = () => {
+    //     // return this.value = newValue;
+    //     // console.log('this.setValue',this.setValue)
+    // }
     render() {
         return (
             // <h1>TimerSlider</h1>
