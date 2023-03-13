@@ -9,7 +9,7 @@ const Search = (props) => {
         value={value}
         fullWidth
         onChange={onChange}
-        // sx = {{mb: '1.5rem'}}
+        sx = {{mt: '1rem'}}
     />;
 };
 

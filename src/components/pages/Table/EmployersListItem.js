@@ -47,12 +47,13 @@ export class EmployersListItem extends React.Component {
         const {CoinInfo, DISPLAY, RAW} = this.props
     return (
         //     <img src={"https://www.cryptocompare.com/"+imageUrl} alt={cryName} width={50} height={50}/>
-        <Grid item >
+        // <div >
+        <Grid item xs >
             {/* xs={6} */}
             {/*<h3>{this.state.time}</h3>*/}
             {/*<button onClick={this.changeClassName}> [+++] </button>*/}
-            <ul>
-                <div className='EmployersList'>
+                <div className='EmployersList' style={{margin: 'auto'}} >
+                    {/*<Card sx={{maxWidth: 345, height: 250}}>*/}
                     <Card sx={{maxWidth: 345}}>
                         <CardHeader
                             avatar={
@@ -72,9 +73,11 @@ export class EmployersListItem extends React.Component {
                         />
                         <CardMedia
                             component="img"
-                            height='180'
+                            sx ={{height: 170, width: 170, margin: 'auto'}}
+                            height = '180'
                             image={"https://www.cryptocompare.com/" + CoinInfo.ImageUrl}
                             alt={CoinInfo.Id}
+
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
@@ -97,9 +100,11 @@ export class EmployersListItem extends React.Component {
                     {/*        // cryNetHashesPerSecond={ cry.Data[keyX].CoinInfo.NetHashesPerSecond }*/}
                     {/*    />*/}
                     {/*</ul>*/}
+
                 </div>
-            </ul>
+         {/*</div>*/}
         </Grid>
+
     )
   }
 }

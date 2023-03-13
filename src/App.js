@@ -29,6 +29,7 @@ function App() {
             <Header/>
             <Container
                 sx={{mt: '1rem'}}
+                maxWidth={false}
             >
                 <header className="App-header">
                     <h1>In God We Trust</h1>

@@ -82,7 +82,7 @@ export class Table extends React.Component {
     render() {
         return (
             <div className="table">
-                <Container>
+                {/*<Container>*/}
                     {/*<EmployersList keyX={1} dataX={dataData}/>*/}
                     <button onClick={() => this.componentDidMount()}> LOAD </button>
                     <Search />
@@ -91,15 +91,9 @@ export class Table extends React.Component {
                         this.state.isLoading
                             ? <Loader/>
                             // : <Tab data={this.state.dataData} />
-                            : <Grid container rowSpacing={1} columnSpacing={{ xs:1, sm:2, md:3 }} >
-                                <Grid item xs={6}>
-                                    <Item>
-                                        <EmployersList data={this.state.dataData}/>
-                                    </Item>
-                                </Grid>
-                            </Grid>
+                            : <EmployersList data={this.state.dataData}/>
                     }
-                </Container>
+                {/*</Container>*/}
             </div>
         )
     }

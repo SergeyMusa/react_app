@@ -8,8 +8,8 @@ body {
   /*flex-direction: column;*/
   /*padding-bottom: 20px;*/
   min-height: 90%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  /*display: grid;*/
+  /*grid-template-rows: auto 1fr auto;*/
   /*padding-bottom: 30px;*/
   background: #e3e3f3;
 

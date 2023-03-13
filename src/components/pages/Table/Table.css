@@ -1,6 +1,6 @@
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
   background-color: #fff;
   color: #444;
   max-width: 1800px;
@@ -19,6 +19,6 @@ div:nth-child(5) { grid-row-start: 3; }
   background-color: #444;
   color: #fff;
   border-radius: 5px;
-  padding: 20px;
+  padding: 10px;
   /*font-size: 150%;*/
 }
