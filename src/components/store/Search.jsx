@@ -7,6 +7,7 @@ const Search = (props) => {
         label={'search'}
         type={'search'}
         value={value}
+        fullWidth
         onChange={onChange}
         // sx = {{mb: '1.5rem'}}
     />;

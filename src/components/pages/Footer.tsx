@@ -32,24 +32,24 @@ export default function Footer() {
     // public render () {
         return (
             <div className={'footer'} >
-                <BottomNavigation sx={{ width: 500 }} value={value} onChange={handleChange}>
-                    <BottomNavigationAction
-                        label="Recents"
-                        value="recents"
-                        icon={<RestorePage />}
-                    />
-                    <BottomNavigationAction
-                        label="Favorites"
-                        value="favorites"
-                        icon={<FavoriteBorder />}
-                    />
-                    <BottomNavigationAction
-                        label="Nearby"
-                        value="nearby"
-                        icon={<LocationOn />}
-                    />
-                    <BottomNavigationAction label="Folder" value="folder" icon={<FileCopy />} />
-                </BottomNavigation>
+                {/*<BottomNavigation sx={{ width: 500 }} value={value} onChange={handleChange}>*/}
+                {/*    <BottomNavigationAction*/}
+                {/*        label="Recents"*/}
+                {/*        value="recents"*/}
+                {/*        icon={<RestorePage />}*/}
+                {/*    />*/}
+                {/*    <BottomNavigationAction*/}
+                {/*        label="Favorites"*/}
+                {/*        value="favorites"*/}
+                {/*        icon={<FavoriteBorder />}*/}
+                {/*    />*/}
+                {/*    <BottomNavigationAction*/}
+                {/*        label="Nearby"*/}
+                {/*        value="nearby"*/}
+                {/*        icon={<LocationOn />}*/}
+                {/*    />*/}
+                {/*    <BottomNavigationAction label="Folder" value="folder" icon={<FileCopy />} />*/}
+                {/*</BottomNavigation>*/}
                <p> © 2023 Copyright MuSa </p>
              </div>
         )

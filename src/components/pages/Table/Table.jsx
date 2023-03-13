@@ -10,6 +10,9 @@ import Timer2 from "../../store/Timer2";
 import Timer3 from "../../store/Timer3";
 import Store from "../../store/Store";
 import StoreCoins from "../../store/StoreCoins";
+import {Container, Paper} from "@mui/material";
+import Grid from "@mui/material/Grid";
+import {styled} from "@mui/material/styles";
 
 let dataData = [];
 
@@ -32,15 +35,23 @@ let dataData = [];
 //     )
 // }
 
+const Item = styled(Paper)(({ theme }) => ({
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+}));
 
 export class Table extends React.Component {
+
     state = {
         isLoading: true,
         data: [],
         // dataCoinInfo: {},
-        componentDidMount() {
-            this.loadData() }
+        // store: new StoreCoins(),
     }
+    componentDidMount() {
+        this.loadData() }
 
     async componentDidMount() { //loadData
         setInterval(this.loadData, Store.timeUpdate); //30000
@@ -52,6 +63,8 @@ export class Table extends React.Component {
             dataData = data.Data;
             console.log('dataData', dataData)
             StoreCoins.CoinsTemp = dataData;
+            console.log('StoreCoins', StoreCoins.CoinsTemp)
+            // this.state.store.
             StoreCoins.show();
                 this.setState({
                 isLoading: false,
@@ -64,22 +77,32 @@ export class Table extends React.Component {
         }
     }
 
+
+
     render() {
         return (
-            <div className="container">
-                {/*<EmployersList keyX={1} dataX={dataData}/>*/}
-                <button onClick={() => this.componentDidMount()}> LOAD </button>
-                <Search />
+            <div className="table">
+                <Container>
+                    {/*<EmployersList keyX={1} dataX={dataData}/>*/}
+                    <button onClick={() => this.componentDidMount()}> LOAD </button>
+                    <Search />
 
-                {
-                    this.state.isLoading
-                        ? <Loader/>
-                        // : <Tab data={this.state.dataData} />
-                        : <EmployersList data={this.state.dataData}/>
-                        // : <CryptoCard data={this.state.dataData}/>
-                }
+                    {
+                        this.state.isLoading
+                            ? <Loader/>
+                            // : <Tab data={this.state.dataData} />
+                            : <Grid container rowSpacing={1} columnSpacing={{ xs:1, sm:2, md:3 }} >
+                                <Grid item xs={6}>
+                                    <Item>
+                                        <EmployersList data={this.state.dataData}/>
+                                    </Item>
+                                </Grid>
+                            </Grid>
+                    }
+                </Container>
             </div>
         )
     }
 
 }
+    // {/*: <CryptoCard data={this.state.dataData}/>*/}

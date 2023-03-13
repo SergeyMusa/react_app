@@ -3,7 +3,7 @@ import React, {Component} from "react";
 import {observer} from "mobx-react";
 
 class StoreCoins {
-    CoinsTemp = []
+    CoinsTemp = [1,2,3]
     CoinsState = true
 
     constructor() {

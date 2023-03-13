@@ -10,19 +10,29 @@ import Badge from '@mui/material/Badge';
 // import { makeObservable, observable, computed, action } from "mobx"
 import Store from "./Store";
 import {number} from "prop-types";
-import {observable} from "mobx";
+import {action, makeAutoObservable, observable} from "mobx";
 
 export class Timer4 extends React.Component<any, any> {
-    counter3: number;
-    timer: any;
-
+    counter4: any;
+    // timer: any;
+    // counterTemp: any;
     constructor(props: any) {
         super(props);
+        // makeAutoObservable(this)
         this.state = {
+            finishMessage: "Timer3 - USED",
+            counter4: Store.timeUpdate,
+            counterTemp: this.counter4,
+            // timeLeft: this.counterTemp,
             // time: {},
-            timeLeft: 15,  // !!! оставшееся время - временно - хранится в сторе
+            timeLeft: 5,  // !!! оставшееся время - временно - хранится в сторе
             timer: 0, // Отсылка на таймер
             isRepeat: false,
+            // counter4: observable,
+
+            // setCounter: 0,
+            // counterTemp: 0, //[this.counter4, 0], // this.setCounter
+        // onClickStart: action,
         };
         this.startTimer = this.startTimer.bind(this);
         // this.countDown = this.countDown.bind(this);
@@ -49,61 +59,86 @@ export class Timer4 extends React.Component<any, any> {
     //     let timeLeftVar = this.secondsToTime({seconds: this.state.seconds});
     //     this.setState({ time: timeLeftVar });
     // }
-
-    startTimer(timeLeft) {   // Вызывается при нажатии на button
-        clearInterval(this.state.timer);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
-        // this.counter3 = Store.timeUpdate;
-         this.timer = setTimeout(() => { // old setInterval // old timer =
-
-            let timeLeft = this.state.timeLeft - 1;  // Отнимает 1 секунду от оставшегося времени
-            if (timeLeft === 0) {    // Если оставшееся время равно 0,
-                // if (this.timer == 0 && this.state.seconds > 0) {
-                clearInterval(this.timer); //old clearInterval(timer) // очищаем таймер, чтоб таймер не уходил в минус
-            }
-            this.setState({
-                timeLeft: timeLeft   // timeLeft из строки 25 равен timeLeft из строки 58
-            });
-        }, 1000);
-        return this.setState({timeLeft: timeLeft});
-        // return this.setState({timeLeft: timeLeft, timer: timer});
+    callbackTimeout =() => {
+        console.log(' counter4.1 ', this.state.counter4);
+        console.log(' timeLeft ', this.state.timeLeft)
+            // this.counterTemp = this.state.counterTemp - 1;  // Отнимает 1 секунду от оставшегося времени
+        this.setState({counter4: (this.state.counter4 - 1)});
+        this.setState({timeLeft: (this.state.timeLeft - 1)});
+        // let timeLeft = this.state.timeLeft - 1;
+        // console.log(' counter4.2 ', this.state.counter4);
+            // return this.setState({counterTemp: this.counterTemp});
+        console.log(' timer = ',  this.state.timer );
     }
 
+    startTimer() {
+        // ??? maybe delete str down > clearInterval
+        console.log(' timeLeft ', this.state.timeLeft)
+        console.log('startTimer', ' counter4 = ', this.state.counter4 )
+
+        clearInterval(this.state.timer);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
+        // this.counter3 = Store.timeUpdate;
+        let timeLeft = this.state.timeLeft ;
+        let timer = timeLeft  > 0 && setInterval(this.callbackTimeout, 1000, this.state.finishMessage);
+
+        // this.state.counterTemp =  this.state.counterTemp > 0 && setTimeout(this.callbackTimeout, 1000, this.state.finishMessage);
+        console.log(' timer = ',  timer );
+
+         if (this.state.counter4 === 0 || -1) {
+            console.log(' Timer4 - ok ')
+            console.log(' 5 ',this.state.finishMessage)
+        };
+
+        // return () => clearInterval(timer);
+    return this.setState({timeLeft: timeLeft, timer: timer});
+    }
 
     // const [count, setCount] = React.useState(1);
 
     //  [counterTemp = counter3, setCounter] = React.useState(counter3);
     // isRepeat = counterTemp,
-    // пока пустая переменная
 
+    onClickStop () {
+        // this.setCounter(this.timer=0);
 
-    // onClickStop () {
-    //     // this.setCounter(this.timer=0);
-    //     clearInterval(timer);
-    //     Store.timerTemp = 0;
-    // }
-    // onClickStart = () => {
-    //     setCounter(timer=Store.timeUpdate) ;
-    // }
-    // onClickPause = () => {
+        this.setState({timer: 0});
+
+        clearInterval(this.state.timer);
+        Store.timerTemp = 0;
+        console.log('onClickStop')
+    }
+    onClickStart = () => {
+        // setCounter(timer=Store.timeUpdate) ;
+        console.log('timer', this.state.timer);
+        this.setState({timer: Store.timeUpdate});
+        console.log('timer', this.state.timer);
+
+        console.log('onClickStart', this.state.counter4);
+
+        return this.startTimer();
+    }
+    onClickPause = () => {
     //     Store.timerTemp = counterTemp;
     //     Store.timerTemp = counterTemp;
     //     setCounter(timer=0);
     //     clearInterval(timer);
-    // }
-    // onClickResume = () => {
+        console.log('onClickPause')
+    }
+    onClickResume = () => {
     //     setCounter(timer=Store.timerTemp) ;
-    // }
+        console.log('onClickResume')
+    }
     //
-    // checkSwitch = event => {
-    //     (event.target.checked) ? isRepeat=counterTemp : isRepeat=0 ;
-    //     console.log('isRepeat',isRepeat)
-    // }       Store.reset();
+    checkSwitch = event => {
+        // (event.target.checked) ? isRepeat=counterTemp : isRepeat=0 ;
+        console.log('isRepeat', this.state.isRepeat)
+    }    //   Store.reset();
     //
     //
 
 
     render() {
-
+    const {timerTemp} = this.props;
         return (
             <div className="Timer4">
                 <div>
@@ -113,12 +148,13 @@ export class Timer4 extends React.Component<any, any> {
                 </div>
                 <h1> {this.state.timeLeft} </h1>
                 <Paper elevation={3} >
-                    {/*<h4>{counter3} : [ {counterTemp} ]</h4>*/}
+                    <h4>{this.state.counter4} : [ {this.state.counter4} ]</h4>
+                    {/*<h4>{this.counter4} : [ {counterTemp} ]</h4>*/}
                     <span>[ {Store.timeUpdate} ]</span>
 
                     {/*<Badge badgeContent={counterTemp} color="primary">*/}
                     {/*<Badge badgeContent={time_up} color="primary">*/}
-                    {/*    <AccessTime color="action" />*/}
+                        <AccessTime color="action" />
                     {/*</Badge>*/}
                     <span>[ {Store.timerTemp} ]</span>
 
@@ -138,15 +174,15 @@ export class Timer4 extends React.Component<any, any> {
                         </Button>
                     </ButtonGroup>
                     <FormControlLabel control={<Switch defaultChecked />}
-                        // onChange={checkSwitch }
+                        onChange={this.checkSwitch }
                                       label="repeat"
                     />
 
                     <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                        {/*<Button onClick={onClickStart}>Start</Button>*/}
-                        {/*<Button onClick={onClickStop}>Stop </Button>*/}
-                        {/*<Button onClick={onClickPause}>Pause</Button>*/}
-                        {/*<Button onClick={onClickResume}>Resume</Button>*/}
+                        <Button onClick={this.onClickStart}>Start</Button>
+                        <Button onClick={this.onClickStop}>Stop </Button>
+                        <Button onClick={this.onClickPause}>Pause</Button>
+                        <Button onClick={this.onClickResume}>Resume</Button>
                     </ButtonGroup>
                 </Paper>
             </div>

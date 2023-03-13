@@ -20,8 +20,8 @@ export class Timers extends React.Component {
                         <hr/><h3>-=2=-</h3>
                         <Timer2 />
                         <hr/><h3>-=3=-</h3>
-                        <Timer3 />
-                            <hr/><h3>-=4=-</h3>
+                        {/*<Timer3 />*/}
+                        {/*    <hr/><h3>-=4=-</h3>*/}
                             <Timer4 />
                         <hr/>
                     </div>

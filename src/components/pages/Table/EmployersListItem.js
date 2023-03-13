@@ -10,6 +10,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { deepPurple } from '@mui/material/colors';
+import Grid from "@mui/material/Grid";
 
 // const EmployersListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
 export class EmployersListItem extends React.Component {
@@ -46,58 +47,59 @@ export class EmployersListItem extends React.Component {
         const {CoinInfo, DISPLAY, RAW} = this.props
     return (
         //     <img src={"https://www.cryptocompare.com/"+imageUrl} alt={cryName} width={50} height={50}/>
-        <div>
-            <h3>{this.state.time}</h3>
-            <button onClick={this.changeClassName}> [+++] </button>
-        <ul>
-            <div className='EmployersList'>
-                <Card sx={{maxWidth: 345}}>
-                    <CardHeader
-                        avatar={
-                            <Avatar  aria-label="recipe">
-                                {/* sx={{bgcolor: deepPurple[500]}} */}
-                                {DISPLAY.USD.FROMSYMBOL}
-                            </Avatar>
-                        }
-                        action={
-                            <IconButton aria-label="settings">
-                                <MoreVertIcon/>
-                            </IconButton>
-                        }
-                        title={"id: " + CoinInfo.Id}
-                        // subheader="September 14, 2016"
-                        className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green
-                    />
-                    <CardMedia
-                        component="img"
-                        height='180'
-                        image={"https://www.cryptocompare.com/" + CoinInfo.ImageUrl}
-                        alt={CoinInfo.Id}
-                    />
-                    <CardContent>
-                        <Typography variant="body2" color="text.secondary">
-                            1 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE} <AttachMoney
-                            fontSize="small"/>
-                        </Typography>
-                    </CardContent>
-                </Card>
+        <Grid item >
+            {/* xs={6} */}
+            {/*<h3>{this.state.time}</h3>*/}
+            {/*<button onClick={this.changeClassName}> [+++] </button>*/}
+            <ul>
+                <div className='EmployersList'>
+                    <Card sx={{maxWidth: 345}}>
+                        <CardHeader
+                            avatar={
+                                <Avatar  aria-label="recipe">
+                                    {/* sx={{bgcolor: deepPurple[500]}} */}
+                                    {DISPLAY.USD.FROMSYMBOL}
+                                </Avatar>
+                            }
+                            action={
+                                <IconButton aria-label="settings">
+                                    <MoreVertIcon/>
+                                </IconButton>
+                            }
+                            title={"id: " + CoinInfo.Id}
+                            // subheader="September 14, 2016"
+                            className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green
+                        />
+                        <CardMedia
+                            component="img"
+                            height='180'
+                            image={"https://www.cryptocompare.com/" + CoinInfo.ImageUrl}
+                            alt={CoinInfo.Id}
+                        />
+                        <CardContent>
+                            <Typography variant="body2" color="text.secondary">
+                                1 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE} <AttachMoney
+                                fontSize="small"/>
+                            </Typography>
+                        </CardContent>
+                    </Card>
 
-                {/*<ul className={"app-list"}>*/}
-                {/*    <EmployersListItem*/}
-                {/*        id={item.CoinInfo.Id}*/}
-                {/*        cryName={item.CoinInfo.Name}*/}
-                {/*        raw={item.RAW.USD.PRICE}*/}
-                {/*        display={item.DISPLAY.USD.FROMSYMBOL}*/}
-                {/*        imageUrl={item.CoinInfo.ImageUrl}*/}
-                {/*        cryFullName={item.CoinInfo.FullName}*/}
-                {/*        cryUrl={item.CoinInfo.Url}*/}
-                {/*        // cryUrl={ dataX[keyX].CoinInfo.Url }*/}
-                {/*        // cryNetHashesPerSecond={ cry.Data[keyX].CoinInfo.NetHashesPerSecond }*/}
-                {/*    />*/}
-                {/*</ul>*/}
-            </div>
-        </ul>
-        </div>
+                    {/*<ul className={"app-list"}>*/}
+                    {/*    <EmployersListItem*/}
+                    {/*        id={item.CoinInfo.Id}*/}
+                    {/*        cryName={item.CoinInfo.Name}*/}
+                    {/*        raw={item.RAW.USD.PRICE}*/}
+                    {/*        display={item.DISPLAY.USD.FROMSYMBOL}*/}
+                    {/*        imageUrl={item.CoinInfo.ImageUrl}*/}
+                    {/*        cryFullName={item.CoinInfo.FullName}*/}
+                    {/*        cryUrl={item.CoinInfo.Url}*/}
+                    {/*        // cryUrl={ dataX[keyX].CoinInfo.Url }*/}
+                    {/*        // cryNetHashesPerSecond={ cry.Data[keyX].CoinInfo.NetHashesPerSecond }*/}
+                    {/*    />*/}
+                    {/*</ul>*/}
+                </div>
+            </ul>
+        </Grid>
     )
   }
 }

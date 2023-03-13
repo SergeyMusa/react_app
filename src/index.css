@@ -26,11 +26,11 @@ header {
 }
 .footer {
   display: grid;
-  margin: 0;
+  margin-top: 100px;
   padding: 0;
   background-color: #aaa2b2;
   /* Позиционируем footer внизу main */
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0;
   width: 100vw;
   /* Высота footer */
