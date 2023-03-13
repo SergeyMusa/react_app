@@ -3,7 +3,7 @@
 import React, {Component} from "react";
 // import Button from '@mui/material/Button';
 
-const header = <h3>TEST-Element</h3>;
+const homeHeader = <h3>TEST-Element</h3>;
 
 function Welcome() {
     return <h1>Hello world</h1>
@@ -38,8 +38,8 @@ export class Home extends React.Component {
     public render () {
         return (
             <div>
-                {header}
-                <h1>Home</h1>
+                <h3>Home</h3>
+                {homeHeader}
                 <Welcome/>
                 <Welcome2 />
             </div>

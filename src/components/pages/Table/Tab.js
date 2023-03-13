@@ -1,5 +1,5 @@
 import React from 'react';
-// import styles from './Table.css';
+// import styles from './Cards.css';
 
 export default data => (
     <div className="wrapper">

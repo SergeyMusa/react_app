@@ -1,5 +1,5 @@
 import React from "react";
-// import styles from '.src/styles/Table.css';
+// import styles from '.src/styles/Cards.css';
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;

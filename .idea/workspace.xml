@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip dont work">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="made table - style=ok">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/EmployersListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/EmployersList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/EmployersList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/EmployersListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/_Tab.js_" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Timer3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer3.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +82,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/store",
+    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Table",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -95,18 +99,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/store" />
       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
+      <recent name="$PROJECT_DIR$/src/components/store" />
       <recent name="$PROJECT_DIR$/src/components/pages" />
       <recent name="$PROJECT_DIR$/src/components/home" />
       <recent name="$PROJECT_DIR$/src/Components/home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
       <recent name="$PROJECT_DIR$/src/components/store/Loader" />
       <recent name="$PROJECT_DIR$/src/components/store" />
       <recent name="$PROJECT_DIR$/src/components/pages" />
-      <recent name="$PROJECT_DIR$/src/images" />
     </key>
   </component>
   <component name="RunManager">
@@ -143,7 +147,7 @@
       <workItem from="1677683561237" duration="39926000" />
       <workItem from="1677949063474" duration="160282000" />
       <workItem from="1678514678133" duration="1203000" />
-      <workItem from="1678515943080" duration="44571000" />
+      <workItem from="1678515943080" duration="48682000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -390,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678721574651</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="made table - style=ok">
+      <created>1678731364843</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1678731364843</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +423,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="add_#2 = begin api" />
     <MESSAGE value="add_#2+ = api, work in network" />
     <MESSAGE value="add_#2-ok- = api, work but other" />
     <MESSAGE value="return all back" />
@@ -437,6 +447,7 @@
     <MESSAGE value="wip ?bugs debug" />
     <MESSAGE value="remake Timer4 - from fun to class" />
     <MESSAGE value="wip dont work" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip dont work" />
+    <MESSAGE value="made table - style=ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="made table - style=ok" />
   </component>
 </project>

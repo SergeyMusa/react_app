@@ -4,13 +4,14 @@ import {Route, Routes, Link} from "react-router-dom";
 import Button from '@mui/material/Button';
 
 import {Timers} from "./components/pages/Timers";
-import {Table} from "./components/pages/Table/Table";
+import {Cards} from "./components/pages/Cards/Cards";
 import Lesson2 from "./components/pages/Lesson";
 import {Home} from "./components/pages/Home";
 import './styles/main.scss'
 import {Header} from "./components/pages/Header";
 import Footer from "./components/pages/Footer";
-import {Container} from "@mui/material"; //, createTheme
+import {Container} from "@mui/material";
+import {Tables} from "./components/pages/Table/Tables"; //, createTheme
 
 
 function App() {
@@ -35,7 +36,8 @@ function App() {
                     <h1>In God We Trust</h1>
                     <div className="poke">
                         <Link id="one" to="/Home">Home</Link>
-                        <Link id="one" to="/">Table</Link>
+                        <Link id="one" to="/">Cards</Link>
+                        <Link id="one" to="/Tables">Tables</Link>
 
                         <Link id="one" to="/Timers">Timers</Link>
                         <Link id="one" to="/Lesson">Lesson</Link>
@@ -45,7 +47,8 @@ function App() {
                     <br/>
                     <Routes>
                         <Route path="/Home" element={<Home/>}/>
-                        <Route path="/" element={<Table/>}/>
+                        <Route path="/" element={<Cards/>}/>
+                        <Route path="/Tables" element={<Tables/>}/>
                         <Route path="/Lesson" element={<Lesson2/>}/>
                         <Route path="*" element={<Timers/>}/>
                         {/*<Route path="login" element={<LoginPage />}/>*/}

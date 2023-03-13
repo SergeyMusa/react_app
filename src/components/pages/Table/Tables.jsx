@@ -1,17 +1,13 @@
 import React from "react"; //, {Component}
-// import styles from './Table.css';
+// import styles from './Cards.css';
 import Loader from "../../store/Loader/Loader";
-// import Tab from "./Tab";
+import Tab from "./Tab";
 // import {CryptoCard} from "../../store/CryptoCard";
-import {EmployersList} from "./EmployersList";
+import {EmployersList} from "../Cards/EmployersList";
 import Search from "../../store/Search";
-import {Timer1} from "../../store/Timer1";
-import Timer2 from "../../store/Timer2";
-import Timer3 from "../../store/Timer3";
 import Store from "../../store/Store";
 import StoreCoins from "../../store/StoreCoins";
 import {Container, Paper} from "@mui/material";
-import Grid from "@mui/material/Grid";
 import {styled} from "@mui/material/styles";
 
 let dataData = [];
@@ -42,7 +38,7 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
-export class Table extends React.Component {
+export class Tables extends React.Component {
 
     state = {
         isLoading: true,
@@ -84,14 +80,16 @@ export class Table extends React.Component {
             <div className="table">
                 {/*<Container>*/}
                     {/*<EmployersList keyX={1} dataX={dataData}/>*/}
-                    <button onClick={() => this.componentDidMount()}> LOAD </button>
-                    <Search />
+                    {/*<button onClick={() => this.componentDidMount()}> LOAD </button>*/}
+                <h3>Tables</h3>
+
+                <Search />
 
                     {
                         this.state.isLoading
                             ? <Loader/>
-                            // : <Tab data={this.state.dataData} />
-                            : <EmployersList data={this.state.dataData}/>
+                            : <Tab data={this.state.dataData} />
+                            // : <EmployersList data={this.state.dataData}/>
                     }
                 {/*</Container>*/}
             </div>

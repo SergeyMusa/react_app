@@ -142,13 +142,13 @@ export class Timer4 extends React.Component<any, any> {
         return (
             <div className="Timer4">
                 <div>
-                    <button onClick={this.startTimer}>Start</button>
+                    {/*<button onClick={this.startTimer}>Start</button>*/}
                     {/*<Button time = '10' startTimer = {this.startTimer}/>*/}
                     {/*m: {this.state.time.m} s: {this.state.time.s}*/}
                 </div>
-                <h1> {this.state.timeLeft} </h1>
+                {/*<h1> {this.state.timeLeft} </h1>*/}
                 <Paper elevation={3} >
-                    <h4>{this.state.counter4} : [ {this.state.counter4} ]</h4>
+                    <h4>{this.state.counter4} : [ {this.state.timeLeft} ]</h4>
                     {/*<h4>{this.counter4} : [ {counterTemp} ]</h4>*/}
                     <span>[ {Store.timeUpdate} ]</span>
 
@@ -158,7 +158,7 @@ export class Timer4 extends React.Component<any, any> {
                     {/*</Badge>*/}
                     <span>[ {Store.timerTemp} ]</span>
 
-                    <ButtonGroup >
+                    {/*<ButtonGroup >*/}
                         {/*//variant="contained"*/}
                         <Button
                             aria-label="increase"
@@ -172,7 +172,7 @@ export class Timer4 extends React.Component<any, any> {
                         >
                             <RemoveIcon fontSize="small" />
                         </Button>
-                    </ButtonGroup>
+                    {/*</ButtonGroup>*/}
                     <FormControlLabel control={<Switch defaultChecked />}
                         onChange={this.checkSwitch }
                                       label="repeat"

@@ -14,7 +14,7 @@ export class Timers extends React.Component {
         public render () {
                 return (
                     <div>
-                        <h1>Timers</h1>
+                        <h3>Timers</h3>
                         {/*<hr/><h3>1</h3>*/}
                         {/*<Timer1 timerProps={5000}/>*/}
                         <hr/><h3>-=2=-</h3>

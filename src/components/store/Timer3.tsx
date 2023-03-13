@@ -10,6 +10,7 @@ import Badge from '@mui/material/Badge';
 // import { deepPurple } from '@mui/material/colors';
 // import { makeObservable, observable, computed, action } from "mobx"
 import Store from "./Store";
+import Box from "@mui/material/Box";
 
 
 function Timer3() {
@@ -65,8 +66,9 @@ function Timer3() {
 
     return (
         <div className="Timer3">
-            <h1>{counter3}</h1>
-            <Paper elevation={3} >
+            {/*<h1>{counter3}</h1>*/}
+            <Box
+                >
                 {/*<h4>{counter3} : [ {counterTemp} ]</h4>*/}
                 <span>[ {Store.timeUpdate} ]</span>
 
@@ -75,24 +77,27 @@ function Timer3() {
                 </Badge>
                 <span>[ {Store.timerTemp} ]</span>
 
-                <ButtonGroup >
-                    {/*//variant="contained"*/}
+                {/*<ButtonGroup variant="contained" sx={{ m: 1}}>*/}
+                    {/*//*/}
                     <Button
                         aria-label="increase"
                         onClick={() => Store.increment()}
+                        variant="contained"
                     >
                         <AddIcon fontSize="small" />
                     </Button>
                     <Button
                         aria-label="reduce"
                         onClick={() => Store.decrement()}
+                        variant="contained"
                     >
                         <RemoveIcon fontSize="small" />
                     </Button>
-                </ButtonGroup>
+                {/*</ButtonGroup>*/}
                 <FormControlLabel control={<Switch defaultChecked />}
                                   onChange={checkSwitch }
                                   label="repeat"
+                                  color={'inherit'}
                 />
 
                 <ButtonGroup variant="contained" aria-label="outlined primary button group">
@@ -101,7 +106,7 @@ function Timer3() {
                     <Button onClick={onClickPause}>Pause</Button>
                     <Button onClick={onClickResume}>Resume</Button>
                 </ButtonGroup>
-            </Paper>
+            </Box>
         </div>
     );
 }

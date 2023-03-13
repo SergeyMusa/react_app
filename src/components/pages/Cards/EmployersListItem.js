@@ -3,7 +3,7 @@ import {AttachMoney} from "@mui/icons-material";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import Avatar from "@mui/material/Avatar";
-import {red} from "@mui/material/colors";
+import {green, red} from "@mui/material/colors";
 import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CardMedia from "@mui/material/CardMedia";
@@ -81,8 +81,8 @@ export class EmployersListItem extends React.Component {
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                                1 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE} <AttachMoney
-                                fontSize="small"/>
+                                1 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}
+                                <AttachMoney fontSize="small" sx={{ color: green[500] }}/>
                             </Typography>
                         </CardContent>
                     </Card>
