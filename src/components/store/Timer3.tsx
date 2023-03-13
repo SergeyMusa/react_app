@@ -20,14 +20,6 @@ function Timer3() {
     let isRepeat = counterTemp,
         timer = 0 // пока пустая переменная
 
-    // const incCount = () => {
-    //     counter3 = counter3 < 99 ? counter3 + 1 : 99 ;
-    //     Store.timeUpdate = counter3;
-    // }
-    // const decCount = () => {
-    //     counter3 = counter3 > 0 ? counter3 - 1 : 0 ;
-    //     Store.timeUpdate = counter3;
-    // }
     const onClickStop = () => {
         setCounter(timer=0);
         clearInterval(timer);
@@ -62,10 +54,10 @@ function Timer3() {
         }
         const timer = //!!! old setInterval
             counterTemp > 0 && setTimeout(callbackTimeout, 1000);
-                setTimeout(one, 1000);
-                if (counterTemp === 0) {
-                    console.log(' Timer3 ')
-                };
+        setTimeout(one, 1000);
+        if (counterTemp === 0) {
+            console.log(' Timer3 ')
+        };
 
         return () => clearInterval(timer);
     }, [counterTemp]);

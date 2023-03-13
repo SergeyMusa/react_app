@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step_#3-table_work">
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/_.babelrc_" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip ?bugs debug">
+      <change afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/EmployersListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/_Tab.js_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Loader/Loader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Loader/Loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/Timer3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer3.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/TimerSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/TimerSlider.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +137,7 @@
       <workItem from="1677683561237" duration="39926000" />
       <workItem from="1677949063474" duration="160282000" />
       <workItem from="1678514678133" duration="1203000" />
-      <workItem from="1678515943080" duration="3201000" />
+      <workItem from="1678515943080" duration="12773000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -371,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678482430016</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="wip ?bugs debug">
+      <created>1678519357898</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1678519357898</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +392,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="add_#1+ = add ts and mobx, begin makeAutoObservable" />
     <MESSAGE value="add_#1+ = add component &gt; footer" />
     <MESSAGE value="add_#1+ = edit tsconfig.json" />
     <MESSAGE value="add_#2 = begin api" />
@@ -418,6 +416,7 @@
     <MESSAGE value="wip" />
     <MESSAGE value="step_#3-timer-ok_almost)" />
     <MESSAGE value="step_#3-table_work" />
-    <option name="LAST_COMMIT_MESSAGE" value="step_#3-table_work" />
+    <MESSAGE value="wip ?bugs debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip ?bugs debug" />
   </component>
 </project>
