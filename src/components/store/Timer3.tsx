@@ -22,6 +22,7 @@ function Timer3() {
         timer = 0 // пока пустая переменная
 
     const onClickStop = () => {
+        setCounter(timer=Store.timeUpdate) ;
         setCounter(timer=0);
         clearInterval(timer);
         Store.timerTemp = 0;
@@ -63,19 +64,22 @@ function Timer3() {
         return () => clearInterval(timer);
     }, [counterTemp]);
 
+    const xxx = (counterTemp > 0) ? counterTemp : Store.timerTemp ;
 
     return (
         <div className="Timer3">
             {/*<h1>{counter3}</h1>*/}
             <Box
                 >
-                {/*<h4>{counter3} : [ {counterTemp} ]</h4>*/}
-                <span>[ {Store.timeUpdate} ]</span>
+                {/*<h4> xxx : [ {xxx} ]</h4>*/}
+                {/*<span>[ {Store.timeUpdate} ]</span>*/}
 
-                <Badge badgeContent={counterTemp} color="primary">
+                <Badge badgeContent= { xxx } color="primary">
+                {/*<Badge badgeContent= ( (counterTemp > 0) ? {counterTemp} : {Store.timeUpdate} ) color="primary">*/}
                     <AccessTime color="action" />
                 </Badge>
-                <span>[ {Store.timerTemp} ]</span>
+                <span>   </span>
+                {/*<span>[ {Store.timerTemp} ]</span>*/}
 
                 {/*<ButtonGroup variant="contained" sx={{ m: 1}}>*/}
                     {/*//*/}

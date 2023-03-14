@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="made table - style=ok">
-      <change afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.jsx" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/EmployersList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/EmployersList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/EmployersListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/EmployersListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table2.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/_Tab.js_" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/Timer3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer3.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +72,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Table",
+    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Modal",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -99,11 +89,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/pages/Modal" />
       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
       <recent name="$PROJECT_DIR$/src/components/store" />
       <recent name="$PROJECT_DIR$/src/components/pages" />
       <recent name="$PROJECT_DIR$/src/components/home" />
-      <recent name="$PROJECT_DIR$/src/Components/home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
@@ -147,7 +137,7 @@
       <workItem from="1677683561237" duration="39926000" />
       <workItem from="1677949063474" duration="160282000" />
       <workItem from="1678514678133" duration="1203000" />
-      <workItem from="1678515943080" duration="48682000" />
+      <workItem from="1678515943080" duration="53520000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -401,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678731364843</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="wip">
+      <created>1678735509137</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1678735509137</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,13 +438,13 @@
     <MESSAGE value="step_#3-timer = add second" />
     <MESSAGE value="step_#3-timer = ui ok" />
     <MESSAGE value="step_#3-timer = crash Table? not errors" />
-    <MESSAGE value="wip" />
     <MESSAGE value="step_#3-timer-ok_almost)" />
     <MESSAGE value="step_#3-table_work" />
     <MESSAGE value="wip ?bugs debug" />
     <MESSAGE value="remake Timer4 - from fun to class" />
     <MESSAGE value="wip dont work" />
     <MESSAGE value="made table - style=ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="made table - style=ok" />
+    <MESSAGE value="wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip" />
   </component>
 </project>
