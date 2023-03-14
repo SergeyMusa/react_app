@@ -1,13 +1,12 @@
-import React from "react"; //, {Component}
-// import styles from './Cards.css';
+import React, {useState} from "react"; //, {Component}
+import './Cards.css';
 import Loader from "../../store/Loader/Loader";
-// import {CryptoCard} from "../../store/CryptoCard";
 import {EmployersList} from "./EmployersList";
 import Search from "../../store/Search";
 import Store from "../../store/Store";
 import StoreCoins from "../../store/StoreCoins";
-import {Container, Paper} from "@mui/material";
 import {styled} from "@mui/material/styles";
+import {Modal} from "../Modal/Modal";
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
@@ -20,25 +19,13 @@ import {styled} from "@mui/material/styles";
 //     )
 // }
 
-// function WhoIsWho ({name, surn}) { //(props) //props.name\/
-//     return (
-//     <div>
-//         <h1>my name is {name.fname} of the {surn}</h1>
-//     </div>
-//     )
-// }
-
-const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
 
 export class Cards extends React.Component {
     dataData: any[];
     state = {
         isLoading: true,
+        modalActive: true,
+        setModalActive: true,
         // dataCoinInfo: {},
         // store: new StoreCoins(),
     }
@@ -68,8 +55,16 @@ export class Cards extends React.Component {
             console.log(e);
         }
     }
+    setModalActiveF () {
+        // this.setState({counter4: (this.state.counter4 - 1)});
+        console.log(this.state.setModalActive);
+        // this.setState({setModalActive: true});
+        console.log(this.state.setModalActive);
+    }
 
     render() {
+        // const [ modalActive ] = useState(true); //, setModalActive
+        console.log('>>>>', this.state.modalActive ,this.state.setModalActive);
         return (
             <div className="cards">
                 {/*<Container>*/}
@@ -85,6 +80,15 @@ export class Cards extends React.Component {
                             : <EmployersList data={this.dataData}/>
                     }
                 {/*</Container>*/}
+            <button className='open-btn' onClick={this.setModalActiveF}>Open Modal</button>
+                {/*<Modal message={'modal_message'} modalTimer={15} active={modalActive} setActive={setModalActive} />*/}
+                {/* setActiv={()=>{1} activ={true}  */}
+                    <p><span>2 Lorem ipsum dolor sit amuam temporibus veritatis vero voluptas voluptatem. Veritatis, voluptatem.</span>
+                    <span>22 Beatae dolores ipsa natus odio possimus quo sunt tempore vel veniam, voluptatibus! Aliquid , enim error voluptate.</span>
+                    <span>222 Aliquam aut cumque dicta eaque id nemo neque omnis quae soluta suscipit! harum quod veniam voluptatem!</span></p>
+                <Modal message={'modal_message'} modalTimer={15} active={this.state.modalActive} setActive={this.state.setModalActive} />
+            {/*  setActive={setModalActive}   */}
+
             </div>
         )
     }

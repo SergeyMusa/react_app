@@ -2,44 +2,16 @@ import React from "react"; //, {Component}
 // import styles from './Cards.css';
 import Loader from "../../store/Loader/Loader";
 import Tab from "./Tab";
-// import {CryptoCard} from "../../store/CryptoCard";
-import {EmployersList} from "../Cards/EmployersList";
+// import {EmployersList} from "../Cards/EmployersList";
 import Search from "../../store/Search";
-import Store from "../../store/Store";
-import StoreCoins from "../../store/StoreCoins";
-import {Container, Paper} from "@mui/material";
-import {styled} from "@mui/material/styles";
+// import Store from "../../store/Store";
+// import StoreCoins from "../../store/StoreCoins";
 import {PostData} from "../../store/PostData";
 
 interface dataFromCrypta {
     dataData: [];
 }
 
-// export default props => {
-//     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
-//     const bigUrl = `http://www.filltext.com/?rows=1000&id={number|1000}&firstName={firstName}&delay=3&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
-//     return (
-//         <div style={{display:'flex', justifyContent:'center', padding: '50px 0'}}>
-//             <button onClick={()=>props.onSelect(smallUrl)} className="btn btn-success">32 элемента</button>
-//             <button onClick={()=>props.onSelect(bigUrl)} className="btn btn-danger">1000 элементов</button>
-//         </div>
-//     )
-// }
-
-// function WhoIsWho ({name, surn}) { //(props) //props.name\/
-//     return (
-//     <div>
-//         <h1>my name is {name.fname} of the {surn}</h1>
-//     </div>
-//     )
-// }
-
-    // const Item = styled(Paper)(({ theme }) => ({
-    //     ...theme.typography.body2,
-    //     padding: theme.spacing(1),
-    //     textAlign: 'center',
-    //     color: theme.palette.text.secondary,
-    // }));
 
 export class Tables extends React.Component<dataFromCrypta> {
     dataData: any[];
@@ -100,6 +72,7 @@ export class Tables extends React.Component<dataFromCrypta> {
                             ? <Loader/>
                             : <Tab data={this.props.dataData} />
                     }
+
             </div>
         )
     }

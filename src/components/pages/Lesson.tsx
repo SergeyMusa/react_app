@@ -7,7 +7,7 @@ import {action, computed, observable, makeObservable, makeAutoObservable} from "
 //--------------------------------------------
 import Counter from "../store/Counter";
 import Store from "../store/Store";
-import TestStore from "../store/TestStore";
+// import TestStore from "../store/_TestStore.tsx_";
 import {number} from "prop-types";
 
 // @observable class countZerro {
@@ -51,7 +51,7 @@ import {number} from "prop-types";
         return (
             <div>
                 <h3>Lesson</h3>
-                <h1> <TestStore pprops={this.timerTestData}/> </h1>
+                {/*<h1> <TestStore pprops={this.timerTestData}/> </h1>*/}
                 {/*    */}
                 {/*<h3>{`countZ = ${this.TimerSet.timeUpdate}`}h</h3>*/}
                 {/*<button onClick={() => this.incCountZ()}>+++</button>*/}

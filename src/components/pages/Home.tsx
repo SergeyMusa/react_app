@@ -48,3 +48,11 @@ export class Home extends React.Component {
 }
 
 // export default Home;
+
+// function WhoIsWho ({name, surn}) { //(props) //props.name\/
+//     return (
+//     <div>
+//         <h1>my name is {name.fname} of the {surn}</h1>
+//     </div>
+//     )
+// }
