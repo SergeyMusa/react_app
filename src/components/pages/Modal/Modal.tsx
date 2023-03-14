@@ -5,15 +5,15 @@ import {bool} from "prop-types";
 
 interface TimerDefaultProps {
     message: string;
-    cartOpen;
-
+    modalObj: {};// title, img, main-text
+    modalTimer: any;
 }
 
 export class Modal extends React.Component<any, any> {
     public static readonly defaultProps = {
         message: `Done!`,
-        cartOpen: '',
-
+        modalObj: '',
+        modalTimer: null,
     };
 
     constructor(props: any) {
@@ -23,6 +23,21 @@ export class Modal extends React.Component<any, any> {
         order: false,
         // closeCart: Function.prototype,
     };
+    }
+
+    doOnRun() {
+        console.log('modalTimer',this.props.modalTimer)
+        if (this.props.modalTimer) {
+            // clearInterval(modalTimer);
+        }
+    }
+
+    openModal () {
+        console.log('openModal');
+        this.doOnRun();
+    }
+    closeModal () {
+        console.log('closeModal');
     }
 
         public render() {

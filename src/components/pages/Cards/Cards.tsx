@@ -1,16 +1,13 @@
 import React from "react"; //, {Component}
 // import styles from './Cards.css';
 import Loader from "../../store/Loader/Loader";
-import Tab from "./Tab";
 // import {CryptoCard} from "../../store/CryptoCard";
-import {EmployersList} from "../Cards/EmployersList";
+import {EmployersList} from "./EmployersList";
 import Search from "../../store/Search";
 import Store from "../../store/Store";
 import StoreCoins from "../../store/StoreCoins";
 import {Container, Paper} from "@mui/material";
 import {styled} from "@mui/material/styles";
-
-let dataData = [];
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
@@ -38,34 +35,33 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
-export class Tables extends React.Component {
-
+export class Cards extends React.Component {
+    dataData: any[];
     state = {
         isLoading: true,
-        data: [],
         // dataCoinInfo: {},
         // store: new StoreCoins(),
     }
-    componentDidMount() {
-        this.loadData() }
+    // componentDidMount() {
+    //     this.loadData() }
 
     async componentDidMount() { //loadData
-        setInterval(this.loadData, Store.timeUpdate); //30000
+        // setInterval(this.loadData, Store.timeUpdate); //30000
+        // setInterval( Store.timeUpdate); //30000
         console.log('timeUpdate', Store.timeUpdate);
         try {
                 //         fetch("https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD")
             const response = await fetch(`https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`)
             const data = await response.json()
-            dataData = data.Data;
-            console.log('dataData', dataData)
-            StoreCoins.CoinsTemp = dataData;
+            this.dataData = data.Data;
+            console.log('dataData', this.dataData)
+            StoreCoins.CoinsTemp = this.dataData;
             console.log('StoreCoins', StoreCoins.CoinsTemp)
             // this.state.store.
-            StoreCoins.show();
+            // StoreCoins.show();
                 this.setState({
                 isLoading: false,
-                dataData, // data,
-
+                // data,
                 })
             console.log('load_api');
         } catch (e) {
@@ -73,23 +69,20 @@ export class Tables extends React.Component {
         }
     }
 
-
-
     render() {
         return (
-            <div className="table">
+            <div className="cards">
                 {/*<Container>*/}
                     {/*<EmployersList keyX={1} dataX={dataData}/>*/}
-                    {/*<button onClick={() => this.componentDidMount()}> LOAD </button>*/}
-                <h3>Tables</h3>
-
-                <Search />
+                <h3>Cards</h3>
+                    <button onClick={() => this.componentDidMount()}> LOAD </button>
+                    <Search />
 
                     {
                         this.state.isLoading
                             ? <Loader/>
-                            : <Tab data={this.state.dataData} />
-                            // : <EmployersList data={this.state.dataData}/>
+                            // : <Tab data={this.state.dataData} />
+                            : <EmployersList data={this.dataData}/>
                     }
                 {/*</Container>*/}
             </div>

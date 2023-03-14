@@ -10,6 +10,7 @@ export class EmployersList extends React.Component {
         super(props);
     }
     elements = () => {
+        console.log('EmployersList', this.props.data )
         return this.props.data.map(item => {
             const {id = item.CoinInfo.Id, ...itemProps} = item;
             // console.log('id',id);

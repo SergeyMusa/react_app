@@ -19,7 +19,7 @@ function Timer3() {
     let counter3 = Store.timeUpdate;
     const [counterTemp = counter3, setCounter] = React.useState(counter3);
     let isRepeat = counterTemp,
-        timer = 0 // пока пустая переменная
+        timer = 0 //  переменная
 
     const onClickStop = () => {
         setCounter(timer=Store.timeUpdate) ;
@@ -64,25 +64,23 @@ function Timer3() {
         return () => clearInterval(timer);
     }, [counterTemp]);
 
-    const xxx = (counterTemp > 0) ? counterTemp : Store.timerTemp ;
+    const changeBadge = (counterTemp > 0) ? counterTemp : Store.timerTemp ;
 
     return (
         <div className="Timer3">
             {/*<h1>{counter3}</h1>*/}
             <Box
                 >
-                {/*<h4> xxx : [ {xxx} ]</h4>*/}
+                {/*<h4> changeBadge : [ {changeBadge} ]</h4>*/}
                 {/*<span>[ {Store.timeUpdate} ]</span>*/}
-
-                <Badge badgeContent= { xxx } color="primary">
-                {/*<Badge badgeContent= ( (counterTemp > 0) ? {counterTemp} : {Store.timeUpdate} ) color="primary">*/}
+                <Badge badgeContent= { changeBadge } color="primary">
                     <AccessTime color="action" />
                 </Badge>
                 <span>   </span>
                 {/*<span>[ {Store.timerTemp} ]</span>*/}
 
                 {/*<ButtonGroup variant="contained" sx={{ m: 1}}>*/}
-                    {/*//*/}
+                    {/* ??? ButtonGroup поднимает регистр, нужен ли вообще */}
                     <Button
                         aria-label="increase"
                         onClick={() => Store.increment()}

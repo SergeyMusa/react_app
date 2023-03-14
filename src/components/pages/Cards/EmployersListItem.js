@@ -32,7 +32,6 @@ export class EmployersListItem extends React.Component {
         this.setState(state => ({
             time: state.time + 1
         }))
-        // console.log('time', this.state.time);
 
         // if( this.newPrice < this.oldPrice) {
         //     this.classNames += ' red';
@@ -47,13 +46,11 @@ export class EmployersListItem extends React.Component {
         const {CoinInfo, DISPLAY, RAW} = this.props
     return (
         //     <img src={"https://www.cryptocompare.com/"+imageUrl} alt={cryName} width={50} height={50}/>
-        // <div >
         <Grid item xs >
             {/* xs={6} */}
             {/*<h3>{this.state.time}</h3>*/}
             {/*<button onClick={this.changeClassName}> [+++] </button>*/}
                 <div className='EmployersList' style={{margin: 'auto'}} >
-                    {/*<Card sx={{maxWidth: 345, height: 250}}>*/}
                     <Card sx={{maxWidth: 345}}>
                         <CardHeader
                             avatar={
@@ -68,7 +65,6 @@ export class EmployersListItem extends React.Component {
                                 </IconButton>
                             }
                             title={"id: " + CoinInfo.Id}
-                            // subheader="September 14, 2016"
                             className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green
                         />
                         <CardMedia
@@ -86,23 +82,7 @@ export class EmployersListItem extends React.Component {
                             </Typography>
                         </CardContent>
                     </Card>
-
-                    {/*<ul className={"app-list"}>*/}
-                    {/*    <EmployersListItem*/}
-                    {/*        id={item.CoinInfo.Id}*/}
-                    {/*        cryName={item.CoinInfo.Name}*/}
-                    {/*        raw={item.RAW.USD.PRICE}*/}
-                    {/*        display={item.DISPLAY.USD.FROMSYMBOL}*/}
-                    {/*        imageUrl={item.CoinInfo.ImageUrl}*/}
-                    {/*        cryFullName={item.CoinInfo.FullName}*/}
-                    {/*        cryUrl={item.CoinInfo.Url}*/}
-                    {/*        // cryUrl={ dataX[keyX].CoinInfo.Url }*/}
-                    {/*        // cryNetHashesPerSecond={ cry.Data[keyX].CoinInfo.NetHashesPerSecond }*/}
-                    {/*    />*/}
-                    {/*</ul>*/}
-
                 </div>
-         {/*</div>*/}
         </Grid>
 
     )

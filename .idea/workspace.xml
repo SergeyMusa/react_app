@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip">
-      <change afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip modify timer3">
+      <change afterPath="$PROJECT_DIR$/src/components/store/PostData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/store/type.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/EmployersList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/EmployersList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/EmployersListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/EmployersListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/Timer3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer3.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,9 +32,9 @@
         <option value="SCSS File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -137,7 +142,7 @@
       <workItem from="1677683561237" duration="39926000" />
       <workItem from="1677949063474" duration="160282000" />
       <workItem from="1678514678133" duration="1203000" />
-      <workItem from="1678515943080" duration="53520000" />
+      <workItem from="1678515943080" duration="64256000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -398,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678735509137</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="wip modify timer3">
+      <created>1678775645662</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1678775645662</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +432,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="add_#2+ = api, work in network" />
     <MESSAGE value="add_#2-ok- = api, work but other" />
     <MESSAGE value="return all back" />
     <MESSAGE value="step_#2-api = ok, begin mui, begin table" />
@@ -445,6 +456,7 @@
     <MESSAGE value="wip dont work" />
     <MESSAGE value="made table - style=ok" />
     <MESSAGE value="wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip" />
+    <MESSAGE value="wip modify timer3" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip modify timer3" />
   </component>
 </project>
