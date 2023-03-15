@@ -1,12 +1,11 @@
 import React from 'react';
-import {render} from "react-dom";
-
-// import styles from './Cards.css';
+// import {render} from "react-dom";
+// import  './Cards.css';
 
 export class Tab extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
         // console.log('data',this.props);

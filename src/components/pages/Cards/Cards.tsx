@@ -46,7 +46,7 @@ export class Cards extends React.Component {
         return (
             <div className="cards">
                 <h3>Cards</h3>
-                <button onClick={() => this.componentDidMount()}> LOAD</button>
+                <button onClick={() => this.componentDidMount()}>[ LOAD ]</button>
                 <Search/>
                 {
                     isLoading

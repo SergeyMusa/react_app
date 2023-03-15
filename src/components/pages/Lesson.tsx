@@ -6,7 +6,7 @@ import {observable} from "mobx";
 // import {action, computed, observable, makeObservable, makeAutoObservable} from "mobx";
 // import {observe} from 'mobx-decorators';
 //--------------------------------------------
-import Counter from "../store/Counter";
+import {counter} from "../store/Counter";
 // import { store } from "../store/Store";
 // import TestStore from "../store/_TestStore.tsx_";
 // import {number} from "prop-types";
@@ -32,18 +32,11 @@ import Counter from "../store/Counter";
     @observable timerTestData: number = 42
     value: number
     double: any
-    increment:any
-    constructor(value) {
-        super(value);
-        // makeObservable(this,
-        //     {
-        //     value : observable,
-        //     double: computed,
-        //     increment: action,
-        //     // TestData.testProps = 'www';
-        // })
-        // this.value = value
-    }
+    // increment:any
+    // constructor(value) {
+    //     super(value);
+    //     // makeObservable(this,
+    // }
 
       render (){
         // this.setState(TestData.timerTestData=32);
@@ -56,19 +49,17 @@ import Counter from "../store/Counter";
                 {/*    */}
                 {/*<h3>{`countZ = ${this.TimerSet.timeUpdate}`}h</h3>*/}
                 {/*<button onClick={() => this.incCountZ()}>+++</button>*/}
-                <h3>{"Counter = " + Counter.count1}</h3>
+                <h3>{"Counter = " + counter.count1}</h3>
                 {/*<h3>{"Counter1 = "+ counter.count1 }</h3>*/}
                 {/*<h3>{"Counter2 = "+ counter.count3 }</h3>*/}
-                <button onClick={() => Counter.increment()}>+++</button>
-                <button onClick={() => Counter.decrement()}>---</button>
-                <button onClick={() => Counter.reset()}>=zero=</button>
+                <button onClick={() => counter.increment()}>+++</button>
+                <button onClick={() => counter.decrement()}>---</button>
+                <button onClick={() => counter.reset()}>=zero=</button>
             </div>
         )
         // }
     };
 }
-
-{/*export default Lesson2;*/}
 
 
 // export class Lesson extends Component {

@@ -3,13 +3,13 @@ import {AttachMoney} from "@mui/icons-material";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import Avatar from "@mui/material/Avatar";
-import {green, red} from "@mui/material/colors";
+import {green} from "@mui/material/colors";
 import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { deepPurple } from '@mui/material/colors';
+// import { deepPurple } from '@mui/material/colors';
 import Grid from "@mui/material/Grid";
 
 // const EmployersListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
@@ -27,7 +27,7 @@ export class EmployersListItem extends React.Component {
     changeTime = () => {
         console.log('changeTime')
     }
-    changeClassName = () => {
+    changeClassName = () => { //  ??? WTF---------------------
         console.log('newPrice',this.newPrice);
         this.setState(state => ({
             time: state.time + 1
@@ -47,15 +47,14 @@ export class EmployersListItem extends React.Component {
     return (
         //     <img src={"https://www.cryptocompare.com/"+imageUrl} alt={cryName} width={50} height={50}/>
         <Grid item xs >
-            {/* xs={6} */}
-            {/*<h3>{this.state.time}</h3>*/}
+            <h3>{this.state.time}</h3>
             {/*<button onClick={this.changeClassName}> [+++] </button>*/}
                 <div className='EmployersList' style={{margin: 'auto'}} >
                     <Card sx={{maxWidth: 345}}>
                         <CardHeader
                             avatar={
-                                <Avatar  aria-label="recipe">
-                                    {/* sx={{bgcolor: deepPurple[500]}} */}
+                                <Avatar  aria-label="recipe" >
+                                     {/*sx={{bgcolor: deepPurple[500]}}*/}
                                     {DISPLAY.USD.FROMSYMBOL}
                                 </Avatar>
                             }
