@@ -1,7 +1,8 @@
 // import React from 'react';
 // import {Component} from "react"; // import component
 import React, {Component} from "react";
-// import Button from '@mui/material/Button';
+import {Link} from "react-router-dom";
+import Button from "@mui/material/Button";
 
 const homeHeader = <h3>TEST-Element</h3>;
 
@@ -33,12 +34,22 @@ function Welcome2 () {
     )
 }
 
+function handleOnClick () {
+    console.log('push btn')
+    return (
+        <Link id="one" to="/Home"></Link>
+    )
+    // this.props.history.push('/')
+};
+
 // * work
 export class Home extends React.Component {
     public render () {
         return (
             <div>
                 <h3>Home</h3>
+                <Button variant="contained" onClick={handleOnClick}>go home</Button>
+
                 {homeHeader}
                 <Welcome/>
                 <Welcome2 />

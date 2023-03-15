@@ -1,14 +1,15 @@
 import React, {Component} from "react"; // import component
-import Search from "../store/Search";
+// import Search from "../store/Search";
 // import {observer} from "mobx-react-lite";
 import {observer} from "mobx-react";
-import {action, computed, observable, makeObservable, makeAutoObservable} from "mobx";
+import {observable} from "mobx";
+// import {action, computed, observable, makeObservable, makeAutoObservable} from "mobx";
 // import {observe} from 'mobx-decorators';
 //--------------------------------------------
 import Counter from "../store/Counter";
-import Store from "../store/Store";
+// import { store } from "../store/Store";
 // import TestStore from "../store/_TestStore.tsx_";
-import {number} from "prop-types";
+// import {number} from "prop-types";
 
 // @observable class countZerro {
 //     countZ:number = 0;
@@ -47,7 +48,7 @@ import {number} from "prop-types";
       render (){
         // this.setState(TestData.timerTestData=32);
         //   console.log('timerTestData',this.timerTestData);
-        //   console.log('Store', Store.timerTestData)
+        //   console.log('store', store.timerTestData)
         return (
             <div>
                 <h3>Lesson</h3>

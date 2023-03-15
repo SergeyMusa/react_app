@@ -1,4 +1,4 @@
-import StoreCoins from "./StoreCoins";
+// import StoreCoins from "./StoreCoins";
 import {ResponseData} from "./type";
 
 //         fetch("https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD")
@@ -11,14 +11,11 @@ export class PostData {
             const response = await fetch(fetchUrl)
             const data = await response.json()
             this.dataData = data.Data;
-            console.log(data)
+                // console.log(data) //ok
         // StoreCoins.CoinsTemp = this.dataData;
             // this.state.store.
             // StoreCoins.show();
-    // this.setState({
-    //     isLoading: false,
-    //     dataData, // data,
-    // })
+
         } catch (e) {
             console.log(e);
         }

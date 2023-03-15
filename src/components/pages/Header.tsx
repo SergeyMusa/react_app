@@ -1,8 +1,6 @@
 import React from "react";
-import {AccessTime} from "@mui/icons-material";
-import {AppBar, Toolbar, IconButton, Typography, TextField} from "@mui/material";
-import Search from "../store/Search";
-import TimerSlider2 from "../store/TimerSlider2";
+// import {AccessTime} from "@mui/icons-material";
+import {AppBar, Toolbar, Typography} from "@mui/material";
 import Timer3 from "../store/Timer3";
 
 export class Header extends React.Component {
@@ -20,14 +18,7 @@ export class Header extends React.Component {
                            MuSa_App
                        </Typography>
                         <Timer3 />
-
-                        {/*<IconButton*/}
-                        {/*    color={'inherit'}*/}
-                        {/*>*/}
-                        {/*    <TimerSlider2 />*/}
-                        {/*    /!*<AccessTime />*!/*/}
-                        {/*</IconButton>*/}
-                   </Toolbar>
+                    </Toolbar>
                </AppBar>
              </div>
         )

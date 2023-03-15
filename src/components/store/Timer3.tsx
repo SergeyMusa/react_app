@@ -1,7 +1,7 @@
 import React from 'react'
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import {ButtonGroup, Paper} from "@mui/material";
+import {ButtonGroup} from "@mui/material";
 import Button from "@mui/material/Button";
 import {AccessTime} from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
@@ -9,36 +9,36 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import Badge from '@mui/material/Badge';
 // import { deepPurple } from '@mui/material/colors';
 // import { makeObservable, observable, computed, action } from "mobx"
-import Store from "./Store";
+import { store } from "./Store";
 import Box from "@mui/material/Box";
 
 
 function Timer3() {
-    const [count] = React.useState(1);
+    // const [count] = React.useState(1);
     // const [count, setCount] = React.useState(1);
-    let counter3 = Store.timeUpdate;
+    let counter3 = store.timeUpdate;
     const [counterTemp = counter3, setCounter] = React.useState(counter3);
     let isRepeat = counterTemp,
         timer = 0 //  переменная
 
     const onClickStop = () => {
-        setCounter(timer=Store.timeUpdate) ;
+        setCounter(timer=store.timeUpdate) ;
         setCounter(timer=0);
         clearInterval(timer);
-        Store.timerTemp = 0;
-        Store.reset();
+        store.timerTemp = 0;
+        store.reset();
     }
     const onClickStart = () => {
-        setCounter(timer=Store.timeUpdate) ;
+        setCounter(timer=store.timeUpdate) ;
     }
     const onClickPause = () => {
-        Store.timerTemp = counterTemp;
-        Store.timerTemp = counterTemp;
+        store.timerTemp = counterTemp;
+        store.timerTemp = counterTemp;
         setCounter(timer=0);
         clearInterval(timer);
     }
     const onClickResume = () => {
-        setCounter(timer=Store.timerTemp) ;
+        setCounter(timer=store.timerTemp) ;
     }
 
     const checkSwitch = event => {
@@ -64,7 +64,7 @@ function Timer3() {
         return () => clearInterval(timer);
     }, [counterTemp]);
 
-    const changeBadge = (counterTemp > 0) ? counterTemp : Store.timerTemp ;
+    const changeBadge = (counterTemp > 0) ? counterTemp : store.timerTemp ;
 
     return (
         <div className="Timer3">
@@ -72,25 +72,25 @@ function Timer3() {
             <Box
                 >
                 {/*<h4> changeBadge : [ {changeBadge} ]</h4>*/}
-                {/*<span>[ {Store.timeUpdate} ]</span>*/}
+                {/*<span>[ {store.timeUpdate} ]</span>*/}
                 <Badge badgeContent= { changeBadge } color="primary">
                     <AccessTime color="action" />
                 </Badge>
                 <span>   </span>
-                {/*<span>[ {Store.timerTemp} ]</span>*/}
+                {/*<span>[ {store.timerTemp} ]</span>*/}
 
                 {/*<ButtonGroup variant="contained" sx={{ m: 1}}>*/}
                     {/* ??? ButtonGroup поднимает регистр, нужен ли вообще */}
                     <Button
                         aria-label="increase"
-                        onClick={() => Store.increment()}
+                        onClick={() => store.increment()}
                         variant="contained"
                     >
                         <AddIcon fontSize="small" />
                     </Button>
                     <Button
                         aria-label="reduce"
-                        onClick={() => Store.decrement()}
+                        onClick={() => store.decrement()}
                         variant="contained"
                     >
                         <RemoveIcon fontSize="small" />

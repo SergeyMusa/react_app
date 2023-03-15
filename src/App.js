@@ -16,14 +16,7 @@ import {Tables} from "./components/pages/Table/Tables"; //, createTheme
 
 function App() {
 
-        function handleOnClick () {
-            console.log('push btn')
-        return (
-            <Link id="one" to="/Home"></Link>
-        )
 
-            // this.props.history.push('/')
-        };
 
     return (
         <div className="App">
@@ -54,7 +47,6 @@ function App() {
                         {/*<Route path="login" element={<LoginPage />}/>*/}
                     </Routes>
                     {/*'Lorem ipsum dolor sit amet.'*/}
-                    {/*<Button variant="contained" onClick={handleOnClick}>go home</Button>*/}
                     <Button variant="contained" href="/">go home</Button>
                     {/*  */}
                     {/*<h4> ... go <Link to="/">home</Link></h4>*/}

@@ -4,6 +4,10 @@ export interface FetchUrl {
     fetchUrl: string;
 }
 
+export interface dataFromCrypta {
+    dataData: [];
+}
+
 export type ResponseData = {
     CoinInfo: {
         Id: number,

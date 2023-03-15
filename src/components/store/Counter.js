@@ -1,11 +1,11 @@
-import {makeAutoObservable, makeObservable, observable, action} from "mobx";
+import {makeAutoObservable, observable, action} from "mobx";
 import React from "react";
-import {observer} from "mobx-react";
+// import {observer} from "mobx-react";
 
 class Counter { //extends React.Component{ //
 // @observable
 count1 = 0;
-count3 = 43
+// count3 = 43
     constructor() { //props
             // super(props); //{counter}
             // makeObservable(this)

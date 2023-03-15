@@ -3,19 +3,13 @@ import { observable, action, makeAutoObservable} from "mobx"
 // import {observer} from "mobx-react";
 
  // @observer
- class Store {
+ export class Store {
     timerTemp = 0
     timeUpdate = 30
-    // timerStart = true
+     // timerStart = true
 
     constructor() {
         makeAutoObservable(this)
-        this.state = {
-            timerTemp: observable,
-            timeUpdate: observable,
-            increment: action,
-            decrement: action,
-        }
     }
 
 // action
@@ -28,13 +22,10 @@ import { observable, action, makeAutoObservable} from "mobx"
         this.timeUpdate =  this.timeUpdate > 0 ?  this.timeUpdate - 1 : 0 ;
         console.log('decrement', this.timeUpdate);
     }
+
     reset = () => {
         this.timerTemp = 0;
     }
-    // return {
-    //    timeUpdate
-    // }
 }
 
-export default new Store();
-
+export const store = new Store();

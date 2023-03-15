@@ -1,10 +1,9 @@
-import {makeObservable, observable, action, makeAutoObservable} from "mobx"
-import React, {Component} from "react";
-import {observer} from "mobx-react";
+import { observable, action, makeAutoObservable} from "mobx"
+// import React from "react";
 
 class StoreCoins {
     CoinsTemp = [1,2,3]
-    CoinsState = true
+    // CoinsState = true
 
     constructor() {
         makeAutoObservable(this)

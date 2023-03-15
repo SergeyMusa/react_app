@@ -1,16 +1,14 @@
 import React from "react"; //, {Component}
 // import styles from './Cards.css';
 import Loader from "../../store/Loader/Loader";
-import Tab from "./Tab";
+import {Tab} from "./Tab";
 // import {EmployersList} from "../Cards/EmployersList";
 import Search from "../../store/Search";
 // import Store from "../../store/Store";
 // import StoreCoins from "../../store/StoreCoins";
 import {PostData} from "../../store/PostData";
+import {dataFromCrypta, FetchUrl} from "../../store/type";
 
-interface dataFromCrypta {
-    dataData: [];
-}
 
 
 export class Tables extends React.Component<dataFromCrypta> {
@@ -20,18 +18,18 @@ export class Tables extends React.Component<dataFromCrypta> {
         data: [],
         // dataCoinInfo: {},
         // store: new StoreCoins(),
-        fetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
+        FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
     componentDidMount() {
         // setInterval(this.loadData, Store.timeUpdate); //30000
-        this.loadData().then();
-
         //     console.log('timeUpdate', Store.timeUpdate);
+        this.loadData().then();
 
         // this.setState({
         //     isLoading: false,
         //     dataData, // data,
         // })
+
     }
 
     // async componentDidMount() { //loadData
@@ -57,9 +55,12 @@ export class Tables extends React.Component<dataFromCrypta> {
     //     }
     // }
     async loadData () {
-        this.dataData = await new PostData().doFetchData(this.state.fetchUrl)  ;
+        this.dataData = await new PostData().doFetchData(this.state.FetchUrl)  ;
+        this.setState({
+            isLoading: false,
+            // dataData, // data,
+        })
     }
-
 
     render() {
         return (
@@ -70,7 +71,7 @@ export class Tables extends React.Component<dataFromCrypta> {
                     {
                         this.state.isLoading
                             ? <Loader/>
-                            : <Tab data={this.props.dataData} />
+                            : <Tab data={this.dataData} />
                     }
 
             </div>
