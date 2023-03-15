@@ -1,10 +1,10 @@
 import {string} from "prop-types";
 
 export interface FetchUrl {
-    fetchUrl: string;
+    FetchUrl: string;
 }
 
-export interface dataFromCrypta {
+export interface propsDataCryptaFromPostData {
     dataData: [];
 }
 

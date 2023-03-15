@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip-tables=ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Lesson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Lesson.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/PostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/PostData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer3.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +142,7 @@
       <workItem from="1678864241814" duration="948000" />
       <workItem from="1678865376916" duration="684000" />
       <workItem from="1678866079743" duration="405000" />
-      <workItem from="1678866707742" duration="6488000" />
+      <workItem from="1678866707742" duration="9402000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -436,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678801150693</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="wip-tables=ok">
+      <created>1678874749672</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1678874749672</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +453,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="return all back" />
     <MESSAGE value="step_#2-api = ok, begin mui, begin table" />
     <MESSAGE value="step_#2-api = wip" />
     <MESSAGE value="step_#2-api = work" />
@@ -483,6 +477,7 @@
     <MESSAGE value="wip modify timer3" />
     <MESSAGE value="wip tables&amp;cards remade to ts" />
     <MESSAGE value="wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip" />
+    <MESSAGE value="wip-tables=ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip-tables=ok" />
   </component>
 </project>

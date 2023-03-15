@@ -3,9 +3,9 @@ import './Cards.css';
 import Loader from "../../store/Loader/Loader";
 import {EmployersList} from "./EmployersList";
 import Search from "../../store/Search";
-import { store } from "../../store/Store";
-import StoreCoins from "../../store/StoreCoins";
+// import StoreCoins from "../../store/StoreCoins";
 import {Modal} from "../Modal/Modal";
+import {PostData} from "../../store/PostData";
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
@@ -18,45 +18,23 @@ import {Modal} from "../Modal/Modal";
 //     )
 // }
 
-
 export class Cards extends React.Component {
     dataData: any[];
-
     state = {
         isLoading: true,
         modalActive: true,
         setModalActive: true,
-        // dataCoinInfo: {},
-        // store: new StoreCoins(),
+        FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
-    // componentDidMount() {
-    //     this.loadData() }
-
-    async componentDidMount() { //loadData
-        // setInterval(this.loadData, Store.timeUpdate); //30000
-        // setInterval( store.timeUpdate); //30000
-        // console.log('timeUpdate', store.timeUpdate);
-        try {
-            //         fetch("https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD")
-            const response = await fetch(`https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`)
-            const data = await response.json()
-            this.dataData = data.Data;
-                console.log('dataData', this.dataData)
-                StoreCoins.CoinsTemp = this.dataData;
-                console.log('StoreCoins', StoreCoins.CoinsTemp)
-                // StoreCoins.show();
-            this.setState({
-                isLoading: false,
-                // data,
-            })
-            console.log('load_api');
-        } catch (e) {
-            console.log(e);
-        }
+    componentDidMount() {
+        this.loadData().then();
+    }
+    async loadData () {
+        this.dataData = await new PostData().doFetchData(this.state.FetchUrl)  ;
+        this.setState({ isLoading: false, })
     }
 
-    private setModalActiveF = () => {
-        // console.log(this.state?.setModalActive);
+     private setModalActiveF = () => {
         this.setState({setModalActive: true});
     }
 
@@ -67,18 +45,14 @@ export class Cards extends React.Component {
         // console.log('>>>>', this.state.modalActive, this.state.setModalActive);
         return (
             <div className="cards">
-                {/*<Container>*/}
-                {/*<EmployersList keyX={1} dataX={dataData}/>*/}
                 <h3>Cards</h3>
                 <button onClick={() => this.componentDidMount()}> LOAD</button>
                 <Search/>
                 {
                     isLoading
                         ? <Loader/>
-                        // : <Tab data={this.state.dataData} />
                         : <EmployersList data={this.dataData}/>
                 }
-                {/*</Container>*/}
                 <button className='open-btn' onClick={this.setModalActiveF}>Open Modal</button>
                 {/*<Modal message={'modal_message'} modalTimer={15} active={modalActive} setActive={setModalActive} />*/}
                 {/* setActiv={()=>{1} activ={true}  */}
