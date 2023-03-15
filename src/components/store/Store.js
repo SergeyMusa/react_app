@@ -1,12 +1,12 @@
-import { observable, action, makeAutoObservable} from "mobx"
+import { makeAutoObservable } from "mobx"
 // import React  from "react";
 // import {observer} from "mobx-react";
 
  // @observer
  export class Store {
     timerTemp = 0
-    timeUpdate = 30
-     // timerStart = true
+    timeUpdate = 15
+     timerFunction = (() => {console.log('timerFunction')})
 
     constructor() {
         makeAutoObservable(this)

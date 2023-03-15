@@ -1,7 +1,7 @@
 import React from "react";
 // import {AccessTime} from "@mui/icons-material";
 import {AppBar, Toolbar, Typography} from "@mui/material";
-import Timer3 from "../store/Timer3";
+import Timer4 from "../store/Timer4";
 
 export class Header extends React.Component {
     public render () {
@@ -17,7 +17,7 @@ export class Header extends React.Component {
                        >
                            MuSa_App
                        </Typography>
-                        <Timer3 />
+                        <Timer4 />
                     </Toolbar>
                </AppBar>
              </div>

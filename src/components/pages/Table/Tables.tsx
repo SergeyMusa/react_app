@@ -22,7 +22,7 @@ export class Tables extends React.Component<propsDataCryptaFromPostData> {
         // setInterval(this.loadData, Store.timeUpdate); //30000
         //     console.log('timeUpdate', Store.timeUpdate);
         this.loadData().then();
-
+// !!! исправить восстановить прелоадер
         // this.setState({
         //     isLoading: false,
         //     dataData, // data,

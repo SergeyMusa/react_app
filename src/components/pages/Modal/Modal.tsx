@@ -1,7 +1,7 @@
-import React, {FunctionComponent} from "react";
+import React from "react"; // , {FunctionComponent}
 import './Modal.scss';
-import {Drawer} from "@mui/material";
-import {bool} from "prop-types";
+// import {Drawer} from "@mui/material";
+// import {bool} from "prop-types";
 import {action} from "mobx";
 
 interface ModalProps {
@@ -14,14 +14,19 @@ interface ModalProps {
 
 export class Modal extends React.Component<ModalProps> {
         message: `Done!`;
+    constructor(props) {
+        super(props);
+        this.openModal = this.openModal.bind(this) ;
+
+    }
         // modalObj: any{};
         // modalTimer: null;
 
     doOnRun() {
         console.log('modalTimer', this.props.modalTimer)
-        if (this.props.modalTimer) {
-            // clearInterval(modalTimer);
-        }
+        // if (this.props.modalTimer) {
+        //     // clearInterval(modalTimer);
+        // }
     }
 
     openModal () {
@@ -30,6 +35,7 @@ export class Modal extends React.Component<ModalProps> {
         console.log('setActive', this.props.setActive);
         // this.doOnRun();
     }
+
     closeModal () {
         console.log('closeModal');
     }

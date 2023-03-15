@@ -12,6 +12,7 @@ import Badge from '@mui/material/Badge';
 import { store } from "./Store";
 import Box from "@mui/material/Box";
 
+// сделать чекер репиат
 
 function Timer3() {
     // const [count] = React.useState(1);
