@@ -1,14 +1,14 @@
 import {CardsListItem} from "./CardsListItem";
 import React from "react";
-import styles from './CardsList.css';
+import './CardsList.css';
 import {Grid} from "@mui/material";
 // import Search from "../../store/Search";
 
 export class CardsList extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
     elements = () => {
         console.log('CardsList', this.props.data )
         return this.props.data.map(item => {

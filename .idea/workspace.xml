@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="Timers = ok, only autostart &amp; +/- observ">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - rename CardsList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/PostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/PostData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,28 +68,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/components/pages/Modal&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Modal",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "settings.sync",
+    "ts.external.directory.path": "/home/musa/GIT/react_app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/pages/Modal" />
@@ -142,7 +145,7 @@
       <workItem from="1678864241814" duration="948000" />
       <workItem from="1678865376916" duration="684000" />
       <workItem from="1678866079743" duration="405000" />
-      <workItem from="1678866707742" duration="26069000" />
+      <workItem from="1678866707742" duration="34131000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -452,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678905040715</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="wip - rename CardsList">
+      <created>1678951308612</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1678951308612</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +484,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="step_#2-api+ = remake EmployersList" />
     <MESSAGE value="step_#2-api+ = wip" />
     <MESSAGE value="step_#2-api+ = wip, add id" />
     <MESSAGE value="step_#2-api+ = wip, add timer-visual" />
@@ -499,6 +508,7 @@
     <MESSAGE value="remade Cards=ok took out-fetch load" />
     <MESSAGE value="wip clear proj" />
     <MESSAGE value="Timers = ok, only autostart &amp; +/- observ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Timers = ok, only autostart &amp; +/- observ" />
+    <MESSAGE value="wip - rename CardsList" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip - rename CardsList" />
   </component>
 </project>

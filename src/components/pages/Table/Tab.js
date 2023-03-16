@@ -3,10 +3,19 @@ import React from 'react';
 // import  './Cards.css';
 
 export class Tab extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-
+// export default Tab (props) {
+//     constructor(props) {
+//         super(props);
+//     }
+// doThis = (id=item.CoinInfo.Id) => {
+//     this.setState (({data})) => ({
+//             data: data.map(item => {
+//                 if (item.id === id) {
+//                     return { ...item }
+//                 }
+//             })
+//         })
+//     }
     render() {
         // console.log('data',this.props);
         return (
@@ -39,5 +48,6 @@ export class Tab extends React.Component {
             </div>
 
         )
+
     }
 }

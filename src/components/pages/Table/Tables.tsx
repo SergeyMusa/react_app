@@ -23,38 +23,11 @@ export class Tables extends React.Component<propsDataCryptaFromPostData> {
         //     console.log('timeUpdate', Store.timeUpdate);
         this.loadData().then();
 // !!! исправить восстановить прелоадер
-        // this.setState({
-        //     isLoading: false,
-        //     dataData, // data,
-        // })
     }
+    public async loadData () {
 
-    // async componentDidMount() { //loadData
-    //     setInterval(this.loadData, Store.timeUpdate); //30000
-    //     console.log('timeUpdate', Store.timeUpdate);
-    //     try {
-    //         const response = await fetch(this.fetchUrl)
-    //         const data = await response.json()
-    //         dataData = data.Data;
-    //         console.log('dataData', dataData)
-    //         StoreCoins.CoinsTemp = dataData;
-    //         console.log('StoreCoins', StoreCoins.CoinsTemp)
-    //         // this.state.store.
-    //         StoreCoins.show();
-    //             this.setState({
-    //             isLoading: false,
-    //             dataData, // data,
-    //
-    //             })
-    //         console.log('load_api');
-    //     } catch (e) {
-    //         console.log(e);
-    //     }
-    // }
-    async loadData () {
-        this.dataData = await new PostData().doFetchData(this.state.FetchUrl)  ;
+        this.dataData = await new PostData().doFetchData(this.state.FetchUrl);
         this.setState({ isLoading: false, })
-
     }
 
     render() {
@@ -68,9 +41,32 @@ export class Tables extends React.Component<propsDataCryptaFromPostData> {
                             ? <Loader/>
                             : <Tab data={this.dataData} />
                     }
-
             </div>
         )
     }
-
 }
+
+
+
+// async componentDidMount() { //loadData
+//     setInterval(this.loadData, Store.timeUpdate); //30000
+//     console.log('timeUpdate', Store.timeUpdate);
+//     try {
+//         const response = await fetch(this.fetchUrl)
+//         const data = await response.json()
+//         dataData = data.Data;
+//         console.log('dataData', dataData)
+//         StoreCoins.CoinsTemp = dataData;
+//         console.log('StoreCoins', StoreCoins.CoinsTemp)
+//         // this.state.store.
+//         StoreCoins.show();
+//             this.setState({
+//             isLoading: false,
+//             dataData, // data,
+//
+//             })
+//         console.log('load_api');
+//     } catch (e) {
+//         console.log(e);
+//     }
+// }

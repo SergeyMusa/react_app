@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES2015",
-    "lib": ["dom"],
+    "lib": [
+      "dom",
+      "es2015.iterable"
+    ],
     "module": "ES2015",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
