@@ -30,12 +30,15 @@ export class Cards extends React.Component {
         this.loadData().then();
     }
     async loadData () {
+
         this.dataData = await new PostData().doFetchData(this.state.FetchUrl)  ;
+
         this.setState({ isLoading: false, })
     }
 
      private setModalActiveF = () => {
         this.setState({setModalActive: true});
+
     }
 
     public render() {

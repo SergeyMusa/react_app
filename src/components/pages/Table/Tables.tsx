@@ -13,21 +13,25 @@ export class Tables extends React.Component<propsDataCryptaFromPostData> {
     dataData: any[];
     state = {
         isLoading: true,
-        data: [],
+        // data: [],
         // dataCoinInfo: {},
         // store: new StoreCoins(),
         FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
-    componentDidMount() {
+    componentDidMount = () => {
         // setInterval(this.loadData, Store.timeUpdate); //30000
         //     console.log('timeUpdate', Store.timeUpdate);
-        this.loadData().then();
+        console.log('isLoading 0 ', this.state.isLoading);
+        this.loadData().then( );
+
+        console.log('isLoading 1 ', this.state.isLoading);
+         this.setState({ isLoading: false }) ; // !!! DONT WORK
+        this.state.isLoading = false ;
+        console.log('isLoading 2 ', this.state.isLoading);
 // !!! исправить восстановить прелоадер
     }
     public async loadData () {
-
         this.dataData = await new PostData().doFetchData(this.state.FetchUrl);
-        this.setState({ isLoading: false, })
     }
 
     render() {
