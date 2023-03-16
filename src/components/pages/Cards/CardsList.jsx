@@ -1,22 +1,22 @@
-import {EmployersListItem} from "./EmployersListItem";
+import {CardsListItem} from "./CardsListItem";
 import React from "react";
-import styles from './EmployersList.css';
+import styles from './CardsList.css';
 import {Grid} from "@mui/material";
 // import Search from "../../store/Search";
 
-export class EmployersList extends React.Component {
+export class CardsList extends React.Component {
 
     constructor(props) {
         super(props);
     }
     elements = () => {
-        console.log('EmployersList', this.props.data )
+        console.log('CardsList', this.props.data )
         return this.props.data.map(item => {
             const {id = item.CoinInfo.Id, ...itemProps} = item;
             // console.log('id',id);
             return (
                 // <Grid item xs='12' md='4'>
-                    <EmployersListItem key={id} {...itemProps} />
+                    <CardsListItem key={id} {...itemProps} />
                 // </Grid>
             )
         })

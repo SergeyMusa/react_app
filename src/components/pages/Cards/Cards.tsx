@@ -1,7 +1,7 @@
 import React from "react"; //, {Component}
 import './Cards.css';
 import Loader from "../../store/Loader/Loader";
-import {EmployersList} from "./EmployersList";
+import {CardsList} from "./CardsList";
 import Search from "../../store/Search";
 // import StoreCoins from "../../store/StoreCoins";
 import {Modal} from "../Modal/Modal";
@@ -51,7 +51,7 @@ export class Cards extends React.Component {
                 {
                     isLoading
                         ? <Loader/>
-                        : <EmployersList data={this.dataData}/>
+                        : <CardsList data={this.dataData}/>
                 }
                 <button className='open-btn' onClick={this.setModalActiveF}>Open Modal</button>
                 {/*<Modal message={'modal_message'} modalTimer={15} active={modalActive} setActive={setModalActive} />*/}

@@ -2,7 +2,7 @@ import React from "react"; //, {Component}
 // import './Cards.css';
 import Loader from "../../store/Loader/Loader";
 import {Tab} from "./Tab";
-// import {EmployersList} from "../Cards/EmployersList";
+// import {CardsList} from "../Cards/CardsList";
 import Search from "../../store/Search";
 // import Store from "../../store/Store";
 // import StoreCoins from "../../store/StoreCoins";
@@ -54,6 +54,7 @@ export class Tables extends React.Component<propsDataCryptaFromPostData> {
     async loadData () {
         this.dataData = await new PostData().doFetchData(this.state.FetchUrl)  ;
         this.setState({ isLoading: false, })
+
     }
 
     render() {

@@ -12,8 +12,8 @@ import Typography from "@mui/material/Typography";
 // import { deepPurple } from '@mui/material/colors';
 import Grid from "@mui/material/Grid";
 
-// const EmployersListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
-export class EmployersListItem extends React.Component {
+// const CardsListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
+export class CardsListItem extends React.Component {
     classNames = 'priceColor normalColor';
     newPrice = this.props.RAW.USD.PRICE ;
     // oldPrice = RAW.USD.PRICE ;
@@ -91,4 +91,4 @@ export class EmployersListItem extends React.Component {
 // <Icon fontSize="small">add_circle</Icon>
 //#66CC00
 //https://get-color.ru/green/
-// export default EmployersListItem;
+// export default CardsListItem;
