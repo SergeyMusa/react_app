@@ -21,6 +21,11 @@ export class CardsList extends React.Component {
             )
         })
     }
+
+    onClickCoin = () => {
+        console.log("onClickCoin") ;
+    }
+
   render () {
     return (
         <Grid container

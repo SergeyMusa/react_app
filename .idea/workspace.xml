@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - ERROR">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - fix ERROR, work with preLoader">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modals.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/PostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/PostData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Loader/Loader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Loader/Loader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Store__.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +79,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Modal",
+    "last_opened_file_path": "/home/musa/GIT/react_app/src/index.jsx",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -103,9 +110,19 @@
       <recent name="$PROJECT_DIR$/src/components/pages" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.index.jsx">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
+    </configuration>
+    <configuration name="index.jsx" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="src/index.jsx" working-dir="$PROJECT_DIR$">
+      <method v="2">
+        <option name="NpmBeforeRunTask" enabled="true">
+          <package-json value="$PROJECT_DIR$/package.json" />
+          <command value="stars" />
+          <node-interpreter value="project" />
+          <envs />
+        </option>
+      </method>
     </configuration>
     <configuration default="true" type="ReactNative" factoryName="React Native">
       <node-interpreter value="project" />
@@ -118,6 +135,10 @@
         <option name="ReactNativePackager" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="Node.js.index.jsx" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -142,7 +163,7 @@
       <workItem from="1678864241814" duration="948000" />
       <workItem from="1678865376916" duration="684000" />
       <workItem from="1678866079743" duration="405000" />
-      <workItem from="1678866707742" duration="37193000" />
+      <workItem from="1678866707742" duration="48228000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -466,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678960473726</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="wip - fix ERROR, work with preLoader">
+      <created>1678963462249</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1678963462250</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +516,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="step_#2-api+ = wip, add id" />
     <MESSAGE value="step_#2-api+ = wip, add timer-visual" />
     <MESSAGE value="step_#2-api+ = wip, remade on class EmployersListItem" />
     <MESSAGE value="step_#2-api+ = wip, with state" />
@@ -513,6 +540,7 @@
     <MESSAGE value="Timers = ok, only autostart &amp; +/- observ" />
     <MESSAGE value="wip - rename CardsList" />
     <MESSAGE value="wip - ERROR" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip - ERROR" />
+    <MESSAGE value="wip - fix ERROR, work with preLoader" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip - fix ERROR, work with preLoader" />
   </component>
 </project>

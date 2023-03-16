@@ -8,11 +8,13 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { store } from "./Store";
 import Box from "@mui/material/Box";
+import {ResponseData} from "./type";
 // import { makeObservable, observable, computed, action } from "mobx"
 
 //??? как автозапуск сделать
 
 export class Timer4 extends React.Component<any, any> {
+
     counter4: any;
     timer: any;
     timerFunction: any; // ??? change on Fun
