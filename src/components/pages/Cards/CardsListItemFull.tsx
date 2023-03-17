@@ -12,8 +12,8 @@ import Typography from "@mui/material/Typography";
 // import { deepPurple } from '@mui/material/colors';
 import Grid from "@mui/material/Grid";
 
-// const CardsListItem = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
-export class CardsListItem extends React.Component<any, any> {
+// const CardsListItemFull = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
+export class CardsListItemFull extends React.Component<any, any> {
     classNames = 'priceColor normalColor';
     newPrice = this.props.RAW.USD.PRICE;
     // oldPrice = RAW.USD.PRICE ;
@@ -53,7 +53,7 @@ export class CardsListItem extends React.Component<any, any> {
                 <h3>{this.state.time}</h3>
                 {/*<button onClick={this.changeClassName}> [+++] </button>*/}
                 <div className='EmployersList' style={{margin: 'auto'}}>
-                    <Card sx={{maxWidth: 345}} onClick={()=>this.props.press(CoinInfo.Id)}>
+                    <Card sx={{maxWidth: 345}}>
                         <CardHeader
                             avatar={
                                 <Avatar aria-label="recipe">
@@ -79,13 +79,10 @@ export class CardsListItem extends React.Component<any, any> {
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                                1 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}
+                                2 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}
                                 <AttachMoney fontSize="small" sx={{color: green[500]}}/>
                             </Typography>
                         </CardContent>
-
-
-
                     </Card>
                 </div>
             </Grid>
@@ -93,9 +90,3 @@ export class CardsListItem extends React.Component<any, any> {
         )
     }
 }
-
-// sx={{ color: green[500] }}>add_circle</Icon>
-// <Icon fontSize="small">add_circle</Icon>
-//#66CC00
-//https://get-color.ru/green/
-// export default CardsListItem;

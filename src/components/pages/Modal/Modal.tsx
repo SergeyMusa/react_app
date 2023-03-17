@@ -8,6 +8,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import {observer} from "mobx-react";
 import { CardsList } from '../Cards/CardsList';
+import {CardsListItem} from "../Cards/CardsListItem";
+import {CardsListItemFull} from "../Cards/CardsListItemFull";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -32,6 +34,7 @@ export interface ModalProps {
     modalObj?: {};
     isOpen: boolean;
     onClosed:  () => void;
+    id?: any,
 }
 
 
@@ -63,7 +66,7 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 export class Modal extends React.Component<ModalProps> {
     render() {
         // const [open, setOpen] = React.useState(false);
-        const { modalTitle, modalMessage, modalObj, isOpen, onClosed } = this.props;
+        const { modalTitle, modalMessage, modalObj, isOpen, onClosed, id  } = this.props;
 
         // const handleClickOpen = function () {
         //     setOpen(true);
@@ -89,7 +92,7 @@ export class Modal extends React.Component<ModalProps> {
                     <DialogContent dividers>
                         <Typography gutterBottom>
                             {modalMessage}
-                            {/*<CardsList data={modalObj}/>*/}
+                            {/*<CardsListItemFull key={id} {...modalObj} />*/}
                         {/*  ??? __________________________________________  */}
                         </Typography>
                     </DialogContent>

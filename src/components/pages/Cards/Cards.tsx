@@ -77,5 +77,3 @@ export class Cards extends React.Component<any, any> {
     }
 
 }
-
-// {/*: <CryptoCard data={this.state.dataData}/>*/}

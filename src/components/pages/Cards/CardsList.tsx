@@ -5,6 +5,7 @@ import {Grid} from "@mui/material";
 import {Modal} from "../Modal/Modal";
 import {Toggle} from "../../store/Toggle";
 import {observer} from "mobx-react";
+import { CardsListItemFull } from "./CardsListItemFull";
 
 @observer
 export class CardsList extends React.Component<any, any> {
@@ -16,23 +17,28 @@ export class CardsList extends React.Component<any, any> {
     }
 
     elements = () => {
-        console.log('CardsList', this.props.data)
+        console.log('CardsList_one', this.props.data)
         return this.props.data.map(item => {
             const {id = item.CoinInfo.Id, ...itemProps} = item;
             return (
-                <CardsListItem key={id} {...itemProps} />
+                <CardsListItem key={id} {...itemProps} press={this.modalOpen} />
             )
         })
+    }
+
+    elementsFull = (event) => {
+
     }
 
     onClickCoin = () => {
         console.log("onClickCoin");
     }
 
-    modalOpen = () => { //event
-        // console.log('event', event.target);
+    modalOpen = (id: any) => { //
+        console.log('event', id);
+        // !!! find
         this.state.toggle.open();
-        console.log('2>>>>', this.state.toggle.isOpen);
+
     }
 
     render() {
@@ -44,18 +50,23 @@ export class CardsList extends React.Component<any, any> {
                       justifyContent="space-evenly"
                       alignItems="center"
                       mt={1}
-                      onClick={this.modalOpen}
                 >
                     {this.elements()}
                 </Grid>
+                    {/*{this.elementsFull()}*/}
                 <Modal
                     modalTitle={'modalTitle'}
                     modalMessage={'modalMessage'}
                     modalTimer={15}
                     isOpen={this.state.toggle.isOpen}
                     onClosed={this.state.toggle.close}
-                    // modalObj={this.dataData}
+                    // key={id}
+                    // modalObj={itemProps}
                 />
+                    {/*<CardsListItemFull />*/}
+                    {/*  !!! >>>>>>>>>>>>>>>>>>>>  */}
+                {/*</Modal>*/}
+
             </>
         )
     }
