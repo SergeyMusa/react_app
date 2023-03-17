@@ -8,7 +8,7 @@ import Search from "../../store/Search";
 // import StoreCoins from "../../store/StoreCoins";
 import {PostData} from "../../store/PostData";
 import {propsDataCryptaFromPostData} from "../../store/type";
-import login from "../../auth/login/login"; // ??? , FetchUrl
+// import login from "../../auth/login/login"; // ??? , FetchUrl
 
 export class Tables extends React.Component<propsDataCryptaFromPostData> {
     dataData: any[];
@@ -24,7 +24,7 @@ export class Tables extends React.Component<propsDataCryptaFromPostData> {
         //     console.log('timeUpdate', Store.timeUpdate);
         this.loadData().then(() => {
             this.setState({isLoading: false}); // !!! DONT WORK
-            this.state.isLoading = false;
+            // this.state.isLoading = false;
         });
     }
 

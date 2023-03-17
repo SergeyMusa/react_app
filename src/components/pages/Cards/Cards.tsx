@@ -4,9 +4,7 @@ import Loader from "../../store/Loader/Loader";
 import {CardsList} from "./CardsList";
 import Search from "../../store/Search";
 // import StoreCoins from "../../store/StoreCoins";
-import {MyModal} from "../Modal/MyModal";
 import {PostData} from "../../store/PostData";
-import CustomizedDialogs from "../Modal/Modal";
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
@@ -19,7 +17,7 @@ import CustomizedDialogs from "../Modal/Modal";
 //     )
 // }
 
-export class Cards extends React.Component {
+export class Cards extends React.Component<any, any> {
     dataData: any[];
     state = {
         isLoading: true,
@@ -30,7 +28,7 @@ export class Cards extends React.Component {
     componentDidMount() {
         this.loadData().then(() => { // ??? refactor late twix code
             this.setState({ isLoading: false }) ; // !!! DONT WORK
-            this.state.isLoading = false ;
+            // this.state.isLoading = false ;
         } );    }
     async loadData () {
         this.dataData = await new PostData().doFetchData(this.state.FetchUrl) ;
@@ -38,11 +36,11 @@ export class Cards extends React.Component {
         // !!! add timer load
     }
 
-     private setModalActiveF = () => {
-         console.log('setModalActiveF 1', this.state.setModalActive);
-        this.setState({setModalActive: true});
-         console.log('setModalActiveF 2', this.state.setModalActive);
-    }
+    //  private setModalActiveF = () => {
+    //      console.log('setModalActiveF 1', this.state.setModalActive);
+    //     this.setState({setModalActive: true});
+    //      console.log('setModalActiveF 2', this.state.setModalActive);
+    // }
 
     public render() {
         // const [ modalActive ] = useState(true); //, setModalActive
@@ -56,12 +54,7 @@ export class Cards extends React.Component {
                 <h3>Cards</h3>
                 <button onClick={() => this.componentDidMount()}>[ LOAD ]</button>
                 <Search/>
-                <CustomizedDialogs modalTitle={'modalTitle'}
-                                   modalMessage={'modalMessage'}
-                                   modalTimer={15}
-                                   modalObj={this.dataData}
-                                   // zzz={<CardsList data={this.dataData}//>}
-                />
+
                 {
                     this.state.isLoading
                         ? <Loader/>
