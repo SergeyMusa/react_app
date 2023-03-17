@@ -1,8 +1,9 @@
 import React from "react"; // , {FunctionComponent}
-import './Modal.css';
+import './MyModal.css';
 // import {Drawer} from "@mui/material";
 // import {bool} from "prop-types";
 import {action} from "mobx";
+
 
 interface ModalProps {
     message?: string;
@@ -12,14 +13,17 @@ interface ModalProps {
     setActive: any; //FunctionComponent; // функция изменяет состояние видимости
 }
 
-export class Modals extends React.Component<ModalProps> {
+export class MyModal extends React.Component<ModalProps> {
         message: `Done!`;
     constructor(props) {
         super(props);
+
         this.openModal = this.openModal.bind(this) ;
     }
         // modalObj: any{};
         // modalTimer: null;
+
+
 
     doOnRun() {
         console.log('modalTimer', this.props.modalTimer)

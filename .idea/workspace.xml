@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - fix ERROR, work with preLoader">
-      <change afterPath="$PROJECT_DIR$/src/components/pages/test.ts" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step4-make Modal">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modals.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Loader/Loader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Loader/Loader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Store__.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/MyModal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modals.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/MyModal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +27,10 @@
         <option value="SCSS File" />
         <option value="JavaScript File" />
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
         <option value="HTML File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -72,28 +66,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/musa/GIT/react_app/src/index.jsx",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.sync",
-    "ts.external.directory.path": "/home/musa/GIT/react_app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/index.jsx&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/pages/Modal" />
@@ -118,7 +112,7 @@
       <method v="2">
         <option name="NpmBeforeRunTask" enabled="true">
           <package-json value="$PROJECT_DIR$/package.json" />
-          <command value="stars" />
+          <command value="start" />
           <node-interpreter value="project" />
           <envs />
         </option>
@@ -163,7 +157,8 @@
       <workItem from="1678864241814" duration="948000" />
       <workItem from="1678865376916" duration="684000" />
       <workItem from="1678866079743" duration="405000" />
-      <workItem from="1678866707742" duration="48228000" />
+      <workItem from="1678866707742" duration="48424000" />
+      <workItem from="1679035010337" duration="3731000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson-1-Components&amp;function/class">
       <created>1677494968648</created>
@@ -494,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678963462250</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="step4-make Modal">
+      <created>1678994653952</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1678994653952</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +518,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="step_#2-api+ = wip, add timer-visual" />
     <MESSAGE value="step_#2-api+ = wip, remade on class EmployersListItem" />
     <MESSAGE value="step_#2-api+ = wip, with state" />
     <MESSAGE value="step_#2-api+ = wip+" />
@@ -541,6 +542,7 @@
     <MESSAGE value="wip - rename CardsList" />
     <MESSAGE value="wip - ERROR" />
     <MESSAGE value="wip - fix ERROR, work with preLoader" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip - fix ERROR, work with preLoader" />
+    <MESSAGE value="step4-make Modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="step4-make Modal" />
   </component>
 </project>
