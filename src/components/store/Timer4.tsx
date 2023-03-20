@@ -9,11 +9,17 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { store } from "./Store";
 import Box from "@mui/material/Box";
 import {ResponseData} from "./type";
+import {number} from "prop-types";
 // import { makeObservable, observable, computed, action } from "mobx"
 
 //??? как автозапуск сделать
+export interface inputTimer {
+    inputTime?: string;
+    messageTimer?: '';
+    activeTimer?: boolean;
+}
 
-export class Timer4 extends React.Component<any, any> {
+export class Timer4 extends React.Component<inputTimer, any> {
 
     counter4: any;
     timer: any;
@@ -22,8 +28,9 @@ export class Timer4 extends React.Component<any, any> {
         super(props);
         // makeAutoObservable(this) // !!! dont work super
         this.state = {
-            finishMessage: "Timer3 - USED",
-            counter4: store.timeUpdate, // !!! оставшееся время
+            finishMessage: this.props.messageTimer || "Timer4 - USED",
+            // counter4: this.props.inputTime || store.timeUpdate, // !!! оставшееся время
+            counter4: this.props.inputTime || store.timeUpdate, // !!! оставшееся время
             counterTemp: store.timeUpdate , // !!! поменять местами с counter4
             // timeLeft: 15,  // !!! оставшееся время - временно - хранится в сторе
             timer: 0, // Отсылка на таймер

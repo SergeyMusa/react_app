@@ -12,6 +12,8 @@ import { makeAutoObservable } from "mobx"
         makeAutoObservable(this)
     }
 
+    // !!! start timer !!!
+
 // action
     increment = () => {
         // ++this.timeUpdate;

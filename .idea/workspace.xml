@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step4-make Modal=ok+ осталось дату">
-      <change afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step4-remake Modal=ok+ осталось дату">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,28 +65,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Cards",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.tools",
-    "ts.external.directory.path": "/home/musa/GIT/react_app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/components/pages/Cards&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
@@ -159,14 +157,8 @@
       <workItem from="1678865376916" duration="684000" />
       <workItem from="1678866079743" duration="405000" />
       <workItem from="1678866707742" duration="48424000" />
-      <workItem from="1679035010337" duration="26723000" />
-    </task>
-    <task id="LOCAL-00002" summary="Lesson-1-Components_end">
-      <created>1677495564960</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1677495564960</updated>
+      <workItem from="1679035010337" duration="28451000" />
+      <workItem from="1679301673134" duration="634000" />
     </task>
     <task id="LOCAL-00003" summary="Lesson-2-State _old &amp; _new">
       <created>1677496197305</created>
@@ -504,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679056249108</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="step4-remake Modal=ok+ осталось дату">
+      <created>1679061767972</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1679061767972</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +525,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="step_#2-api+ = wip+" />
     <MESSAGE value="step_#3-timer = begin, disable React.StrictMode" />
     <MESSAGE value="step_#3-timer = begin, enable React.StrictMode" />
     <MESSAGE value="step_#3-timer = add second" />
@@ -551,6 +549,7 @@
     <MESSAGE value="step4-make Modal" />
     <MESSAGE value="step4-make Modal=ok, wip" />
     <MESSAGE value="step4-make Modal=ok+ осталось дату" />
-    <option name="LAST_COMMIT_MESSAGE" value="step4-make Modal=ok+ осталось дату" />
+    <MESSAGE value="step4-remake Modal=ok+ осталось дату" />
+    <option name="LAST_COMMIT_MESSAGE" value="step4-remake Modal=ok+ осталось дату" />
   </component>
 </project>

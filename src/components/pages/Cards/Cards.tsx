@@ -19,6 +19,7 @@ import {PostData} from "../../store/PostData";
 
 export class Cards extends React.Component<any, any> {
     dataData: any[];
+
     state = {
         isLoading: true,
         modalActive: false,
@@ -32,7 +33,7 @@ export class Cards extends React.Component<any, any> {
         } );    }
     async loadData () {
         this.dataData = await new PostData().doFetchData(this.state.FetchUrl) ;
-        // new timer4().startTimer();
+        //
         // !!! add timer load
     }
 
