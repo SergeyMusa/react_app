@@ -9,37 +9,37 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import Badge from '@mui/material/Badge';
 // import { deepPurple } from '@mui/material/colors';
 // import { makeObservable, observable, computed, action } from "mobx"
-import { store } from "./Store";
+import { storeOld } from "./Store";
 import Box from "@mui/material/Box";
 
 // сделать чекер репиат
 
-function Timer3() {
+export const Timer3 = () => {
     // const [count] = React.useState(1);
     // const [count, setCount] = React.useState(1);
-    let counter3 = store.timeUpdate;
+    let counter3 = storeOld.timeUpdate;
     const [counterTemp = counter3, setCounter] = React.useState(counter3);
     let isRepeat = counterTemp,
         timer = 0 //  переменная
 
     const onClickStop = () => {
-        setCounter(timer=store.timeUpdate) ;
+        setCounter(timer=storeOld.timeUpdate) ;
         setCounter(timer=0);
         clearInterval(timer);
-        store.timerTemp = 0;
-        store.reset();
+        storeOld.timerTemp = 0;
+        storeOld.reset();
     }
     const onClickStart = () => {
-        setCounter(timer=store.timeUpdate) ;
+        setCounter(timer=storeOld.timeUpdate) ;
     }
     const onClickPause = () => {
-        store.timerTemp = counterTemp;
-        store.timerTemp = counterTemp;
+        storeOld.timerTemp = counterTemp;
+        storeOld.timerTemp = counterTemp;
         setCounter(timer=0);
         clearInterval(timer);
     }
     const onClickResume = () => {
-        setCounter(timer=store.timerTemp) ;
+        setCounter(timer=storeOld.timerTemp) ;
     }
 
     const checkSwitch = event => {
@@ -65,7 +65,7 @@ function Timer3() {
         return () => clearInterval(timer);
     }, [counterTemp]);
 
-    const changeBadge = (counterTemp > 0) ? counterTemp : store.timerTemp ;
+    const changeBadge = (counterTemp > 0) ? counterTemp : storeOld.timerTemp ;
 
     return (
         <div className="Timer3">
@@ -73,25 +73,25 @@ function Timer3() {
             <Box
                 >
                 {/*<h4> changeBadge : [ {changeBadge} ]</h4>*/}
-                {/*<span>[ {store.timeUpdate} ]</span>*/}
+                {/*<span>[ {storeOld.timeUpdate} ]</span>*/}
                 <Badge badgeContent= { changeBadge } color="primary">
                     <AccessTime color="action" />
                 </Badge>
                 <span>   </span>
-                {/*<span>[ {store.timerTemp} ]</span>*/}
+                {/*<span>[ {storeOld.timerTemp} ]</span>*/}
 
                 {/*<ButtonGroup variant="contained" sx={{ m: 1}}>*/}
                     {/* ??? ButtonGroup поднимает регистр, нужен ли вообще */}
                     <Button
                         aria-label="increase"
-                        onClick={() => store.increment()}
+                        onClick={() => storeOld.increment()}
                         variant="contained"
                     >
                         <AddIcon fontSize="small" />
                     </Button>
                     <Button
                         aria-label="reduce"
-                        onClick={() => store.decrement()}
+                        onClick={() => storeOld.decrement()}
                         variant="contained"
                     >
                         <RemoveIcon fontSize="small" />
@@ -113,4 +113,3 @@ function Timer3() {
         </div>
     );
 }
-export default Timer3;

@@ -5,6 +5,8 @@ import {CardsList} from "./CardsList";
 import Search from "../../store/Search";
 // import StoreCoins from "../../store/StoreCoins";
 import {PostData} from "../../store/PostData";
+import {store} from "../../store/StoreTimer";
+import login from "../../auth/login/login";
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
@@ -27,6 +29,10 @@ export class Cards extends React.Component<any, any> {
         FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
     componentDidMount() {
+        store.timerActive = true;
+        store.timerBeginTime = 15;
+        // store.timerMakeFun = console.log('timerActive');
+
         this.loadData().then(() => { // ??? refactor late twix code
             this.setState({ isLoading: false }) ; // !!! DONT WORK
             // this.state.isLoading = false ;
@@ -37,18 +43,11 @@ export class Cards extends React.Component<any, any> {
         // !!! add timer load
     }
 
-    //  private setModalActiveF = () => {
-    //      console.log('setModalActiveF 1', this.state.setModalActive);
-    //     this.setState({setModalActive: true});
-    //      console.log('setModalActiveF 2', this.state.setModalActive);
-    // }
-
     public render() {
         // const [ modalActive ] = useState(true); //, setModalActive
         // const {modalActive, setModalActive} = this.state; //, setModalActive
          // [isLoading] = this.state; //, setModalActive
         // ??? HOW up work
-        // console.log('>>>>', this.state.modalActive, this.state.setModalActive);
 
         return (
             <div className="cards">
@@ -61,19 +60,7 @@ export class Cards extends React.Component<any, any> {
                         ? <Loader/>
                         : <CardsList data={this.dataData}/>
                 }
-                {/*<div className="modalka">*/}
-                {/*    <button className='open-btn' onClick={this.setModalActiveF}>Open Modal</button>*/}
-                {/*    /!*<MyModal message={'modal_message'} modalTimer={15} active={modalActive} setActive={setModalActive} />*!/*/}
-                {/*    /!* setActiv={()=>{1} activ={true}  *!/*/}
-                {/*    <p><span>2 Lorem ipsum dolor sit amuam temporibus veritatis vero voluptas voluptatem. Veritatis, voluptatem.</span>*/}
-                {/*        <span>22 Beatae dolores ipsa natus odio possimus quo sunt tempore vel veniam, voluptatibus! Aliquid , enim error voluptate.</span>*/}
-                {/*        <span>222 Aliquam aut cumque dicta eaque id nemo neque omnis quae soluta suscipit! harum quod veniam voluptatem!</span>*/}
-                {/*    </p>*/}
-                {/*    <MyModal message={'modal_message'} modalTimer={15} active={this.state.modalActive} setActive={this.state.setModalActive}/>*/}
-                {/*    /!*  setActive={setModalActive}   *!/*/}
-                {/*</div>*/}
-
-            </div>
+                            </div>
         )
     }
 

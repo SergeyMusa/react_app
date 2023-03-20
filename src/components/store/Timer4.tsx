@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import {AccessTime} from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { store } from "./Store";
+import { store } from "./StoreTimer";
 import Box from "@mui/material/Box";
 import {ResponseData} from "./type";
 import {number} from "prop-types";
@@ -14,39 +14,42 @@ import {number} from "prop-types";
 
 //??? как автозапуск сделать
 export interface inputTimer {
-    inputTime?: string;
-    messageTimer?: '';
+    inputTime?: number;
+    messageTimer?: string;
     activeTimer?: boolean;
+    functionTimer?():void ;
 }
 
 export class Timer4 extends React.Component<inputTimer, any> {
+    // state: any
 
-    counter4: any;
-    timer: any;
-    timerFunction: any; // ??? change on Fun
-    constructor(props: any) {
+    constructor(props?: inputTimer) {
         super(props);
-        // makeAutoObservable(this) // !!! dont work super
         this.state = {
-            finishMessage: this.props.messageTimer || "Timer4 - USED",
-            // counter4: this.props.inputTime || store.timeUpdate, // !!! оставшееся время
-            counter4: this.props.inputTime || store.timeUpdate, // !!! оставшееся время
-            counterTemp: store.timeUpdate , // !!! поменять местами с counter4
-            // timeLeft: 15,  // !!! оставшееся время - временно - хранится в сторе
-            timer: 0, // Отсылка на таймер
-            isRepeat: false,
-            checkerLabel: '',
-        };
-        this.startTimer = this.startTimer.bind(this);
+                finishMessage: this.props?.messageTimer || store?.timerMessage,
+                // counter4: this.props.inputTime || store.timeUpdate, // !!! оставшееся время
+                counter4: this.props?.inputTime || store.timerBeginTime, // !!! оставшееся время
+                counterTemp: store.timerBeginTime , // ??? CHECK !!! поменять местами с counter4
+                // timeLeft: 15,  // !!! оставшееся время - временно - хранится в сторе
+                timer: 0, // Отсылка на таймер
+                isRepeat: false,
+                checkerLabel: '',
+                activeTimer: true,
+                functionTimer: this.props?.functionTimer || store.timerMakeFun ,
+            };
+        // makeAutoObservable(this) // !!! dont work super
+        this.startTimer();
     }
 
     callbackTimeout = () => {
+        console.log("test")
         // this.counterTemp = this.state.counterTemp - 1;  // Отнимает 1 секунду от оставшегося времени
         this.setState({counter4: (this.state.counter4 - 1)}); // *** IS FINISH
-        if ( this.state.isRepeat && (this.state.counter4) === 0 ) {
+        if (this.props.activeTimer && this.state.isRepeat && (this.state.counter4) === 0 ) {
             console.log(' 5 ', this.state.finishMessage);
+            // this.state.functionTimer ;
             clearInterval( this.state.timer);
-             store.timerFunction();
+             store.timerShow();
         } else if  ( !this.state.isRepeat && (this.state.counter4) === 0 )
         {
             this.onClickStart() ;
@@ -70,25 +73,26 @@ export class Timer4 extends React.Component<inputTimer, any> {
         this.setState({counter4: 0});
         clearInterval(this.state.timer);
         // this.setState({timer: 0});
-        store.timerTemp = 0;
+        store.timerPauseTime = 0;
         // console.log('onClickStop')
     }
 
     onClickStart = () => {
         console.clear();
         clearInterval(this.state?.timer);
-        this.setState({counter4: store.timeUpdate});
+        // store.activeTimer = true;
+        this.setState({counter4: store.timerBeginTime});
         // console.log('onClickStart', this.state.counter4);
         return this.startTimer();
     }
     onClickPause = () => {
-        store.timerTemp = this.state.counter4;
+        store.timerPauseTime = this.state.counter4;
         //     setCounter(timer=0);
         clearInterval(this.state.timer);
         // console.log('onClickPause')
     }
     onClickResume = () => {
-        this.setState({counter4: store.timerTemp});
+        this.setState({counter4: store.timerPauseTime});
         // console.log('onClickResume')
         return this.startTimer();
     }
@@ -99,7 +103,6 @@ export class Timer4 extends React.Component<inputTimer, any> {
     }
 
     render() {
-        // [counter4, counterTemp] = this.state;
         return (
             <div className="Timer4">
                 <Box>
@@ -142,10 +145,6 @@ export class Timer4 extends React.Component<inputTimer, any> {
                     </ButtonGroup>
                 </Box>
             </div>
-
         );
     }
 }
-
-export default Timer4
-

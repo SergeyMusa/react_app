@@ -1,30 +1,34 @@
-import { makeObservable, observable, action } from "mobx"
-import React, {Component} from "react";
-import {observer} from "mobx-react";
+import { observable,  makeAutoObservable} from "mobx"
+// import React, {Component} from "react";
+// import {observer} from "mobx-react";
+// import {Store} from "./Store";
 
- class StoreTimer extends Component {
-    @observable timerTestData: number = 44
-        timeUpdate: number = 30
-        timerStart: boolean = true
-    constructor(props) {
-        super(props);
-        makeObservable(this, {
-            timeUpdate: observable,
-            increment: action,
-            decrement: action,
+export class StoreTimer  {
+    @observable timerPauseTime: number = 1
+    @observable timerBeginTime: number = 30
+    @observable timerActive: boolean = false
+    public timerMessage: string = "Time's up"
+    public timerMakeFun = () => {console.log('timerActive_tst')}
+    public timerShow = (() => {
+        console.log(`timer4_timerBeginTime=${this.timerBeginTime}_timerPauseTime=${this.timerPauseTime}`)
+    })
+
+    constructor() {
+        makeAutoObservable(this, {
         })
     }
 
 // action
-    increment() {
-        this.timeUpdate++
+    increment = () => {
+        this.timerBeginTime = this.timerBeginTime < 99 ? this.timerBeginTime + 1 : 99;
     }
     decrement = () => {
-        this.timeUpdate--
+        this.timerBeginTime = this.timerBeginTime > 0 ? this.timerBeginTime - 1 : 0;
     }
-    // return {
-    //    timeUpdate
-    // }
-}
-export default observer (StoreTimer);
 
+    reset = () => {
+        this.timerPauseTime = 0;
+    }
+}
+
+export const store = new StoreTimer();

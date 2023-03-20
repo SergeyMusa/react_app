@@ -1,10 +1,17 @@
 import React from "react";
 import Timer2 from "../store/Timer2";
-import Timer3 from "../store/Timer3";
-import Timer4 from "../store/Timer4";
+import {Timer4} from "../store/Timer4";
+import {store} from "../store/StoreTimer";
+import {Timer3} from "../store/Timer3";
 
 export class Timers extends React.Component {
+    componentDidMount() {
+        // Timer4.startTimer();
+        // Timer3.onClickStop() ;
+    }
+
     public render() {
+        store.timerActive = true;
         return (
             <div>
                 <h3>Timers</h3>
@@ -20,7 +27,8 @@ export class Timers extends React.Component {
                 <hr/>
                 <h3>-=4=-</h3>
                 <h4>on classes</h4>
-                <Timer4/>
+                {/*<Timer4 inputTime={"test"}/>*/}
+                <Timer4 inputTime={10} messageTimer='Page_Timers' activeTimer={true} />
                 <hr/>
             </div>
             // <Lesson child={<Button/>}> <Counter/> </Lesson>

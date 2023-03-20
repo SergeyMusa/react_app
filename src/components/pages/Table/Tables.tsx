@@ -8,6 +8,7 @@ import Search from "../../store/Search";
 // import StoreCoins from "../../store/StoreCoins";
 import {PostData} from "../../store/PostData";
 import {propsDataCryptaFromPostData} from "../../store/type";
+import {store} from "../../store/StoreTimer";
 // import login from "../../auth/login/login"; // ??? , FetchUrl
 
 export class Tables extends React.Component<propsDataCryptaFromPostData> {
@@ -20,6 +21,8 @@ export class Tables extends React.Component<propsDataCryptaFromPostData> {
         FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
     componentDidMount = () => {
+        store.timerActive = true;
+
         // setInterval(this.loadData, Store.timeUpdate); //30000
         //     console.log('timeUpdate', Store.timeUpdate);
         this.loadData().then(() => {

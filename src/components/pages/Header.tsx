@@ -1,10 +1,12 @@
 import React from "react";
 // import {AccessTime} from "@mui/icons-material";
 import {AppBar, Toolbar, Typography} from "@mui/material";
-import Timer4 from "../store/Timer4";
+import {store} from "../store/StoreTimer";
+import {Timer4} from "../store/Timer4";
 
 export class Header extends React.Component {
     public render () {
+
         return (
             <div className={'header'} >
                <AppBar position={'static'}>
@@ -17,7 +19,7 @@ export class Header extends React.Component {
                        >
                            MuSa_App
                        </Typography>
-                        <Timer4 />
+                        {(store.timerActive) ? <Timer4  inputTime={10} messageTimer={'Page_Timers'} activeTimer={true} /> : ''}
                     </Toolbar>
                </AppBar>
              </div>

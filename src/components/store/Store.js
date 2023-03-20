@@ -30,4 +30,4 @@ import { makeAutoObservable } from "mobx"
     }
 }
 
-export const store = new Store();
+export const storeOld = new Store();
