@@ -5,9 +5,10 @@ import {store} from "../store/StoreTimer";
 import {Timer3} from "../store/Timer3";
 
 export class Timers extends React.Component {
+
     componentDidMount() {
-        // Timer4.startTimer();
-        // Timer3.onClickStop() ;
+       // Timer4.startTimer();
+        store.timerActive = true;
     }
 
     public render() {

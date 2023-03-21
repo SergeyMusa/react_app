@@ -7,8 +7,6 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import {observer} from "mobx-react";
-import { CardsList } from '../Cards/CardsList';
-import {CardsListItem} from "../Cards/CardsListItem";
 import {CardsListItemFull} from "../Cards/CardsListItemFull";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -29,7 +27,6 @@ export interface DialogTitleProps {
 export interface ModalProps {
     modalTitle?: string;
     modalMessage?: any;
-    // modalObj: {};// title, img, main-text
     modalTimer?: number;
     modalObj?: {};
     isOpen: boolean;
@@ -92,7 +89,7 @@ export class Modal extends React.Component<ModalProps> {
                     <DialogContent dividers>
                         <Typography gutterBottom>
                             {modalMessage}
-                            {/*<CardsListItemFull key={id} {...modalObj} />*/}
+                            <CardsListItemFull key={id} {...modalObj} />
                         {/*  ??? __________________________________________  */}
                         </Typography>
                     </DialogContent>

@@ -19,7 +19,7 @@ export class Header extends React.Component {
                        >
                            MuSa_App
                        </Typography>
-                        {(store.timerActive) ? <Timer4  inputTime={10} messageTimer={'Page_Timers'} activeTimer={true} /> : ''}
+                        {(store.timerActive) ? <Timer4  inputTime={45} messageTimer={'Page_Timers'} activeTimer={true} /> : ''}
                     </Toolbar>
                </AppBar>
              </div>

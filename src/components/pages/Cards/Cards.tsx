@@ -3,10 +3,8 @@ import './Cards.css';
 import Loader from "../../store/Loader/Loader";
 import {CardsList} from "./CardsList";
 import Search from "../../store/Search";
-// import StoreCoins from "../../store/StoreCoins";
 import {PostData} from "../../store/PostData";
 import {store} from "../../store/StoreTimer";
-import login from "../../auth/login/login";
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;

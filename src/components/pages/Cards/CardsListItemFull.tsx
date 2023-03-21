@@ -25,25 +25,6 @@ export class CardsListItemFull extends React.Component<any, any> {
         }
     }
 
-    // changeTime = () => {
-    //     console.log('changeTime')
-    // }
-
-    changeClassName = () => { //  ??? WTF---------------------
-        console.log('newPrice', this.newPrice);
-        this.setState(state => ({
-            time: this.state.time + 1
-        }))
-
-        // if( this.newPrice < this.oldPrice) {
-        //     this.classNames += ' red';
-        // } else if (newPrice > oldPrice) {
-        //     this.classNames += ' green';
-        // } else {
-        //     this.classNames += ' normalColor';
-        // }
-    }
-
     render() {
         const {CoinInfo, DISPLAY, RAW} = this.props
 

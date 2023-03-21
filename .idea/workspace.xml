@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip add props to timer">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip remake timer props&amp;store">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Counter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer3.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,14 +161,7 @@
       <workItem from="1678866079743" duration="405000" />
       <workItem from="1678866707742" duration="48424000" />
       <workItem from="1679035010337" duration="28451000" />
-      <workItem from="1679301673134" duration="12004000" />
-    </task>
-    <task id="LOCAL-00004" summary="Lesson-2- привязка bind">
-      <created>1677499380136</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1677499380136</updated>
+      <workItem from="1679301673134" duration="19019000" />
     </task>
     <task id="LOCAL-00005" summary="Lesson-2-end">
       <created>1677503510917</created>
@@ -509,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679302475914</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="wip remake timer props&amp;store">
+      <created>1679313937950</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1679313937950</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +528,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="step_#3-timer = begin, enable React.StrictMode" />
     <MESSAGE value="step_#3-timer = add second" />
     <MESSAGE value="step_#3-timer = ui ok" />
     <MESSAGE value="step_#3-timer = crash Table? not errors" />
@@ -556,6 +552,7 @@
     <MESSAGE value="step4-make Modal=ok+ осталось дату" />
     <MESSAGE value="step4-remake Modal=ok+ осталось дату" />
     <MESSAGE value="wip add props to timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip add props to timer" />
+    <MESSAGE value="wip remake timer props&amp;store" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip remake timer props&amp;store" />
   </component>
 </project>

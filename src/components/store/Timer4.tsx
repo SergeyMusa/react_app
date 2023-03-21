@@ -26,11 +26,9 @@ export class Timer4 extends React.Component<inputTimer, any> {
     constructor(props?: inputTimer) {
         super(props);
         this.state = {
-                finishMessage: this.props?.messageTimer || store?.timerMessage,
-                // counter4: this.props.inputTime || store.timeUpdate, // !!! оставшееся время
+                finishMessage: this.props?.messageTimer || store.timerMessage,
                 counter4: this.props?.inputTime || store.timerBeginTime, // !!! оставшееся время
                 counterTemp: store.timerBeginTime , // ??? CHECK !!! поменять местами с counter4
-                // timeLeft: 15,  // !!! оставшееся время - временно - хранится в сторе
                 timer: 0, // Отсылка на таймер
                 isRepeat: false,
                 checkerLabel: '',
@@ -38,48 +36,51 @@ export class Timer4 extends React.Component<inputTimer, any> {
                 functionTimer: this.props?.functionTimer || store.timerMakeFun ,
             };
         // makeAutoObservable(this) // !!! dont work super
-        this.startTimer();
+        // this.startTimer(); //!!! <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    }
+
+    componentDidMount() { // ??? ERROR dont work autostart
+        // Timer4.startTimer();
+        if (store.timerActive) {
+            this.startTimer();
+        }
     }
 
     callbackTimeout = () => {
-        console.log("test")
         // this.counterTemp = this.state.counterTemp - 1;  // Отнимает 1 секунду от оставшегося времени
+    console.log('---','this.state.timer ', this.state.timer, 'this.state.counter4 ', this.state.counter4,'this.state.isRepeat ', this.state.isRepeat)
         this.setState({counter4: (this.state.counter4 - 1)}); // *** IS FINISH
-        if (this.props.activeTimer && this.state.isRepeat && (this.state.counter4) === 0 ) {
+        if (store.timerActive && this.state.isRepeat && (this.state.counter4 === 0) ) {
             console.log(' 5 ', this.state.finishMessage);
             // this.state.functionTimer ;
             clearInterval( this.state.timer);
-             store.timerShow();
-        } else if  ( !this.state.isRepeat && (this.state.counter4) === 0 )
+     store.timerShow();
+        } else if  ( !this.state.isRepeat && (this.state.counter4 === 0) )
         {
             this.onClickStart() ;
         }
-        // console.log('---',this.state.timer)
     }
 
     startTimer = () => {
         // ??? maybe delete str down > clearInterval
         // console.log('startTimer', ' counter4 = ', this.state.counter4)
-        clearInterval(this.state.timer);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
+        clearInterval(this.state?.timer);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
         let timer = setInterval(this.callbackTimeout, 1000);
         // return () => clearInterval(timer);
         return this.setState({ timer: timer });
     }
 
-    //  [counterTemp = counter3, setCounter] = React.useState(counter3);
-    // isRepeat = counterTemp,
-
     onClickStop = () => {
+        store.timerPauseTime = 0;
+        store.timerActive = false;
         this.setState({counter4: 0});
         clearInterval(this.state.timer);
-        // this.setState({timer: 0});
-        store.timerPauseTime = 0;
         // console.log('onClickStop')
     }
 
     onClickStart = () => {
         console.clear();
-        clearInterval(this.state?.timer);
+        clearInterval(this.state.timer);
         // store.activeTimer = true;
         this.setState({counter4: store.timerBeginTime});
         // console.log('onClickStart', this.state.counter4);
@@ -114,8 +115,6 @@ export class Timer4 extends React.Component<inputTimer, any> {
                     <span>   </span>
                     {/*<span>[ {this.state.counter4} ]</span>*/}
 
-                    {/*<ButtonGroup >*/}
-                    {/*//variant="contained"*/}
                     <Button
                         aria-label="increase"
                         onClick={() => store.increment()}
@@ -130,7 +129,6 @@ export class Timer4 extends React.Component<inputTimer, any> {
                     >
                         <RemoveIcon fontSize="small"/>
                     </Button>
-                    {/*</ButtonGroup>*/}
                     <FormControlLabel control={<Switch defaultChecked/>}
                                       onChange={this.checkSwitch}
                                       label='repeat'
