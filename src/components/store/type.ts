@@ -28,3 +28,10 @@ export type ResponseData = {
         }
     }
 }
+
+export interface inputTimer {
+    inputTime?: number;
+    messageTimer?: string;
+    activeTimer?: boolean;
+    functionTimer?():void ;
+}

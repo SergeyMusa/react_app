@@ -8,21 +8,12 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { store } from "./StoreTimer";
 import Box from "@mui/material/Box";
-import {ResponseData} from "./type";
-import {number} from "prop-types";
-// import { makeObservable, observable, computed, action } from "mobx"
+import {inputTimer} from "./type";
+import {observer} from "mobx-react";
 
 //??? как автозапуск сделать
-export interface inputTimer {
-    inputTime?: number;
-    messageTimer?: string;
-    activeTimer?: boolean;
-    functionTimer?():void ;
-}
-
+@observer
 export class Timer4 extends React.Component<inputTimer, any> {
-    // state: any
-
     constructor(props?: inputTimer) {
         super(props);
         this.state = {
@@ -39,12 +30,23 @@ export class Timer4 extends React.Component<inputTimer, any> {
         // this.startTimer(); //!!! <<<<<<<<<<<<<<<<<<<<<<<<<<<<
     }
 
-    componentDidMount() { // ??? ERROR dont work autostart
+    componentDidMount1 = () => { // ??? ERROR dont work autostart
         // Timer4.startTimer();
         if (store.timerActive) {
-            this.startTimer();
+            // startTimer = () => {
+                // ??? maybe delete str down > clearInterval
+                console.log('startTimer', ' counter4 = ', this.state.counter4)
+                clearInterval(this.state?.timer);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
+                let timer = setInterval(this.callbackTimeout, 1000);
+                // return () => clearInterval(timer);
+                return this.setState({ timer: timer });
+            // }
         }
     }
+    // componentWillUnmount () {
+    //     clearInterval(this.state.timer);
+    // }
+
 
     callbackTimeout = () => {
         // this.counterTemp = this.state.counterTemp - 1;  // Отнимает 1 секунду от оставшегося времени
@@ -61,20 +63,14 @@ export class Timer4 extends React.Component<inputTimer, any> {
         }
     }
 
-    startTimer = () => {
-        // ??? maybe delete str down > clearInterval
-        // console.log('startTimer', ' counter4 = ', this.state.counter4)
-        clearInterval(this.state?.timer);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
-        let timer = setInterval(this.callbackTimeout, 1000);
-        // return () => clearInterval(timer);
-        return this.setState({ timer: timer });
-    }
+
 
     onClickStop = () => {
         store.timerPauseTime = 0;
         store.timerActive = false;
         this.setState({counter4: 0});
         clearInterval(this.state.timer);
+        // this.componentWillUnmount();
         // console.log('onClickStop')
     }
 
@@ -84,7 +80,7 @@ export class Timer4 extends React.Component<inputTimer, any> {
         // store.activeTimer = true;
         this.setState({counter4: store.timerBeginTime});
         // console.log('onClickStart', this.state.counter4);
-        return this.startTimer();
+        return this.componentDidMount1();
     }
     onClickPause = () => {
         store.timerPauseTime = this.state.counter4;
@@ -95,7 +91,7 @@ export class Timer4 extends React.Component<inputTimer, any> {
     onClickResume = () => {
         this.setState({counter4: store.timerPauseTime});
         // console.log('onClickResume')
-        return this.startTimer();
+        return this.componentDidMount1();
     }
     //
     checkSwitch = event => {

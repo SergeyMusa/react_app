@@ -27,7 +27,9 @@ export class Cards extends React.Component<any, any> {
         FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
     componentDidMount() {
+        console.log('timerActive',store.timerActive);
         store.timerActive = true;
+        console.log('timerActive',store.timerActive);
         store.timerBeginTime = 15;
         // store.timerMakeFun = console.log('timerActive');
 

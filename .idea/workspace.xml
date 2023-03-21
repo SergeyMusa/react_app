@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip remake timer props&amp;store">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip fix err timer4. dont work autostart timer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,14 +160,7 @@
       <workItem from="1678866079743" duration="405000" />
       <workItem from="1678866707742" duration="48424000" />
       <workItem from="1679035010337" duration="28451000" />
-      <workItem from="1679301673134" duration="19019000" />
-    </task>
-    <task id="LOCAL-00005" summary="Lesson-2-end">
-      <created>1677503510917</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1677503510917</updated>
+      <workItem from="1679301673134" duration="26716000" />
     </task>
     <task id="LOCAL-00006" summary="Lesson-4-destructurisation">
       <created>1677504850462</created>
@@ -506,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679313937950</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="wip fix err timer4. dont work autostart timer">
+      <created>1679397000565</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1679397000565</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +527,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="step_#3-timer = add second" />
     <MESSAGE value="step_#3-timer = ui ok" />
     <MESSAGE value="step_#3-timer = crash Table? not errors" />
     <MESSAGE value="step_#3-timer-ok_almost)" />
@@ -553,6 +551,7 @@
     <MESSAGE value="step4-remake Modal=ok+ осталось дату" />
     <MESSAGE value="wip add props to timer" />
     <MESSAGE value="wip remake timer props&amp;store" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip remake timer props&amp;store" />
+    <MESSAGE value="wip fix err timer4. dont work autostart timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip fix err timer4. dont work autostart timer" />
   </component>
 </project>

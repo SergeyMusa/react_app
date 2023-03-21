@@ -8,7 +8,7 @@ export class Timers extends React.Component {
 
     componentDidMount() {
        // Timer4.startTimer();
-        store.timerActive = true;
+       //  store.timerActive = true;
     }
 
     public render() {

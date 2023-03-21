@@ -3,10 +3,20 @@ import React from "react";
 import {AppBar, Toolbar, Typography} from "@mui/material";
 import {store} from "../store/StoreTimer";
 import {Timer4} from "../store/Timer4";
+import {CardsListItem} from "./Cards/CardsListItem";
+
 
 export class Header extends React.Component {
-    public render () {
 
+    isDrawTimer = () => {
+        if (store.timerActive) {
+            return (
+                <Timer4 />
+            )
+        }
+    }
+
+    public render () {
         return (
             <div className={'header'} >
                <AppBar position={'static'}>
@@ -19,7 +29,8 @@ export class Header extends React.Component {
                        >
                            MuSa_App
                        </Typography>
-                        {(store.timerActive) ? <Timer4  inputTime={45} messageTimer={'Page_Timers'} activeTimer={true} /> : ''}
+                        {this.isDrawTimer()}
+                        {/*{store.timerActive && <Timer4 />}*/}
                     </Toolbar>
                </AppBar>
              </div>
