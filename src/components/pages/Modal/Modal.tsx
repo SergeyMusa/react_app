@@ -8,8 +8,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import {observer} from "mobx-react";
 import {CardsListItemFull} from "../Cards/CardsListItemFull";
-import StoreCoins from "../../store/StoreCoins";
-import {computed, toJS} from 'mobx'
+// import {computed, toJS} from 'mobx'
+import {string} from "prop-types";
+import {storeCoins} from "../../store/StoreCoins";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -62,26 +63,32 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 @observer
 export class Modal extends React.Component<ModalProps> {
+  state = {
+    id: string,
+    modalData: {},
+    modalTitle: string,
+  }
   // @computed private get dataData(){
   //   return StoreCoins.ModalData
   // }
 
   componentDidMount() { // ??? узнать а закончился ли жизненый цикл Cards  и иожно ли вкадывать циклы
-    const { modalId, ModalData  } = StoreCoins;
+    const { modalId, ModalData  } = storeCoins;
 
     // console.log('-ModalData-',  ModalData );
-    const itemData = ModalData.findIndex(ModalData => ModalData.CoinInfo.Id == modalId);
-    StoreCoins.modalItem = ModalData[ itemData ];
-    console.log( 'modalItem___', StoreCoins.modalItem );
+    const itemData = ModalData.findIndex(ModalData => ModalData.CoinInfo.Id === modalId);
+    storeCoins.modalItem = ModalData[ itemData ]; // !!! а надо ли туда?
+    console.log( 'modalItem___', storeCoins.modalItem );
 
-
-
+    this.setState({id: modalId})
+    this.setState({modalData: ModalData[ itemData ]})
+    this.setState({modalTitle: ModalData[ itemData ].CoinInfo.FullName})
   }
 
     render() {
-        const { modalTitle, modalMessage, isOpen, onClosed, id  } = this.props;
-
-        console.log('isOpen___', isOpen);
+        const { isOpen, onClosed, id } = this.props; //, id, modalTitle, modalMessage
+        const { modalData, modalTitle } = this.state; //id,
+        console.log('modalTitle', modalTitle);
 
 
         return (
@@ -92,12 +99,12 @@ export class Modal extends React.Component<ModalProps> {
                     open={isOpen}
                 >
                     <BootstrapDialogTitle id="customized-dialog-title" onClose={onClosed}>
-                        {modalTitle}
+                        {modalTitle} : {id}
                     </BootstrapDialogTitle>
                     <DialogContent dividers>
                         <Typography gutterBottom>
-                            {modalMessage} : {id}
-                            {/*<CardsListItemFull key={id} {...modalObj} />*/}
+                            {/*{modalMessage} */}
+                            <CardsListItemFull key={id} {...modalData} />
                         {/*  ??? __________________________________________  */}
                         </Typography>
                     </DialogContent>

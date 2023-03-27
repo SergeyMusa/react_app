@@ -1,7 +1,4 @@
-import { makeAutoObservable } from "mobx"
-import {number} from "prop-types";
-// import React  from "react";
-// import {observer} from "mobx-react";
+//import { makeAutoObservable } from "mobx"
 
  // @observer
  export class Store {
@@ -9,10 +6,9 @@ import {number} from "prop-types";
     timeUpdate = 15
      timerFunction = (() => {console.log('timerFunction')})
 
-
-    constructor() {
+    // constructor() {
         // makeAutoObservable(this)
-    }
+    // }
 
     // !!! start timer !!!
 

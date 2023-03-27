@@ -1,7 +1,7 @@
-import { observable, action, makeObservable} from "mobx"
+// import { observable, action, makeObservable} from "mobx"
 // import React from "react";
 
-class StoreCoins {
+export class StoreCoins {
     ModalData = []
     // CoinsState = true
     modalId = 0
@@ -24,5 +24,5 @@ class StoreCoins {
 
 }
 
-export default new StoreCoins();
-
+// export default new StoreCoins();
+export const storeCoins = new StoreCoins();

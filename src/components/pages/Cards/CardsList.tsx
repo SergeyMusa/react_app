@@ -5,7 +5,8 @@ import {Grid} from "@mui/material";
 import {Modal} from "../Modal/Modal";
 import {Toggle} from "../../store/Toggle";
 import {observer} from "mobx-react";
-import StoreCoins from "../../store/StoreCoins";
+import {storeCoins} from "../../store/StoreCoins";
+import {string} from "prop-types";
 
 @observer
 export class CardsList extends React.Component<any, any> {
@@ -13,6 +14,7 @@ export class CardsList extends React.Component<any, any> {
         super(props);
         this.state = {
             toggle: new Toggle(false),
+            modalMessage: string,
         }
     }
 
@@ -32,17 +34,12 @@ export class CardsList extends React.Component<any, any> {
     }
 
     modalOpen = (id: any) => {
-        // console.log('event', id);
-        // console.log('props.data', this.props.data);
-            // this.setState({modalId: id})
-        StoreCoins.modalId = id;
-        StoreCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));
-
-        // console.log('eventId', StoreCoins.modalId);
-        // console.log('CoinsTemp', StoreCoins.CoinsTemp);
-
-        // !!! find
+        storeCoins.modalId = id;
+        storeCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));
         this.state.toggle.open();
+
+        // const modalMessage = StoreCoins.ModalData.CoinInfo.FullName ;
+        //   this.setState({modalMessage: modalMessage}) ;
     }
 
     render() {
@@ -57,22 +54,17 @@ export class CardsList extends React.Component<any, any> {
                 >
                     {this.elements()}
                 </Grid>
-                    {/*{this.elementsFull()}*/}
                 <Modal
                     modalTitle={'modalTitle'}
-                    modalMessage={'modalMessage'}
+                    // modalMessage={'this.state.modalMessage'}
                     modalTimer={15}
                     isOpen={this.state.toggle.isOpen}
                     onClosed={this.state.toggle.close}
-                    key={StoreCoins.modalId}
-                    id={StoreCoins.modalId}
+                    key={storeCoins.modalId}
+                    id={storeCoins.modalId}
                     // modalObj={ StoreCoins.CoinsData }
                 />
-                    {/*<CardsListItemFull />*/}
-                    {/*  !!! >>>>>>>>>>>>>>>>>>>>  */}
-                {/*</Modal>*/}
-
-            </>
+             </>
         )
     }
 }

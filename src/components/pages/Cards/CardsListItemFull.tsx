@@ -26,7 +26,7 @@ export class CardsListItemFull extends React.Component<any, any> {
 
         return (
             <Grid item xs>
-                <h3>{this.state.time}</h3>
+                {/*<h3>{this.state.time}</h3>*/}
 
                 <div className='EmployersList' style={{margin: 'auto'}}>
                     <Card sx={{maxWidth: 345}}>
@@ -54,8 +54,12 @@ export class CardsListItemFull extends React.Component<any, any> {
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
                                 2 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}
+
                                 <AttachMoney fontSize="small" sx={{color: green[500]}}/>
+
                             </Typography>
+                            <hr />
+                            NetHashesPerSecond - {CoinInfo.NetHashesPerSecond}
                         </CardContent>
                     </Card>
                 </div>
