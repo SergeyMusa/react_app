@@ -62,24 +62,19 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 @observer
 export class Modal extends React.Component<ModalProps> {
-  @computed private get dataData(){
-    return StoreCoins.CoinsData
-  }
+  // @computed private get dataData(){
+  //   return StoreCoins.ModalData
+  // }
 
   componentDidMount() { // ??? узнать а закончился ли жизненый цикл Cards  и иожно ли вкадывать циклы
-    const { modalId, CoinsData  } = StoreCoins;
+    const { modalId, ModalData  } = StoreCoins;
 
-    // alert(CoinsData.findIndex(CoinsData => CoinsData. .CoinInfo.Id == modalId)); // 0
+    // console.log('-ModalData-',  ModalData );
+    const itemData = ModalData.findIndex(ModalData => ModalData.CoinInfo.Id == modalId);
+    StoreCoins.modalItem = ModalData[ itemData ];
+    console.log( 'modalItem___', StoreCoins.modalItem );
 
-    // const dataData = toJS(CoinsData);
-    console.log('-CoinsData-',  this.dataData );
-    const itemData = this.dataData.findIndex(dataData => dataData.CoinInfo.Id == modalId);
-    // const itemData = dataData.findIndex(dataData => dataData.CoinInfo.Id == modalId);
 
-    console.log('itemData', itemData, this.dataData[ 1 ]);
-    // const modalObj = StoreCoins.CoinsData;
-    console.log('modalId___', modalId);
-    // console.log('modalObj___', CoinsData);
 
   }
 

@@ -2,16 +2,16 @@ import { observable, action, makeObservable} from "mobx"
 // import React from "react";
 
 class StoreCoins {
-    CoinsData = [1,2,3]
+    ModalData = []
     // CoinsState = true
     modalId = 0
-    modalObj = []
+    modalItem = {}
     constructor() {
-        makeObservable(this)
+        // makeObservable(this)
         this.state = {
-            modalId: observable,
-            // CoinsState: observable,
-            show: action,
+            // modalId: observable,
+            // // CoinsState: observable,
+            // show: action,
             //
         }
     }
@@ -19,7 +19,7 @@ class StoreCoins {
 // action
     show = () => {
         // ++this.timeUpdate;
-        console.log('CoinsData', this.CoinsData);
+        console.log('ModalData', this.ModalData);
     }
 
 }

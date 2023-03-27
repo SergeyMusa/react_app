@@ -36,7 +36,7 @@ export class CardsList extends React.Component<any, any> {
         // console.log('props.data', this.props.data);
             // this.setState({modalId: id})
         StoreCoins.modalId = id;
-        StoreCoins.CoinsData = JSON.parse(JSON.stringify(this.props.data));
+        StoreCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));
 
         // console.log('eventId', StoreCoins.modalId);
         // console.log('CoinsTemp', StoreCoins.CoinsTemp);
