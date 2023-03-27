@@ -34,21 +34,21 @@ export class Cards extends React.Component<any, any> {
         // store.timerMakeFun = console.log('timerActive');
 
         this.loadData().then(() => { // ??? refactor late twix code
-            this.setState({ isLoading: false }) ; // !!! DONT WORK
-            // this.state.isLoading = false ;
-        } );    }
-    async loadData () {
+            this.setState({ isLoading: false }) ; // !!! WORK?  // this.state.isLoading = false ;
+            // console.log('!!!');
+            // console.log(this.dataData[ this.dataData.findIndex(dataData => dataData.CoinInfo.Id == "5031") ]); // index=del(+1) , nativ +1
+            // console.log( this.dataData[3] );
+
+        } );
+    }
+
+    async loadData () { // ??? можно ли await в componentDidMount
         this.dataData = await new PostData().doFetchData(this.state.FetchUrl) ;
         //
         // !!! add timer load
     }
 
     public render() {
-        // const [ modalActive ] = useState(true); //, setModalActive
-        // const {modalActive, setModalActive} = this.state; //, setModalActive
-         // [isLoading] = this.state; //, setModalActive
-        // ??? HOW up work
-
         return (
             <div className="cards">
                 <h3>Cards</h3>
@@ -60,8 +60,7 @@ export class Cards extends React.Component<any, any> {
                         ? <Loader/>
                         : <CardsList data={this.dataData}/>
                 }
-                            </div>
+            </div>
         )
     }
-
 }

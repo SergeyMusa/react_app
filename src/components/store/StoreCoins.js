@@ -1,23 +1,25 @@
-import { observable, action, makeAutoObservable} from "mobx"
+import { observable, action, makeObservable} from "mobx"
 // import React from "react";
 
 class StoreCoins {
-    CoinsTemp = [1,2,3]
+    CoinsData = [1,2,3]
     // CoinsState = true
-
+    modalId = 0
+    modalObj = []
     constructor() {
-        makeAutoObservable(this)
+        makeObservable(this)
         this.state = {
-            CoinsTemp: observable,
-            CoinsState: observable,
+            modalId: observable,
+            // CoinsState: observable,
             show: action,
+            //
         }
     }
 
 // action
     show = () => {
         // ++this.timeUpdate;
-        console.log('CoinsTemp', this.CoinsTemp);
+        console.log('CoinsData', this.CoinsData);
     }
 
 }

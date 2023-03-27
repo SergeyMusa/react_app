@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import {styled} from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -8,6 +8,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import {observer} from "mobx-react";
 import {CardsListItemFull} from "../Cards/CardsListItemFull";
+import StoreCoins from "../../store/StoreCoins";
+import {computed, toJS} from 'mobx'
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -28,7 +30,7 @@ export interface ModalProps {
     modalTitle?: string;
     modalMessage?: any;
     modalTimer?: number;
-    modalObj?: {};
+    // modalObj?: [];
     isOpen: boolean;
     onClosed:  () => void;
     id?: any,
@@ -37,7 +39,6 @@ export interface ModalProps {
 
 function BootstrapDialogTitle(props: DialogTitleProps) {
     const { children, onClose, ...other } = props;
-
     return (
         <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
             {children}
@@ -61,43 +62,50 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 @observer
 export class Modal extends React.Component<ModalProps> {
-    render() {
-        // const [open, setOpen] = React.useState(false);
-        const { modalTitle, modalMessage, modalObj, isOpen, onClosed, id  } = this.props;
+  @computed private get dataData(){
+    return StoreCoins.CoinsData
+  }
 
-        // const handleClickOpen = function () {
-        //     setOpen(true);
-        // };
-        // const handleClose = () => {
-        //     setOpen(false);
-        // };
+  componentDidMount() { // ??? узнать а закончился ли жизненый цикл Cards  и иожно ли вкадывать циклы
+    const { modalId, CoinsData  } = StoreCoins;
+
+    // alert(CoinsData.findIndex(CoinsData => CoinsData. .CoinInfo.Id == modalId)); // 0
+
+    // const dataData = toJS(CoinsData);
+    console.log('-CoinsData-',  this.dataData );
+    const itemData = this.dataData.findIndex(dataData => dataData.CoinInfo.Id == modalId);
+    // const itemData = dataData.findIndex(dataData => dataData.CoinInfo.Id == modalId);
+
+    console.log('itemData', itemData, this.dataData[ 1 ]);
+    // const modalObj = StoreCoins.CoinsData;
+    console.log('modalId___', modalId);
+    // console.log('modalObj___', CoinsData);
+
+  }
+
+    render() {
+        const { modalTitle, modalMessage, isOpen, onClosed, id  } = this.props;
+
         console.log('isOpen___', isOpen);
+
 
         return (
             <div>
-                {/*<Button variant="outlined" onClick={handleClickOpen}>*/}
-                {/*    Open dialog*/}
-                {/*</Button>*/}
                 <BootstrapDialog
                     onClose={onClosed}
                     aria-labelledby="customized-dialog-title"
                     open={isOpen}
                 >
                     <BootstrapDialogTitle id="customized-dialog-title" onClose={onClosed}>
-                        <h3>{modalTitle}</h3>
+                        {modalTitle}
                     </BootstrapDialogTitle>
                     <DialogContent dividers>
                         <Typography gutterBottom>
-                            {modalMessage}
-                            <CardsListItemFull key={id} {...modalObj} />
+                            {modalMessage} : {id}
+                            {/*<CardsListItemFull key={id} {...modalObj} />*/}
                         {/*  ??? __________________________________________  */}
                         </Typography>
                     </DialogContent>
-                    {/*<DialogActions>*/}
-                    {/*    <Button autoFocus onClick={handleClose}>*/}
-                    {/*        Save changes*/}
-                    {/*    </Button>*/}
-                    {/*</DialogActions>*/}
                 </BootstrapDialog>
             </div>
         );
