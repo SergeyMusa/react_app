@@ -1,7 +1,7 @@
 import React from "react";
 // import {AccessTime} from "@mui/icons-material";
 import {AppBar, Toolbar, Typography} from "@mui/material";
-import {store} from "../store/StoreTimer";
+import {storeTimer} from "../store/StoreTimer";
 import {Timer4} from "../store/Timer4";
 import {observer} from "mobx-react";
 // import {CardsListItem} from "./Cards/CardsListItem";
@@ -29,7 +29,7 @@ export class Header extends React.Component {
                            MuSa_App
                        </Typography>
                         {/*{this.isDrawTimer()}*/}
-                        {store.timerVisible && <Timer4 />}
+                        {storeTimer.timerVisible && <Timer4 />}
                     </Toolbar>
                </AppBar>
              </div>

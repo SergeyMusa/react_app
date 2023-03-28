@@ -33,8 +33,9 @@ export interface ModalProps {
     modalTimer?: number;
     // modalObj?: [];
     isOpen: boolean;
-    onClosed:  () => void;
-    id?: any,
+    onClosed: () => void;
+    id?: any;
+    // functionTimer: () => void;
 }
 
 

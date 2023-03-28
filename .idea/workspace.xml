@@ -4,21 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="fix bugs timer">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip rename store to storeTimer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tab_copy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Table2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Table2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/TimerSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/-TimerSlider.jsx-" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/TimerSlider2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/-TimerSlider2.tsx-" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/_TestStore.tsx_" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,13 +171,6 @@
       <workItem from="1679903596738" duration="597000" />
       <workItem from="1679904217171" duration="19000" />
       <workItem from="1679904254365" duration="22780000" />
-    </task>
-    <task id="LOCAL-00012" summary="add_#2+ = api, work in network">
-      <created>1677746985796</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1677746985796</updated>
     </task>
     <task id="LOCAL-00013" summary="return all back">
       <created>1677936749149</created>
@@ -516,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679998232455</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="wip">
+      <created>1680000670245</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1680000670245</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +537,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="remake Timer4 - from fun to class" />
     <MESSAGE value="wip dont work" />
     <MESSAGE value="made table - style=ok" />
     <MESSAGE value="wip modify timer3" />
@@ -557,12 +555,13 @@
     <MESSAGE value="wip add props to timer" />
     <MESSAGE value="wip remake timer props&amp;store" />
     <MESSAGE value="wip fix err timer4. dont work autostart timer" />
-    <MESSAGE value="wip" />
     <MESSAGE value="wip mobx Modal" />
     <MESSAGE value="wip Modal, Item = ok" />
     <MESSAGE value="remade Tables" />
     <MESSAGE value="fix bugs ui modal" />
     <MESSAGE value="fix bugs timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs timer" />
+    <MESSAGE value="wip" />
+    <MESSAGE value="wip rename store to storeTimer" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip rename store to storeTimer" />
   </component>
 </project>

@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 import {Timers} from "./components/pages/Timers";
 import {Cards} from "./components/pages/Cards/Cards";
-import Lesson2 from "./components/pages/Lesson";
+// import Lesson2 from "./components/pages/Lesson";
 import {Home} from "./components/pages/Home";
 import './styles/main.scss'
 import {Header} from "./components/pages/Header";
@@ -28,12 +28,12 @@ function App() {
                 <header className="App-header">
                     <h1>In God We Trust</h1>
                     <div className="poke">
-                        <Link id="one" to="/Home">Home</Link>
+                        <Link id="one" to="/Home">нe_Home</Link>
                         <Link id="one" to="/">Cards</Link>
                         <Link id="one" to="/Tables">Tables</Link>
 
                         <Link id="one" to="/Timers">Timers</Link>
-                        <Link id="one" to="/Lesson">Lesson</Link>
+                        {/*<Link id="one" to="/Lesson">Lesson</Link>*/}
                     </div>
                 </header>
                 <div className="App-top">
@@ -42,7 +42,7 @@ function App() {
                         <Route path="/Home" element={<Home/>}/>
                         <Route path="/" element={<Cards/>}/>
                         <Route path="/Tables" element={<Tables/>}/>
-                        <Route path="/Lesson" element={<Lesson2/>}/>
+                        {/*<Route path="/Lesson" element={<Lesson2/>}/>*/}
                         <Route path="*" element={<Timers/>}/>
                         {/*<Route path="login" element={<LoginPage />}/>*/}
                     </Routes>

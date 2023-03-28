@@ -4,7 +4,7 @@ import Loader from "../../store/Loader/Loader";
 import {CardsList} from "./CardsList";
 import Search from "../../store/Search";
 import {PostData} from "../../store/PostData";
-import {store} from "../../store/StoreTimer";
+import {storeTimer} from "../../store/StoreTimer";
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
@@ -28,14 +28,15 @@ export class Cards extends React.Component<any, any> {
     }
     componentDidMount() {
         // console.log('timerActive',store.timerActive);
-        store.doStart();
-        store.timerBeginTime = 15;
+        storeTimer.doStart();
+        storeTimer.timerBeginTime = 15;
+        // store.timerMakeFun() = {() => {console.log('>>> timerActive_tst <<<')};
+            // storeTimer.functionTimer = {()  =>     {      console.log('>>> timerActive_tst <<<' )    }  }
+        storeTimer.timerMakeFun = () => {console.log('>>> timerActive_tst <<<')}
+
 
         this.loadData().then(() => { // ??? refactor late twix code
             this.setState({ isLoading: false }) ; // !!! WORK?  // this.state.isLoading = false ;
-            // console.log('!!!');
-            // console.log(this.dataData[ this.dataData.findIndex(dataData => dataData.CoinInfo.Id == "5031") ]); // index=del(+1) , nativ +1
-            // console.log( this.dataData[3] );
 
         } );
     }

@@ -25,9 +25,6 @@ export class CardsListItem extends React.Component<any, any> {
         }
     }
 
-    // changeTime = () => {
-    //     console.log('changeTime')
-    // }
 
     changeClassName = () => { //  ??? WTF---------------------
         console.log('newPrice', this.newPrice);

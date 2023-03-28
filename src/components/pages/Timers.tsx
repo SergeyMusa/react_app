@@ -1,19 +1,19 @@
 import React from "react";
-import Timer2 from "../store/Timer2";
+// import Timer2 from "../store/Timer2";
 import {Timer4} from "../store/Timer4";
-import {store} from "../store/StoreTimer";
-import {Timer3} from "../store/Timer3";
+import {storeTimer} from "../store/StoreTimer";
+// import {Timer3} from "../store/Timer3";
 
 export class Timers extends React.Component {
 
   componentDidMount() {
-    store.doStop();
+    storeTimer.doStop();
     // Timer4.startTimer();
-    //  store.timerActive = true;
+    //  storeTimer.timerActive = true;
   }
 
     public render() {
-        store.timerActive = true;
+        storeTimer.timerActive = true;
         return (
             <div>
                 <h3>Timers</h3>
@@ -21,11 +21,11 @@ export class Timers extends React.Component {
                 {/*<Timer1 timerProps={5000}/>*/}
                 <hr/>
                 <h3>-=2=-</h3>
-                <Timer2/>
+                {/*<Timer2/>*/}
                 <hr/>
                 <h3>-=3=-</h3>
                 <h4>on huks</h4>
-                <Timer3/>
+                {/*<Timer3/>*/}
                 <hr/>
                 <h3>-=4=-</h3>
                 <h4>on classes</h4>

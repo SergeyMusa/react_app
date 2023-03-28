@@ -3,7 +3,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import Button from "@mui/material/Button";
-import {store} from "../store/StoreTimer";
+import {storeTimer} from "../store/StoreTimer";
 
 const homeHeader = <h3>TEST-Element</h3>;
 
@@ -47,7 +47,7 @@ function handleOnClick () {
 export class Home extends React.Component {
 
   componentDidMount() {
-    store.doStop();
+    storeTimer.doStop();
   }
 
     public render () {
@@ -63,13 +63,3 @@ export class Home extends React.Component {
         )
     }
 }
-
-// export default Home;
-
-// function WhoIsWho ({name, surn}) { //(props) //props.name\/
-//     return (
-//     <div>
-//         <h1>my name is {name.fname} of the {surn}</h1>
-//     </div>
-//     )
-// }

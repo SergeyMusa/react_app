@@ -8,7 +8,7 @@ import Search from "../../store/Search";
 // import StoreCoins from "../../store/StoreCoins";
 import {PostData} from "../../store/PostData";
 import {propsDataCryptaFromPostData} from "../../store/type";
-import {store} from "../../store/StoreTimer";
+import {storeTimer} from "../../store/StoreTimer";
 // import login from "../../auth/login/login"; // ??? , FetchUrl
 
 export class Tables extends React.Component<propsDataCryptaFromPostData> {
@@ -17,15 +17,15 @@ export class Tables extends React.Component<propsDataCryptaFromPostData> {
         isLoading: true,
         // data: [],
         // dataCoinInfo: {},
-        // store: new StoreCoins(),
+        // storeTimer: new StoreCoins(),
         FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
     componentDidMount = () => {
-        // console.log('timerActive',store.timerActive);
-        store.timerActive = true;
-        // console.log('timerActive',store.timerActive);
-        store.timerBeginTime = 15;
-        // console.log('timerBeginTime',store.timerBeginTime);
+        // console.log('timerActive',storeTimer.timerActive);
+        storeTimer.timerActive = true;
+        // console.log('timerActive',storeTimer.timerActive);
+        storeTimer.timerBeginTime = 15;
+        // console.log('timerBeginTime',storeTimer.timerBeginTime);
 
         // setInterval(this.loadData, Store.timeUpdate); //30000
         //     console.log('timeUpdate', Store.timeUpdate);

@@ -6,7 +6,7 @@ export class StoreCoins {
     // CoinsState = true
     modalId = 0
     modalItem = {}
-    constructor() {
+    // constructor() {
         // makeObservable(this)
         // this.state = {
             // modalId: observable,
@@ -14,7 +14,7 @@ export class StoreCoins {
             // show: action,
             //
         // }
-    }
+    // }
 
 // action
     show = () => {
