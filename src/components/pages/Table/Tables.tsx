@@ -21,7 +21,11 @@ export class Tables extends React.Component<propsDataCryptaFromPostData> {
         FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
     componentDidMount = () => {
+        // console.log('timerActive',store.timerActive);
         store.timerActive = true;
+        // console.log('timerActive',store.timerActive);
+        store.timerBeginTime = 15;
+        // console.log('timerBeginTime',store.timerBeginTime);
 
         // setInterval(this.loadData, Store.timeUpdate); //30000
         //     console.log('timeUpdate', Store.timeUpdate);

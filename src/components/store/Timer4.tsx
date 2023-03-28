@@ -11,7 +11,6 @@ import Box from "@mui/material/Box";
 import {inputTimer} from "./type";
 import {observer} from "mobx-react";
 
-//??? как автозапуск сделать
 @observer
 export class Timer4 extends React.Component<inputTimer, any> {
     constructor(props?: inputTimer) {
@@ -26,37 +25,35 @@ export class Timer4 extends React.Component<inputTimer, any> {
                 activeTimer: true,
                 functionTimer: this.props?.functionTimer || store.timerMakeFun ,
             };
-        // makeAutoObservable(this) // !!! dont work super
-        // this.startTimer(); //!!! <<<<<<<<<<<<<<<<<<<<<<<<<<<<
     }
 
-    componentDidMount1 = () => { // ??? ERROR dont work autostart
-        // Timer4.startTimer();
+    componentDidMount = () => {
         if (store.timerActive) {
-            // startTimer = () => {
                 // ??? maybe delete str down > clearInterval
-                console.log('startTimer', ' counter4 = ', this.state.counter4)
+                // console.log('startTimer', ' counter4 = ', this.state.counter4)
                 clearInterval(this.state?.timer);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
                 let timer = setInterval(this.callbackTimeout, 1000);
                 // return () => clearInterval(timer);
                 return this.setState({ timer: timer });
-            // }
         }
     }
-    // componentWillUnmount () {
-    //     clearInterval(this.state.timer);
-    // }
+    componentWillUnmount () {
+      // store.timerActive = false;
+      // store.timerBeginTime = 0;
+      // clearInterval(this.state.timer);
+      console.log('stopTimer1', this.state.counter4)
+      console.log('stopTimer2', this.state.timer)
+    }
 
 
     callbackTimeout = () => {
-        // this.counterTemp = this.state.counterTemp - 1;  // Отнимает 1 секунду от оставшегося времени
-    console.log('---','this.state.timer ', this.state.timer, 'this.state.counter4 ', this.state.counter4,'this.state.isRepeat ', this.state.isRepeat)
+      // ??? возможно утечка памяти в this.state.timer
+    // console.log('---','this.state.timer ', this.state.timer, 'this.state.counter4 ', this.state.counter4,'this.state.isRepeat ', this.state.isRepeat)
         this.setState({counter4: (this.state.counter4 - 1)}); // *** IS FINISH
         if (store.timerActive && this.state.isRepeat && (this.state.counter4 === 0) ) {
             console.log(' 5 ', this.state.finishMessage);
-            // this.state.functionTimer ;
             clearInterval( this.state.timer);
-     store.timerShow();
+           store.timerShow();
         } else if  ( !this.state.isRepeat && (this.state.counter4 === 0) )
         {
             this.onClickStart() ;
@@ -80,7 +77,8 @@ export class Timer4 extends React.Component<inputTimer, any> {
         // store.activeTimer = true;
         this.setState({counter4: store.timerBeginTime});
         // console.log('onClickStart', this.state.counter4);
-        return this.componentDidMount1();
+        store.timerMakeFun();
+        return this.componentDidMount();
     }
     onClickPause = () => {
         store.timerPauseTime = this.state.counter4;
@@ -91,7 +89,7 @@ export class Timer4 extends React.Component<inputTimer, any> {
     onClickResume = () => {
         this.setState({counter4: store.timerPauseTime});
         // console.log('onClickResume')
-        return this.componentDidMount1();
+        return this.componentDidMount();
     }
     //
     checkSwitch = event => {

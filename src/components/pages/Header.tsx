@@ -3,15 +3,15 @@ import React from "react";
 import {AppBar, Toolbar, Typography} from "@mui/material";
 import {store} from "../store/StoreTimer";
 import {Timer4} from "../store/Timer4";
+import {observer} from "mobx-react";
 // import {CardsListItem} from "./Cards/CardsListItem";
 
+@observer
 export class Header extends React.Component {
 
     isDrawTimer = () => {
         if (store.timerActive) {
-            return (
-                <Timer4 />
-            )
+            return  <Timer4 />
         }
     }
 

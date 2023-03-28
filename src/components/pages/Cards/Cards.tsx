@@ -27,11 +27,10 @@ export class Cards extends React.Component<any, any> {
         FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
     componentDidMount() {
-        console.log('timerActive',store.timerActive);
+        // console.log('timerActive',store.timerActive);
         store.timerActive = true;
-        console.log('timerActive',store.timerActive);
         store.timerBeginTime = 15;
-        // store.timerMakeFun = console.log('timerActive');
+        // store.timerMakeFun = 15;
 
         this.loadData().then(() => { // ??? refactor late twix code
             this.setState({ isLoading: false }) ; // !!! WORK?  // this.state.isLoading = false ;

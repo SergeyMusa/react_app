@@ -3,6 +3,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import Button from "@mui/material/Button";
+import {store} from "../store/StoreTimer";
 
 const homeHeader = <h3>TEST-Element</h3>;
 
@@ -44,6 +45,13 @@ function handleOnClick () {
 
 // * work
 export class Home extends React.Component {
+
+  componentDidMount() {
+    store.timerActive = false;
+    store.timerBeginTime = 0;
+    // console.log('timerActive', store.timerActive);
+  }
+
     public render () {
         return (
             <div>

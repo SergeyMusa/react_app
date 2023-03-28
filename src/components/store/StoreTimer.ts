@@ -8,7 +8,7 @@ export class StoreTimer  {
     @observable timerBeginTime: number = 30
     @observable timerActive: boolean = false
     public timerMessage: string = "Time's up"
-    public timerMakeFun = () => {console.log('timerActive_tst')}
+    public timerMakeFun = () => {console.log('>>>>>>>>>>>>> timerActive_tst')}
     public timerShow = (() => {
         console.log(`timer4_timerBeginTime=${this.timerBeginTime}_timerPauseTime=${this.timerPauseTime}`)
     })
