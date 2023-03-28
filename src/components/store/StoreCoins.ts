@@ -3,9 +3,10 @@
 
 export class StoreCoins {
     ModalData = []
-    // CoinsState = true
     modalId = 0
     modalItem = {}
+    FetchUrl = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`
+
     // constructor() {
         // makeObservable(this)
         // this.state = {

@@ -7,7 +7,6 @@ import {Toggle} from "../../store/Toggle";
 import {observer} from "mobx-react";
 import {storeCoins} from "../../store/StoreCoins";
 import {string} from "prop-types";
-// import {storeTimer} from "../../store/StoreTimer";
 
 @observer
 export class CardsList extends React.Component<any, any> {
@@ -21,7 +20,6 @@ export class CardsList extends React.Component<any, any> {
 
 
   elements = () => {
-    // console.log('CardsList_one', this.props.data)
     return this.props.data?.map(item => {
       const {id = item.CoinInfo.Id, ...itemProps} = item;
 
@@ -31,18 +29,11 @@ export class CardsList extends React.Component<any, any> {
     })
   }
 
-  // onClickCoin = () => {
-  //     console.log("onClickCoin");
-  // }
-
   modalOpen = (id: any) => {
     storeCoins.modalId = id;
     console.log("MODALKA-0 id ", storeCoins.modalId)
     storeCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));
     this.state.toggle.open();
-
-    // const modalMessage = StoreCoins.ModalData.CoinInfo.FullName ;
-    //   this.setState({modalMessage: modalMessage}) ;
   }
 
   render() {
@@ -65,8 +56,6 @@ export class CardsList extends React.Component<any, any> {
           onClosed={this.state.toggle.close}
           key={storeCoins.modalId}
           id={storeCoins.modalId}
-          // modalObj={ StoreCoins.CoinsData }
-
         />
       </>
     )

@@ -33,9 +33,8 @@ export class Timer4 extends React.Component<inputTimer, any> {
       console.log('startTimer', ' counter4 = ', this.state.counter4)
 
       // ??? maybe delete str down > clearInterval
-      clearInterval(this.state?.timer);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
+      // clearInterval(this.state?.timer);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
       let timer = setInterval(this.callbackTimeout, 1000);
-      // return () => clearInterval(timer);
       return this.setState({timer: timer});
     }
   }
@@ -47,7 +46,6 @@ export class Timer4 extends React.Component<inputTimer, any> {
     console.log('stopTimer1', this.state.counter4)
     console.log('stopTimer2', this.state.timer)
   }
-
 
   callbackTimeout = () => {
     // ??? возможно утечка памяти в this.state.timer
@@ -72,19 +70,10 @@ export class Timer4 extends React.Component<inputTimer, any> {
   onClickStop = () => {
     storeTimer.clearPauseTime();
     storeTimer.timerActive = false;
-    // storeTimer.timerActive = false;
-    this.setState({counter4: 0});
-
-    console.log('this.state.timer', this.state.timer);
     clearInterval(this.state.timer);
-    console.log('this.state.timer', this.state.timer);
-
-    console.log('this.state.counter4', this.state.counter4);
     clearInterval(this.state.counter4);
-    console.log('this.state.counter4', this.state.counter4);
-
+    this.setState({counter4: 0});
     this.handleBadgeVisibility();
-    // this.componentWillUnmount();
   }
 
   onClickStart = () => {
@@ -100,17 +89,20 @@ export class Timer4 extends React.Component<inputTimer, any> {
       return this.componentDidMount();
     }
   }
+
   onClickPause = () => {
     storeTimer.timerPauseTime = this.state.counter4;
     clearInterval(this.state.timer);
     this.handleBadgeVisibility();
   }
+
   onClickResume = () => {
     this.setState({counter4: storeTimer.timerPauseTime});
     this.handleBadgeInVisibility();
     return this.componentDidMount();
   }
-//=================================================================
+
+  //=================================================================
   checkSwitch = event => {
     this.setState({isRepeat: !this.state.isRepeat});
   }
@@ -130,8 +122,6 @@ export class Timer4 extends React.Component<inputTimer, any> {
     this.handleBadgeVisibility();
   };
 
-
-
   render() {
     return (
       <div className="Timer4">
@@ -150,17 +140,12 @@ export class Timer4 extends React.Component<inputTimer, any> {
             badgeContent={storeTimer.timerBeginTime}
             color="error"
             invisible={this.state.invisible}
-            // onClick={this.handleBadgeVisibility}
           >
-
             <Badge badgeContent={this.state.counter4} showZero color="primary">
-              {/*<Badge badgeContent={time_up} color="primary">*/}
               <AccessTime color="action"/>
-
             </Badge>
           </Badge>
           <span>   </span>
-          {/*<span>[ {this.state.counter4} ]</span>*/}
           <Button
             aria-label="increase"
             onClick={this.onClickPlus}
@@ -180,7 +165,6 @@ export class Timer4 extends React.Component<inputTimer, any> {
                             label='repeat'
                             color={'inherit'}
           />
-          {/* label={this.state.checkerLabel} */}
           <ButtonGroup variant="contained" aria-label="outlined primary button group">
             <Button onClick={this.onClickStart}>Start</Button>
             <Button onClick={this.onClickStop}>Stop </Button>
