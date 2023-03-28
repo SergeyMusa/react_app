@@ -2,7 +2,7 @@ import React from 'react';
 // import {render} from "react-dom";
 // import  './Cards.css';
 
-export class Tab extends React.Component {
+export class Tabs extends React.Component {
 // export default Tab (props) {
 //     constructor(props) {
 //         super(props);

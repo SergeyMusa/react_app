@@ -78,17 +78,17 @@ export class Modal extends React.Component<ModalProps> {
     // console.log('-ModalData-',  ModalData );
     const itemData = ModalData.findIndex(ModalData => ModalData.CoinInfo.Id === modalId);
     storeCoins.modalItem = ModalData[ itemData ]; // !!! а надо ли туда?
-    console.log( 'modalItem___', storeCoins.modalItem );
+    // console.log( 'modalItem___', storeCoins.modalItem );
 
     this.setState({id: modalId})
     this.setState({modalData: ModalData[ itemData ]})
-    this.setState({modalTitle: ModalData[ itemData ].CoinInfo.FullName})
+    this.setState({modalTitle: ModalData[ itemData ]?.CoinInfo.FullName})
   }
 
     render() {
         const { isOpen, onClosed, id } = this.props; //, id, modalTitle, modalMessage
         const { modalData, modalTitle } = this.state; //id,
-        console.log('modalTitle', modalTitle);
+        // console.log('modalTitle', modalTitle);
 
 
         return (

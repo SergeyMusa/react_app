@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip Modal, Item = ok">
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Table/Tab_copy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tab.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +72,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Cards",
+    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Table",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -91,9 +89,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/pages/Table" />
       <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
       <recent name="$PROJECT_DIR$/src/components/pages/Modal" />
-      <recent name="$PROJECT_DIR$/src/components/pages/Table" />
       <recent name="$PROJECT_DIR$/src/components/store" />
       <recent name="$PROJECT_DIR$/src/components/pages" />
     </key>
