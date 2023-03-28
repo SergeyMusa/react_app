@@ -97,16 +97,17 @@ export class Modal extends React.Component<ModalProps> {
                     onClose={onClosed}
                     aria-labelledby="customized-dialog-title"
                     open={isOpen}
+
                 >
                     <BootstrapDialogTitle id="customized-dialog-title" onClose={onClosed}>
                         {modalTitle} : {id}
                     </BootstrapDialogTitle>
-                    <DialogContent dividers>
-                        <Typography gutterBottom>
+                    <DialogContent dividers sx={{ minHeight: 380}}>
+                        <Typography gutterBottom component="div">
                             {/*{modalMessage} */}
                             <CardsListItemFull key={id} {...modalData} />
-                        {/*  ??? __________________________________________  */}
                         </Typography>
+
                     </DialogContent>
                 </BootstrapDialog>
             </div>

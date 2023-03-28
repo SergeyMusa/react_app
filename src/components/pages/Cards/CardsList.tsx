@@ -20,7 +20,7 @@ export class CardsList extends React.Component<any, any> {
 
     elements = () => {
         // console.log('CardsList_one', this.props.data)
-        return this.props.data.map(item => {
+        return this.props.data?.map(item => {
             const {id = item.CoinInfo.Id, ...itemProps} = item;
 
             return (
@@ -29,12 +29,13 @@ export class CardsList extends React.Component<any, any> {
         })
     }
 
-    onClickCoin = () => {
-        console.log("onClickCoin");
-    }
+    // onClickCoin = () => {
+    //     console.log("onClickCoin");
+    // }
 
     modalOpen = (id: any) => {
         storeCoins.modalId = id;
+      console.log("MODALKA-0 id ", storeCoins.modalId)
         storeCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));
         this.state.toggle.open();
 
@@ -63,6 +64,7 @@ export class CardsList extends React.Component<any, any> {
                     key={storeCoins.modalId}
                     id={storeCoins.modalId}
                     // modalObj={ StoreCoins.CoinsData }
+
                 />
              </>
         )

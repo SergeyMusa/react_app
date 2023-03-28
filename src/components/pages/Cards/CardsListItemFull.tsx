@@ -25,7 +25,7 @@ export class CardsListItemFull extends React.Component<any, any> {
         const {CoinInfo, DISPLAY, RAW} = this.props
 
         return (
-            <Grid item xs>
+            <Grid item xs >
                 {/*<h3>{this.state.time}</h3>*/}
 
                 <div className='EmployersList' style={{margin: 'auto'}}>

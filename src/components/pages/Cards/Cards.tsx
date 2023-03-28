@@ -58,7 +58,7 @@ export class Cards extends React.Component<any, any> {
                 {
                     this.state.isLoading
                         ? <Loader/>
-                        : <CardsList data={this.dataData}/>
+                        : <CardsList data={this.dataData}  />
                 }
             </div>
         )

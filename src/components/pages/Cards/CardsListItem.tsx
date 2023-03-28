@@ -21,7 +21,7 @@ export class CardsListItem extends React.Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
-            time: 1,
+            // time: 1,
         }
     }
 
@@ -50,10 +50,11 @@ export class CardsListItem extends React.Component<any, any> {
         return (
             //     <img src={"https://www.cryptocompare.com/"+imageUrl} alt={cryName} width={50} height={50}/>
             <Grid item xs>
-                <h3>{this.state.time}</h3>
+                {/*<h3>{this.state.time}</h3>*/}
                 {/*<button onClick={this.changeClassName}> [+++] </button>*/}
                 <div className='EmployersList' style={{margin: 'auto'}}>
-                    <Card sx={{maxWidth: 345}} onClick={()=>this.props.press(CoinInfo.Id)}>
+                    {/*<Card sx={{maxWidth: 345, height: '100%', minHeight: 500 }} onClick={()=>this.props.press(CoinInfo.Id)}>*/}
+                    <Card  onClick={()=>this.props.press(CoinInfo.Id)}>
                         <CardHeader
                             avatar={
                                 <Avatar aria-label="recipe">
@@ -77,14 +78,12 @@ export class CardsListItem extends React.Component<any, any> {
                             alt={CoinInfo.Id}
 
                         />
-                        <CardContent>
-                            <Typography variant="body2" color="text.secondary">
-                                1 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}
+                        <CardContent >
+                            <Typography variant="body2" color="text.secondary" gutterBottom component="div">
+                                 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}
                                 <AttachMoney fontSize="small" sx={{color: green[500]}}/>
                             </Typography>
                         </CardContent>
-
-
 
                     </Card>
                 </div>
