@@ -11,6 +11,7 @@ import {CardsListItemFull} from "../Cards/CardsListItemFull";
 // import {computed, toJS} from 'mobx'
 import {string} from "prop-types";
 import {storeCoins} from "../../store/StoreCoins";
+import {storeTimer} from "../../store/StoreTimer";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -85,6 +86,7 @@ export class Modal extends React.Component<ModalProps> {
     this.setState({modalData: ModalData[ itemData ]})
     this.setState({modalTitle: ModalData[ itemData ]?.CoinInfo.FullName})
   }
+
 
     render() {
         const { isOpen, onClosed, id } = this.props; //, id, modalTitle, modalMessage

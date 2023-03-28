@@ -103,7 +103,7 @@ export class Timer4 extends React.Component<inputTimer, any> {
   }
 
   //=================================================================
-  checkSwitch = event => {
+  checkSwitch = () => { //event
     this.setState({isRepeat: !this.state.isRepeat});
   }
 
