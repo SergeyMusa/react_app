@@ -64,7 +64,7 @@ export class Timer4 extends React.Component<inputTimer, any> {
 
     onClickStop = () => {
         store.timerPauseTime = 0;
-        store.timerActive = false;
+        // store.timerActive = false;
         this.setState({counter4: 0});
         clearInterval(this.state.timer);
         // this.componentWillUnmount();
@@ -72,7 +72,7 @@ export class Timer4 extends React.Component<inputTimer, any> {
     }
 
     onClickStart = () => {
-        console.clear();
+        // console.clear();
         clearInterval(this.state.timer);
         // store.activeTimer = true;
         this.setState({counter4: store.timerBeginTime});

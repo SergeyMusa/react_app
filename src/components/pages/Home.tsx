@@ -47,9 +47,7 @@ function handleOnClick () {
 export class Home extends React.Component {
 
   componentDidMount() {
-    store.timerActive = false;
-    store.timerBeginTime = 0;
-    // console.log('timerActive', store.timerActive);
+    store.doStop();
   }
 
     public render () {

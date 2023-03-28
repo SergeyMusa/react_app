@@ -28,9 +28,8 @@ export class Cards extends React.Component<any, any> {
     }
     componentDidMount() {
         // console.log('timerActive',store.timerActive);
-        store.timerActive = true;
+        store.doStart();
         store.timerBeginTime = 15;
-        // store.timerMakeFun = 15;
 
         this.loadData().then(() => { // ??? refactor late twix code
             this.setState({ isLoading: false }) ; // !!! WORK?  // this.state.isLoading = false ;

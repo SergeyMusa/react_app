@@ -6,10 +6,11 @@ import {Timer3} from "../store/Timer3";
 
 export class Timers extends React.Component {
 
-    componentDidMount() {
-       // Timer4.startTimer();
-       //  store.timerActive = true;
-    }
+  componentDidMount() {
+    store.doStop();
+    // Timer4.startTimer();
+    //  store.timerActive = true;
+  }
 
     public render() {
         store.timerActive = true;

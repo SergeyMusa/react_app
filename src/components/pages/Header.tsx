@@ -9,11 +9,11 @@ import {observer} from "mobx-react";
 @observer
 export class Header extends React.Component {
 
-    isDrawTimer = () => {
-        if (store.timerActive) {
-            return  <Timer4 />
-        }
-    }
+    // isDrawTimer = () => {
+    //     if (store.timerVisible) {
+    //         return  <Timer4 />
+    //     }
+    // }
 
     public render () {
         return (
@@ -28,8 +28,8 @@ export class Header extends React.Component {
                        >
                            MuSa_App
                        </Typography>
-                        {this.isDrawTimer()}
-                        {/*{store.timerActive && <Timer4 />}*/}
+                        {/*{this.isDrawTimer()}*/}
+                        {store.timerVisible && <Timer4 />}
                     </Toolbar>
                </AppBar>
              </div>

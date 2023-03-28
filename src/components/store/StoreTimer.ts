@@ -7,6 +7,7 @@ export class StoreTimer  {
     @observable timerPauseTime: number = 1
     @observable timerBeginTime: number = 30
     @observable timerActive: boolean = false
+    @observable timerVisible: boolean = false
     public timerMessage: string = "Time's up"
     public timerMakeFun = () => {console.log('>>>>>>>>>>>>> timerActive_tst')}
     public timerShow = (() => {
@@ -19,11 +20,22 @@ export class StoreTimer  {
     }
 
 // action
+    doStart = () => {
+        this.timerActive = true;
+        this.timerVisible = true;
+    }
+    doStop = () => {
+        this.timerActive = false;
+        this.timerVisible = false;
+        this.timerBeginTime = 0;
+    }
     increment = () => {
         this.timerBeginTime = this.timerBeginTime < 99 ? this.timerBeginTime + 1 : 99;
+        console.log('increment', this.timerBeginTime);
     }
     decrement = () => {
         this.timerBeginTime = this.timerBeginTime > 0 ? this.timerBeginTime - 1 : 0;
+        console.log('decrement', this.timerBeginTime);
     }
 
     reset = () => {

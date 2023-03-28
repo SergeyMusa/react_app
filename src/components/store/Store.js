@@ -1,4 +1,5 @@
 //import { makeAutoObservable } from "mobx"
+// *** для таймер3 - можно удалить?
 
  // @observer
  export class Store {
