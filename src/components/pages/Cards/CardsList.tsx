@@ -1,12 +1,11 @@
-import {CardsListItem} from "./CardsListItem";
 import React from "react";
 import './CardsList.css';
 import {Grid} from "@mui/material";
-import {Modal} from "../Modal/Modal";
-import {Toggle} from "../../store/Toggle";
 import {observer} from "mobx-react";
 import {storeCoins} from "../../store/StoreCoins";
-import {string} from "prop-types";
+import {CardsListItem} from "./CardsListItem";
+import {Modal} from "../Modal/Modal";
+import {Toggle} from "../../store/Toggle";
 
 @observer
 export class CardsList extends React.Component<any, any> {
@@ -14,10 +13,9 @@ export class CardsList extends React.Component<any, any> {
     super(props);
     this.state = {
       toggle: new Toggle(false),
-      modalMessage: string,
+      modalMessage: '',
     }
   }
-
 
   elements = () => {
     return this.props.data?.map(item => {
@@ -31,7 +29,7 @@ export class CardsList extends React.Component<any, any> {
 
   modalOpen = (id: any) => {
     storeCoins.modalId = id;
-    console.log("MODALKA-0 id ", storeCoins.modalId)
+    // console.log("MODALKA-0 id ", storeCoins.modalId)
     storeCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));
     this.state.toggle.open();
   }

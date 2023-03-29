@@ -19,25 +19,23 @@ export class Timer4 extends React.Component<inputTimer, any> {
     this.state = {
       finishMessage: this.props?.messageTimer || storeTimer.timerMessage,
       counter4: this.props?.inputTime || storeTimer.timerBeginTime,
-      counterTemp: storeTimer.timerPauseTime, // ??? CHECK !!! поменять местами с counter4
+      // counterTemp: storeTimer.timerPauseTime,
       functionTimer: this.props?.functionTimer || storeTimer.timerMakeFun,
       invisibleBadge: true,
-      // isRepeat: storeTimer.timerRepeat,
     };
   }
 
   componentDidMount() {
-    console.log('Timer_componentDidMount');
+    // console.log('Timer_componentDidMount');
     this.timerStart();
+    this.onClickStart();
   }
 
   timerStart = () => {
     if (storeTimer.timerActive) {
-      console.log('timerStart', ' timerId = ', this?.timerId)
-
-      // ??? maybe delete str down > clearInterval
-      // clearInterval(this.timerId);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
+      // console.log('timerStart', ' timerId = ', this?.timerId)
       this.timerId = setInterval(this.callbackTimeout, 1000);
+
     }
   }
 
@@ -46,7 +44,7 @@ export class Timer4 extends React.Component<inputTimer, any> {
   }
 
   componentWillUnmount() {
-    console.log('Timer_componentWillUnmount');
+    // console.log('Timer_componentWillUnmount');
     storeTimer.doStop();
     clearInterval(this.timerId);
   }
@@ -57,24 +55,19 @@ export class Timer4 extends React.Component<inputTimer, any> {
 
     this.setState({counter4: (this.state.counter4 - 1)});
     if (storeTimer.timerActive && storeTimer.timerRepeat && (this.state.counter4 === 0)) {// *** IS FINISH
-      console.log(' 5 ', this.state.finishMessage);
-      // console.log(' storeTimer.timerRepeat 1', storeTimer.timerRepeat);
-      // clearInterval(this.timerId);
+      // console.log(' 5 ', this.state.finishMessage);
       this.onClickStart();
-
-      storeTimer.timerMakeFun(); // *** Finish действие при выполнении
+      storeTimer.timerMakeFun(); // *** Finish действие и стоп
       // storeTimer.timerShow();
 
     } else if (!storeTimer.timerRepeat && (this.state.counter4 === 0)) {
-      console.log(' 7 ', this.state.finishMessage);
-      // console.log(' storeTimer.timerRepeat 2', storeTimer.timerRepeat);
+      // console.log(' 7 ', this.state.finishMessage);
       clearInterval(this.timerId);
       this.onClickStop();
-      storeTimer.timerMakeFun(); // *** Temp действие при выполнении
+      storeTimer.timerMakeFun(); // *** Temp действие и продолжить
       // storeTimer.timerShow();
     }
   }
-
 
   onClickStop = () => {
     storeTimer.clearPauseTime();
@@ -84,24 +77,22 @@ export class Timer4 extends React.Component<inputTimer, any> {
     this.handleBadgeVisibility();
   }
 
-  private onClickStart = () => {
+  private onClickStart = () => {  // !!! <--------------Work here
     // console.clear();
-    console.log('onClickStart', this.timerId);
+    // console.log('onClickStart', this.timerId);
     storeTimer.clearPauseTime();
       // clearInterval(this.timerId);
     this.setState({counter4: storeTimer.timerBeginTime});
     if (this.state.counter4 > 0) {
       storeTimer.doStart();
-      //
       this.handleBadgeInVisibility();
       this.timerStart(); //return
     }
   }
 
   onClickPause = () => {
-    storeTimer.doPause(this.state.counter4); // !!! <--------------Work here
-    // this.setState({counter4: storeTimer.timerPauseTime});
-    this.setState({counterTemp: storeTimer.timerPauseTime}); // ??? is use ?
+    storeTimer.doPause(this.state.counter4);
+    // this.setState({counterTemp: storeTimer.timerPauseTime}); // ??? is use ?
     clearInterval(this.timerId);
     this.handleBadgeVisibility();
   }
@@ -137,7 +128,7 @@ export class Timer4 extends React.Component<inputTimer, any> {
     // console.log('Timer_render')
     return (
       <div className="Timer4">
-        <span>[ counterTemp:{this.state.counterTemp} ]</span><span>   </span>
+        {/*<span>[ counterTemp:{this.state.counterTemp} ]</span><span>   </span>*/}
         <span>[ counter4:{this.state.counter4} ]</span><span>   </span>
         <span>[ timerBeginTime:{storeTimer.timerBeginTime} ]</span><span>   </span>
         <span>[ timerPauseTime:{storeTimer.timerPauseTime} ]</span><span>   </span>

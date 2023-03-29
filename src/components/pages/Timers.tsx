@@ -9,6 +9,7 @@ export class Timers extends React.Component {
   componentDidMount() {
     // storeTimer.doStop();
     storeTimer.doInVisible();
+    storeTimer.setTimerBeginTime(9);
   }
 
     public render() {

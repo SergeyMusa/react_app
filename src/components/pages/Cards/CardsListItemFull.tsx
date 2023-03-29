@@ -14,24 +14,21 @@ import {storeTimer} from "../../store/StoreTimer";
 // const CardsListItemFull = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
 export class CardsListItemFull extends React.Component<any, any> {
   classNames = 'priceColor normalColor';
-  newPrice = this.props.RAW.USD.PRICE;
+  // newPrice = this.props.RAW.USD.PRICE;
 
   constructor(props) {
     super(props);
     this.state = {
-      time: 2,
+      // time: 2,
     }
   }
 
   componentDidMount() {
-    storeTimer.doStop(); //Pause(0); // .timerActive = false;
-
-    console.log('doPause', storeTimer.timerActive);
-    console.log('create_modal');
+    storeTimer.doStop();
+    console.log('create_modal__doPause', storeTimer.timerActive);
   }
 
   componentWillUnmount() {
-    // storeTimer.timerActive = true;
     storeTimer.doStart();
     console.log('close_modal');
   }
@@ -42,9 +39,9 @@ export class CardsListItemFull extends React.Component<any, any> {
     return (
       <Grid item xs>
         {/*<h3>{this.state.time}</h3>*/}
-
         <div className='EmployersList' style={{margin: 'auto'}}>
           <Card sx={{maxWidth: 345}}>
+
             <CardHeader
               avatar={
                 <Avatar aria-label="recipe">
@@ -58,24 +55,24 @@ export class CardsListItemFull extends React.Component<any, any> {
               title={"id: " + CoinInfo.Id}
               className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green
             />
+
             <CardMedia
               component="img"
               sx={{height: 170, width: 170, margin: 'auto'}}
               height='180'
               image={"https://www.cryptocompare.com/" + CoinInfo.ImageUrl}
               alt={CoinInfo.Id}
-
             />
+
             <CardContent>
-              <Typography variant="body2" color="text.secondary">
-                2 '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}
-
+              <Typography variant="body2" color="text.secondary" gutterBottom component="div">
+                '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}
                 <AttachMoney fontSize="small" sx={{color: green[500]}}/>
-
               </Typography>
               <hr/>
               NetHashesPerSecond - {CoinInfo.NetHashesPerSecond}
             </CardContent>
+
           </Card>
         </div>
       </Grid>

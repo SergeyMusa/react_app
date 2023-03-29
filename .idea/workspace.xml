@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - debug timer">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - timer=ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
     </list>
@@ -161,13 +168,6 @@
       <workItem from="1679903596738" duration="597000" />
       <workItem from="1679904217171" duration="19000" />
       <workItem from="1679904254365" duration="22780000" />
-    </task>
-    <task id="LOCAL-00017" summary="step_#2-api+ = wip">
-      <created>1678048322664</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1678048322664</updated>
     </task>
     <task id="LOCAL-00018" summary="step_#2-api+ = remake EmployersList">
       <created>1678088055019</created>
@@ -505,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680087220844</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="wip - timer=ok">
+      <created>1680090307138</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1680090307138</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +534,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="wip-tables=ok" />
     <MESSAGE value="remade Cards=ok took out-fetch load" />
     <MESSAGE value="wip clear proj" />
     <MESSAGE value="Timers = ok, only autostart &amp; +/- observ" />
@@ -552,6 +558,7 @@
     <MESSAGE value="timer=ok load data" />
     <MESSAGE value="wip - modal work  componentDidMount" />
     <MESSAGE value="wip - debug timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip - debug timer" />
+    <MESSAGE value="wip - timer=ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip - timer=ok" />
   </component>
 </project>

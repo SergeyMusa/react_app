@@ -21,13 +21,14 @@ import {inputTimer} from "../../store/type";
 
 export class Cards extends React.Component<any, any> {
     dataData: any[];
-
     state = {
         isLoading: true,
         modalActive: false,
         setModalActive: false,
         // FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
+        oldPrice: [],
     }
+
     componentDidMount() {
         console.log('Cards_componentDidMount');
 
@@ -37,7 +38,7 @@ export class Cards extends React.Component<any, any> {
         this.startTimer();
     }
     componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {
-        console.log('Cards_componentDidUpdate');
+        // console.log('Cards_componentDidUpdate');
     }
     componentWillUnmount() {
         console.log('Cards_componentWillUnmount');
@@ -62,7 +63,8 @@ export class Cards extends React.Component<any, any> {
         return (
             <div className="cards">
                 <h3>Cards</h3>
-                <button onClick={() => this.componentDidMount()}>[ LOAD ]</button>
+                {/*<button onClick={() => this.componentDidMount()}>[ LOAD ]</button>*/}
+                <button onClick={() => this.startTimer()}>[ LOAD ]</button>
                 <Search/>
                 {
                     this.state.isLoading

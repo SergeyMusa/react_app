@@ -4,16 +4,9 @@ import {AppBar, Toolbar, Typography} from "@mui/material";
 import {storeTimer} from "../store/StoreTimer";
 import {Timer4} from "../store/Timer4";
 import {observer} from "mobx-react";
-// import {CardsListItem} from "./Cards/CardsListItem";
 
 @observer
 export class Header extends React.Component {
-
-    // isDrawTimer = () => {
-    //     if (store.timerVisible) {
-    //         return  <Timer4 />
-    //     }
-    // }
 
     public render () {
         return (
@@ -28,7 +21,6 @@ export class Header extends React.Component {
                        >
                            MuSa_App
                        </Typography>
-                        {/*{this.isDrawTimer()}*/}
                         {storeTimer.timerVisible ? <Timer4 /> : null}
                     </Toolbar>
                </AppBar>
