@@ -7,13 +7,12 @@ import {storeTimer} from "../store/StoreTimer";
 export class Timers extends React.Component {
 
   componentDidMount() {
-    storeTimer.doStop();
-    // Timer4.startTimer();
-    //  storeTimer.timerActive = true;
+    // storeTimer.doStop();
+    storeTimer.doInVisible();
   }
 
     public render() {
-        storeTimer.timerActive = true;
+        // storeTimer.doStart();
         return (
             <div>
                 <h3>Timers</h3>

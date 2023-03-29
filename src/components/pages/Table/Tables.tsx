@@ -9,6 +9,7 @@ import Search from "../../store/Search";
 import {PostData} from "../../store/PostData";
 import {propsDataCryptaFromPostData} from "../../store/type";
 import {storeTimer} from "../../store/StoreTimer";
+import {storeCoins} from "../../store/StoreCoins";
 // import login from "../../auth/login/login"; // ??? , FetchUrl
 
 export class Tables extends React.Component<propsDataCryptaFromPostData> {
@@ -20,23 +21,26 @@ export class Tables extends React.Component<propsDataCryptaFromPostData> {
         // storeTimer: new StoreCoins(),
         FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
-    componentDidMount = () => {
-        // console.log('timerActive',storeTimer.timerActive);
-        storeTimer.timerActive = true;
-        // console.log('timerActive',storeTimer.timerActive);
-        storeTimer.timerBeginTime = 15;
-        // console.log('timerBeginTime',storeTimer.timerBeginTime);
 
-        // setInterval(this.loadData, Store.timeUpdate); //30000
-        //     console.log('timeUpdate', Store.timeUpdate);
-        this.loadData().then(() => {
-            this.setState({isLoading: false}); // !!! DONT WORK
-            // this.state.isLoading = false;
-        });
+    componentDidMount() {
+        console.log('Cards_componentDidMount');
+
+        storeTimer.setTimerBeginTime(15);
+        this.startTimer();
+    }
+
+    startTimer = () => {
+        console.log('Cards_startTimer');
+        storeTimer.doVisible();
+        storeTimer.doStart();
+
+        this.loadData().then(() => { // ??? refactor late twix code
+            this.setState({ isLoading: false });
+        } );
     }
 
     public async loadData() {
-        this.dataData = await new PostData().doFetchData(this.state.FetchUrl);
+        this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl);
     }
 
     render() {

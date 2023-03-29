@@ -24,12 +24,15 @@ export class CardsListItemFull extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    storeTimer.timerActive = false;
+    storeTimer.doStop(); //Pause(0); // .timerActive = false;
+
+    console.log('doPause', storeTimer.timerActive);
     console.log('create_modal');
   }
 
   componentWillUnmount() {
-    storeTimer.timerActive = true;
+    // storeTimer.timerActive = true;
+    storeTimer.doStart();
     console.log('close_modal');
   }
 

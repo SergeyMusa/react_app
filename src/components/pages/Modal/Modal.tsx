@@ -11,7 +11,7 @@ import {CardsListItemFull} from "../Cards/CardsListItemFull";
 // import {computed, toJS} from 'mobx'
 import {string} from "prop-types";
 import {storeCoins} from "../../store/StoreCoins";
-import {storeTimer} from "../../store/StoreTimer";
+// import {storeTimer} from "../../store/StoreTimer";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {

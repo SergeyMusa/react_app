@@ -29,7 +29,7 @@ export class Header extends React.Component {
                            MuSa_App
                        </Typography>
                         {/*{this.isDrawTimer()}*/}
-                        {storeTimer.timerVisible && <Timer4 />}
+                        {storeTimer.timerVisible ? <Timer4 /> : null}
                     </Toolbar>
                </AppBar>
              </div>

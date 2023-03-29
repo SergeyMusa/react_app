@@ -6,6 +6,7 @@ import Search from "../../store/Search";
 import {PostData} from "../../store/PostData";
 import {storeTimer} from "../../store/StoreTimer";
 import {storeCoins} from "../../store/StoreCoins";
+import {inputTimer} from "../../store/type";
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
@@ -28,18 +29,31 @@ export class Cards extends React.Component<any, any> {
         // FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
     }
     componentDidMount() {
-        // console.log('timerActive',store.timerActive);
+        console.log('Cards_componentDidMount');
+
+        storeTimer.setTimerBeginTime(15);
+        storeTimer.setTimerFunction( () => new Cards(storeCoins.FetchUrl).startTimer() );
+
+        this.startTimer();
+    }
+    componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {
+        console.log('Cards_componentDidUpdate');
+    }
+    componentWillUnmount() {
+        console.log('Cards_componentWillUnmount');
+    }
+
+    startTimer = () => {
+        console.log('Cards_startTimer');
+        storeTimer.doVisible();
         storeTimer.doStart();
-        storeTimer.timerBeginTime = 15;
-        // storeTimer.timerMakeFun = () => {console.log('>>> timerActive_tst <<<')} // *** work
-        // storeTimer.timerMakeFun = () => { new Cards(storeCoins.FetchUrl).componentDidMount() } // ??? как по другому?
 
         this.loadData().then(() => { // ??? refactor late twix code
             this.setState({ isLoading: false });
         } );
     }
 
-    async loadData () { // ??? можно ли await в componentDidMount
+    private async loadData () { // ??? можно ли await в componentDidMount
         this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl) ;
         console.log('load_data...');
     }
@@ -50,7 +64,6 @@ export class Cards extends React.Component<any, any> {
                 <h3>Cards</h3>
                 <button onClick={() => this.componentDidMount()}>[ LOAD ]</button>
                 <Search/>
-
                 {
                     this.state.isLoading
                         ? <Loader/>

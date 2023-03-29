@@ -48,6 +48,7 @@ export class Home extends React.Component {
 
   componentDidMount() {
     storeTimer.doStop();
+    storeTimer.doInVisible();
   }
 
     public render () {
