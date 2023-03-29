@@ -10,24 +10,19 @@ import {storeTimer} from "./StoreTimer";
 import Box from "@mui/material/Box";
 import {inputTimer} from "./type";
 import {observer} from "mobx-react";
-import {number} from "prop-types";
 
 @observer
 export class Timer4 extends React.Component<inputTimer, any> {
-  timerId: any ;
+  timerId: any;
   constructor(props?: inputTimer) {
     super(props);
-    // this.timerId = 0; // таймер
     this.state = {
       finishMessage: this.props?.messageTimer || storeTimer.timerMessage,
       counter4: this.props?.inputTime || storeTimer.timerBeginTime,
       counterTemp: storeTimer.timerPauseTime, // ??? CHECK !!! поменять местами с counter4
-
-      isRepeat: storeTimer.timerRepeat,
-      // checkerLabel: '',
-      // activeTimer: true,
       functionTimer: this.props?.functionTimer || storeTimer.timerMakeFun,
       invisibleBadge: true,
+      // isRepeat: storeTimer.timerRepeat,
     };
   }
 
@@ -35,56 +30,48 @@ export class Timer4 extends React.Component<inputTimer, any> {
     console.log('Timer_componentDidMount');
     this.timerStart();
   }
+
   timerStart = () => {
     if (storeTimer.timerActive) {
-      console.log('startTimer', ' counter4 = ', this.state.counter4)
+      console.log('timerStart', ' timerId = ', this?.timerId)
 
       // ??? maybe delete str down > clearInterval
-      clearInterval(this.state?.timerId);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
+      // clearInterval(this.timerId);  // Избавляемся от запусков нескольких таймеров одновременно при нажатии на разные кнопки
       this.timerId = setInterval(this.callbackTimeout, 1000);
-      // console.log('typeof.timerId', typeof(this.timerId))
-      // return this.setState({timer: timer});
     }
   }
 
   componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {
-    console.log('Timer_componentDidUpdate');
+    // console.log('Timer_componentDidUpdate');
   }
-
 
   componentWillUnmount() {
     console.log('Timer_componentWillUnmount');
     storeTimer.doStop();
-    // storeTimer.timerBeginTime = 0;
     clearInterval(this.timerId);
-
-    // console.log('stopTimer1', this.state.counter4)
-    // console.log('stopTimer2', this.state.timer)
   }
 
   callbackTimeout = () => {
     // ??? возможно утечка памяти в this.state.timer
-    // console.log('---', 'this.state.timer ', this.state.timer, 'this.state.counter4 ', this.state.counter4, 'this.state.isRepeat ', this.state.isRepeat)
+    // console.log('---', 'this.timerId ', this.timerId, 'this.state.counter4 ', this.state.counter4, 'Repeat ', storeTimer.timerRepeat )
+
     this.setState({counter4: (this.state.counter4 - 1)});
-    if (storeTimer.timerActive && !storeTimer.timerRepeat && (this.state.counter4 === 0)) {// *** IS FINISH
+    if (storeTimer.timerActive && storeTimer.timerRepeat && (this.state.counter4 === 0)) {// *** IS FINISH
       console.log(' 5 ', this.state.finishMessage);
-      console.log(' storeTimer.timerRepeat ', storeTimer.timerRepeat);
-      storeTimer.timerMakeFun(); // *** Finish действие при выполнении
-      // this.setState({counter4: storeTimer.timerBeginTime});
+      // console.log(' storeTimer.timerRepeat 1', storeTimer.timerRepeat);
       // clearInterval(this.timerId);
       this.onClickStart();
-      // clearInterval(this.state.counter4);
 
+      storeTimer.timerMakeFun(); // *** Finish действие при выполнении
       // storeTimer.timerShow();
-    } else if (storeTimer.timerRepeat && (this.state.counter4 === 0)) {
-      console.log(' 7 ', this.state.finishMessage);
-      console.log(' storeTimer.timerRepeat ', storeTimer.timerRepeat);
-      clearInterval(this.timerId);
-      storeTimer.timerMakeFun(); // *** Temp действие при выполнении
 
-    // } else if (!storeTimer.timerRepeat && (this.state.counter4 === 0)) {
-    //   console.log(' 9 ', this.state.finishMessage);
-    //   clearInterval(this.timerId);
+    } else if (!storeTimer.timerRepeat && (this.state.counter4 === 0)) {
+      console.log(' 7 ', this.state.finishMessage);
+      // console.log(' storeTimer.timerRepeat 2', storeTimer.timerRepeat);
+      clearInterval(this.timerId);
+      this.onClickStop();
+      storeTimer.timerMakeFun(); // *** Temp действие при выполнении
+      // storeTimer.timerShow();
     }
   }
 
@@ -93,22 +80,21 @@ export class Timer4 extends React.Component<inputTimer, any> {
     storeTimer.clearPauseTime();
     storeTimer.doStop();
     clearInterval(this.timerId);
-    // clearInterval(this.state.counter4);
     this.setState({counter4: 0});
     this.handleBadgeVisibility();
   }
 
   private onClickStart = () => {
     // console.clear();
+    console.log('onClickStart', this.timerId);
     storeTimer.clearPauseTime();
-    clearInterval(this.timerId);
-    // clearInterval(this.state.counter4);
+      // clearInterval(this.timerId);
     this.setState({counter4: storeTimer.timerBeginTime});
     if (this.state.counter4 > 0) {
       storeTimer.doStart();
-      // console.log('onClickStart', this.state.counter4);
+      //
       this.handleBadgeInVisibility();
-       this.timerStart(); //return
+      this.timerStart(); //return
     }
   }
 
@@ -117,7 +103,6 @@ export class Timer4 extends React.Component<inputTimer, any> {
     // this.setState({counter4: storeTimer.timerPauseTime});
     this.setState({counterTemp: storeTimer.timerPauseTime}); // ??? is use ?
     clearInterval(this.timerId);
-    // clearInterval(this.state.counter4);
     this.handleBadgeVisibility();
   }
 
@@ -126,12 +111,12 @@ export class Timer4 extends React.Component<inputTimer, any> {
     storeTimer.doStart();
 
     this.handleBadgeInVisibility();
-     this.timerStart(); //return
+    this.timerStart(); //return
   }
 
   //=================================================================
   checkSwitch = () => { //event
-    storeTimer.setTimerRepeat(); //this.setState({isRepeat: !this.state.isRepeat});
+    storeTimer.setTimerRepeat();
   }
   handleBadgeVisibility = () => {
     this.setState({invisibleBadge: false});
