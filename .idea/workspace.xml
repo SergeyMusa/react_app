@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - timer=ok">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Timer4.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,13 +163,6 @@
       <workItem from="1679903596738" duration="597000" />
       <workItem from="1679904217171" duration="19000" />
       <workItem from="1679904254365" duration="22780000" />
-    </task>
-    <task id="LOCAL-00018" summary="step_#2-api+ = remake EmployersList">
-      <created>1678088055019</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1678088055019</updated>
     </task>
     <task id="LOCAL-00019" summary="step_#2-api+ = wip">
       <created>1678091663056</created>
@@ -512,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680090307138</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="wip">
+      <created>1680095139936</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1680095139937</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,13 +547,13 @@
     <MESSAGE value="remade Tables" />
     <MESSAGE value="fix bugs ui modal" />
     <MESSAGE value="fix bugs timer" />
-    <MESSAGE value="wip" />
     <MESSAGE value="wip rename store to storeTimer" />
     <MESSAGE value="wip with timer start fun" />
     <MESSAGE value="timer=ok load data" />
     <MESSAGE value="wip - modal work  componentDidMount" />
     <MESSAGE value="wip - debug timer" />
     <MESSAGE value="wip - timer=ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip - timer=ok" />
+    <MESSAGE value="wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip" />
   </component>
 </project>

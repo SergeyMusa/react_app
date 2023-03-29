@@ -5,8 +5,8 @@ import {CardsList} from "./CardsList";
 import Search from "../../store/Search";
 import {PostData} from "../../store/PostData";
 import {storeTimer} from "../../store/StoreTimer";
-import {storeCoins} from "../../store/StoreCoins";
 import {inputTimer} from "../../store/type";
+import {storeCoins} from "../../store/StoreCoins";
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
@@ -49,6 +49,9 @@ export class Cards extends React.Component<any, any> {
         storeTimer.doVisible();
         storeTimer.doStart();
 
+        storeCoins.searchItems = ['xxx', 'zzz', 'aaa'];
+        storeCoins.searchFind = 'x';
+
         this.loadData().then(() => { // ??? refactor late twix code
             this.setState({ isLoading: false });
         } );
@@ -65,7 +68,7 @@ export class Cards extends React.Component<any, any> {
                 <h3>Cards</h3>
                 {/*<button onClick={() => this.componentDidMount()}>[ LOAD ]</button>*/}
                 <button onClick={() => this.startTimer()}>[ LOAD ]</button>
-                <Search/>
+                <Search props={"xxx"}/>
                 {
                     this.state.isLoading
                         ? <Loader/>
