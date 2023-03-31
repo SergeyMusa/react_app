@@ -16,13 +16,15 @@ export class TablesList extends React.Component<any, any> {
     toggle: new Toggle(false),
   }
 
-  modalOpen = (id: any) => {
-    console.log("MODALKA")
-    storeCoins.modalId = id;
-    console.log("MODALKA-1 id ", storeCoins.modalId)
-    storeCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));
-    console.log("MODALKA ModalData ", storeCoins.ModalData)
-    this.state.toggle.open();
+  modalOpen = (id, row ) => { //
+    console.log("MODALKA", '_id_', id, '_row_', row);
+
+    // storeCoins.setId(id) ;
+    // console.log("MODALKA-1 id ", storeCoins.modalId)
+    // // storeCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));
+    // storeCoins.setData(row);
+    // console.log("MODALKA ModalData ", storeCoins.ModalData)
+    // this.state.toggle.open();
   }
 
   render() {
@@ -48,7 +50,7 @@ export class TablesList extends React.Component<any, any> {
                 <TableRow
                   key={id}
                   sx={{'&:last-child td, &:last-child th': {border: 0}}}
-                  onClick={this.modalOpen}
+                  onClick={() => this.modalOpen(id, {...row}) } //
                   // onClick={()=>this.props.onClick(row.CoinInfo.Id)}
                 >
                   <TableCell component="th" scope="row">{row.CoinInfo.Name}</TableCell>

@@ -70,7 +70,8 @@ export class Modal extends React.Component<ModalProps> {
   componentDidMount() {
 
     const { modalId, ModalData  } = storeCoins;
-    const data = JSON.parse(JSON.stringify( storeCoins.ModalData ));
+    // const data = JSON.parse(JSON.stringify( storeCoins.ModalData ));
+    const data =  storeCoins.ModalData ;
     // console.log('-ModalData-',  ModalData );
     let itemData = data.findIndex(data => data.CoinInfo?.Id === modalId);
 

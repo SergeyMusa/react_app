@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - work )">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/TablesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/TablesList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,13 +161,6 @@
       <workItem from="1679903596738" duration="597000" />
       <workItem from="1679904217171" duration="19000" />
       <workItem from="1679904254365" duration="22780000" />
-    </task>
-    <task id="LOCAL-00019" summary="step_#2-api+ = wip">
-      <created>1678091663056</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1678091663056</updated>
     </task>
     <task id="LOCAL-00020" summary="step_#2-api+ = wip, add id">
       <created>1678093136843</created>
@@ -507,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680095139937</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="wip - work )">
+      <created>1680268742601</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1680268742601</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +527,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="remade Cards=ok took out-fetch load" />
     <MESSAGE value="wip clear proj" />
     <MESSAGE value="Timers = ok, only autostart &amp; +/- observ" />
     <MESSAGE value="wip - rename CardsList" />
@@ -554,6 +551,7 @@
     <MESSAGE value="wip - debug timer" />
     <MESSAGE value="wip - timer=ok" />
     <MESSAGE value="wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip" />
+    <MESSAGE value="wip - work )" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip - work )" />
   </component>
 </project>
