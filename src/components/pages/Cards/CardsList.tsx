@@ -19,7 +19,10 @@ export class CardsList extends React.Component<any, any> {
 
   elements = () => {
     return this.props.data?.map(item => {
-      const {id = item.CoinInfo.Id, ...itemProps} = item;
+      const {id = item.CoinInfo.Id, ...itemProps} = item; //*** <-----------WORK HERE
+      // console.log(3333333, id , itemProps);
+      // storeCoins.setId(id); //------------------------Crash
+      // storeCoins.setData(itemProps);
 
       return (
         <CardsListItem key={id} {...itemProps} press={this.modalOpen}/>
@@ -27,14 +30,9 @@ export class CardsList extends React.Component<any, any> {
     })
   }
 
-  modalOpen = (id: any) => {
-    // console.log('====id====', id)
-    storeCoins.setId(id);
-    // console.log(3333333, this.props.data);
-    // storeCoins.setItemData( JSON.parse(JSON.stringify(this.props.data)) ) ;
+  modalOpen = ( id: any ) => {
+    storeCoins.setId( id );
     storeCoins.setItemData( this.props.data ) ;
-    // console.log(1111111, JSON.parse(JSON.stringify( storeCoins.ModalData )));
-    // console.log(4444444, storeCoins.ModalData );
     this.state.toggle.open();
   }
 

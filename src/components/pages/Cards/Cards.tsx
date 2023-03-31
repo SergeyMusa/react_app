@@ -34,6 +34,7 @@ export class Cards extends React.Component<any, any> {
     storeTimer.setTimerBeginTime(15);
     storeTimer.setTimerFunction( () => new Cards(storeCoins.FetchUrl).startTimer() );
     this.startTimer();
+
   }
 
   startTimer = () => {
@@ -41,27 +42,28 @@ export class Cards extends React.Component<any, any> {
     storeTimer.doVisible();
     storeTimer.doStart();
 
-    storeCoins.searchItems = ['xxx', 'zzz', 'aaa'];
-    storeCoins.searchFind = 'x';
+    // storeCoins.searchItems = ['xxx', 'zzz', 'aaa'];
+    // storeCoins.searchFind = 'x';
 
     this.loadData().then(() => { // ??? refactor late twix code
       this.setState({ isLoading: false });
     } );
 
-    this.randomId();
-
+    this.randomId(); // !!! - remake it
 
   }
 
   private async loadData () {
     this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl) ;
     storeCoins.setData(this.dataData);
+    // storeCoins.setPreData(this.dataData);
     // console.log('load_data...', storeCoins.DataData);
+
   }
 
   randomId () {
     const id = Math.floor(Math.random() * (2000 - 100));
-    // *** Work method \/
+    // *** Work method \/ -> не надо, все и так работает, прокси только визуально
     // console.log( JSON.parse(JSON.stringify(storeCoins.DataData)) );
   }
 

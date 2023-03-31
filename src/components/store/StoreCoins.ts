@@ -4,12 +4,12 @@
 import {makeAutoObservable} from "mobx";
 
 class StoreCoins {
-  ModalData = []
+  ModalData: any[] = []
   modalId = 0
   // modalItem = {}
 
   FetchUrl = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`
-  // DataData: [] = []
+  PreData: [] = []
   ItemData: any
   IsLoading: boolean = true
 
@@ -34,7 +34,12 @@ class StoreCoins {
 
   setData = (loadData) => {
     this.ModalData = loadData
-    // console.log('DataData:', this.DataData);
+    // this.PreData = this.ModalData
+    // console.log('ModalData:', this.ModalData);
+  }
+  setPreData = (loadPreData) => {
+    this.PreData = loadPreData
+    console.log('PreData:', this.PreData);
   }
   setItemData = (loadItemData) => {
     this.ItemData = loadItemData
