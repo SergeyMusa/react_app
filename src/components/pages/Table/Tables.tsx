@@ -1,38 +1,38 @@
 import React from "react"; //, {Component}
 // import './Cards.css';
-import Loader from "../../store/Loader/Loader";
-import Search from "../../store/Search";
 import {storeTimer} from "../../store/StoreTimer";
 import {storeCoins} from "../../store/StoreCoins";
-import {Tab} from "./Tab";
-import {PostData} from "../../store/PostData";
+import {TablesList} from "./TablesList";
+// import {LoaderData} from "../../utils/LoaderData";
+import {PostData} from "../../utils/PostData";
+import Search from "../../utils/Search";
+import LoaderSpiner from "../../utils/LoaderSpiner/LoaderSpiner";
 
 // import {inputTimer, propsDataCryptaFromPostData} from "../../store/type";
 
 export class Tables extends React.Component<any, any> { //propsDataCryptaFromPostData
   dataData: any[];
   state = {
-    isLoading: true,
+    isLoading: true, //  storeCoins.IsLoading: boolean = true
   }
 
   componentDidMount() {
-    console.log('Cards_componentDidMount');
-
     storeTimer.setTimerBeginTime(15);
     storeTimer.setTimerFunction(() => new Tables(storeCoins.FetchUrl).startTimer());
-
     this.startTimer();
   }
 
-  // componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {
-  //     // console.log('Cards_componentDidUpdate');
+  // // componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {
+  // //     // console.log('Tables_componentDidUpdate');
+  // // }
+  // componentWillUnmount() {
+  //   console.log('Tables_componentWillUnmount');
   // }
-  componentWillUnmount() {
-    console.log('Cards_componentWillUnmount');
-  }
 
   startTimer = () => {
-    console.log('Cards_startTimer');
+    // new LoaderData('x').loadData() ;
+    // this.dataData = storeCoins.DataData;
+    //   console.log('Tables_startTimer');
     storeTimer.doVisible();
     storeTimer.doStart();
 
@@ -54,8 +54,8 @@ export class Tables extends React.Component<any, any> { //propsDataCryptaFromPos
         <Search/>
         {
           this.state.isLoading
-            ? <Loader/>
-            : <Tab data={this.dataData}/>
+            ? <LoaderSpiner/>
+            : <TablesList data={this.dataData}/>
         }
       </div>
     )

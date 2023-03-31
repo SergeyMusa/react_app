@@ -7,11 +7,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import {storeCoins} from "../../store/StoreCoins";
-import {Toggle} from "../../store/Toggle";
 import {Modal} from "../Modal/Modal";
+import {Toggle} from "../../utils/Toggle";
 
 
-export class Tab extends React.Component<any, any> {
+export class TablesList extends React.Component<any, any> {
   state = {
     toggle: new Toggle(false),
   }

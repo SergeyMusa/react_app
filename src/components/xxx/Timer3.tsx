@@ -9,8 +9,8 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import Badge from '@mui/material/Badge';
 // import { deepPurple } from '@mui/material/colors';
 // import { makeObservable, observable, computed, action } from "mobx"
-import { storeOld } from "./Store";
 import Box from "@mui/material/Box";
+import {storeOld} from "../store/Store";
 
 // сделать чекер репиат
 

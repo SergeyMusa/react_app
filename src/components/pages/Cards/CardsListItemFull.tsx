@@ -14,6 +14,7 @@ import {storeTimer} from "../../store/StoreTimer";
 // const CardsListItemFull = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
 export class CardsListItemFull extends React.Component<any, any> {
   classNames = 'priceColor normalColor';
+  preUrl = "https://www.cryptocompare.com/";
   // newPrice = this.props.RAW.USD.PRICE;
 
   constructor(props) {
@@ -24,8 +25,12 @@ export class CardsListItemFull extends React.Component<any, any> {
   }
 
   componentDidMount() {
+    console.log('props', this.props);
+
+    console.log('storeTimer_Active', storeTimer.timerActive)
     storeTimer.doStop();
     console.log('create_modal__doPause', storeTimer.timerActive);
+
   }
 
   componentWillUnmount() {
@@ -38,7 +43,6 @@ export class CardsListItemFull extends React.Component<any, any> {
 
     return (
       <Grid item xs>
-        {/*<h3>{this.state.time}</h3>*/}
         <div className='EmployersList' style={{margin: 'auto'}}>
           <Card sx={{maxWidth: 345}}>
 
@@ -60,7 +64,7 @@ export class CardsListItemFull extends React.Component<any, any> {
               component="img"
               sx={{height: 170, width: 170, margin: 'auto'}}
               height='180'
-              image={"https://www.cryptocompare.com/" + CoinInfo.ImageUrl}
+              image={this.preUrl + CoinInfo.ImageUrl}
               alt={CoinInfo.Id}
             />
 

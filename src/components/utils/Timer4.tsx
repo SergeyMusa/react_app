@@ -6,10 +6,10 @@ import Button from "@mui/material/Button";
 import {AccessTime} from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import {storeTimer} from "./StoreTimer";
 import Box from "@mui/material/Box";
-import {inputTimer} from "./type";
 import {observer} from "mobx-react";
+import {storeTimer} from "../store/StoreTimer";
+import {inputTimer} from "../type/Type";
 
 @observer
 export class Timer4 extends React.Component<inputTimer, any> {

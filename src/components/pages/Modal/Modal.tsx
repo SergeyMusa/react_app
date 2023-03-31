@@ -11,60 +11,53 @@ import {CardsListItemFull} from "../Cards/CardsListItemFull";
 // import {computed, toJS} from 'mobx'
 import {string} from "prop-types";
 import {storeCoins} from "../../store/StoreCoins";
-// import {storeTimer} from "../../store/StoreTimer";
 
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-    '& .MuiDialogContent-root': {
-        padding: theme.spacing(2),
-    },
-    '& .MuiDialogActions-root': {
-        padding: theme.spacing(1),
-    },
+const BootstrapDialog = styled(Dialog)(({theme}) => ({
+  '& .MuiDialogContent-root': {
+    padding: theme.spacing(2),
+  },
+  '& .MuiDialogActions-root': {
+    padding: theme.spacing(1),
+  },
 }));
 
 export interface DialogTitleProps {
-    id: string;
-    children?: React.ReactNode;
-    onClose: () => void;
+  id: string;
+  children?: React.ReactNode;
+  onClose: () => void;
 }
 
 export interface ModalProps {
-    modalTitle?: string;
-    modalMessage?: any;
-    modalTimer?: number;
-    // modalObj?: [];
-    isOpen: boolean;
-    onClosed: () => void;
-    id?: any;
-    // functionTimer: () => void;
+  modalTitle?: string;
+  modalMessage?: any;
+  modalTimer?: number;
+  isOpen: boolean;
+  onClosed: () => void;
+  id?: any;
+  // modalObj?: [];
+  // functionTimer: () => void;
 }
 
-
 function BootstrapDialogTitle(props: DialogTitleProps) {
-    const { children, onClose, ...other } = props;
-    return (
-        <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
-            {children}
-            {onClose ? (
-                <IconButton
-                    aria-label="close"
-                    onClick={onClose}
-                    sx={{
-                        position: 'absolute',
-                        right: 8,
-                        top: 8,
-                        color: (theme) => theme.palette.grey[500],
-                    }}
-                >
-                    <CloseIcon />
-                </IconButton>
-            ) : null}
-        </DialogTitle>
-    );
+  const {children, onClose, ...other} = props;
+  return (
+    <DialogTitle sx={{m: 0, p: 2}} {...other}>
+      {children}
+      {onClose ? (
+        <IconButton
+          aria-label="close"
+          onClick={onClose}
+          sx={{ position: 'absolute', right: 8, top: 8, color: (theme) => theme.palette.grey[500], }} >
+          <CloseIcon/>
+        </IconButton>
+      ) : null}
+    </DialogTitle>
+  );
 }
 
 @observer
 export class Modal extends React.Component<ModalProps> {
+  JModalData = null
   state = {
     id: string,
     modalData: {},
@@ -74,46 +67,61 @@ export class Modal extends React.Component<ModalProps> {
   //   return StoreCoins.ModalData
   // }
 
-  componentDidMount() { // ??? узнать а закончился ли жизненый цикл Cards  и иожно ли вкадывать циклы
-    const { modalId, ModalData  } = storeCoins;
+  componentDidMount() {
+    console.log("ModalProps",this.props )
+    const {modalId, ModalData} = storeCoins;
 
-    // console.log('-ModalData-',  ModalData );
+    this.JModalData = JSON.parse(JSON.stringify( ModalData ));
+    console.log("JModalData",this.JModalData );
+
     const itemData = ModalData.findIndex(ModalData => ModalData.CoinInfo.Id === modalId);
-    storeCoins.modalItem = ModalData[ itemData ]; // !!! а надо ли туда?
-    // console.log( 'modalItem___', storeCoins.modalItem );
+    console.log('itemData',itemData)
+
+    storeCoins.setItemData(ModalData[itemData]); // modalItem = ModalData[itemData]; // !!! а надо ли туда?
+    // console.log( 'modalItem___', storeCoins.modalItem,  'modalId___', storeCoins.modalId );
+    // console.log( 'ModalData___', storeCoins.ModalData );
 
     this.setState({id: modalId})
-    this.setState({modalData: ModalData[ itemData ]})
-    this.setState({modalTitle: ModalData[ itemData ]?.CoinInfo.FullName})
+    console.log( 'modalId___', storeCoins.modalId );
+    this.setState({modalData: ModalData[itemData] } ) ;
+    console.log( 'ModalData___', storeCoins.ModalData , storeCoins.ModalData.length);
+
+    if (storeCoins.ModalData.length > 0) {
+      this.setState({modalTitle: JSON.parse(JSON.stringify( ModalData[itemData] ))?.CoinInfo.FullName})
+    }
+    console.log( 'modalTitle___', this.state.modalTitle);
+
+    console.log( 'modalData___', this.state.modalData );
+
   }
 
 
-    render() {
-        const { isOpen, onClosed, id } = this.props; //, id, modalTitle, modalMessage
-        const { modalData, modalTitle } = this.state; //id,
-        // console.log('modalTitle', modalTitle);
+  render() {
+    const {isOpen, onClosed, id} = this.props; //, id, modalTitle, modalMessage
+    const {modalData, modalTitle} = this.state; //id,
+    // console.log('modalTitle', modalTitle);
 
 
-        return (
-            <div>
-                <BootstrapDialog
-                    onClose={onClosed}
-                    aria-labelledby="customized-dialog-title"
-                    open={isOpen}
+    return (
+      <div>
+        <BootstrapDialog
+          onClose={onClosed}
+          aria-labelledby="customized-dialog-title"
+          open={isOpen}
 
-                >
-                    <BootstrapDialogTitle id="customized-dialog-title" onClose={onClosed}>
-                        {modalTitle} : {id}
-                    </BootstrapDialogTitle>
-                    <DialogContent dividers sx={{ minHeight: 380}}>
-                        <Typography gutterBottom component="div">
-                            {/*{modalMessage} */}
-                            <CardsListItemFull key={id} {...modalData} />
-                        </Typography>
+        >
+          <BootstrapDialogTitle id="customized-dialog-title" onClose={onClosed}>
+            {modalTitle} : {id}
+          </BootstrapDialogTitle>
+          <DialogContent dividers sx={{minHeight: 380}}>
+            <Typography gutterBottom component="div">
+              {/*{modalMessage} */}
+              <CardsListItemFull key={id} {...modalData} />
+            </Typography>
 
-                    </DialogContent>
-                </BootstrapDialog>
-            </div>
-        );
-    }
+          </DialogContent>
+        </BootstrapDialog>
+      </div>
+    );
+  }
 }

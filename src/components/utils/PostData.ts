@@ -1,4 +1,4 @@
-import {ResponseData} from "../Type/type";
+import {ResponseData} from "../type/Type";
 
 export class PostData {
     dataData: ResponseData[] = [];

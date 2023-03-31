@@ -1,15 +1,7 @@
 import React, {Component} from "react"; // import component
-// import Search from "../store/Search";
-// import {observer} from "mobx-react-lite";
 import {observer} from "mobx-react";
 import {observable} from "mobx";
-// import {action, computed, observable, makeObservable, makeAutoObservable} from "mobx";
-// import {observe} from 'mobx-decorators';
-//--------------------------------------------
-import {counter} from "../store/Counter";
-// import { store } from "../store/Store";
-// import TestStore from "../store/_TestStore.tsx_";
-// import {number} from "prop-types";
+import {counter} from "../utils/Counter";
 
 // @observable class countZerro {
 //     countZ:number = 0;

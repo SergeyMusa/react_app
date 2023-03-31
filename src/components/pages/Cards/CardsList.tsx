@@ -1,11 +1,11 @@
 import React from "react";
+import {observer} from "mobx-react";
 import './CardsList.css';
 import {Grid} from "@mui/material";
-import {observer} from "mobx-react";
 import {storeCoins} from "../../store/StoreCoins";
 import {CardsListItem} from "./CardsListItem";
 import {Modal} from "../Modal/Modal";
-import {Toggle} from "../../store/Toggle";
+import {Toggle} from "../../utils/Toggle";
 
 @observer
 export class CardsList extends React.Component<any, any> {
@@ -13,7 +13,7 @@ export class CardsList extends React.Component<any, any> {
     super(props);
     this.state = {
       toggle: new Toggle(false),
-      modalMessage: '',
+      // modalMessage: '',
     }
   }
 
@@ -28,13 +28,14 @@ export class CardsList extends React.Component<any, any> {
   }
 
   modalOpen = (id: any) => {
-    storeCoins.modalId = id;
-    // console.log("MODALKA-0 id ", storeCoins.modalId)
-    storeCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));
+    // console.log('====id====', id)
+    storeCoins.setId(id);
+    storeCoins.setItemData( JSON.parse(JSON.stringify(this.props.data)) ) ;
     this.state.toggle.open();
   }
 
   render() {
+    const {toggle} = this.state;
     return (
       <>
         <Grid container
@@ -50,8 +51,8 @@ export class CardsList extends React.Component<any, any> {
           modalTitle={'modalTitle'}
           // modalMessage={'this.state.modalMessage'}
           modalTimer={15}
-          isOpen={this.state.toggle.isOpen}
-          onClosed={this.state.toggle.close}
+          isOpen={toggle.isOpen}
+          onClosed={toggle.close}
           key={storeCoins.modalId}
           id={storeCoins.modalId}
         />

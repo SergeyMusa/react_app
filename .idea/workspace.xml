@@ -4,23 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step_5 - begin seach">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - folders">
+      <change afterPath="$PROJECT_DIR$/src/components/utils/LoaderData.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/-TimerSlider.jsx-" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/-TimerSlider.jsx-" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/-TimerSlider2.tsx-" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/-TimerSlider2.tsx-" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Counter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Counter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Loader/Loader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Loader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Loader/Loader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/PostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/PostData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Type/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/type/Type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Lesson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Lesson.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/MyModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/MyModal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/MyModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/MyModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/TablesList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Timer1.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Timer2.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Timer3.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Timer4.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Toggle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Toggle.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Type/type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/Count.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Count.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/Loader/Loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/LoaderSpiner/LoaderSpiner.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/Loader/Loader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/LoaderSpiner/LoaderSpiner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/PostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/PostData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/Timer3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Timer3.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Timer4.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/Toggle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Toggle.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,8 +114,8 @@
       <recent name="$PROJECT_DIR$/src/components/pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/utils" />
       <recent name="$PROJECT_DIR$/src/components/xxx" />
+      <recent name="$PROJECT_DIR$/src/components/utils" />
       <recent name="$PROJECT_DIR$/src/components/Type" />
       <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
@@ -175,14 +181,7 @@
       <workItem from="1679904217171" duration="19000" />
       <workItem from="1679904254365" duration="22780000" />
       <workItem from="1680246951389" duration="77000" />
-      <workItem from="1680247275778" duration="1235000" />
-    </task>
-    <task id="LOCAL-00020" summary="step_#2-api+ = wip, add id">
-      <created>1678093136843</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1678093136843</updated>
+      <workItem from="1680247275778" duration="15392000" />
     </task>
     <task id="LOCAL-00021" summary="step_#2-api+ = wip, add timer-visual">
       <created>1678095342123</created>
@@ -520,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680098586413</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="wip - folders">
+      <created>1680248598327</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1680248598328</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +548,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="wip clear proj" />
     <MESSAGE value="Timers = ok, only autostart &amp; +/- observ" />
     <MESSAGE value="wip - rename CardsList" />
     <MESSAGE value="wip - ERROR" />
@@ -567,6 +572,7 @@
     <MESSAGE value="wip - timer=ok" />
     <MESSAGE value="wip" />
     <MESSAGE value="step_5 - begin seach" />
-    <option name="LAST_COMMIT_MESSAGE" value="step_5 - begin seach" />
+    <MESSAGE value="wip - folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip - folders" />
   </component>
 </project>

@@ -1,6 +1,4 @@
 import { observable,  makeAutoObservable} from "mobx"
-// import {storeCoins} from "./StoreCoins";
-// import {Cards} from "../pages/Cards/Cards";
 
 export class StoreTimer  {
     @observable timerPauseTime: number = 0

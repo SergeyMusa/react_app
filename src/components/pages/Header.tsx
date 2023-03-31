@@ -2,8 +2,8 @@ import React from "react";
 // import {AccessTime} from "@mui/icons-material";
 import {AppBar, Toolbar, Typography} from "@mui/material";
 import {storeTimer} from "../store/StoreTimer";
-import {Timer4} from "../store/Timer4";
 import {observer} from "mobx-react";
+import {Timer4} from "../utils/Timer4";
 
 @observer
 export class Header extends React.Component {
