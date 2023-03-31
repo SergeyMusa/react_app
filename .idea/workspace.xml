@@ -4,12 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step_5 - begin seach">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/-TimerSlider.jsx-" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/-TimerSlider.jsx-" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/-TimerSlider2.tsx-" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/-TimerSlider2.tsx-" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Counter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Counter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Loader/Loader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Loader/Loader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Loader/Loader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/PostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/PostData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Timer1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Timer1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Timer2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Timer2.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Timer3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Timer3.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Timer4.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/Toggle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Toggle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Type/type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/Count.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Count.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,28 +77,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Table",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "ts.external.directory.path": "/home/musa/GIT/react_app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/components/pages/Table&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
@@ -97,11 +108,11 @@
       <recent name="$PROJECT_DIR$/src/components/pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/utils" />
+      <recent name="$PROJECT_DIR$/src/components/xxx" />
+      <recent name="$PROJECT_DIR$/src/components/Type" />
       <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
-      <recent name="$PROJECT_DIR$/src/components/store/Loader" />
-      <recent name="$PROJECT_DIR$/src/components/store" />
-      <recent name="$PROJECT_DIR$/src/components/pages" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.index.jsx">
@@ -163,13 +174,8 @@
       <workItem from="1679903596738" duration="597000" />
       <workItem from="1679904217171" duration="19000" />
       <workItem from="1679904254365" duration="22780000" />
-    </task>
-    <task id="LOCAL-00019" summary="step_#2-api+ = wip">
-      <created>1678091663056</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1678091663056</updated>
+      <workItem from="1680246951389" duration="77000" />
+      <workItem from="1680247275778" duration="1235000" />
     </task>
     <task id="LOCAL-00020" summary="step_#2-api+ = wip, add id">
       <created>1678093136843</created>
@@ -507,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680095139937</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="step_5 - begin seach">
+      <created>1680098586413</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1680098586413</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +542,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="remade Cards=ok took out-fetch load" />
     <MESSAGE value="wip clear proj" />
     <MESSAGE value="Timers = ok, only autostart &amp; +/- observ" />
     <MESSAGE value="wip - rename CardsList" />
@@ -554,6 +566,7 @@
     <MESSAGE value="wip - debug timer" />
     <MESSAGE value="wip - timer=ok" />
     <MESSAGE value="wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip" />
+    <MESSAGE value="step_5 - begin seach" />
+    <option name="LAST_COMMIT_MESSAGE" value="step_5 - begin seach" />
   </component>
 </project>

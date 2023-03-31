@@ -1,6 +1,6 @@
 import {TextField} from "@mui/material";
 import React from "react";
-import {storeCoins} from "./StoreCoins";
+import {storeCoins} from "../store/StoreCoins";
 
 const Search = (props?) => {
     // const {items, find} = props;
