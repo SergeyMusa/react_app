@@ -9,7 +9,7 @@ class StoreCoins {
   // modalItem = {}
 
   FetchUrl = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`
-  DataData: [] = []
+  // DataData: [] = []
   ItemData: any
   IsLoading: boolean = true
 
@@ -29,11 +29,11 @@ class StoreCoins {
 // action
   show = () => {
     // ++this.timeUpdate;
-    console.log('ModalData', this.ModalData);
+    // console.log('ModalData', this.ModalData);
   }
 
   setData = (loadData) => {
-    this.DataData = loadData
+    this.ModalData = loadData
     // console.log('DataData:', this.DataData);
   }
   setItemData = (loadItemData) => {

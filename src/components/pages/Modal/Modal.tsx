@@ -68,37 +68,24 @@ export class Modal extends React.Component<ModalProps> {
   // }
 
   componentDidMount() {
-    console.log("ModalProps",this.props )
-    const {modalId, ModalData} = storeCoins;
 
-    this.JModalData = JSON.parse(JSON.stringify( ModalData ));
-    console.log("JModalData",this.JModalData );
+    const { modalId, ModalData  } = storeCoins;
+    const data = JSON.parse(JSON.stringify( storeCoins.ModalData ));
+    // console.log('-ModalData-',  ModalData );
+    let itemData = data.findIndex(data => data.CoinInfo?.Id === modalId);
 
-    const itemData = ModalData.findIndex(ModalData => ModalData.CoinInfo.Id === modalId);
-    console.log('itemData',itemData)
-
-    storeCoins.setItemData(ModalData[itemData]); // modalItem = ModalData[itemData]; // !!! а надо ли туда?
-    // console.log( 'modalItem___', storeCoins.modalItem,  'modalId___', storeCoins.modalId );
-    // console.log( 'ModalData___', storeCoins.ModalData );
+    storeCoins.setItemData(data[ itemData ]) ; // !!! а надо ли туда?
+    // console.log( 'modalItem___', storeCoins.modalItem );
 
     this.setState({id: modalId})
-    console.log( 'modalId___', storeCoins.modalId );
-    this.setState({modalData: ModalData[itemData] } ) ;
-    console.log( 'ModalData___', storeCoins.ModalData , storeCoins.ModalData.length);
-
-    if (storeCoins.ModalData.length > 0) {
-      this.setState({modalTitle: JSON.parse(JSON.stringify( ModalData[itemData] ))?.CoinInfo.FullName})
-    }
-    console.log( 'modalTitle___', this.state.modalTitle);
-
-    console.log( 'modalData___', this.state.modalData );
-
+    this.setState({modalData: data[ itemData ]})
+    this.setState({modalTitle: data[ itemData ]?.CoinInfo?.FullName})
   }
-
 
   render() {
     const {isOpen, onClosed, id} = this.props; //, id, modalTitle, modalMessage
     const {modalData, modalTitle} = this.state; //id,
+    // console.log(1111, modalData)
     // console.log('modalTitle', modalTitle);
 
 

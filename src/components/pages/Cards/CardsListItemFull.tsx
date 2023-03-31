@@ -25,9 +25,9 @@ export class CardsListItemFull extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    console.log('props', this.props);
+    // console.log('props', this.props);
 
-    console.log('storeTimer_Active', storeTimer.timerActive)
+    console.log('Modal_storeTimer_Active', storeTimer.timerActive)
     storeTimer.doStop();
     console.log('create_modal__doPause', storeTimer.timerActive);
 
@@ -49,14 +49,14 @@ export class CardsListItemFull extends React.Component<any, any> {
             <CardHeader
               avatar={
                 <Avatar aria-label="recipe">
-                  {DISPLAY.USD.FROMSYMBOL}
+                  {DISPLAY?.USD?.FROMSYMBOL}
                 </Avatar>
               }
               action={
                 <IconButton aria-label="settings">
                 </IconButton>
               }
-              title={"id: " + CoinInfo.Id}
+              title={"id: " + CoinInfo?.Id}
               className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green
             />
 
@@ -64,17 +64,17 @@ export class CardsListItemFull extends React.Component<any, any> {
               component="img"
               sx={{height: 170, width: 170, margin: 'auto'}}
               height='180'
-              image={this.preUrl + CoinInfo.ImageUrl}
-              alt={CoinInfo.Id}
+              image={this.preUrl + CoinInfo?.ImageUrl}
+              alt={CoinInfo?.Id}
             />
 
             <CardContent>
               <Typography variant="body2" color="text.secondary" gutterBottom component="div">
-                '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}
+                '{DISPLAY?.USD?.FROMSYMBOL}'({CoinInfo?.Name}) = {RAW?.USD?.PRICE}
                 <AttachMoney fontSize="small" sx={{color: green[500]}}/>
               </Typography>
               <hr/>
-              NetHashesPerSecond - {CoinInfo.NetHashesPerSecond}
+              NetHashesPerSecond - {CoinInfo?.NetHashesPerSecond}
             </CardContent>
 
           </Card>

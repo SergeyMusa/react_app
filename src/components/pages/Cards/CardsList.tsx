@@ -30,7 +30,11 @@ export class CardsList extends React.Component<any, any> {
   modalOpen = (id: any) => {
     // console.log('====id====', id)
     storeCoins.setId(id);
-    storeCoins.setItemData( JSON.parse(JSON.stringify(this.props.data)) ) ;
+    // console.log(3333333, this.props.data);
+    // storeCoins.setItemData( JSON.parse(JSON.stringify(this.props.data)) ) ;
+    storeCoins.setItemData( this.props.data ) ;
+    // console.log(1111111, JSON.parse(JSON.stringify( storeCoins.ModalData )));
+    // console.log(4444444, storeCoins.ModalData );
     this.state.toggle.open();
   }
 
