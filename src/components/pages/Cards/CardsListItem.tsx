@@ -9,37 +9,73 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import {storeCoins} from "../../store/StoreCoins";
+import {observer} from "mobx-react";
 
+@observer
 export class CardsListItem extends React.Component<any, any> {
-  classNames = 'priceColor normalColor';
-  newPrice = this.props.RAW.USD.PRICE;
+  classNames = 'priceColor ';
+  newPrice = this.props.RAW.USD.PRICE; // !!! del it
   // oldPrice = RAW.USD.PRICE ;
   // !!! думать как запоминать, может через локал сторадж
   constructor(props) {
     super(props);
     this.state = {
-      // time: 1,
+      // upOrDown: null,
     }
   }
 
+  componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {
+    let arrX = storeCoins.ModalData; //  *** new
+    let itemY = prevProps;      //  *** old
 
-  changeClassName = () => { //  ??? WTF---------------------
-    console.log('newPrice', this.newPrice);
-    this.setState(state => ({
-      time: this.state.time + 1
-    }))
+    const idY = itemY?.CoinInfo.Id; //*** <-----------WORK HERE
+    console.log('idY ', idY);
 
-    // if( this.newPrice < this.oldPrice) {
-    //     this.classNames += ' red';
-    // } else if (newPrice > oldPrice) {
-    //     this.classNames += ' green';
-    // } else {
-    //     this.classNames += ' normalColor';
-    // }
+    arrX?.map(itemX => {
+      console.log('itemX ', itemX);
+
+      const idX = itemX.CoinInfo.Id;
+      console.log('idX ', idX);
+
+      if (idX == idY) {
+
+        //     const itemY = arrX.find(y => idY === idX).foo;
+
+        //     (this.state.upOrDown > 0) ? (this.classNames += ' red') : (this.classNames += ' blue')
+        const priceY = prevProps.DISPLAY.USD.PRICE;
+        const priceX = itemY.DISPLAY.USD.PRICE;
+        console.log('priceX ', priceX);
+        console.log('priceY ', priceY);
+        if (priceX > priceY) {
+          (this.classNames += ' red') // !!! исправить позже = или +=
+          // (this.classNames += ' red')
+        } else if (priceX < priceY) {
+          (this.classNames += ' green')
+        }else {
+              this.classNames += ' normalColor';
+          }
+      }
+    });
   }
 
+  // changeClassName = () => { //  ??? WTF---------------------
+  //   console.log('newPrice', this.newPrice);
+  //   this.setState(state => ({
+  //     time: this.state.time + 1
+  //   }))
+  //
+  //   // if( this.newPrice < this.oldPrice) {
+  //   //     this.classNames += ' red';
+  //   // } else if (newPrice > oldPrice) {
+  //   //     this.classNames += ' green';
+  //   // } else {
+  //   //     this.classNames += ' normalColor';
+  //   // }
+  // }
+
   render() {
-    const {CoinInfo, DISPLAY, RAW} = this.props
+    const {CoinInfo, DISPLAY, RAW} = this.props;
 
     return (
       <Grid item xs>

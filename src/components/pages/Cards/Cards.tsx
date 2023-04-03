@@ -49,16 +49,15 @@ export class Cards extends React.Component<any, any> {
       this.setState({ isLoading: false });
     } );
 
-    this.randomId(); // !!! - remake it
+    // storeCoins.setPreData(this.dataData);
+    // console.log('load_data...', storeCoins.DataData);
 
+    this.randomId(); // !!! - remake it
   }
 
   private async loadData () {
     this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl) ;
     storeCoins.setData(this.dataData);
-    // storeCoins.setPreData(this.dataData);
-    // console.log('load_data...', storeCoins.DataData);
-
   }
 
   randomId () {

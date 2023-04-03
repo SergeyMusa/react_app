@@ -29,7 +29,8 @@ class StoreCoins {
 // action
   show = () => {
     // ++this.timeUpdate;
-    // console.log('ModalData', this.ModalData);
+    console.log('ModalData', this.ModalData);
+    console.log('PreData', this.PreData);
   }
 
   setData = (loadData) => {
@@ -47,7 +48,7 @@ class StoreCoins {
   setId = (id) => {
     this.modalId = id
   }
-  checkLoading = (loadState) => {
+  checkLoading = (loadState) => { // ??? is Used? change on Toggle
     this.IsLoading = !loadState;
     // console.log('DataData:', this.DataData);
   }

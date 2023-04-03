@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - fix tables props">
-      <change afterPath="$PROJECT_DIR$/src/components/utils/CompareData.ts" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Timer4.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="REBASE" />
@@ -163,20 +169,7 @@
       <workItem from="1679903596738" duration="597000" />
       <workItem from="1679904217171" duration="19000" />
       <workItem from="1679904254365" duration="22780000" />
-    </task>
-    <task id="LOCAL-00021" summary="step_#2-api+ = wip, add timer-visual">
-      <created>1678095342123</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1678095342123</updated>
-    </task>
-    <task id="LOCAL-00022" summary="step_#2-api+ = wip, remade on class EmployersListItem">
-      <created>1678099529379</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1678099529379</updated>
+      <workItem from="1680508386909" duration="11782000" />
     </task>
     <task id="LOCAL-00023" summary="step_#2-api+ = wip, with state">
       <created>1678101613243</created>
@@ -507,7 +500,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680271492696</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="wip">
+      <created>1680273984995</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1680273984995</updated>
+    </task>
+    <task id="LOCAL-00071" summary="wip">
+      <created>1680274071541</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1680274071541</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,9 +558,9 @@
     <MESSAGE value="wip - modal work  componentDidMount" />
     <MESSAGE value="wip - debug timer" />
     <MESSAGE value="wip - timer=ok" />
-    <MESSAGE value="wip" />
     <MESSAGE value="wip - work )" />
     <MESSAGE value="wip - fix tables props" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip - fix tables props" />
+    <MESSAGE value="wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip" />
   </component>
 </project>

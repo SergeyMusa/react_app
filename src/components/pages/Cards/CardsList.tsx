@@ -21,7 +21,8 @@ export class CardsList extends React.Component<any, any> {
     return this.props.data?.map(item => {
       const {id = item.CoinInfo.Id, ...itemProps} = item; //*** <-----------WORK HERE
 
-      console.log(3333333, id , itemProps);
+      //console.log(3333333, id , itemProps); // => go CardListItem > did update
+
       // storeCoins.setId(id); //------------------------Crash
       // storeCoins.setData(itemProps);
 

@@ -10,6 +10,7 @@ import Box from "@mui/material/Box";
 import {observer} from "mobx-react";
 import {storeTimer} from "../store/StoreTimer";
 import {inputTimer} from "../type/Type";
+import {storeCoins} from "../store/StoreCoins";
 
 @observer
 export class Timer4 extends React.Component<inputTimer, any> {
@@ -67,6 +68,26 @@ export class Timer4 extends React.Component<inputTimer, any> {
       storeTimer.timerMakeFun(); // *** Temp действие и продолжить
       // storeTimer.timerShow();
     }
+  }
+
+  compareChangeData = () => {
+    // let arrX = storeCoins.ModalData; //  *** new
+    // let arrY = storeCoins.PreData;      //  *** old
+    // let x = null; //
+
+    //return
+    // arrX?.map(itemX => {
+    //   const idX = itemX.CoinInfo.Id; //*** <-----------WORK HERE
+    //
+    //   arrY?.map(itemY => {
+    //     // const {idY = itemY.CoinInfo.Id, ...itemData} = itemY;
+    //     const itemY = arrX.find(y => idY === idX).foo;
+    //
+    //   if (idX == idY) {
+    //     RAW.USD.PRICE ==
+    //     }
+    //   }
+    // }
   }
 
   onClickStop = () => {
