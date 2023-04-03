@@ -28,18 +28,15 @@ export class CardsListItem extends React.Component<any, any> {
   componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {
     let arrX = storeCoins.ModalData; //  *** new
     let itemY = prevProps;      //  *** old
-
-    const idY = itemY?.CoinInfo.Id; //*** <-----------WORK HERE
-    console.log('idY ', idY);
+console.log('---------------------');
+    const idY = itemY.CoinInfo.Id; //*** <-----------WORK HERE
+    // console.log('idY ', idY);
 
     arrX?.map(itemX => {
-      console.log('itemX ', itemX);
-
+      // console.log('itemX ', itemX);
       const idX = itemX.CoinInfo.Id;
-      console.log('idX ', idX);
-
+      // console.log('idX ', idX);
       if (idX == idY) {
-
         //     const itemY = arrX.find(y => idY === idX).foo;
 
         //     (this.state.upOrDown > 0) ? (this.classNames += ' red') : (this.classNames += ' blue')

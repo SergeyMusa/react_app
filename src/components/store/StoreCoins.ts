@@ -1,29 +1,23 @@
 // import { observable, action, makeObservable} from "mobx"
 // import React from "react";
 
-import {makeAutoObservable} from "mobx";
+import {makeAutoObservable, observable} from "mobx";
 
 class StoreCoins {
-  ModalData: any[] = []
+  @observable ModalData: any[] = []
   modalId = 0
   // modalItem = {}
 
-  FetchUrl = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`
+  public FetchUrl = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`
   PreData: [] = []
   ItemData: any
-  IsLoading: boolean = true
+  public IsLoading: boolean = true
 
   searchItems = []
   searchFind = ''
 
   constructor() {
     makeAutoObservable(this)
-    // this.state = {
-    // modalId: observable,
-    // // CoinsState: observable,
-    // show: action,
-    //
-    // }
   }
 
 // action

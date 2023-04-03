@@ -8,6 +8,7 @@ import {PostData} from "../../utils/PostData";
 import Search from "../../utils/Search";
 import LoaderSpiner from "../../utils/LoaderSpiner/LoaderSpiner";
 import {observable} from "mobx";
+import {observer} from "mobx-react";
 
 // export default props => {
 //     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
@@ -20,8 +21,10 @@ import {observable} from "mobx";
 //     )
 // }
 
+@observer
 export class Cards extends React.Component<any, any> {
-  @observable dataData: any[];
+  // @observable
+  dataData: any[];
   state = {
     isLoading: true,
     modalActive: false,
@@ -38,21 +41,16 @@ export class Cards extends React.Component<any, any> {
   }
 
   startTimer = () => {
-    // console.log('Cards_startTimer');
     storeTimer.doVisible();
     storeTimer.doStart();
-
-    // storeCoins.searchItems = ['xxx', 'zzz', 'aaa'];
-    // storeCoins.searchFind = 'x';
 
     this.loadData().then(() => { // ??? refactor late twix code
       this.setState({ isLoading: false });
     } );
 
-    // storeCoins.setPreData(this.dataData);
-    // console.log('load_data...', storeCoins.DataData);
+    console.log('load_data...');
 
-    this.randomId(); // !!! - remake it
+    // this.randomId(); // !!! - remake it
   }
 
   private async loadData () {

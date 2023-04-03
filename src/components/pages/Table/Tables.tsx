@@ -7,9 +7,11 @@ import {TablesList} from "./TablesList";
 import {PostData} from "../../utils/PostData";
 import Search from "../../utils/Search";
 import LoaderSpiner from "../../utils/LoaderSpiner/LoaderSpiner";
+import {observer} from "mobx-react";
 
 // import {inputTimer, propsDataCryptaFromPostData} from "../../store/type";
 
+@observer
 export class Tables extends React.Component<any, any> { //propsDataCryptaFromPostData
   dataData: any[];
   state = {
