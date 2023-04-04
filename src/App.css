@@ -1,55 +1,57 @@
 .App {
-  text-align: center;
-
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    height: 40vmin;
+    pointer-events: none;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
-body{
-  /*margin: 20px 20px ;*/
-  /*padding: 20px;*/
+body {
+    /*margin: 20px 20px ;*/
+    /*padding: 20px;*/
 }
+
 .poke a {
-  margin:  auto 10px;
+    margin: auto 10px;
 
-  /*padding: 10px;*/
+    /*padding: 10px;*/
 }
-.poke a:visited{
-  color:white;
+
+.poke a:visited {
+    color: white;
 }
+
 .App-header {
-  background-color: darkslateblue;
-  /*min-height: 100vh;*/
-  /*padding-top: -20px;*/
-  min-height: 14vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 1vmin);
-  color: white;
+    background-color: darkslateblue;
+    /*min-height: 100vh;*/
+    /*padding-top: -20px;*/
+    min-height: 14vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 1vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
