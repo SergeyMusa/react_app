@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import {observer} from "mobx-react";
-import {storeCoins} from "_store/StoreCoins";
+import {STORE_COINS} from "_store/StoreCoins";
 import {Modal} from "_view/components/Modal/Modal";
 import {Toggle} from "_common/utils/Toggle";
 
@@ -20,8 +20,8 @@ export class TablesList extends React.Component<any, any> {
   modalOpen = (id, row ) => { //
     console.log("MODALKA", '_id_', id, '_row_', row);
 
-    storeCoins.setId( id );
-    storeCoins.setItemData( this.props.data ) ;
+    // STORE_COINS.setId( id );
+    // STORE_COINS.setItemData( this.props.data ) ;
     this.state.toggle.open();
   }
 
@@ -66,15 +66,15 @@ export class TablesList extends React.Component<any, any> {
             </TableBody>
           </Table>
         </TableContainer>
-        <Modal
-          modalTitle={'modalTitle'}
-          // modalMessage={'this.state.modalMessage'}
-          modalTimer={15}
-          isOpen={this.state.toggle.isOpen}
-          onClosed={this.state.toggle.close}
-          key={storeCoins.modalId}
-          id={storeCoins.modalId}
-        />
+        {/*<Modal*/}
+        {/*  title={'modalTitle'}*/}
+        {/*  // modalMessage={'this.state.modalMessage'}*/}
+        {/*  modalTimer={15}*/}
+        {/*  isOpen={this.state.toggle.isOpen}*/}
+        {/*  onClosed={this.state.toggle.close}*/}
+        {/*  key={STORE_COINS.modalId}*/}
+        {/*  id={STORE_COINS.modalId}*/}
+        {/*/>*/}
       </>
     );
   }

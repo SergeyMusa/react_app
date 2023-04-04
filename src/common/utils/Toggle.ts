@@ -1,6 +1,3 @@
-// ??? можно сделать на дженерике получая разные значения отдавать нужные
-// 0/1 true/false
-
 import {action, computed, makeObservable, observable} from "mobx";
 
 export class Toggle {
@@ -25,5 +22,3 @@ export class Toggle {
     this._isOpen = true;
   }
 }
-
-// export const toggler = new Toggler();

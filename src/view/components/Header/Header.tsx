@@ -1,8 +1,7 @@
 import React from "react";
 import {AppBar, Toolbar, Typography} from "@mui/material";
 import {observer} from "mobx-react";
-import {Timer4} from "_common/utils/Timer4";
-import {storeTimer} from "_store/StoreTimer";
+import {Timer} from "../Timer/Timer";
 
 @observer
 export class Header extends React.Component {
@@ -20,7 +19,7 @@ export class Header extends React.Component {
             >
               MuSa_App
             </Typography>
-            {storeTimer.timerVisible ? <Timer4/> : null}
+            {<Timer/>}
           </Toolbar>
         </AppBar>
       </div>

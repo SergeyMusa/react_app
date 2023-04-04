@@ -1,11 +1,11 @@
 import React from "react"; //, {Component}
 import {TablesList} from "./TablesList";
 import {observer} from "mobx-react";
-import {storeCoins} from "_store/StoreCoins";
-import {storeTimer} from "_store/StoreTimer";
-import Search from "_common/utils/Search";
-import {LoaderSpinner} from "_common/utils/LoaderSpiner/LoaderSpiner";
-import {doFetchData} from "_common/utils/PostData";
+import {STORE_TIMER} from "_store/StoreTimer";
+import {doFetchData} from "_common/utils/Fetch";
+import {URL_COINS} from "_common/const/Const";
+import Search from "_view/components/Search/Search";
+import {LoaderSpinner} from "_view/components/LoaderSpiner/LoaderSpiner";
 
 @observer
 export class Tables extends React.Component<any, any> { //propsDataCryptaFromPostData
@@ -15,24 +15,19 @@ export class Tables extends React.Component<any, any> { //propsDataCryptaFromPos
   }
 
   componentDidMount() {
-    storeTimer.setTimerBeginTime(15);
-    storeTimer.setTimerFunction(this.startTimer);
+    // STORE_TIMER.setTimerFunction(this.startTimer);
     this.startTimer();
   }
 
   startTimer = () => {
-    storeTimer.doVisible();
-    storeTimer.doStart();
-
+    // STORE_TIMER.start();
     this.loadData().then(() => { // ??? refactor late twix code
       this.setState({isLoading: false});
     });
   }
 
   public async loadData() {
-    this.dataData = await doFetchData(storeCoins.FetchUrl);
-    console.log('load_data...');
-    // console.log(this.dataData);
+    this.dataData = await doFetchData(URL_COINS);
   }
 
   render() {
