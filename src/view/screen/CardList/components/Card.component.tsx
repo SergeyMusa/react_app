@@ -14,10 +14,10 @@ import {observable} from "mobx";
 import {ResponseData} from "_common/type/Type";
 
 interface Props {
-  press(id: string): void
+  press?(id: string): void
 }
 
-type CardProps = ResponseData & Props
+export type CardProps = ResponseData & Props
 
 @observer
 export class CardComponent extends React.Component<CardProps> {
