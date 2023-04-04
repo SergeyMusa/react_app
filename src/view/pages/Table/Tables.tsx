@@ -3,9 +3,9 @@ import {TablesList} from "./TablesList";
 import {observer} from "mobx-react";
 import {storeCoins} from "_store/StoreCoins";
 import {storeTimer} from "_store/StoreTimer";
-import {PostData} from "_common/utils/PostData";
 import Search from "_common/utils/Search";
 import {LoaderSpinner} from "_common/utils/LoaderSpiner/LoaderSpiner";
+import {doFetchData} from "_common/utils/PostData";
 
 @observer
 export class Tables extends React.Component<any, any> { //propsDataCryptaFromPostData
@@ -16,7 +16,7 @@ export class Tables extends React.Component<any, any> { //propsDataCryptaFromPos
 
   componentDidMount() {
     storeTimer.setTimerBeginTime(15);
-    storeTimer.setTimerFunction(() => new Tables(storeCoins.FetchUrl).startTimer());
+    storeTimer.setTimerFunction(this.startTimer);
     this.startTimer();
   }
 
@@ -30,7 +30,7 @@ export class Tables extends React.Component<any, any> { //propsDataCryptaFromPos
   }
 
   public async loadData() {
-    this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl);
+    this.dataData = await doFetchData(storeCoins.FetchUrl);
     console.log('load_data...');
     // console.log(this.dataData);
   }

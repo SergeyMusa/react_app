@@ -1,15 +1,14 @@
 import React from "react";
-import './App.css';
 import {Link, Route, Routes} from "react-router-dom";
 import Button from '@mui/material/Button';
 import './assets/styles/main.scss'
 import {Container} from "@mui/material";
-import {Cards} from "../src/view/pages/Cards/Cards";
-import {Home} from "../src/view/pages/Home/Home";
-import {Tables} from "../src/view/pages/Table/Tables";
-import {Header} from "../src/view/components/Header/Header";
+import {Cards} from "_view/pages/Cards/Cards";
+import {Home} from "_view/pages/Home/Home";
+import {Tables} from "_view/pages/Table/Tables";
+import {Header} from "_view/components/Header/Header";
 import Footer from "../src/view/components/Footer/Footer";
-import {Timers} from "../src/view/pages/Timer/Timers";
+import {Timers} from "_view/pages/Timer/Timers";
 
 function App() {
   return (

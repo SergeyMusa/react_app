@@ -58,3 +58,7 @@ export class CardsList extends React.Component<any, any> {
     )
   }
 }
+
+const steles = {
+
+}
