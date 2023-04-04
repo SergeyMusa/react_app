@@ -84,7 +84,7 @@ export class Modal extends React.Component<ModalProps> {
           <BootstrapDialogTitle id="customized-dialog-title" onClose={onClosed}>
             {modalTitle} : {id}
           </BootstrapDialogTitle>
-          <DialogContent dividers sx={{minHeight: 380}}>
+          <DialogContent dividers sx={{minHeight: 400}}>
             <Typography gutterBottom component="div">
               {/*{modalMessage} */}
               <CardsListItemFull key={id} {...modalData} />

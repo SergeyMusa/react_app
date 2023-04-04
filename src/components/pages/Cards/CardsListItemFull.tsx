@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import {storeTimer} from "../../store/StoreTimer";
 import {Timer4} from "../../utils/Timer4";
+import TableCell from "@mui/material/TableCell";
 
 export class CardsListItemFull extends React.Component<any, any> {
   classNames = 'priceColor normalColor';
@@ -61,9 +62,11 @@ export class CardsListItemFull extends React.Component<any, any> {
               <Typography variant="body2" color="text.secondary" gutterBottom component="div">
                 '{DISPLAY?.USD?.FROMSYMBOL}'({CoinInfo?.Name}) = {RAW?.USD?.PRICE}
                 <AttachMoney fontSize="small" sx={{color: green[500]}}/>
+                <hr/>
+                NetHashesPerSecond - {CoinInfo?.NetHashesPerSecond}
+                MKTCAP - {DISPLAY?.USD.MKTCAP}
+                TOTALVOLUME24HTO - {DISPLAY?.USD.TOTALVOLUME24HTO}
               </Typography>
-              <hr/>
-              NetHashesPerSecond - {CoinInfo?.NetHashesPerSecond}
             </CardContent>
 
           </Card>

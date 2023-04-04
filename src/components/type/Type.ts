@@ -23,6 +23,8 @@ export type ResponseData = {
   RAW: {
     USD: {
       PRICE: number | string,
+      MKTCAP: string,
+      TOTALVOLUME24HTO: string
     }
   }
 }

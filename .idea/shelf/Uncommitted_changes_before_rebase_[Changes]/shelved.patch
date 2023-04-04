@@ -1,0 +1,1418 @@
+Index: src/components/pages/Modal/Modal.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import * as React from 'react';\nimport {styled} from '@mui/material/styles';\nimport Dialog from '@mui/material/Dialog';\nimport DialogTitle from '@mui/material/DialogTitle';\nimport DialogContent from '@mui/material/DialogContent';\nimport IconButton from '@mui/material/IconButton';\nimport CloseIcon from '@mui/icons-material/Close';\nimport Typography from '@mui/material/Typography';\nimport {observer} from \"mobx-react\";\nimport {CardsListItemFull} from \"../Cards/CardsListItemFull\";\n// import {computed, toJS} from 'mobx'\nimport {string} from \"prop-types\";\nimport {storeCoins} from \"../../store/StoreCoins\";\n\nconst BootstrapDialog = styled(Dialog)(({theme}) => ({\n  '& .MuiDialogContent-root': {\n    padding: theme.spacing(2),\n  },\n  '& .MuiDialogActions-root': {\n    padding: theme.spacing(1),\n  },\n}));\n\nexport interface DialogTitleProps {\n  id: string;\n  children?: React.ReactNode;\n  onClose: () => void;\n}\n\nexport interface ModalProps {\n  modalTitle?: string;\n  modalMessage?: any;\n  modalTimer?: number;\n  isOpen: boolean;\n  onClosed: () => void;\n  id?: any;\n  // modalObj?: [];\n  // functionTimer: () => void;\n}\n\nfunction BootstrapDialogTitle(props: DialogTitleProps) {\n  const {children, onClose, ...other} = props;\n  return (\n    <DialogTitle sx={{m: 0, p: 2}} {...other}>\n      {children}\n      {onClose ? (\n        <IconButton\n          aria-label=\"close\"\n          onClick={onClose}\n          sx={{ position: 'absolute', right: 8, top: 8, color: (theme) => theme.palette.grey[500], }} >\n          <CloseIcon/>\n        </IconButton>\n      ) : null}\n    </DialogTitle>\n  );\n}\n\n@observer\nexport class Modal extends React.Component<ModalProps> {\n  JModalData = null\n  state = {\n    id: string,\n    modalData: {},\n    modalTitle: string,\n  }\n  // @computed private get dataData(){\n  //   return StoreCoins.ModalData\n  // }\n\n  componentDidMount() {\n\n    const { modalId, ModalData  } = storeCoins;\n    // const data = JSON.parse(JSON.stringify( storeCoins.ModalData ));\n    const data =  storeCoins.ModalData ;\n    // console.log('-ModalData-',  ModalData );\n    let itemData = data.findIndex(data => data.CoinInfo?.Id === modalId);\n\n    storeCoins.setItemData(data[ itemData ]) ; // !!! а надо ли туда?\n    // console.log( 'modalItem___', storeCoins.modalItem );\n\n    this.setState({id: modalId})\n    this.setState({modalData: data[ itemData ]})\n    this.setState({modalTitle: data[ itemData ]?.CoinInfo?.FullName})\n  }\n\n  render() {\n    const {isOpen, onClosed, id} = this.props; //, id, modalTitle, modalMessage\n    const {modalData, modalTitle} = this.state; //id,\n    // console.log(1111, modalData)\n    // console.log('modalTitle', modalTitle);\n\n\n    return (\n      <div>\n        <BootstrapDialog\n          onClose={onClosed}\n          aria-labelledby=\"customized-dialog-title\"\n          open={isOpen}\n\n        >\n          <BootstrapDialogTitle id=\"customized-dialog-title\" onClose={onClosed}>\n            {modalTitle} : {id}\n          </BootstrapDialogTitle>\n          <DialogContent dividers sx={{minHeight: 380}}>\n            <Typography gutterBottom component=\"div\">\n              {/*{modalMessage} */}\n              <CardsListItemFull key={id} {...modalData} />\n            </Typography>\n\n          </DialogContent>\n        </BootstrapDialog>\n      </div>\n    );\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Modal/Modal.tsx b/src/components/pages/Modal/Modal.tsx
+--- a/src/components/pages/Modal/Modal.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Modal/Modal.tsx	(date 1680599211496)
+@@ -8,8 +8,6 @@
+ import Typography from '@mui/material/Typography';
+ import {observer} from "mobx-react";
+ import {CardsListItemFull} from "../Cards/CardsListItemFull";
+-// import {computed, toJS} from 'mobx'
+-import {string} from "prop-types";
+ import {storeCoins} from "../../store/StoreCoins";
+ 
+ const BootstrapDialog = styled(Dialog)(({theme}) => ({
+@@ -34,7 +32,6 @@
+   isOpen: boolean;
+   onClosed: () => void;
+   id?: any;
+-  // modalObj?: [];
+   // functionTimer: () => void;
+ }
+ 
+@@ -57,27 +54,17 @@
+ 
+ @observer
+ export class Modal extends React.Component<ModalProps> {
+-  JModalData = null
+   state = {
+-    id: string,
++    id: '',
+     modalData: {},
+-    modalTitle: string,
++    modalTitle: '',
+   }
+-  // @computed private get dataData(){
+-  //   return StoreCoins.ModalData
+-  // }
+ 
+   componentDidMount() {
+-
+-    const { modalId, ModalData  } = storeCoins;
+-    // const data = JSON.parse(JSON.stringify( storeCoins.ModalData ));
++    const { modalId } = storeCoins; // !!! , ModalData < only store ?
+     const data =  storeCoins.ModalData ;
+-    // console.log('-ModalData-',  ModalData );
+     let itemData = data.findIndex(data => data.CoinInfo?.Id === modalId);
+-
+     storeCoins.setItemData(data[ itemData ]) ; // !!! а надо ли туда?
+-    // console.log( 'modalItem___', storeCoins.modalItem );
+-
+     this.setState({id: modalId})
+     this.setState({modalData: data[ itemData ]})
+     this.setState({modalTitle: data[ itemData ]?.CoinInfo?.FullName})
+@@ -86,9 +73,6 @@
+   render() {
+     const {isOpen, onClosed, id} = this.props; //, id, modalTitle, modalMessage
+     const {modalData, modalTitle} = this.state; //id,
+-    // console.log(1111, modalData)
+-    // console.log('modalTitle', modalTitle);
+-
+ 
+     return (
+       <div>
+@@ -96,7 +80,6 @@
+           onClose={onClosed}
+           aria-labelledby="customized-dialog-title"
+           open={isOpen}
+-
+         >
+           <BootstrapDialogTitle id="customized-dialog-title" onClose={onClosed}>
+             {modalTitle} : {id}
+Index: src/components/pages/Cards/CardsListItem.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\nimport {AttachMoney} from \"@mui/icons-material\";\nimport Card from \"@mui/material/Card\";\nimport CardHeader from \"@mui/material/CardHeader\";\nimport Avatar from \"@mui/material/Avatar\";\nimport {green} from \"@mui/material/colors\";\nimport IconButton from \"@mui/material/IconButton\";\nimport CardMedia from \"@mui/material/CardMedia\";\nimport CardContent from \"@mui/material/CardContent\";\nimport Typography from \"@mui/material/Typography\";\nimport Grid from \"@mui/material/Grid\";\nimport {storeCoins} from \"../../store/StoreCoins\";\nimport {observer} from \"mobx-react\";\n\n@observer\nexport class CardsListItem extends React.Component<any, any> {\n  classNames = 'priceColor ';\n  newPrice = this.props.RAW.USD.PRICE; // !!! del it\n  // oldPrice = RAW.USD.PRICE ;\n  // !!! думать как запоминать, может через локал сторадж\n  constructor(props) {\n    super(props);\n    this.state = {\n      // upOrDown: null,\n    }\n  }\n\n  componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {\n    let arrX = storeCoins.ModalData; //  *** new\n    let itemY = prevProps;      //  *** old\nconsole.log('---------------------');\n    const idY = itemY.CoinInfo.Id; //*** <-----------WORK HERE\n    // console.log('idY ', idY);\n\n    arrX?.map(itemX => {\n      // console.log('itemX ', itemX);\n      const idX = itemX.CoinInfo.Id;\n      // console.log('idX ', idX);\n      if (idX == idY) {\n        //     const itemY = arrX.find(y => idY === idX).foo;\n\n        //     (this.state.upOrDown > 0) ? (this.classNames += ' red') : (this.classNames += ' blue')\n        const priceY = prevProps.DISPLAY.USD.PRICE;\n        const priceX = itemY.DISPLAY.USD.PRICE;\n        console.log('priceX ', priceX);\n        console.log('priceY ', priceY);\n        if (priceX > priceY) {\n          (this.classNames += ' red') // !!! исправить позже = или +=\n          // (this.classNames += ' red')\n        } else if (priceX < priceY) {\n          (this.classNames += ' green')\n        }else {\n              this.classNames += ' normalColor';\n          }\n      }\n    });\n  }\n\n  // changeClassName = () => { //  ??? WTF---------------------\n  //   console.log('newPrice', this.newPrice);\n  //   this.setState(state => ({\n  //     time: this.state.time + 1\n  //   }))\n  //\n  //   // if( this.newPrice < this.oldPrice) {\n  //   //     this.classNames += ' red';\n  //   // } else if (newPrice > oldPrice) {\n  //   //     this.classNames += ' green';\n  //   // } else {\n  //   //     this.classNames += ' normalColor';\n  //   // }\n  // }\n\n  render() {\n    const {CoinInfo, DISPLAY, RAW} = this.props;\n\n    return (\n      <Grid item xs>\n        {/*<h3>{this.state.time}</h3>*/}\n        <div className='EmployersList' style={{margin: 'auto'}}>\n          <Card onClick={() => this.props.press(CoinInfo.Id)}>\n\n            <CardHeader\n              avatar={\n                <Avatar aria-label=\"recipe\">\n                  {/*sx={{bgcolor: deepPurple[500]}}*/}\n                  {DISPLAY.USD.FROMSYMBOL}\n                </Avatar>\n              }\n              action={\n                <IconButton aria-label=\"settings\">\n                  {/*<MoreVertIcon/>*/}\n                </IconButton>\n              }\n              title={\"id: \" + CoinInfo.Id}\n              className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green\n            />\n\n            <CardMedia\n              component=\"img\"\n              sx={{height: 170, width: 170, margin: 'auto'}}\n              height='180'\n              image={\"https://www.cryptocompare.com/\" + CoinInfo.ImageUrl}\n              alt={CoinInfo.Id}\n\n            />\n\n            <CardContent>\n              <Typography variant=\"body2\" color=\"text.secondary\" gutterBottom component=\"div\">\n                '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}\n                <AttachMoney fontSize=\"small\" sx={{color: green[500]}}/>\n              </Typography>\n            </CardContent>\n\n          </Card>\n        </div>\n      </Grid>\n    )\n  }\n}\n\n// sx={{ color: green[500] }}>add_circle</Icon>\n// <Icon fontSize=\"small\">add_circle</Icon>\n//#66CC00\n//https://get-color.ru/green/\n// export default CardsListItem;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Cards/CardsListItem.tsx b/src/components/pages/Cards/CardsListItem.tsx
+--- a/src/components/pages/Cards/CardsListItem.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Cards/CardsListItem.tsx	(date 1680599358147)
+@@ -15,37 +15,24 @@
+ @observer
+ export class CardsListItem extends React.Component<any, any> {
+   classNames = 'priceColor ';
+-  newPrice = this.props.RAW.USD.PRICE; // !!! del it
+-  // oldPrice = RAW.USD.PRICE ;
+-  // !!! думать как запоминать, может через локал сторадж
+-  constructor(props) {
+-    super(props);
+-    this.state = {
+-      // upOrDown: null,
+-    }
+-  }
+ 
+   componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {
+     let arrX = storeCoins.ModalData; //  *** new
+     let itemY = prevProps;      //  *** old
+-console.log('---------------------');
++    console.log('---------------------');
+     const idY = itemY.CoinInfo.Id; //*** <-----------WORK HERE
+     // console.log('idY ', idY);
+-
+     arrX?.map(itemX => {
+       // console.log('itemX ', itemX);
+       const idX = itemX.CoinInfo.Id;
+       // console.log('idX ', idX);
+       if (idX == idY) {
+-        //     const itemY = arrX.find(y => idY === idX).foo;
+-
+-        //     (this.state.upOrDown > 0) ? (this.classNames += ' red') : (this.classNames += ' blue')
+         const priceY = prevProps.DISPLAY.USD.PRICE;
+         const priceX = itemY.DISPLAY.USD.PRICE;
+         console.log('priceX ', priceX);
+         console.log('priceY ', priceY);
+         if (priceX > priceY) {
+-          (this.classNames += ' red') // !!! исправить позже = или +=
++          (this.classNames += ' red') // !!! провеерить и исправить позже = или +=
+           // (this.classNames += ' red')
+         } else if (priceX < priceY) {
+           (this.classNames += ' green')
+@@ -56,27 +43,10 @@
+     });
+   }
+ 
+-  // changeClassName = () => { //  ??? WTF---------------------
+-  //   console.log('newPrice', this.newPrice);
+-  //   this.setState(state => ({
+-  //     time: this.state.time + 1
+-  //   }))
+-  //
+-  //   // if( this.newPrice < this.oldPrice) {
+-  //   //     this.classNames += ' red';
+-  //   // } else if (newPrice > oldPrice) {
+-  //   //     this.classNames += ' green';
+-  //   // } else {
+-  //   //     this.classNames += ' normalColor';
+-  //   // }
+-  // }
+-
+   render() {
+     const {CoinInfo, DISPLAY, RAW} = this.props;
+-
+     return (
+       <Grid item xs>
+-        {/*<h3>{this.state.time}</h3>*/}
+         <div className='EmployersList' style={{margin: 'auto'}}>
+           <Card onClick={() => this.props.press(CoinInfo.Id)}>
+ 
+@@ -89,7 +59,6 @@
+               }
+               action={
+                 <IconButton aria-label="settings">
+-                  {/*<MoreVertIcon/>*/}
+                 </IconButton>
+               }
+               title={"id: " + CoinInfo.Id}
+Index: src/components/store/StoreCoins.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// import { observable, action, makeObservable} from \"mobx\"\n// import React from \"react\";\n\nimport {makeAutoObservable, observable} from \"mobx\";\n\nclass StoreCoins {\n  @observable ModalData: any[] = []\n  modalId = 0\n  // modalItem = {}\n\n  public FetchUrl = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`\n  PreData: [] = []\n  ItemData: any\n  public IsLoading: boolean = true\n\n  searchItems = []\n  searchFind = ''\n\n  constructor() {\n    makeAutoObservable(this)\n  }\n\n// action\n  show = () => {\n    // ++this.timeUpdate;\n    console.log('ModalData', this.ModalData);\n    console.log('PreData', this.PreData);\n  }\n\n  setData = (loadData) => {\n    this.ModalData = loadData\n    // this.PreData = this.ModalData\n    // console.log('ModalData:', this.ModalData);\n  }\n  setPreData = (loadPreData) => {\n    this.PreData = loadPreData\n    console.log('PreData:', this.PreData);\n  }\n  setItemData = (loadItemData) => {\n    this.ItemData = loadItemData\n  }\n  setId = (id) => {\n    this.modalId = id\n  }\n  checkLoading = (loadState) => { // ??? is Used? change on Toggle\n    this.IsLoading = !loadState;\n    // console.log('DataData:', this.DataData);\n  }\n\n}\nexport const storeCoins = new StoreCoins();\n// export default StoreCoins();
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/store/StoreCoins.ts b/src/components/store/StoreCoins.ts
+--- a/src/components/store/StoreCoins.ts	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/store/StoreCoins.ts	(date 1680597803266)
+@@ -1,18 +1,12 @@
+-// import { observable, action, makeObservable} from "mobx"
+-// import React from "react";
+-
+ import {makeAutoObservable, observable} from "mobx";
+ 
+ class StoreCoins {
+   @observable ModalData: any[] = []
+   modalId = 0
+-  // modalItem = {}
+-
++  public IsLoading: boolean = true
+   public FetchUrl = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`
+   PreData: [] = []
+   ItemData: any
+-  public IsLoading: boolean = true
+-
+   searchItems = []
+   searchFind = ''
+ 
+@@ -20,7 +14,6 @@
+     makeAutoObservable(this)
+   }
+ 
+-// action
+   show = () => {
+     // ++this.timeUpdate;
+     console.log('ModalData', this.ModalData);
+@@ -29,8 +22,6 @@
+ 
+   setData = (loadData) => {
+     this.ModalData = loadData
+-    // this.PreData = this.ModalData
+-    // console.log('ModalData:', this.ModalData);
+   }
+   setPreData = (loadPreData) => {
+     this.PreData = loadPreData
+@@ -46,7 +37,6 @@
+     this.IsLoading = !loadState;
+     // console.log('DataData:', this.DataData);
+   }
+-
+ }
++
+ export const storeCoins = new StoreCoins();
+-// export default StoreCoins();
+\ No newline at end of file
+Index: src/components/pages/Cards/CardsListItemFull.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\nimport {AttachMoney} from \"@mui/icons-material\";\nimport Card from \"@mui/material/Card\";\nimport CardHeader from \"@mui/material/CardHeader\";\nimport Avatar from \"@mui/material/Avatar\";\nimport {green} from \"@mui/material/colors\";\nimport IconButton from \"@mui/material/IconButton\";\nimport CardMedia from \"@mui/material/CardMedia\";\nimport CardContent from \"@mui/material/CardContent\";\nimport Typography from \"@mui/material/Typography\";\nimport Grid from \"@mui/material/Grid\";\nimport {storeTimer} from \"../../store/StoreTimer\";\n\n// const CardsListItemFull = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}\nexport class CardsListItemFull extends React.Component<any, any> {\n  classNames = 'priceColor normalColor';\n  preUrl = \"https://www.cryptocompare.com/\";\n  // newPrice = this.props.RAW.USD.PRICE;\n\n  constructor(props) {\n    super(props);\n    this.state = {\n      // time: 2,\n    }\n  }\n\n  componentDidMount() {\n    // console.log('props', this.props);\n\n    console.log('Modal_storeTimer_Active', storeTimer.timerActive)\n    storeTimer.doStop();\n    console.log('create_modal__doPause', storeTimer.timerActive);\n\n  }\n\n  componentWillUnmount() {\n    storeTimer.doStart();\n    console.log('close_modal');\n  }\n\n  render() {\n    const {CoinInfo, DISPLAY, RAW} = this.props\n\n    return (\n      <Grid item xs>\n        <div className='EmployersList' style={{margin: 'auto'}}>\n          <Card sx={{maxWidth: 345}}>\n\n            <CardHeader\n              avatar={\n                <Avatar aria-label=\"recipe\">\n                  {DISPLAY?.USD?.FROMSYMBOL}\n                </Avatar>\n              }\n              action={\n                <IconButton aria-label=\"settings\">\n                </IconButton>\n              }\n              title={\"id: \" + CoinInfo?.Id}\n              className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green\n            />\n\n            <CardMedia\n              component=\"img\"\n              sx={{height: 170, width: 170, margin: 'auto'}}\n              height='180'\n              image={this.preUrl + CoinInfo?.ImageUrl}\n              alt={CoinInfo?.Id}\n            />\n\n            <CardContent>\n              <Typography variant=\"body2\" color=\"text.secondary\" gutterBottom component=\"div\">\n                '{DISPLAY?.USD?.FROMSYMBOL}'({CoinInfo?.Name}) = {RAW?.USD?.PRICE}\n                <AttachMoney fontSize=\"small\" sx={{color: green[500]}}/>\n              </Typography>\n              <hr/>\n              NetHashesPerSecond - {CoinInfo?.NetHashesPerSecond}\n            </CardContent>\n\n          </Card>\n        </div>\n      </Grid>\n\n    )\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Cards/CardsListItemFull.tsx b/src/components/pages/Cards/CardsListItemFull.tsx
+--- a/src/components/pages/Cards/CardsListItemFull.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Cards/CardsListItemFull.tsx	(date 1680596900521)
+@@ -10,31 +10,20 @@
+ import Typography from "@mui/material/Typography";
+ import Grid from "@mui/material/Grid";
+ import {storeTimer} from "../../store/StoreTimer";
++import {Timer4} from "../../utils/Timer4";
+ 
+-// const CardsListItemFull = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
+ export class CardsListItemFull extends React.Component<any, any> {
+   classNames = 'priceColor normalColor';
+   preUrl = "https://www.cryptocompare.com/";
+-  // newPrice = this.props.RAW.USD.PRICE;
+-
+-  constructor(props) {
+-    super(props);
+-    this.state = {
+-      // time: 2,
+-    }
+-  }
+ 
+   componentDidMount() {
+-    // console.log('props', this.props);
+-
+-    console.log('Modal_storeTimer_Active', storeTimer.timerActive)
+     storeTimer.doStop();
+-    console.log('create_modal__doPause', storeTimer.timerActive);
+-
+   }
+ 
+   componentWillUnmount() {
+     storeTimer.doStart();
++    new Timer4().onClickResume(); // !!! - - - Dont Work
++    // new Timer4().timerStart();
+     console.log('close_modal');
+   }
+ 
+Index: src/components/type/Type.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {string} from \"prop-types\";\n\nexport interface FetchUrl {\n    FetchUrl?: string;\n}\n\nexport interface propsDataCryptaFromPostData {\n    dataData: [];\n}\n\nexport type ResponseData = {\n    CoinInfo: {\n        Id: number,\n        Name: string,\n        ImageUrl: string,\n        FullName: string,\n        Url: string,\n        NetHashesPerSecond: string,\n    }\n    DISPLAY:{\n        USD:{\n            FROMSYMBOL: string,\n        }\n    }\n    RAW:{\n        USD:{\n            PRICE: number | string,\n        }\n    }\n}\n\nexport interface inputTimer {\n    inputTime?: number;\n    messageTimer?: string;\n    activeTimer?: boolean;\n    functionTimer?():void ;\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/type/Type.ts b/src/components/type/Type.ts
+--- a/src/components/type/Type.ts	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/type/Type.ts	(date 1680598305667)
+@@ -1,37 +1,36 @@
+-import {string} from "prop-types";
+-
+ export interface FetchUrl {
+-    FetchUrl?: string;
++  FetchUrl?: string;
+ }
+ 
+ export interface propsDataCryptaFromPostData {
+-    dataData: [];
++  dataData: [];
+ }
+ 
+ export type ResponseData = {
+-    CoinInfo: {
+-        Id: number,
+-        Name: string,
+-        ImageUrl: string,
+-        FullName: string,
+-        Url: string,
+-        NetHashesPerSecond: string,
+-    }
+-    DISPLAY:{
+-        USD:{
+-            FROMSYMBOL: string,
+-        }
+-    }
+-    RAW:{
+-        USD:{
+-            PRICE: number | string,
+-        }
+-    }
++  CoinInfo: {
++    Id: number,
++    Name: string,
++    ImageUrl: string,
++    FullName: string,
++    Url: string,
++    NetHashesPerSecond: string,
++  }
++  DISPLAY: {
++    USD: {
++      FROMSYMBOL: string,
++    }
++  }
++  RAW: {
++    USD: {
++      PRICE: number | string,
++    }
++  }
+ }
+ 
+ export interface inputTimer {
+-    inputTime?: number;
+-    messageTimer?: string;
+-    activeTimer?: boolean;
+-    functionTimer?():void ;
++  inputTime?: number;
++  messageTimer?: string;
++  activeTimer?: boolean;
++
++  functionTimer?(): void;
+ }
+Index: src/components/utils/Timer4.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport Switch from '@mui/material/Switch';\nimport {Badge, ButtonGroup} from \"@mui/material\";\nimport Button from \"@mui/material/Button\";\nimport {AccessTime} from '@mui/icons-material';\nimport AddIcon from '@mui/icons-material/Add';\nimport RemoveIcon from '@mui/icons-material/Remove';\nimport Box from \"@mui/material/Box\";\nimport {observer} from \"mobx-react\";\nimport {storeTimer} from \"../store/StoreTimer\";\nimport {inputTimer} from \"../type/Type\";\nimport {storeCoins} from \"../store/StoreCoins\";\n\n@observer\nexport class Timer4 extends React.Component<inputTimer, any> {\n  timerId: any;\n  constructor(props?: inputTimer) {\n    super(props);\n    this.state = {\n      finishMessage: this.props?.messageTimer || storeTimer.timerMessage,\n      counter4: this.props?.inputTime || storeTimer.timerBeginTime,\n      // counterTemp: storeTimer.timerPauseTime,\n      functionTimer: this.props?.functionTimer || storeTimer.timerMakeFun,\n      invisibleBadge: true,\n    };\n  }\n\n  componentDidMount() {\n    // console.log('Timer_componentDidMount');\n    this.timerStart();\n    this.onClickStart();\n  }\n\n  timerStart = () => {\n    if (storeTimer.timerActive) {\n      // console.log('timerStart', ' timerId = ', this?.timerId)\n      this.timerId = setInterval(this.callbackTimeout, 1000);\n\n    }\n  }\n\n  componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {\n    // console.log('Timer_componentDidUpdate');\n  }\n\n  componentWillUnmount() {\n    // console.log('Timer_componentWillUnmount');\n    storeTimer.doStop();\n    clearInterval(this.timerId);\n  }\n\n  callbackTimeout = () => {\n    // ??? возможно утечка памяти в this.state.timer\n    // console.log('---', 'this.timerId ', this.timerId, 'this.state.counter4 ', this.state.counter4, 'Repeat ', storeTimer.timerRepeat )\n\n    this.setState({counter4: (this.state.counter4 - 1)});\n    if (storeTimer.timerActive && storeTimer.timerRepeat && (this.state.counter4 === 0)) {// *** IS FINISH\n      // console.log(' 5 ', this.state.finishMessage);\n      this.onClickStart();\n      storeTimer.timerMakeFun(); // *** Finish действие и стоп\n      // storeTimer.timerShow();\n\n    } else if (!storeTimer.timerRepeat && (this.state.counter4 === 0)) {\n      // console.log(' 7 ', this.state.finishMessage);\n      clearInterval(this.timerId);\n      this.onClickStop();\n      storeTimer.timerMakeFun(); // *** Temp действие и продолжить\n      // storeTimer.timerShow();\n    }\n  }\n\n  compareChangeData = () => {\n    // let arrX = storeCoins.ModalData; //  *** new\n    // let arrY = storeCoins.PreData;      //  *** old\n    // let x = null; //\n\n    //return\n    // arrX?.map(itemX => {\n    //   const idX = itemX.CoinInfo.Id; //*** <-----------WORK HERE\n    //\n    //   arrY?.map(itemY => {\n    //     // const {idY = itemY.CoinInfo.Id, ...itemData} = itemY;\n    //     const itemY = arrX.find(y => idY === idX).foo;\n    //\n    //   if (idX == idY) {\n    //     RAW.USD.PRICE ==\n    //     }\n    //   }\n    // }\n  }\n\n  onClickStop = () => {\n    storeTimer.clearPauseTime();\n    storeTimer.doStop();\n    clearInterval(this.timerId);\n    this.setState({counter4: 0});\n    this.handleBadgeVisibility();\n  }\n\n  private onClickStart = () => {  // !!! <--------------Work here\n    // console.clear();\n    // console.log('onClickStart', this.timerId);\n    storeTimer.clearPauseTime();\n      // clearInterval(this.timerId);\n    this.setState({counter4: storeTimer.timerBeginTime});\n    if (this.state.counter4 > 0) {\n      storeTimer.doStart();\n      this.handleBadgeInVisibility();\n      this.timerStart(); //return\n    }\n  }\n\n  onClickPause = () => {\n    storeTimer.doPause(this.state.counter4);\n    // this.setState({counterTemp: storeTimer.timerPauseTime}); // ??? is use ?\n    clearInterval(this.timerId);\n    this.handleBadgeVisibility();\n  }\n\n  onClickResume = () => {\n    this.setState({counter4: storeTimer.timerPauseTime});\n    storeTimer.doStart();\n\n    this.handleBadgeInVisibility();\n    this.timerStart(); //return\n  }\n\n  //=================================================================\n  checkSwitch = () => { //event\n    storeTimer.setTimerRepeat();\n  }\n  handleBadgeVisibility = () => {\n    this.setState({invisibleBadge: false});\n  }\n  handleBadgeInVisibility = () => {\n    this.setState({invisibleBadge: true});\n  }\n  onClickPlus = () => {\n    storeTimer.increment();\n    this.handleBadgeVisibility();\n  }\n  onClickMinus = () => {\n    storeTimer.decrement();\n    this.handleBadgeVisibility();\n  }\n\n  render() {\n    // console.log('Timer_render')\n    return (\n      <div className=\"Timer4\">\n        {/*<span>[ counterTemp:{this.state.counterTemp} ]</span><span>   </span>*/}\n        <span>[ counter4:{this.state.counter4} ]</span><span>   </span>\n        <span>[ timerBeginTime:{storeTimer.timerBeginTime} ]</span><span>   </span>\n        <span>[ timerPauseTime:{storeTimer.timerPauseTime} ]</span><span>   </span>\n        <span>[ timerActive:{storeTimer.timerActive} ]</span><span>   </span>\n        <br/>\n        <hr/>\n        <br/>\n        <Box>\n          <Badge\n            anchorOrigin={{\n              vertical: 'top',\n              horizontal: 'left',\n            }}\n            badgeContent={storeTimer.timerBeginTime}\n            color=\"error\"\n            invisible={this.state.invisibleBadge}\n          >\n            <Badge badgeContent={this.state.counter4} showZero color=\"primary\">\n              <AccessTime color=\"action\"/>\n            </Badge>\n          </Badge>\n          <span>   </span>\n          <Button\n            aria-label=\"increase\"\n            onClick={this.onClickPlus}\n            variant=\"contained\"\n          >\n            <AddIcon fontSize=\"small\"/>\n          </Button>\n          <Button\n            aria-label=\"reduce\"\n            onClick={this.onClickMinus}\n            variant=\"contained\"\n          >\n            <RemoveIcon fontSize=\"small\"/>\n          </Button>\n          <FormControlLabel control={<Switch defaultChecked/>}\n                            onChange={this.checkSwitch}\n                            label='repeat'\n                            color={'inherit'}\n          />\n          <ButtonGroup variant=\"contained\" aria-label=\"outlined primary button group\">\n            <Button onClick={this.onClickStart}>Start</Button>\n            <Button onClick={this.onClickStop}>Stop </Button>\n            <Button onClick={this.onClickPause}>Pause</Button>\n            <Button onClick={this.onClickResume}>Resume</Button>\n          </ButtonGroup>\n        </Box>\n      </div>\n    );\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/utils/Timer4.tsx b/src/components/utils/Timer4.tsx
+--- a/src/components/utils/Timer4.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/utils/Timer4.tsx	(date 1680596640880)
+@@ -10,7 +10,6 @@
+ import {observer} from "mobx-react";
+ import {storeTimer} from "../store/StoreTimer";
+ import {inputTimer} from "../type/Type";
+-import {storeCoins} from "../store/StoreCoins";
+ 
+ @observer
+ export class Timer4 extends React.Component<inputTimer, any> {
+@@ -20,7 +19,6 @@
+     this.state = {
+       finishMessage: this.props?.messageTimer || storeTimer.timerMessage,
+       counter4: this.props?.inputTime || storeTimer.timerBeginTime,
+-      // counterTemp: storeTimer.timerPauseTime,
+       functionTimer: this.props?.functionTimer || storeTimer.timerMakeFun,
+       invisibleBadge: true,
+     };
+@@ -28,7 +26,7 @@
+ 
+   componentDidMount() {
+     // console.log('Timer_componentDidMount');
+-    this.timerStart();
++    // this.timerStart();
+     this.onClickStart();
+   }
+ 
+@@ -36,8 +34,8 @@
+     if (storeTimer.timerActive) {
+       // console.log('timerStart', ' timerId = ', this?.timerId)
+       this.timerId = setInterval(this.callbackTimeout, 1000);
+-
+     }
++
+   }
+ 
+   componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {
+@@ -56,41 +54,22 @@
+ 
+     this.setState({counter4: (this.state.counter4 - 1)});
+     if (storeTimer.timerActive && storeTimer.timerRepeat && (this.state.counter4 === 0)) {// *** IS FINISH
+-      // console.log(' 5 ', this.state.finishMessage);
+       this.onClickStart();
+       storeTimer.timerMakeFun(); // *** Finish действие и стоп
+-      // storeTimer.timerShow();
+ 
+     } else if (!storeTimer.timerRepeat && (this.state.counter4 === 0)) {
+-      // console.log(' 7 ', this.state.finishMessage);
+       clearInterval(this.timerId);
+       this.onClickStop();
+       storeTimer.timerMakeFun(); // *** Temp действие и продолжить
+       // storeTimer.timerShow();
+     }
+-  }
+-
+-  compareChangeData = () => {
+-    // let arrX = storeCoins.ModalData; //  *** new
+-    // let arrY = storeCoins.PreData;      //  *** old
+-    // let x = null; //
+-
+-    //return
+-    // arrX?.map(itemX => {
+-    //   const idX = itemX.CoinInfo.Id; //*** <-----------WORK HERE
+-    //
+-    //   arrY?.map(itemY => {
+-    //     // const {idY = itemY.CoinInfo.Id, ...itemData} = itemY;
+-    //     const itemY = arrX.find(y => idY === idX).foo;
+-    //
+-    //   if (idX == idY) {
+-    //     RAW.USD.PRICE ==
+-    //     }
+-    //   }
+-    // }
++    if (!storeTimer.timerActive) {
++      this.onClickPause();
++    }
+   }
+ 
+   onClickStop = () => {
++    console.log('onClickStop')
+     storeTimer.clearPauseTime();
+     storeTimer.doStop();
+     clearInterval(this.timerId);
+@@ -98,22 +77,20 @@
+     this.handleBadgeVisibility();
+   }
+ 
+-  private onClickStart = () => {  // !!! <--------------Work here
++  // private
++  onClickStart = () => {  // !!! <--------------Work here
+     // console.clear();
+-    // console.log('onClickStart', this.timerId);
+     storeTimer.clearPauseTime();
+-      // clearInterval(this.timerId);
+     this.setState({counter4: storeTimer.timerBeginTime});
+     if (this.state.counter4 > 0) {
+       storeTimer.doStart();
+       this.handleBadgeInVisibility();
+-      this.timerStart(); //return
++      this.timerStart();
+     }
+   }
+ 
+   onClickPause = () => {
+     storeTimer.doPause(this.state.counter4);
+-    // this.setState({counterTemp: storeTimer.timerPauseTime}); // ??? is use ?
+     clearInterval(this.timerId);
+     this.handleBadgeVisibility();
+   }
+@@ -146,17 +123,15 @@
+   }
+ 
+   render() {
+-    // console.log('Timer_render')
+     return (
+       <div className="Timer4">
+-        {/*<span>[ counterTemp:{this.state.counterTemp} ]</span><span>   </span>*/}
+-        <span>[ counter4:{this.state.counter4} ]</span><span>   </span>
+-        <span>[ timerBeginTime:{storeTimer.timerBeginTime} ]</span><span>   </span>
+-        <span>[ timerPauseTime:{storeTimer.timerPauseTime} ]</span><span>   </span>
+-        <span>[ timerActive:{storeTimer.timerActive} ]</span><span>   </span>
+-        <br/>
+-        <hr/>
+-        <br/>
++        {/*<span>[ counter4:{this.state.counter4} ]</span><span>   </span>*/}
++        {/*<span>[ timerBeginTime:{storeTimer.timerBeginTime} ]</span><span>   </span>*/}
++        {/*<span>[ timerPauseTime:{storeTimer.timerPauseTime} ]</span><span>   </span>*/}
++        {/*<span>[ timerActive:{storeTimer.timerActive} ]</span><span>   </span>*/}
++        {/*<br/>*/}
++        {/*<hr/>*/}
++        {/*<br/>*/}
+         <Box>
+           <Badge
+             anchorOrigin={{
+Index: src/components/xxx/Lesson.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {Component} from \"react\"; // import component\nimport {observer} from \"mobx-react\";\nimport {observable} from \"mobx\";\nimport {counter} from \"../utils/Counter\";\n\n// @observable class countZerro {\n//     countZ:number = 0;\n//     incCountZ = () => {++this.number};\n// }\n\n//     @action(\n//         incZ = ++incZ\n//     )\n// )\n\n// @observer let Lesson2: () => JSX.Element;\n// Lesson2 = () => {\n// @observer export default class Lesson2 extends Component<any, any> {\n@observer export default class Lesson2 extends Component{\n    // TestData: {\n    //     timerTestData: number,\n    //     testProps: string,\n    // };\n    @observable timerTestData: number = 42\n    value: number\n    double: any\n    // increment:any\n    // constructor(value) {\n    //     super(value);\n    //     // makeObservable(this,\n    // }\n\n      render (){\n        // this.setState(TestData.timerTestData=32);\n        //   console.log('timerTestData',this.timerTestData);\n        //   console.log('store', store.timerTestData)\n        return (\n            <div>\n                <h3>Lesson</h3>\n                {/*<h1> <TestStore pprops={this.timerTestData}/> </h1>*/}\n                {/*    */}\n                {/*<h3>{`countZ = ${this.TimerSet.timeUpdate}`}h</h3>*/}\n                {/*<button onClick={() => this.incCountZ()}>+++</button>*/}\n                <h3>{\"Counter = \" + counter.count1}</h3>\n                {/*<h3>{\"Counter1 = \"+ counter.count1 }</h3>*/}\n                {/*<h3>{\"Counter2 = \"+ counter.count3 }</h3>*/}\n                <button onClick={() => counter.increment()}>+++</button>\n                <button onClick={() => counter.decrement()}>---</button>\n                <button onClick={() => counter.reset()}>=zero=</button>\n            </div>\n        )\n        // }\n    };\n}\n\n\n// export class Lesson extends Component {\n//     // static propTypes = {\n//     //     children: PropTypes.element,\n//     // }\n//     // static defaultProps = {\n//     //     children: null,\n//     // }\n//     // counter: 1;\n//     state = {\n//         counter0: 0,\n//     }\n//     handleClick = () => {\n//         this.setState(({this.counter}) => ({\n//             counter0: ++counter,\n//         }))\n//     }\n//\n//     render() {\n//         const {counter0} = this.state;\n//         const {children, child} = this.props;\n//\n//         return (\n//\n//             <div>\n//                 <Search\n//                     // value={search}\n//                     // onChange={handleChange}\n//                 ></Search>\n//                 <div>{counter0}</div>\n//                 {child}\n//                 {children}\n//                 {/*{React.cloneElement(children, {counter: this.state.counter})} // dont work*/}\n//                 {/*<Counter counter={counter} />*/}\n//                 <button onClick={this.handleClick}> [ +1 ] </button>\n//                 {/*<button onClick=<Counter counter/> [ +1 ] </button>*/}\n//             </div>\n//         );\n//     }\n// }\n//\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/xxx/Lesson.tsx b/src/components/xxx/Lesson.tsx
+--- a/src/components/xxx/Lesson.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/xxx/Lesson.tsx	(date 1680598335624)
+@@ -1,7 +1,7 @@
+ import React, {Component} from "react"; // import component
+ import {observer} from "mobx-react";
+ import {observable} from "mobx";
+-import {counter} from "../utils/Counter";
++import {counter} from "./Counter";
+ 
+ // @observable class countZerro {
+ //     countZ:number = 0;
+Index: src/components/pages/Table/Tables.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\"; //, {Component}\n// import './Cards.css';\nimport {storeTimer} from \"../../store/StoreTimer\";\nimport {storeCoins} from \"../../store/StoreCoins\";\nimport {TablesList} from \"./TablesList\";\n// import {LoaderData} from \"../../utils/LoaderData\";\nimport {PostData} from \"../../utils/PostData\";\nimport Search from \"../../utils/Search\";\nimport LoaderSpiner from \"../../utils/LoaderSpiner/LoaderSpiner\";\nimport {observer} from \"mobx-react\";\n\n// import {inputTimer, propsDataCryptaFromPostData} from \"../../store/type\";\n\n@observer\nexport class Tables extends React.Component<any, any> { //propsDataCryptaFromPostData\n  dataData: any[];\n  state = {\n    isLoading: true, //  storeCoins.IsLoading: boolean = true\n  }\n\n  componentDidMount() {\n    storeTimer.setTimerBeginTime(15);\n    storeTimer.setTimerFunction(() => new Tables(storeCoins.FetchUrl).startTimer());\n    this.startTimer();\n  }\n\n  // // componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {\n  // //     // console.log('Tables_componentDidUpdate');\n  // // }\n  // componentWillUnmount() {\n  //   console.log('Tables_componentWillUnmount');\n  // }\n\n  startTimer = () => {\n    // new LoaderData('x').loadData() ;\n    // this.dataData = storeCoins.DataData;\n    //   console.log('Tables_startTimer');\n    storeTimer.doVisible();\n    storeTimer.doStart();\n\n    this.loadData().then(() => { // ??? refactor late twix code\n      this.setState({isLoading: false});\n    });\n  }\n\n  public async loadData() {\n    this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl);\n    console.log('load_data...');\n  }\n\n  render() {\n    return (\n      <div className=\"table\">\n        <h3>Tables</h3>\n        <button onClick={() => this.startTimer()}> LOAD</button>\n        <Search/>\n        {\n          this.state.isLoading\n            ? <LoaderSpiner/>\n            : <TablesList data={this.dataData}/>\n        }\n      </div>\n    )\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Table/Tables.tsx b/src/components/pages/Table/Tables.tsx
+--- a/src/components/pages/Table/Tables.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Table/Tables.tsx	(date 1680597705112)
+@@ -1,16 +1,12 @@
+ import React from "react"; //, {Component}
+-// import './Cards.css';
+ import {storeTimer} from "../../store/StoreTimer";
+ import {storeCoins} from "../../store/StoreCoins";
+ import {TablesList} from "./TablesList";
+-// import {LoaderData} from "../../utils/LoaderData";
+ import {PostData} from "../../utils/PostData";
+ import Search from "../../utils/Search";
+ import LoaderSpiner from "../../utils/LoaderSpiner/LoaderSpiner";
+ import {observer} from "mobx-react";
+ 
+-// import {inputTimer, propsDataCryptaFromPostData} from "../../store/type";
+-
+ @observer
+ export class Tables extends React.Component<any, any> { //propsDataCryptaFromPostData
+   dataData: any[];
+@@ -24,17 +20,7 @@
+     this.startTimer();
+   }
+ 
+-  // // componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {
+-  // //     // console.log('Tables_componentDidUpdate');
+-  // // }
+-  // componentWillUnmount() {
+-  //   console.log('Tables_componentWillUnmount');
+-  // }
+-
+   startTimer = () => {
+-    // new LoaderData('x').loadData() ;
+-    // this.dataData = storeCoins.DataData;
+-    //   console.log('Tables_startTimer');
+     storeTimer.doVisible();
+     storeTimer.doStart();
+ 
+Index: src/components/store/StoreTimer.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { observable,  makeAutoObservable} from \"mobx\"\n\nexport class StoreTimer  {\n    @observable timerPauseTime: number = 0\n    @observable timerBeginTime: number = 30\n    @observable timerActive: boolean = false\n    @observable timerVisible: boolean = false\n    @observable timerRepeat: boolean = true\n    public timerMessage: string = \"Time's Up\"\n    public timerShow = (() => { console.log(`timer4_timerBeginTime=${this.timerBeginTime}_timerPauseTime=${this.timerPauseTime}`) })\n        // public timerMakeFun = () => {console.log('>>> timerActive_tst')}\n        public timerMakeFun(): void { console.log('>>> timerActive_tst <<<') } //  **** ok\n        // public timerMakeFun(): void { new Cards(storeCoins.FetchUrl).startTimer() }\n\n    constructor() {\n        makeAutoObservable(this, {        })\n    }\n\n// action\n    doStart = () => {\n        this.timerActive = true;\n    }\n    doStop = () => {\n        this.timerActive = false;\n    }\n    doVisible = () => {\n        this.timerVisible = true;\n    }\n    doInVisible = () => {\n        this.timerVisible = false;\n    }\n    doPause = (timePause) => {\n        this.timerPauseTime = timePause;\n        this.timerActive = false;\n    }\n\n    setTimerBeginTime = (timeBegin) => {\n        this.timerBeginTime = timeBegin;\n    }\n    setTimerFunction = (timeFun) => {\n        this.timerMakeFun = timeFun;\n    }\n    setTimerRepeat = () => {\n        this.timerRepeat = !this.timerRepeat;\n    }\n    increment = () => {\n        this.timerBeginTime = this.timerBeginTime < 99 ? this.timerBeginTime + 1 : 99;\n        // console.log('increment', this.timerBeginTime);\n    }\n    decrement = () => {\n        this.timerBeginTime = this.timerBeginTime > 0 ? this.timerBeginTime - 1 : 0;\n        // console.log('decrement', this.timerBeginTime);\n    }\n    clearPauseTime = () => {\n        this.timerPauseTime = 0;\n    }\n}\n\nexport const storeTimer = new StoreTimer();\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/store/StoreTimer.ts b/src/components/store/StoreTimer.ts
+--- a/src/components/store/StoreTimer.ts	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/store/StoreTimer.ts	(date 1680598305695)
+@@ -8,7 +8,6 @@
+     @observable timerRepeat: boolean = true
+     public timerMessage: string = "Time's Up"
+     public timerShow = (() => { console.log(`timer4_timerBeginTime=${this.timerBeginTime}_timerPauseTime=${this.timerPauseTime}`) })
+-        // public timerMakeFun = () => {console.log('>>> timerActive_tst')}
+         public timerMakeFun(): void { console.log('>>> timerActive_tst <<<') } //  **** ok
+         // public timerMakeFun(): void { new Cards(storeCoins.FetchUrl).startTimer() }
+ 
+@@ -16,7 +15,6 @@
+         makeAutoObservable(this, {        })
+     }
+ 
+-// action
+     doStart = () => {
+         this.timerActive = true;
+     }
+@@ -45,15 +43,13 @@
+     }
+     increment = () => {
+         this.timerBeginTime = this.timerBeginTime < 99 ? this.timerBeginTime + 1 : 99;
+-        // console.log('increment', this.timerBeginTime);
+     }
+     decrement = () => {
+         this.timerBeginTime = this.timerBeginTime > 0 ? this.timerBeginTime - 1 : 0;
+-        // console.log('decrement', this.timerBeginTime);
+     }
+     clearPauseTime = () => {
+         this.timerPauseTime = 0;
+     }
+ }
+ 
+-export const storeTimer = new StoreTimer();
++export const storeTimer = new StoreTimer();
+\ No newline at end of file
+Index: src/components/pages/Cards/CardsList.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n.EmployersList {\n    width: 300px;\n    height: 330px;\n    /*position: absolute;*/\n    /*top: 50%;*/\n    /*left: 50%;*/\n    margin: 5px;\n    /*padding: 5px;*/\n}\n\n.red {\n    color: darkred;\n}\n\n.green {\n    color: darkgreen;\n}\n\n.normalColor {\n    color: darkblue;\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Cards/CardsList.css b/src/components/pages/Cards/CardsList.css
+--- a/src/components/pages/Cards/CardsList.css	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Cards/CardsList.css	(date 1680597705092)
+@@ -2,11 +2,7 @@
+ .EmployersList {
+     width: 300px;
+     height: 330px;
+-    /*position: absolute;*/
+-    /*top: 50%;*/
+-    /*left: 50%;*/
+     margin: 5px;
+-    /*padding: 5px;*/
+ }
+ 
+ .red {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"724db092-77ce-4751-ac2c-90687941c0d1\" name=\"Changes\" comment=\"step Finish - begin compare data &amp; colores\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/components/pages/Table/Tables.tsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/pages/Table/Tables.tsx\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/components/store/StoreCoins.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/store/StoreCoins.ts\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ChangesViewManager\">\n    <option name=\"groupingKeys\">\n      <option value=\"directory\" />\n    </option>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"SCSS File\" />\n        <option value=\"JavaScript File\" />\n        <option value=\"tsconfig.json\" />\n        <option value=\"CSS File\" />\n        <option value=\"HTML File\" />\n        <option value=\"TypeScript JSX File\" />\n        <option value=\"TypeScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"RESET_MODE\" value=\"HARD\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"27d46811-9241-42ec-b8e1-e782f0ac6aa6\" />\n        <option name=\"url\" value=\"git@github.com:SergeyMusa/react_app.git\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2MILDXJ9PXNJpi61UI6s9FO8fWt\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/components/pages/Table&quot;,\n    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,\n    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,\n    &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/components/pages/Table\" />\n      <recent name=\"$PROJECT_DIR$/src/components/pages/Cards\" />\n      <recent name=\"$PROJECT_DIR$/src/components/pages/Modal\" />\n      <recent name=\"$PROJECT_DIR$/src/components/store\" />\n      <recent name=\"$PROJECT_DIR$/src/components/pages\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/components/pages/Cards\" />\n      <recent name=\"$PROJECT_DIR$/src/components/pages/Table\" />\n      <recent name=\"$PROJECT_DIR$/src/components/store/Loader\" />\n      <recent name=\"$PROJECT_DIR$/src/components/store\" />\n      <recent name=\"$PROJECT_DIR$/src/components/pages\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Node.js.index.jsx\">\n    <configuration name=\"Debug Application\" type=\"JavascriptDebugType\" uri=\"http://localhost:3000\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"index.jsx\" type=\"NodeJSConfigurationType\" nameIsGenerated=\"true\" path-to-js-file=\"src/index.jsx\" working-dir=\"$PROJECT_DIR$\">\n      <method v=\"2\">\n        <option name=\"NpmBeforeRunTask\" enabled=\"true\">\n          <package-json value=\"$PROJECT_DIR$/package.json\" />\n          <command value=\"start\" />\n          <node-interpreter value=\"project\" />\n          <envs />\n        </option>\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"ReactNative\" factoryName=\"React Native\">\n      <node-interpreter value=\"project\" />\n      <react-native value=\"\" />\n      <platform value=\"ANDROID\" />\n      <envs />\n      <only-packager />\n      <browser value=\"98ca6316-2f89-46d9-a9e5-fa9e2b0625b3\" />\n      <method v=\"2\">\n        <option name=\"ReactNativePackager\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <list>\n      <item itemvalue=\"JavaScript Debug.Debug Application\" />\n      <item itemvalue=\"Node.js.index.jsx\" />\n    </list>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"724db092-77ce-4751-ac2c-90687941c0d1\" name=\"Changes\" comment=\"\" />\n      <created>1677450032777</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1677450032777</updated>\n      <workItem from=\"1677450033767\" duration=\"654000\" />\n      <workItem from=\"1677451153566\" duration=\"2846000\" />\n      <workItem from=\"1677454416527\" duration=\"915000\" />\n      <workItem from=\"1677492338098\" duration=\"30000\" />\n      <workItem from=\"1677492369471\" duration=\"42851000\" />\n      <workItem from=\"1677678907763\" duration=\"3873000\" />\n      <workItem from=\"1677682880418\" duration=\"668000\" />\n      <workItem from=\"1677683561237\" duration=\"39926000\" />\n      <workItem from=\"1677949063474\" duration=\"160282000\" />\n      <workItem from=\"1678514678133\" duration=\"1203000\" />\n      <workItem from=\"1678515943080\" duration=\"76807000\" />\n      <workItem from=\"1678861863224\" duration=\"2360000\" />\n      <workItem from=\"1678864241814\" duration=\"948000\" />\n      <workItem from=\"1678865376916\" duration=\"684000\" />\n      <workItem from=\"1678866079743\" duration=\"405000\" />\n      <workItem from=\"1678866707742\" duration=\"48424000\" />\n      <workItem from=\"1679035010337\" duration=\"28451000\" />\n      <workItem from=\"1679301673134\" duration=\"28127000\" />\n      <workItem from=\"1679903596738\" duration=\"597000\" />\n      <workItem from=\"1679904217171\" duration=\"19000\" />\n      <workItem from=\"1679904254365\" duration=\"22780000\" />\n      <workItem from=\"1680508386909\" duration=\"13893000\" />\n    </task>\n    <task id=\"LOCAL-00024\" summary=\"step_#2-api+ = wip+\">\n      <created>1678118162639</created>\n      <option name=\"number\" value=\"00024\" />\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678118162639</updated>\n    </task>\n    <task id=\"LOCAL-00025\" summary=\"step_#3-timer = begin, disable React.StrictMode\">\n      <created>1678196612262</created>\n      <option name=\"number\" value=\"00025\" />\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678196612262</updated>\n    </task>\n    <task id=\"LOCAL-00026\" summary=\"step_#3-timer = begin, enable React.StrictMode\">\n      <created>1678386967727</created>\n      <option name=\"number\" value=\"00026\" />\n      <option name=\"presentableId\" value=\"LOCAL-00026\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678386967727</updated>\n    </task>\n    <task id=\"LOCAL-00027\" summary=\"step_#3-timer = add second\">\n      <created>1678388282837</created>\n      <option name=\"number\" value=\"00027\" />\n      <option name=\"presentableId\" value=\"LOCAL-00027\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678388282837</updated>\n    </task>\n    <task id=\"LOCAL-00028\" summary=\"step_#3-timer = ui ok\">\n      <created>1678463010766</created>\n      <option name=\"number\" value=\"00028\" />\n      <option name=\"presentableId\" value=\"LOCAL-00028\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678463010766</updated>\n    </task>\n    <task id=\"LOCAL-00029\" summary=\"step_#3-timer = crash Table? not errors\">\n      <created>1678465556764</created>\n      <option name=\"number\" value=\"00029\" />\n      <option name=\"presentableId\" value=\"LOCAL-00029\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678465556764</updated>\n    </task>\n    <task id=\"LOCAL-00030\" summary=\"wip\">\n      <created>1678474387896</created>\n      <option name=\"number\" value=\"00030\" />\n      <option name=\"presentableId\" value=\"LOCAL-00030\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678474387896</updated>\n    </task>\n    <task id=\"LOCAL-00031\" summary=\"step_#3-timer-ok_almost)\">\n      <created>1678480197646</created>\n      <option name=\"number\" value=\"00031\" />\n      <option name=\"presentableId\" value=\"LOCAL-00031\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678480197646</updated>\n    </task>\n    <task id=\"LOCAL-00032\" summary=\"step_#3-table_work\">\n      <created>1678482430016</created>\n      <option name=\"number\" value=\"00032\" />\n      <option name=\"presentableId\" value=\"LOCAL-00032\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678482430016</updated>\n    </task>\n    <task id=\"LOCAL-00033\" summary=\"wip ?bugs debug\">\n      <created>1678519357898</created>\n      <option name=\"number\" value=\"00033\" />\n      <option name=\"presentableId\" value=\"LOCAL-00033\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678519357898</updated>\n    </task>\n    <task id=\"LOCAL-00034\" summary=\"remake Timer4 - from fun to class\">\n      <created>1678691696266</created>\n      <option name=\"number\" value=\"00034\" />\n      <option name=\"presentableId\" value=\"LOCAL-00034\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678691696266</updated>\n    </task>\n    <task id=\"LOCAL-00035\" summary=\"wip dont work\">\n      <created>1678721574651</created>\n      <option name=\"number\" value=\"00035\" />\n      <option name=\"presentableId\" value=\"LOCAL-00035\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678721574651</updated>\n    </task>\n    <task id=\"LOCAL-00036\" summary=\"made table - style=ok\">\n      <created>1678731364843</created>\n      <option name=\"number\" value=\"00036\" />\n      <option name=\"presentableId\" value=\"LOCAL-00036\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678731364843</updated>\n    </task>\n    <task id=\"LOCAL-00037\" summary=\"wip\">\n      <created>1678735509137</created>\n      <option name=\"number\" value=\"00037\" />\n      <option name=\"presentableId\" value=\"LOCAL-00037\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678735509137</updated>\n    </task>\n    <task id=\"LOCAL-00038\" summary=\"wip modify timer3\">\n      <created>1678775645662</created>\n      <option name=\"number\" value=\"00038\" />\n      <option name=\"presentableId\" value=\"LOCAL-00038\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678775645662</updated>\n    </task>\n    <task id=\"LOCAL-00039\" summary=\"wip tables&amp;cards remade to ts\">\n      <created>1678788450387</created>\n      <option name=\"number\" value=\"00039\" />\n      <option name=\"presentableId\" value=\"LOCAL-00039\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678788450387</updated>\n    </task>\n    <task id=\"LOCAL-00040\" summary=\"wip\">\n      <created>1678801150693</created>\n      <option name=\"number\" value=\"00040\" />\n      <option name=\"presentableId\" value=\"LOCAL-00040\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678801150693</updated>\n    </task>\n    <task id=\"LOCAL-00041\" summary=\"wip-tables=ok\">\n      <created>1678874749672</created>\n      <option name=\"number\" value=\"00041\" />\n      <option name=\"presentableId\" value=\"LOCAL-00041\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678874749672</updated>\n    </task>\n    <task id=\"LOCAL-00042\" summary=\"remade Cards=ok took out-fetch load\">\n      <created>1678877808192</created>\n      <option name=\"number\" value=\"00042\" />\n      <option name=\"presentableId\" value=\"LOCAL-00042\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678877808192</updated>\n    </task>\n    <task id=\"LOCAL-00043\" summary=\"wip clear proj\">\n      <created>1678879473204</created>\n      <option name=\"number\" value=\"00043\" />\n      <option name=\"presentableId\" value=\"LOCAL-00043\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678879473204</updated>\n    </task>\n    <task id=\"LOCAL-00044\" summary=\"Timers = ok, only autostart &amp; +/- observ\">\n      <created>1678905040715</created>\n      <option name=\"number\" value=\"00044\" />\n      <option name=\"presentableId\" value=\"LOCAL-00044\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678905040715</updated>\n    </task>\n    <task id=\"LOCAL-00045\" summary=\"wip - rename CardsList\">\n      <created>1678951308612</created>\n      <option name=\"number\" value=\"00045\" />\n      <option name=\"presentableId\" value=\"LOCAL-00045\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678951308612</updated>\n    </task>\n    <task id=\"LOCAL-00046\" summary=\"wip - ERROR\">\n      <created>1678960473726</created>\n      <option name=\"number\" value=\"00046\" />\n      <option name=\"presentableId\" value=\"LOCAL-00046\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678960473726</updated>\n    </task>\n    <task id=\"LOCAL-00047\" summary=\"wip - fix ERROR, work with preLoader\">\n      <created>1678963462249</created>\n      <option name=\"number\" value=\"00047\" />\n      <option name=\"presentableId\" value=\"LOCAL-00047\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678963462250</updated>\n    </task>\n    <task id=\"LOCAL-00048\" summary=\"step4-make Modal\">\n      <created>1678994653952</created>\n      <option name=\"number\" value=\"00048\" />\n      <option name=\"presentableId\" value=\"LOCAL-00048\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678994653952</updated>\n    </task>\n    <task id=\"LOCAL-00049\" summary=\"step4-make Modal=ok, wip\">\n      <created>1679038825083</created>\n      <option name=\"number\" value=\"00049\" />\n      <option name=\"presentableId\" value=\"LOCAL-00049\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679038825083</updated>\n    </task>\n    <task id=\"LOCAL-00050\" summary=\"step4-make Modal=ok+ осталось дату\">\n      <created>1679056249107</created>\n      <option name=\"number\" value=\"00050\" />\n      <option name=\"presentableId\" value=\"LOCAL-00050\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679056249108</updated>\n    </task>\n    <task id=\"LOCAL-00051\" summary=\"step4-remake Modal=ok+ осталось дату\">\n      <created>1679061767972</created>\n      <option name=\"number\" value=\"00051\" />\n      <option name=\"presentableId\" value=\"LOCAL-00051\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679061767972</updated>\n    </task>\n    <task id=\"LOCAL-00052\" summary=\"wip add props to timer\">\n      <created>1679302475914</created>\n      <option name=\"number\" value=\"00052\" />\n      <option name=\"presentableId\" value=\"LOCAL-00052\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679302475914</updated>\n    </task>\n    <task id=\"LOCAL-00053\" summary=\"wip remake timer props&amp;store\">\n      <created>1679313937950</created>\n      <option name=\"number\" value=\"00053\" />\n      <option name=\"presentableId\" value=\"LOCAL-00053\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679313937950</updated>\n    </task>\n    <task id=\"LOCAL-00054\" summary=\"wip fix err timer4. dont work autostart timer\">\n      <created>1679397000565</created>\n      <option name=\"number\" value=\"00054\" />\n      <option name=\"presentableId\" value=\"LOCAL-00054\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679397000565</updated>\n    </task>\n    <task id=\"LOCAL-00055\" summary=\"wip\">\n      <created>1679414698916</created>\n      <option name=\"number\" value=\"00055\" />\n      <option name=\"presentableId\" value=\"LOCAL-00055\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679414698916</updated>\n    </task>\n    <task id=\"LOCAL-00056\" summary=\"wip mobx Modal\">\n      <created>1679923034402</created>\n      <option name=\"number\" value=\"00056\" />\n      <option name=\"presentableId\" value=\"LOCAL-00056\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679923034403</updated>\n    </task>\n    <task id=\"LOCAL-00057\" summary=\"wip Modal, Item = ok\">\n      <created>1679924998477</created>\n      <option name=\"number\" value=\"00057\" />\n      <option name=\"presentableId\" value=\"LOCAL-00057\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679924998477</updated>\n    </task>\n    <task id=\"LOCAL-00058\" summary=\"remade Tables\">\n      <created>1679991166811</created>\n      <option name=\"number\" value=\"00058\" />\n      <option name=\"presentableId\" value=\"LOCAL-00058\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679991166811</updated>\n    </task>\n    <task id=\"LOCAL-00059\" summary=\"fix bugs ui modal\">\n      <created>1679996666345</created>\n      <option name=\"number\" value=\"00059\" />\n      <option name=\"presentableId\" value=\"LOCAL-00059\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679996666345</updated>\n    </task>\n    <task id=\"LOCAL-00060\" summary=\"fix bugs timer\">\n      <created>1679998232455</created>\n      <option name=\"number\" value=\"00060\" />\n      <option name=\"presentableId\" value=\"LOCAL-00060\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679998232455</updated>\n    </task>\n    <task id=\"LOCAL-00061\" summary=\"wip\">\n      <created>1680000670245</created>\n      <option name=\"number\" value=\"00061\" />\n      <option name=\"presentableId\" value=\"LOCAL-00061\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680000670245</updated>\n    </task>\n    <task id=\"LOCAL-00062\" summary=\"wip with timer start fun\">\n      <created>1680012284732</created>\n      <option name=\"number\" value=\"00062\" />\n      <option name=\"presentableId\" value=\"LOCAL-00062\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680012284732</updated>\n    </task>\n    <task id=\"LOCAL-00063\" summary=\"timer=ok load data\">\n      <created>1680014944256</created>\n      <option name=\"number\" value=\"00063\" />\n      <option name=\"presentableId\" value=\"LOCAL-00063\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680014944256</updated>\n    </task>\n    <task id=\"LOCAL-00064\" summary=\"wip - modal work  componentDidMount\">\n      <created>1680015776123</created>\n      <option name=\"number\" value=\"00064\" />\n      <option name=\"presentableId\" value=\"LOCAL-00064\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680015776123</updated>\n    </task>\n    <task id=\"LOCAL-00065\" summary=\"wip - debug timer\">\n      <created>1680087220844</created>\n      <option name=\"number\" value=\"00065\" />\n      <option name=\"presentableId\" value=\"LOCAL-00065\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680087220844</updated>\n    </task>\n    <task id=\"LOCAL-00066\" summary=\"wip - timer=ok\">\n      <created>1680090307138</created>\n      <option name=\"number\" value=\"00066\" />\n      <option name=\"presentableId\" value=\"LOCAL-00066\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680090307138</updated>\n    </task>\n    <task id=\"LOCAL-00067\" summary=\"wip\">\n      <created>1680095139936</created>\n      <option name=\"number\" value=\"00067\" />\n      <option name=\"presentableId\" value=\"LOCAL-00067\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680095139937</updated>\n    </task>\n    <task id=\"LOCAL-00068\" summary=\"wip - work )\">\n      <created>1680268742601</created>\n      <option name=\"number\" value=\"00068\" />\n      <option name=\"presentableId\" value=\"LOCAL-00068\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680268742601</updated>\n    </task>\n    <task id=\"LOCAL-00069\" summary=\"wip - fix tables props\">\n      <created>1680271492696</created>\n      <option name=\"number\" value=\"00069\" />\n      <option name=\"presentableId\" value=\"LOCAL-00069\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680271492696</updated>\n    </task>\n    <task id=\"LOCAL-00070\" summary=\"wip\">\n      <created>1680273984995</created>\n      <option name=\"number\" value=\"00070\" />\n      <option name=\"presentableId\" value=\"LOCAL-00070\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680273984995</updated>\n    </task>\n    <task id=\"LOCAL-00071\" summary=\"wip\">\n      <created>1680274071541</created>\n      <option name=\"number\" value=\"00071\" />\n      <option name=\"presentableId\" value=\"LOCAL-00071\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680274071541</updated>\n    </task>\n    <task id=\"LOCAL-00072\" summary=\"step Finish - begin compare data &amp; colores\">\n      <created>1680530329266</created>\n      <option name=\"number\" value=\"00072\" />\n      <option name=\"presentableId\" value=\"LOCAL-00072\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1680530329266</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"73\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <ignored-roots>\n      <path value=\"$PROJECT_DIR$/..\" />\n    </ignored-roots>\n    <MESSAGE value=\"wip - rename CardsList\" />\n    <MESSAGE value=\"wip - ERROR\" />\n    <MESSAGE value=\"wip - fix ERROR, work with preLoader\" />\n    <MESSAGE value=\"step4-make Modal\" />\n    <MESSAGE value=\"step4-make Modal=ok, wip\" />\n    <MESSAGE value=\"step4-make Modal=ok+ осталось дату\" />\n    <MESSAGE value=\"step4-remake Modal=ok+ осталось дату\" />\n    <MESSAGE value=\"wip add props to timer\" />\n    <MESSAGE value=\"wip remake timer props&amp;store\" />\n    <MESSAGE value=\"wip fix err timer4. dont work autostart timer\" />\n    <MESSAGE value=\"wip mobx Modal\" />\n    <MESSAGE value=\"wip Modal, Item = ok\" />\n    <MESSAGE value=\"remade Tables\" />\n    <MESSAGE value=\"fix bugs ui modal\" />\n    <MESSAGE value=\"fix bugs timer\" />\n    <MESSAGE value=\"wip rename store to storeTimer\" />\n    <MESSAGE value=\"wip with timer start fun\" />\n    <MESSAGE value=\"timer=ok load data\" />\n    <MESSAGE value=\"wip - modal work  componentDidMount\" />\n    <MESSAGE value=\"wip - debug timer\" />\n    <MESSAGE value=\"wip - timer=ok\" />\n    <MESSAGE value=\"wip - work )\" />\n    <MESSAGE value=\"wip - fix tables props\" />\n    <MESSAGE value=\"wip\" />\n    <MESSAGE value=\"step Finish - begin compare data &amp; colores\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"step Finish - begin compare data &amp; colores\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/.idea/workspace.xml	(date 1680599358207)
+@@ -4,12 +4,32 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="step Finish - begin compare data &amp; colores">
++    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip">
++      <change afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemRandom.tsx" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/pages/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Footer.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/TablesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/TablesList.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Store.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/type/Type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/type/Type.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/utils/CompareData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/-CompareData.ts-" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/utils/Counter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Counter.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/utils/LoaderData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/-LoaderData.ts-" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/utils/PostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/PostData.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/utils/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Timer4.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/utils/Toggle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Toggle.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/xxx/Lesson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Lesson.tsx" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -71,42 +91,42 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/components/pages/Table&quot;,
+-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,
+-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+-    &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "ASKED_ADD_EXTERNAL_FILES": "true",
++    "DefaultHtmlFileTemplate": "HTML File",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Cards",
++    "list.type.of.created.stylesheet": "CSS",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs.jest.jest_package": "",
++    "nodejs_interpreter_path": "node",
++    "nodejs_package_manager_path": "npm",
++    "run.code.analysis.last.selected.profile": "pProject Default",
++    "settings.editor.selected.configurable": "advanced.settings",
++    "ts.external.directory.path": "/home/musa/GIT/react_app/node_modules/typescript/lib",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
+       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
+-      <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
+       <recent name="$PROJECT_DIR$/src/components/pages/Modal" />
+       <recent name="$PROJECT_DIR$/src/components/store" />
+       <recent name="$PROJECT_DIR$/src/components/pages" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/src/components/xxx" />
+       <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
+       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
+       <recent name="$PROJECT_DIR$/src/components/store/Loader" />
+       <recent name="$PROJECT_DIR$/src/components/store" />
+-      <recent name="$PROJECT_DIR$/src/components/pages" />
+     </key>
+   </component>
+   <component name="RunManager" selected="Node.js.index.jsx">
+@@ -168,14 +188,8 @@
+       <workItem from="1679903596738" duration="597000" />
+       <workItem from="1679904217171" duration="19000" />
+       <workItem from="1679904254365" duration="22780000" />
+-      <workItem from="1680508386909" duration="13893000" />
+-    </task>
+-    <task id="LOCAL-00024" summary="step_#2-api+ = wip+">
+-      <created>1678118162639</created>
+-      <option name="number" value="00024" />
+-      <option name="presentableId" value="LOCAL-00024" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1678118162639</updated>
++      <workItem from="1680508386909" duration="15423000" />
++      <workItem from="1680594745273" duration="4612000" />
+     </task>
+     <task id="LOCAL-00025" summary="step_#3-timer = begin, disable React.StrictMode">
+       <created>1678196612262</created>
+@@ -513,7 +527,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1680530329266</updated>
+     </task>
+-    <option name="localTasksCounter" value="73" />
++    <task id="LOCAL-00073" summary="wip">
++      <created>1680533344928</created>
++      <option name="number" value="00073" />
++      <option name="presentableId" value="LOCAL-00073" />
++      <option name="project" value="LOCAL" />
++      <updated>1680533344928</updated>
++    </task>
++    <option name="localTasksCounter" value="74" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -558,8 +579,8 @@
+     <MESSAGE value="wip - timer=ok" />
+     <MESSAGE value="wip - work )" />
+     <MESSAGE value="wip - fix tables props" />
+-    <MESSAGE value="wip" />
+     <MESSAGE value="step Finish - begin compare data &amp; colores" />
+-    <option name="LAST_COMMIT_MESSAGE" value="step Finish - begin compare data &amp; colores" />
++    <MESSAGE value="wip" />
++    <option name="LAST_COMMIT_MESSAGE" value="wip" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/components/pages/Cards/Cards.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\"; //, {Component}\nimport './Cards.css';\nimport {CardsList} from \"./CardsList\";\nimport {storeTimer} from \"../../store/StoreTimer\";\nimport {storeCoins} from \"../../store/StoreCoins\";\n// import {inputTimer} from \"../../type/Type\";\nimport {PostData} from \"../../utils/PostData\";\nimport Search from \"../../utils/Search\";\nimport LoaderSpiner from \"../../utils/LoaderSpiner/LoaderSpiner\";\nimport {observable} from \"mobx\";\nimport {observer} from \"mobx-react\";\n\n// export default props => {\n//     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;\n//     const bigUrl = `http://www.filltext.com/?rows=1000&id={number|1000}&firstName={firstName}&delay=3&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;\n//     return (\n//         <div style={{display:'flex', justifyContent:'center', padding: '50px 0'}}>\n//             <button onClick={()=>props.onSelect(smallUrl)} className=\"btn btn-success\">32 элемента</button>\n//             <button onClick={()=>props.onSelect(bigUrl)} className=\"btn btn-danger\">1000 элементов</button>\n//         </div>\n//     )\n// }\n\n@observer\nexport class Cards extends React.Component<any, any> {\n  // @observable\n  dataData: any[];\n  state = {\n    isLoading: true,\n    modalActive: false,\n    setModalActive: false,\n    oldPrice: [],\n  }\n\n  componentDidMount() {\n    // console.log('Cards_componentDidMount');\n    storeTimer.setTimerBeginTime(15);\n    storeTimer.setTimerFunction( () => new Cards(storeCoins.FetchUrl).startTimer() );\n    this.startTimer();\n\n  }\n\n  startTimer = () => {\n    storeTimer.doVisible();\n    storeTimer.doStart();\n\n    this.loadData().then(() => { // ??? refactor late twix code\n      this.setState({ isLoading: false });\n    } );\n\n    console.log('load_data...');\n\n    // this.randomId(); // !!! - remake it\n  }\n\n  private async loadData () {\n    this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl) ;\n    storeCoins.setData(this.dataData);\n  }\n\n  randomId () {\n    const id = Math.floor(Math.random() * (2000 - 100));\n    // *** Work method \\/ -> не надо, все и так работает, прокси только визуально\n    // console.log( JSON.parse(JSON.stringify(storeCoins.DataData)) );\n  }\n\n  // listAllSuppliers = async () => {\n  //   return await axios\n  //     .get(`http://localhost:8080/api/suppliers/supplier/list`)\n  //     .then((response) => {\n  //       let apiResults = response.data;\n  //       console.log(apiResults);\n  //       this.setState({ supplier: apiResults });\n  //     })\n  //     .catch((error) => {\n  //       this.setState({ errorMessage: this.state.errorMessage.push(error) });\n  //     });\n  // };\n\n  public render() {\n    return (\n      <div className=\"cards\">\n        <h3>Cards</h3>\n        <button onClick={() => this.startTimer()}>[ LOAD ]</button>\n        <Search props={\"xxx\"}/>\n        {\n          this.state.isLoading\n            ? <LoaderSpiner/>\n            : <CardsList data={this.dataData}  />\n        }\n      </div>\n    )\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Cards/Cards.tsx b/src/components/pages/Cards/Cards.tsx
+--- a/src/components/pages/Cards/Cards.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Cards/Cards.tsx	(date 1680599211508)
+@@ -1,29 +1,15 @@
+-import React from "react"; //, {Component}
++import React from "react";
+ import './Cards.css';
+ import {CardsList} from "./CardsList";
+ import {storeTimer} from "../../store/StoreTimer";
+ import {storeCoins} from "../../store/StoreCoins";
+-// import {inputTimer} from "../../type/Type";
+ import {PostData} from "../../utils/PostData";
+ import Search from "../../utils/Search";
+ import LoaderSpiner from "../../utils/LoaderSpiner/LoaderSpiner";
+-import {observable} from "mobx";
+ import {observer} from "mobx-react";
+ 
+-// export default props => {
+-//     const smallUrl = `http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
+-//     const bigUrl = `http://www.filltext.com/?rows=1000&id={number|1000}&firstName={firstName}&delay=3&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}`;
+-//     return (
+-//         <div style={{display:'flex', justifyContent:'center', padding: '50px 0'}}>
+-//             <button onClick={()=>props.onSelect(smallUrl)} className="btn btn-success">32 элемента</button>
+-//             <button onClick={()=>props.onSelect(bigUrl)} className="btn btn-danger">1000 элементов</button>
+-//         </div>
+-//     )
+-// }
+-
+ @observer
+ export class Cards extends React.Component<any, any> {
+-  // @observable
+   dataData: any[];
+   state = {
+     isLoading: true,
+@@ -33,11 +19,9 @@
+   }
+ 
+   componentDidMount() {
+-    // console.log('Cards_componentDidMount');
+     storeTimer.setTimerBeginTime(15);
+     storeTimer.setTimerFunction( () => new Cards(storeCoins.FetchUrl).startTimer() );
+     this.startTimer();
+-
+   }
+ 
+   startTimer = () => {
+@@ -49,8 +33,6 @@
+     } );
+ 
+     console.log('load_data...');
+-
+-    // this.randomId(); // !!! - remake it
+   }
+ 
+   private async loadData () {
+@@ -58,12 +40,6 @@
+     storeCoins.setData(this.dataData);
+   }
+ 
+-  randomId () {
+-    const id = Math.floor(Math.random() * (2000 - 100));
+-    // *** Work method \/ -> не надо, все и так работает, прокси только визуально
+-    // console.log( JSON.parse(JSON.stringify(storeCoins.DataData)) );
+-  }
+-
+   // listAllSuppliers = async () => {
+   //   return await axios
+   //     .get(`http://localhost:8080/api/suppliers/supplier/list`)
+Index: src/components/pages/Footer.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\n\n// export class Footer extends React.Component {\nexport default function Footer() {\n        // const [value, setValue] = React.useState('recents');\n        // const handleChange = (event, newValue) => {\n        //     setValue(newValue);\n        //  };\n    // public render () {\n        return (\n            <div className={'footer'} >\n               <p> © 2023 Copyright MuSa </p>\n             </div>\n        )\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Footer.tsx b/src/components/pages/Footer.tsx
+--- a/src/components/pages/Footer.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Footer.tsx	(date 1680597705052)
+@@ -1,15 +1,9 @@
+ import React from "react";
+ 
+-// export class Footer extends React.Component {
+ export default function Footer() {
+-        // const [value, setValue] = React.useState('recents');
+-        // const handleChange = (event, newValue) => {
+-        //     setValue(newValue);
+-        //  };
+-    // public render () {
+-        return (
+-            <div className={'footer'} >
+-               <p> © 2023 Copyright MuSa </p>
+-             </div>
+-        )
++  return (
++    <div className={'footer'}>
++      <p> © 2023 Copyright MuSa </p>
++    </div>
++  )
+ }
+Index: src/components/pages/Home.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// import React from 'react';\n// import {Component} from \"react\"; // import component\nimport React, {Component} from \"react\";\nimport {Link} from \"react-router-dom\";\nimport Button from \"@mui/material/Button\";\nimport {storeTimer} from \"../store/StoreTimer\";\n\nconst homeHeader = <h3>TEST-Element</h3>;\n\nfunction Welcome() {\n    return <h1>Hello world</h1>\n}\n\n// class SuperWelcome extends React.Component { // str.1\nclass SuperWelcome extends Component {\n    render() {\n        return <h1>Hello world 2</h1>\n    }\n}\n\n// (function () { // самовызывающаяся анонимная F\n//     return (\n//         <div>\n//             <Welcome/>\n//         </div>\n//     )\n// }())\n\nfunction Welcome2 () {\n    return (\n        <div>\n            <SuperWelcome/>\n            {/*<Button variant=\"contained\">Hello World</Button>*/}\n        </div>\n    )\n}\n\nfunction handleOnClick () {\n    console.log('push btn')\n    return (\n        <Link id=\"one\" to=\"/Home\"></Link>\n    )\n    // this.props.history.push('/')\n};\n\n// * work\nexport class Home extends React.Component {\n\n  componentDidMount() {\n    storeTimer.doStop();\n    storeTimer.doInVisible();\n  }\n\n    public render () {\n        return (\n            <div>\n                <h3>Home</h3>\n                <Button variant=\"contained\" onClick={handleOnClick}>go home</Button>\n\n                {homeHeader}\n                <Welcome/>\n                <Welcome2 />\n            </div>\n        )\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Home.tsx b/src/components/pages/Home.tsx
+--- a/src/components/pages/Home.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Home.tsx	(date 1680597705032)
+@@ -1,5 +1,3 @@
+-// import React from 'react';
+-// import {Component} from "react"; // import component
+ import React, {Component} from "react";
+ import {Link} from "react-router-dom";
+ import Button from "@mui/material/Button";
+@@ -8,39 +6,28 @@
+ const homeHeader = <h3>TEST-Element</h3>;
+ 
+ function Welcome() {
+-    return <h1>Hello world</h1>
++  return <h1>Hello world</h1>
+ }
+ 
+-// class SuperWelcome extends React.Component { // str.1
+ class SuperWelcome extends Component {
+-    render() {
+-        return <h1>Hello world 2</h1>
+-    }
++  render() {
++    return <h1>Hello world 2</h1>
++  }
+ }
+ 
+-// (function () { // самовызывающаяся анонимная F
+-//     return (
+-//         <div>
+-//             <Welcome/>
+-//         </div>
+-//     )
+-// }())
+-
+-function Welcome2 () {
+-    return (
+-        <div>
+-            <SuperWelcome/>
+-            {/*<Button variant="contained">Hello World</Button>*/}
+-        </div>
+-    )
++function Welcome2() {
++  return (
++    <div>
++      <SuperWelcome/>
++    </div>
++  )
+ }
+ 
+-function handleOnClick () {
+-    console.log('push btn')
+-    return (
+-        <Link id="one" to="/Home"></Link>
+-    )
+-    // this.props.history.push('/')
++function handleOnClick() {
++  console.log('push btn')
++  return (
++    <Link id="one" to="/Home"></Link>
++  )
+ };
+ 
+ // * work
+@@ -51,16 +38,16 @@
+     storeTimer.doInVisible();
+   }
+ 
+-    public render () {
+-        return (
+-            <div>
+-                <h3>Home</h3>
+-                <Button variant="contained" onClick={handleOnClick}>go home</Button>
++  public render() {
++    return (
++      <div>
++        <h3>Home</h3>
++        <Button variant="contained" onClick={handleOnClick}>go home</Button>
+ 
+-                {homeHeader}
+-                <Welcome/>
+-                <Welcome2 />
+-            </div>
+-        )
+-    }
++        {homeHeader}
++        <Welcome/>
++        <Welcome2/>
++      </div>
++    )
++  }
+ }
+Index: src/components/store/Store.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//import { makeAutoObservable } from \"mobx\"\n// *** для таймер3 - можно удалить?\n\n // @observer\n export class Store {\n    timerTemp = 0\n    timeUpdate = 15\n     timerFunction = (() => {console.log('timerFunction')})\n\n    // constructor() {\n        // makeAutoObservable(this)\n    // }\n\n    // !!! start timer !!!\n\n// action\n    increment = () => {\n        // ++this.timeUpdate;\n        this.timeUpdate = this.timeUpdate < 99 ? this.timeUpdate + 1 : 99 ;\n        console.log('increment', this.timeUpdate);\n    }\n    decrement = () => {\n        this.timeUpdate =  this.timeUpdate > 0 ?  this.timeUpdate - 1 : 0 ;\n        console.log('decrement', this.timeUpdate);\n    }\n\n    reset = () => {\n        this.timerTemp = 0;\n    }\n}\n\nexport const storeOld = new Store();\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/store/Store.js b/src/components/store/Store.js
+--- a/src/components/store/Store.js	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/store/Store.js	(date 1680597705104)
+@@ -1,26 +1,21 @@
+-//import { makeAutoObservable } from "mobx"
+ // *** для таймер3 - можно удалить?
+ 
+- // @observer
+- export class Store {
++// @observer
++export class Store {
+     timerTemp = 0
+     timeUpdate = 15
+-     timerFunction = (() => {console.log('timerFunction')})
+-
+-    // constructor() {
+-        // makeAutoObservable(this)
+-    // }
++    timerFunction = (() => {
++        console.log('timerFunction')
++    })
+ 
+     // !!! start timer !!!
+-
+-// action
+     increment = () => {
+         // ++this.timeUpdate;
+-        this.timeUpdate = this.timeUpdate < 99 ? this.timeUpdate + 1 : 99 ;
++        this.timeUpdate = this.timeUpdate < 99 ? this.timeUpdate + 1 : 99;
+         console.log('increment', this.timeUpdate);
+     }
+     decrement = () => {
+-        this.timeUpdate =  this.timeUpdate > 0 ?  this.timeUpdate - 1 : 0 ;
++        this.timeUpdate = this.timeUpdate > 0 ? this.timeUpdate - 1 : 0;
+         console.log('decrement', this.timeUpdate);
+     }
+ 
+Index: src/components/utils/Counter.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/utils/Counter.ts b/src/components/xxx/Counter.ts
+rename from src/components/utils/Counter.ts
+rename to src/components/xxx/Counter.ts
+--- a/src/components/utils/Counter.ts	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/xxx/Counter.ts	(date 1680598305655)
+@@ -1,34 +1,28 @@
+-import { makeAutoObservable } from "mobx";
+-// import React from "react";
+-// import {observer} from "mobx-react";
++import {makeAutoObservable} from "mobx";
+ 
+-class Counter { //extends React.Component{ //
++class Counter {
+ // @observable
+-    count1 = 0;
+-    constructor() { //props
+-        // super(props); //{counter}
+-        // this.state = {
+-        //     count3: observable,
+-        //     increment: action,
+-        // }
+-        makeAutoObservable(this) // don`t work with props > state
+-    }
++  count1 = 0;
++
++  constructor() {
++    makeAutoObservable(this)
++  }
+ 
+-    increment = () => {
+-        ++this.count1;
+-    }
++  increment = () => {
++    ++this.count1;
++  }
+ 
+-    decrement = () => {
+-        this.count1 = this.count1 - 1;
+-        // this.setState(
+-        //     this.count2 = this.count2 - 1
+-        // )
+-    }
++  decrement = () => {
++    this.count1 = this.count1 - 1;
++    // this.setState(
++    //     this.count2 = this.count2 - 1
++    // )
++  }
+ 
+-    reset = () => {
+-        this.count1 = 0;
+-        console.log('reset', this.count1)
+-    }
++  reset = () => {
++    this.count1 = 0;
++    console.log('reset', this.count1)
++  }
+ }
+ 
+ export const counter = new Counter();
+\ No newline at end of file
+Index: src/components/utils/PostData.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {ResponseData} from \"../type/Type\";\n\nexport class PostData {\n    dataData: ResponseData[] = [];\n\n    async doFetchData(fetchUrl:string): Promise<ResponseData[]> { //loadData\n        try {\n            const response = await fetch(fetchUrl)\n            const data = await response.json()\n            this.dataData = data.Data;\n        // StoreCoins.CoinsTemp = this.dataData;\n            // StoreCoins.show();\n\n        } catch (e) {\n            console.log(e);\n        }\n        return this.dataData\n    }\n}\n\n//         fetch(\"https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD\")\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/utils/PostData.ts b/src/components/utils/PostData.ts
+--- a/src/components/utils/PostData.ts	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/utils/PostData.ts	(date 1680598305679)
+@@ -3,14 +3,11 @@
+ export class PostData {
+     dataData: ResponseData[] = [];
+ 
+-    async doFetchData(fetchUrl:string): Promise<ResponseData[]> { //loadData
++    async doFetchData(fetchUrl:string): Promise<ResponseData[]> {
+         try {
+             const response = await fetch(fetchUrl)
+             const data = await response.json()
+             this.dataData = data.Data;
+-        // StoreCoins.CoinsTemp = this.dataData;
+-            // StoreCoins.show();
+-
+         } catch (e) {
+             console.log(e);
+         }
+@@ -18,5 +15,4 @@
+     }
+ }
+ 
+-//         fetch("https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD")
+-
++//         fetch("https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD")
+\ No newline at end of file
+Index: src/components/pages/Timers.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\nimport {storeTimer} from \"../store/StoreTimer\";\nimport {Timer4} from \"../utils/Timer4\";\n// import {Timer3} from \"../store/Timer3\";\n// import Timer2 from \"../store/Timer2\";\n\nexport class Timers extends React.Component {\n\n  componentDidMount() {\n    // storeTimer.doStop();\n    storeTimer.doInVisible();\n    storeTimer.setTimerBeginTime(9);\n  }\n\n  public render() {\n    // storeTimer.doStart();\n    return (\n      <div>\n        <h3>Timers</h3>\n        {/*<hr/><h3>1</h3>*/}\n        {/*<Timer1 timerProps={5000}/>*/}\n        <hr/>\n        <h3>-=2=-</h3>\n        {/*<Timer2/>*/}\n        <hr/>\n        <h3>-=3=-</h3>\n        <h4>on huks</h4>\n        {/*<Timer3/>*/}\n        <hr/>\n        <h3>-=4=-</h3>\n        <h4>on classes</h4>\n        {/*<Timer4 inputTime={\"test\"}/>*/}\n        <Timer4 inputTime={10} messageTimer='Page_Timers' activeTimer={true}/>\n        <hr/>\n      </div>\n      // <Lesson child={<Button/>}> <Counter/> </Lesson>\n    );\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Timers.tsx b/src/components/pages/Timers.tsx
+--- a/src/components/pages/Timers.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Timers.tsx	(date 1680597705136)
+@@ -1,19 +1,15 @@
+ import React from "react";
+ import {storeTimer} from "../store/StoreTimer";
+ import {Timer4} from "../utils/Timer4";
+-// import {Timer3} from "../store/Timer3";
+-// import Timer2 from "../store/Timer2";
+ 
+ export class Timers extends React.Component {
+ 
+   componentDidMount() {
+-    // storeTimer.doStop();
+     storeTimer.doInVisible();
+     storeTimer.setTimerBeginTime(9);
+   }
+ 
+   public render() {
+-    // storeTimer.doStart();
+     return (
+       <div>
+         <h3>Timers</h3>
+@@ -33,7 +29,6 @@
+         <Timer4 inputTime={10} messageTimer='Page_Timers' activeTimer={true}/>
+         <hr/>
+       </div>
+-      // <Lesson child={<Button/>}> <Counter/> </Lesson>
+     );
+   }
+ }
+\ No newline at end of file
+Index: src/components/utils/LoaderData.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/utils/LoaderData.ts b/src/components/utils/-LoaderData.ts-
+rename from src/components/utils/LoaderData.ts
+rename to src/components/utils/-LoaderData.ts-
+--- a/src/components/utils/LoaderData.ts	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/utils/-LoaderData.ts-	(date 1680598042626)
+@@ -1,21 +1,8 @@
+ import {storeCoins} from "../store/StoreCoins";
+ import {PostData} from "./PostData";
+-// import React from "react";
+ 
+-
+-// export class LoaderData  {
+ export class LoaderData { //extends React.Component {
+   dataData: any;
+-  // isLoading: boolean = true;
+-  // state = {
+-  //   isLoading: true,
+-  //   // FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
+-  //   // oldPrice: [],
+-  // }
+-
+-  // componentDidMount() {
+-  //   this.loadData();
+-  // }
+ 
+   async loadData() {
+     this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl)
+@@ -31,4 +18,4 @@
+   }
+ }
+ 
+-  export const loaderData = new LoaderData();
+\ No newline at end of file
++export const loaderData = new LoaderData();
+\ No newline at end of file
+Index: src/components/pages/Header.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\n// import {AccessTime} from \"@mui/icons-material\";\nimport {AppBar, Toolbar, Typography} from \"@mui/material\";\nimport {storeTimer} from \"../store/StoreTimer\";\nimport {observer} from \"mobx-react\";\nimport {Timer4} from \"../utils/Timer4\";\n\n@observer\nexport class Header extends React.Component {\n\n    public render () {\n        return (\n            <div className={'header'} >\n               <AppBar position={'static'}>\n                    <Toolbar>\n                       <Typography\n                           fontSize={'18px'}\n                            variant={'h6'}\n                            component={'span'}\n                           sx={{flexGrow: 1}}\n                       >\n                           MuSa_App\n                       </Typography>\n                        {storeTimer.timerVisible ? <Timer4 /> : null}\n                    </Toolbar>\n               </AppBar>\n             </div>\n        )\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Header.tsx b/src/components/pages/Header.tsx
+--- a/src/components/pages/Header.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Header.tsx	(date 1680597705080)
+@@ -1,5 +1,4 @@
+ import React from "react";
+-// import {AccessTime} from "@mui/icons-material";
+ import {AppBar, Toolbar, Typography} from "@mui/material";
+ import {storeTimer} from "../store/StoreTimer";
+ import {observer} from "mobx-react";
+@@ -8,23 +7,23 @@
+ @observer
+ export class Header extends React.Component {
+ 
+-    public render () {
+-        return (
+-            <div className={'header'} >
+-               <AppBar position={'static'}>
+-                    <Toolbar>
+-                       <Typography
+-                           fontSize={'18px'}
+-                            variant={'h6'}
+-                            component={'span'}
+-                           sx={{flexGrow: 1}}
+-                       >
+-                           MuSa_App
+-                       </Typography>
+-                        {storeTimer.timerVisible ? <Timer4 /> : null}
+-                    </Toolbar>
+-               </AppBar>
+-             </div>
+-        )
+-    }
++  public render() {
++    return (
++      <div className={'header'}>
++        <AppBar position={'static'}>
++          <Toolbar>
++            <Typography
++              fontSize={'18px'}
++              variant={'h6'}
++              component={'span'}
++              sx={{flexGrow: 1}}
++            >
++              MuSa_App
++            </Typography>
++            {storeTimer.timerVisible ? <Timer4/> : null}
++          </Toolbar>
++        </AppBar>
++      </div>
++    )
++  }
+ }
+Index: src/components/utils/Toggle.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// ??? можно сделать на дженерике получая разные значения отдавать нужные\n// 0/1 true/false\n// export interface ToggleProps {\n//     initState: boolean;\n// }\n\nimport {action, computed, makeObservable, observable} from \"mobx\";\n\nexport class Toggle {\n    constructor(initState: boolean = false) {\n        this._isOpen = initState\n        makeObservable(this)\n    }\n\n    @observable private _isOpen: boolean\n    @computed\n    public get isOpen() {\n        return this._isOpen\n    }\n\n    @action\n    public close = () => {\n        this._isOpen = false;\n    }\n\n    @action\n    public open = () => {\n        this._isOpen = true;\n    }\n\n    // console.log('propsToggler_',props.propsToggler);\n    // console.log('thisState_1',props.thisState);\n    // console.log('thisState_2',thisState);\n\n    // timerFunction = (() => {console.log('timerFunction')})\n\n    // constructor() {\n    //     makeAutoObservable(this)\n    // }\n}\n\n// export const toggler = new Toggler();\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/utils/Toggle.ts b/src/components/utils/Toggle.ts
+--- a/src/components/utils/Toggle.ts	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/utils/Toggle.ts	(date 1680598305687)
+@@ -1,42 +1,29 @@
+ // ??? можно сделать на дженерике получая разные значения отдавать нужные
+ // 0/1 true/false
+-// export interface ToggleProps {
+-//     initState: boolean;
+-// }
+ 
+ import {action, computed, makeObservable, observable} from "mobx";
+ 
+ export class Toggle {
+-    constructor(initState: boolean = false) {
+-        this._isOpen = initState
+-        makeObservable(this)
+-    }
++  constructor(initState: boolean = false) {
++    this._isOpen = initState
++    makeObservable(this)
++  }
+ 
+-    @observable private _isOpen: boolean
+-    @computed
+-    public get isOpen() {
+-        return this._isOpen
+-    }
++  @observable private _isOpen: boolean
++  @computed
++  public get isOpen() {
++    return this._isOpen
++  }
+ 
+-    @action
+-    public close = () => {
+-        this._isOpen = false;
+-    }
++  @action
++  public close = () => {
++    this._isOpen = false;
++  }
+ 
+-    @action
+-    public open = () => {
+-        this._isOpen = true;
+-    }
+-
+-    // console.log('propsToggler_',props.propsToggler);
+-    // console.log('thisState_1',props.thisState);
+-    // console.log('thisState_2',thisState);
+-
+-    // timerFunction = (() => {console.log('timerFunction')})
+-
+-    // constructor() {
+-    //     makeAutoObservable(this)
+-    // }
++  @action
++  public open = () => {
++    this._isOpen = true;
++  }
+ }
+ 
+-// export const toggler = new Toggler();
++// export const toggler = new Toggler();
+\ No newline at end of file
+Index: src/components/pages/Table/TablesList.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import * as React from 'react';\nimport Table from '@mui/material/Table';\nimport TableBody from '@mui/material/TableBody';\nimport TableCell from '@mui/material/TableCell';\nimport TableContainer from '@mui/material/TableContainer';\nimport TableHead from '@mui/material/TableHead';\nimport TableRow from '@mui/material/TableRow';\nimport Paper from '@mui/material/Paper';\nimport {storeCoins} from \"../../store/StoreCoins\";\nimport {Modal} from \"../Modal/Modal\";\nimport {Toggle} from \"../../utils/Toggle\";\n\n\nexport class TablesList extends React.Component<any, any> {\n  state = {\n    toggle: new Toggle(false),\n  }\n\n  modalOpen = (id, row ) => { //\n    console.log(\"MODALKA\", '_id_', id, '_row_', row);\n\n    // storeCoins.setId(id) ;\n    // console.log(\"MODALKA-1 id \", storeCoins.modalId)\n    // // storeCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));\n    // storeCoins.setData(row);\n    // console.log(\"MODALKA ModalData \", storeCoins.ModalData)\n    // this.state.toggle.open();\n  }\n\n  render() {\n    return (\n      <>\n        <TableContainer component={Paper}>\n          <Table sx={{minWidth: 650}} aria-label=\"simple table\">\n            <TableHead>\n              <TableRow>\n                <TableCell>CryptoCompare</TableCell>\n                <TableCell align=\"right\">ID</TableCell>\n                <TableCell align=\"right\">PRICE</TableCell>\n                <TableCell align=\"right\">SYMBOL</TableCell>\n                <TableCell align=\"right\">NetHashesPerSecond</TableCell>\n                <TableCell align=\"right\">FullName&nbsp;()</TableCell>\n              </TableRow>\n            </TableHead>\n            <TableBody>\n              {/*{rows.map((row) => (*/}\n              {this.props.data?.map(row => {\n                const {id = row.CoinInfo.Id} = row\n                return (\n                <TableRow\n                  key={id}\n                  sx={{'&:last-child td, &:last-child th': {border: 0}}}\n                  onClick={() => this.modalOpen(id, {...row}) } //\n                  // onClick={()=>this.props.onClick(row.CoinInfo.Id)}\n                >\n                  <TableCell component=\"th\" scope=\"row\">{row.CoinInfo.Name}</TableCell>\n                  <TableCell align=\"right\">{row.CoinInfo.Id}</TableCell>\n                  <TableCell align=\"right\">{row.RAW.USD.PRICE}</TableCell>\n                  <TableCell align=\"right\">{row.DISPLAY.USD.FROMSYMBOL}</TableCell>\n                  <TableCell align=\"right\">{row.CoinInfo.NetHashesPerSecond}</TableCell>\n                  <TableCell align=\"right\">{row.CoinInfo.FullName}</TableCell>\n                </TableRow>\n              )})}\n            </TableBody>\n          </Table>\n        </TableContainer>\n        <Modal\n          modalTitle={'modalTitle'}\n          // modalMessage={'this.state.modalMessage'}\n          modalTimer={15}\n          isOpen={this.state.toggle.isOpen}\n          onClosed={this.state.toggle.close}\n          key={storeCoins.modalId}\n          id={storeCoins.modalId}\n        />\n      </>\n    );\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Table/TablesList.tsx b/src/components/pages/Table/TablesList.tsx
+--- a/src/components/pages/Table/TablesList.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Table/TablesList.tsx	(date 1680597705024)
+@@ -10,7 +10,6 @@
+ import {Modal} from "../Modal/Modal";
+ import {Toggle} from "../../utils/Toggle";
+ 
+-
+ export class TablesList extends React.Component<any, any> {
+   state = {
+     toggle: new Toggle(false),
+Index: src/components/pages/Cards/CardsList.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\nimport {observer} from \"mobx-react\";\nimport './CardsList.css';\nimport {Grid} from \"@mui/material\";\nimport {storeCoins} from \"../../store/StoreCoins\";\nimport {CardsListItem} from \"./CardsListItem\";\nimport {Modal} from \"../Modal/Modal\";\nimport {Toggle} from \"../../utils/Toggle\";\n\n@observer\nexport class CardsList extends React.Component<any, any> {\n  constructor(props) {\n    super(props);\n    this.state = {\n      toggle: new Toggle(false),\n      // modalMessage: '',\n    }\n  }\n\n  elements = () => {\n    return this.props.data?.map(item => {\n      const {id = item.CoinInfo.Id, ...itemProps} = item; //*** <-----------WORK HERE\n\n      //console.log(3333333, id , itemProps); // => go CardListItem > did update\n\n      // storeCoins.setId(id); //------------------------Crash\n      // storeCoins.setData(itemProps);\n\n      return (\n        <CardsListItem key={id} {...itemProps} press={this.modalOpen}/>\n      )\n    })\n  }\n\n  modalOpen = ( id: any ) => {\n    storeCoins.setId( id );\n    storeCoins.setItemData( this.props.data ) ;\n    this.state.toggle.open();\n  }\n\n  render() {\n    const {toggle} = this.state;\n    return (\n      <>\n        <Grid container\n              spacing={1}\n              direction=\"row\"\n              justifyContent=\"space-evenly\"\n              alignItems=\"center\"\n              mt={1}\n        >\n          {this.elements()}\n        </Grid>\n        <Modal\n          modalTitle={'modalTitle'}\n          // modalMessage={'this.state.modalMessage'}\n          modalTimer={15}\n          isOpen={toggle.isOpen}\n          onClosed={toggle.close}\n          key={storeCoins.modalId}\n          id={storeCoins.modalId}\n        />\n      </>\n    )\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Cards/CardsList.tsx b/src/components/pages/Cards/CardsList.tsx
+--- a/src/components/pages/Cards/CardsList.tsx	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/pages/Cards/CardsList.tsx	(date 1680597705040)
+@@ -20,12 +20,6 @@
+   elements = () => {
+     return this.props.data?.map(item => {
+       const {id = item.CoinInfo.Id, ...itemProps} = item; //*** <-----------WORK HERE
+-
+-      //console.log(3333333, id , itemProps); // => go CardListItem > did update
+-
+-      // storeCoins.setId(id); //------------------------Crash
+-      // storeCoins.setData(itemProps);
+-
+       return (
+         <CardsListItem key={id} {...itemProps} press={this.modalOpen}/>
+       )
+Index: src/components/utils/CompareData.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/utils/CompareData.ts b/src/components/utils/-CompareData.ts-
+rename from src/components/utils/CompareData.ts
+rename to src/components/utils/-CompareData.ts-
+--- a/src/components/utils/CompareData.ts	(revision d3d7e31933abaa7c60400195fc247ad732f51ea4)
++++ b/src/components/utils/-CompareData.ts-	(date 1680597891124)
+@@ -1,8 +1,8 @@
+ import React from "react";
+ 
+ export class CompareData extends React.Component<any, any> {
+-constructor(props) {
+-  super(props);
+-}
++  constructor(props) {
++    super(props);
++  }
+ 
+ }
+\ No newline at end of file
+Index: src/components/pages/Cards/CardsListItemRandom.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/pages/Cards/CardsListItemRandom.tsx b/src/components/pages/Cards/CardsListItemRandom.tsx
+new file mode 100644
+--- /dev/null	(date 1680598794436)
++++ b/src/components/pages/Cards/CardsListItemRandom.tsx	(date 1680598794436)
+@@ -0,0 +1,21 @@
++import React from "react";
++import {Grid} from "@mui/material";
++// import {observer} from "mobx-react";
++
++// @observer
++export class CardsListItemRandom extends React.Component<any, any> {
++
++  randomId () {
++    const id = Math.floor(Math.random() * (2000 - 100));
++    // *** Work method \/ -> не надо, все и так работает, прокси только визуально
++    // console.log( JSON.parse(JSON.stringify(storeCoins.DataData)) );
++  }
++
++  render() {
++    return (
++      <Grid item xs>
++        <h1> Under Ground </h1>
++      </Grid>
++    )
++  }
++}

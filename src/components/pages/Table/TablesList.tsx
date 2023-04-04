@@ -9,7 +9,9 @@ import Paper from '@mui/material/Paper';
 import {storeCoins} from "../../store/StoreCoins";
 import {Modal} from "../Modal/Modal";
 import {Toggle} from "../../utils/Toggle";
+import {observer} from "mobx-react";
 
+@observer
 export class TablesList extends React.Component<any, any> {
   state = {
     toggle: new Toggle(false),
@@ -18,12 +20,9 @@ export class TablesList extends React.Component<any, any> {
   modalOpen = (id, row ) => { //
     console.log("MODALKA", '_id_', id, '_row_', row);
 
-    // storeCoins.setId(id) ;
-    // console.log("MODALKA-1 id ", storeCoins.modalId)
-    // // storeCoins.ModalData = JSON.parse(JSON.stringify(this.props.data));
-    // storeCoins.setData(row);
-    // console.log("MODALKA ModalData ", storeCoins.ModalData)
-    // this.state.toggle.open();
+    storeCoins.setId( id );
+    storeCoins.setItemData( this.props.data ) ;
+    this.state.toggle.open();
   }
 
   render() {
@@ -39,6 +38,8 @@ export class TablesList extends React.Component<any, any> {
                 <TableCell align="right">SYMBOL</TableCell>
                 <TableCell align="right">NetHashesPerSecond</TableCell>
                 <TableCell align="right">FullName&nbsp;()</TableCell>
+                <TableCell align="right">MKTCAP</TableCell>
+                <TableCell align="right">&nbsp;TOTALVOLUME24HTO&nbsp;</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -58,6 +59,8 @@ export class TablesList extends React.Component<any, any> {
                   <TableCell align="right">{row.DISPLAY.USD.FROMSYMBOL}</TableCell>
                   <TableCell align="right">{row.CoinInfo.NetHashesPerSecond}</TableCell>
                   <TableCell align="right">{row.CoinInfo.FullName}</TableCell>
+                  <TableCell align="right">{row.DISPLAY.USD.MKTCAP}</TableCell>
+                  <TableCell align="right">{row.DISPLAY.USD.TOTALVOLUME24HTO}</TableCell>
                 </TableRow>
               )})}
             </TableBody>
