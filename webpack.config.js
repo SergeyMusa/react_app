@@ -20,19 +20,13 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    // contentBase: path.resolve(__dirname, './dist'),
-    // open: true,
-    // compress: true,
-    // hot: true,
     port: 8080,
-    // progress: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
       title: 'SER',
       template: path.resolve(__dirname, './public/index.html'), // шаблон
-      // filename: 'index.html', // название выходного файла
     }),
   ],
   module: {

@@ -1,15 +1,14 @@
 import React from "react";
-import './Cards.css';
 import {CardsList} from "./CardsList";
 import {observer} from "mobx-react";
 import {storeCoins} from "_store/StoreCoins";
 import {storeTimer} from "_store/StoreTimer";
-import {PostData} from "_common/utils/PostData";
+import {doFetchData} from "_common/utils/PostData";
 import Search from "_common/utils/Search";
 import {LoaderSpinner} from "_common/utils/LoaderSpiner/LoaderSpiner";
 
 @observer
-export class Cards extends React.Component<any, any> {
+export class Cards extends React.Component {
   dataData: any[];
   state = {
     isLoading: true,
@@ -19,8 +18,8 @@ export class Cards extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    storeTimer.setTimerBeginTime(15);
-    storeTimer.setTimerFunction( () => new Cards(storeCoins.FetchUrl).startTimer() );
+    storeTimer.setTimerBeginTime(5);
+    storeTimer.setTimerFunction(this.startTimer);
     this.startTimer();
   }
 
@@ -29,14 +28,14 @@ export class Cards extends React.Component<any, any> {
     storeTimer.doStart();
 
     this.loadData().then(() => { // ??? refactor late twix code
-      this.setState({ isLoading: false });
-    } );
+      this.setState({isLoading: false});
+    });
 
     console.log('load_data...');
   }
 
-  private async loadData () {
-    this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl) ;
+  private async loadData() {
+    this.dataData = await doFetchData(storeCoins.FetchUrl);
     storeCoins.setData(this.dataData);
   }
 
@@ -62,7 +61,7 @@ export class Cards extends React.Component<any, any> {
         {
           this.state.isLoading
             ? <LoaderSpinner/>
-            : <CardsList data={this.dataData}  />
+            : <CardsList data={this.dataData}/>
         }
       </div>
     )
