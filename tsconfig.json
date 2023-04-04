@@ -17,8 +17,21 @@
     "experimentalDecorators": true,
     "outDir": "dist",
     "useDefineForClassFields": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": "./",
+    "paths": {
+      "_view/*": [
+        "src/view/*"
+      ],
+      "_store/*": [
+        "src/store/*"
+      ],
+      "_common/*": [
+        "src/common/*"
+      ]
+    }
   },
+  "include": ["./src"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
