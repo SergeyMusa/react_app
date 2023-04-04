@@ -8,7 +8,6 @@ export class StoreTimer  {
     @observable timerRepeat: boolean = true
     public timerMessage: string = "Time's Up"
     public timerShow = (() => { console.log(`timer4_timerBeginTime=${this.timerBeginTime}_timerPauseTime=${this.timerPauseTime}`) })
-        // public timerMakeFun = () => {console.log('>>> timerActive_tst')}
         public timerMakeFun(): void { console.log('>>> timerActive_tst <<<') } //  **** ok
         // public timerMakeFun(): void { new Cards(storeCoins.FetchUrl).startTimer() }
 
@@ -16,7 +15,6 @@ export class StoreTimer  {
         makeAutoObservable(this, {        })
     }
 
-// action
     doStart = () => {
         this.timerActive = true;
     }
@@ -45,11 +43,9 @@ export class StoreTimer  {
     }
     increment = () => {
         this.timerBeginTime = this.timerBeginTime < 99 ? this.timerBeginTime + 1 : 99;
-        // console.log('increment', this.timerBeginTime);
     }
     decrement = () => {
         this.timerBeginTime = this.timerBeginTime > 0 ? this.timerBeginTime - 1 : 0;
-        // console.log('decrement', this.timerBeginTime);
     }
     clearPauseTime = () => {
         this.timerPauseTime = 0;

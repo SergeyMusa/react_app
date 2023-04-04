@@ -9,41 +9,44 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import {storeCoins} from "../../store/StoreCoins";
+import {observer} from "mobx-react";
 
+@observer
 export class CardsListItem extends React.Component<any, any> {
-  classNames = 'priceColor normalColor';
-  newPrice = this.props.RAW.USD.PRICE;
-  // oldPrice = RAW.USD.PRICE ;
-  // !!! думать как запоминать, может через локал сторадж
-  constructor(props) {
-    super(props);
-    this.state = {
-      // time: 1,
-    }
-  }
+  classNames = 'priceColor ';
 
-
-  changeClassName = () => { //  ??? WTF---------------------
-    console.log('newPrice', this.newPrice);
-    this.setState(state => ({
-      time: this.state.time + 1
-    }))
-
-    // if( this.newPrice < this.oldPrice) {
-    //     this.classNames += ' red';
-    // } else if (newPrice > oldPrice) {
-    //     this.classNames += ' green';
-    // } else {
-    //     this.classNames += ' normalColor';
-    // }
+  componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {
+    let arrX = storeCoins.ModalData; //  *** new
+    let itemY = prevProps;      //  *** old
+    console.log('---------------------');
+    const idY = itemY.CoinInfo.Id; //*** <-----------WORK HERE
+    // console.log('idY ', idY);
+    arrX?.map(itemX => {
+      // console.log('itemX ', itemX);
+      const idX = itemX.CoinInfo.Id;
+      // console.log('idX ', idX);
+      if (idX == idY) {
+        const priceY = prevProps.DISPLAY.USD.PRICE;
+        const priceX = itemY.DISPLAY.USD.PRICE;
+        console.log('priceX ', priceX);
+        console.log('priceY ', priceY);
+        if (priceX > priceY) {
+          (this.classNames += ' red') // !!! провеерить и исправить позже = или +=
+          // (this.classNames += ' red')
+        } else if (priceX < priceY) {
+          (this.classNames += ' green')
+        }else {
+              this.classNames += ' normalColor';
+          }
+      }
+    });
   }
 
   render() {
-    const {CoinInfo, DISPLAY, RAW} = this.props
-
+    const {CoinInfo, DISPLAY, RAW} = this.props;
     return (
       <Grid item xs>
-        {/*<h3>{this.state.time}</h3>*/}
         <div className='EmployersList' style={{margin: 'auto'}}>
           <Card onClick={() => this.props.press(CoinInfo.Id)}>
 
@@ -56,7 +59,6 @@ export class CardsListItem extends React.Component<any, any> {
               }
               action={
                 <IconButton aria-label="settings">
-                  {/*<MoreVertIcon/>*/}
                 </IconButton>
               }
               title={"id: " + CoinInfo.Id}

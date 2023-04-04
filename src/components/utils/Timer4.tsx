@@ -19,7 +19,6 @@ export class Timer4 extends React.Component<inputTimer, any> {
     this.state = {
       finishMessage: this.props?.messageTimer || storeTimer.timerMessage,
       counter4: this.props?.inputTime || storeTimer.timerBeginTime,
-      // counterTemp: storeTimer.timerPauseTime,
       functionTimer: this.props?.functionTimer || storeTimer.timerMakeFun,
       invisibleBadge: true,
     };
@@ -27,7 +26,7 @@ export class Timer4 extends React.Component<inputTimer, any> {
 
   componentDidMount() {
     // console.log('Timer_componentDidMount');
-    this.timerStart();
+    // this.timerStart();
     this.onClickStart();
   }
 
@@ -35,8 +34,8 @@ export class Timer4 extends React.Component<inputTimer, any> {
     if (storeTimer.timerActive) {
       // console.log('timerStart', ' timerId = ', this?.timerId)
       this.timerId = setInterval(this.callbackTimeout, 1000);
-
     }
+
   }
 
   componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {
@@ -55,21 +54,22 @@ export class Timer4 extends React.Component<inputTimer, any> {
 
     this.setState({counter4: (this.state.counter4 - 1)});
     if (storeTimer.timerActive && storeTimer.timerRepeat && (this.state.counter4 === 0)) {// *** IS FINISH
-      // console.log(' 5 ', this.state.finishMessage);
       this.onClickStart();
       storeTimer.timerMakeFun(); // *** Finish действие и стоп
-      // storeTimer.timerShow();
 
     } else if (!storeTimer.timerRepeat && (this.state.counter4 === 0)) {
-      // console.log(' 7 ', this.state.finishMessage);
       clearInterval(this.timerId);
       this.onClickStop();
       storeTimer.timerMakeFun(); // *** Temp действие и продолжить
       // storeTimer.timerShow();
     }
+    if (!storeTimer.timerActive) {
+      this.onClickPause();
+    }
   }
 
   onClickStop = () => {
+    console.log('onClickStop')
     storeTimer.clearPauseTime();
     storeTimer.doStop();
     clearInterval(this.timerId);
@@ -77,22 +77,20 @@ export class Timer4 extends React.Component<inputTimer, any> {
     this.handleBadgeVisibility();
   }
 
-  private onClickStart = () => {  // !!! <--------------Work here
+  // private
+  onClickStart = () => {  // !!! <--------------Work here
     // console.clear();
-    // console.log('onClickStart', this.timerId);
     storeTimer.clearPauseTime();
-      // clearInterval(this.timerId);
     this.setState({counter4: storeTimer.timerBeginTime});
     if (this.state.counter4 > 0) {
       storeTimer.doStart();
       this.handleBadgeInVisibility();
-      this.timerStart(); //return
+      this.timerStart();
     }
   }
 
   onClickPause = () => {
     storeTimer.doPause(this.state.counter4);
-    // this.setState({counterTemp: storeTimer.timerPauseTime}); // ??? is use ?
     clearInterval(this.timerId);
     this.handleBadgeVisibility();
   }
@@ -125,17 +123,15 @@ export class Timer4 extends React.Component<inputTimer, any> {
   }
 
   render() {
-    // console.log('Timer_render')
     return (
       <div className="Timer4">
-        {/*<span>[ counterTemp:{this.state.counterTemp} ]</span><span>   </span>*/}
-        <span>[ counter4:{this.state.counter4} ]</span><span>   </span>
-        <span>[ timerBeginTime:{storeTimer.timerBeginTime} ]</span><span>   </span>
-        <span>[ timerPauseTime:{storeTimer.timerPauseTime} ]</span><span>   </span>
-        <span>[ timerActive:{storeTimer.timerActive} ]</span><span>   </span>
-        <br/>
-        <hr/>
-        <br/>
+        {/*<span>[ counter4:{this.state.counter4} ]</span><span>   </span>*/}
+        {/*<span>[ timerBeginTime:{storeTimer.timerBeginTime} ]</span><span>   </span>*/}
+        {/*<span>[ timerPauseTime:{storeTimer.timerPauseTime} ]</span><span>   </span>*/}
+        {/*<span>[ timerActive:{storeTimer.timerActive} ]</span><span>   </span>*/}
+        {/*<br/>*/}
+        {/*<hr/>*/}
+        {/*<br/>*/}
         <Box>
           <Badge
             anchorOrigin={{

@@ -1,21 +1,8 @@
 import {storeCoins} from "../store/StoreCoins";
 import {PostData} from "./PostData";
-// import React from "react";
 
-
-// export class LoaderData  {
 export class LoaderData { //extends React.Component {
   dataData: any;
-  // isLoading: boolean = true;
-  // state = {
-  //   isLoading: true,
-  //   // FetchUrl: `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`,
-  //   // oldPrice: [],
-  // }
-
-  // componentDidMount() {
-  //   this.loadData();
-  // }
 
   async loadData() {
     this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl)
@@ -31,4 +18,4 @@ export class LoaderData { //extends React.Component {
   }
 }
 
-  export const loaderData = new LoaderData();
+export const loaderData = new LoaderData();

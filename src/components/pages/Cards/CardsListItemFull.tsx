@@ -10,31 +10,20 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import {storeTimer} from "../../store/StoreTimer";
+import {Timer4} from "../../utils/Timer4";
 
-// const CardsListItemFull = ({CoinInfo, DISPLAY, RAW}) => { //{id, cryName, raw, display, imageUrl}
 export class CardsListItemFull extends React.Component<any, any> {
   classNames = 'priceColor normalColor';
   preUrl = "https://www.cryptocompare.com/";
-  // newPrice = this.props.RAW.USD.PRICE;
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      // time: 2,
-    }
-  }
 
   componentDidMount() {
-    // console.log('props', this.props);
-
-    console.log('Modal_storeTimer_Active', storeTimer.timerActive)
     storeTimer.doStop();
-    console.log('create_modal__doPause', storeTimer.timerActive);
-
   }
 
   componentWillUnmount() {
     storeTimer.doStart();
+    new Timer4().onClickResume(); // !!! - - - Dont Work
+    // new Timer4().timerStart();
     console.log('close_modal');
   }
 

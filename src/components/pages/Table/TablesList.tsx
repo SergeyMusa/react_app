@@ -10,7 +10,6 @@ import {storeCoins} from "../../store/StoreCoins";
 import {Modal} from "../Modal/Modal";
 import {Toggle} from "../../utils/Toggle";
 
-
 export class TablesList extends React.Component<any, any> {
   state = {
     toggle: new Toggle(false),
