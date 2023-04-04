@@ -1,7 +1,7 @@
 import React, {Component} from "react"; // import component
 import {observer} from "mobx-react";
 import {observable} from "mobx";
-import {counter} from "../utils/Counter";
+import {counter} from "./Counter";
 
 // @observable class countZerro {
 //     countZ:number = 0;

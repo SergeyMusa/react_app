@@ -1,15 +1,11 @@
 import React from "react"; //, {Component}
-// import './Cards.css';
 import {storeTimer} from "../../store/StoreTimer";
 import {storeCoins} from "../../store/StoreCoins";
 import {TablesList} from "./TablesList";
-// import {LoaderData} from "../../utils/LoaderData";
 import {PostData} from "../../utils/PostData";
 import Search from "../../utils/Search";
 import LoaderSpiner from "../../utils/LoaderSpiner/LoaderSpiner";
 import {observer} from "mobx-react";
-
-// import {inputTimer, propsDataCryptaFromPostData} from "../../store/type";
 
 @observer
 export class Tables extends React.Component<any, any> { //propsDataCryptaFromPostData
@@ -24,17 +20,7 @@ export class Tables extends React.Component<any, any> { //propsDataCryptaFromPos
     this.startTimer();
   }
 
-  // // componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {
-  // //     // console.log('Tables_componentDidUpdate');
-  // // }
-  // componentWillUnmount() {
-  //   console.log('Tables_componentWillUnmount');
-  // }
-
   startTimer = () => {
-    // new LoaderData('x').loadData() ;
-    // this.dataData = storeCoins.DataData;
-    //   console.log('Tables_startTimer');
     storeTimer.doVisible();
     storeTimer.doStart();
 

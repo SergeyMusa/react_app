@@ -8,8 +8,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import {observer} from "mobx-react";
 import {CardsListItemFull} from "../Cards/CardsListItemFull";
-// import {computed, toJS} from 'mobx'
-import {string} from "prop-types";
 import {storeCoins} from "../../store/StoreCoins";
 
 const BootstrapDialog = styled(Dialog)(({theme}) => ({
@@ -34,7 +32,6 @@ export interface ModalProps {
   isOpen: boolean;
   onClosed: () => void;
   id?: any;
-  // modalObj?: [];
   // functionTimer: () => void;
 }
 
@@ -57,27 +54,17 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 @observer
 export class Modal extends React.Component<ModalProps> {
-  JModalData = null
   state = {
-    id: string,
+    id: '',
     modalData: {},
-    modalTitle: string,
+    modalTitle: '',
   }
-  // @computed private get dataData(){
-  //   return StoreCoins.ModalData
-  // }
 
   componentDidMount() {
-
-    const { modalId, ModalData  } = storeCoins;
-    // const data = JSON.parse(JSON.stringify( storeCoins.ModalData ));
+    const { modalId } = storeCoins; // !!! , ModalData < only store ?
     const data =  storeCoins.ModalData ;
-    // console.log('-ModalData-',  ModalData );
     let itemData = data.findIndex(data => data.CoinInfo?.Id === modalId);
-
     storeCoins.setItemData(data[ itemData ]) ; // !!! а надо ли туда?
-    // console.log( 'modalItem___', storeCoins.modalItem );
-
     this.setState({id: modalId})
     this.setState({modalData: data[ itemData ]})
     this.setState({modalTitle: data[ itemData ]?.CoinInfo?.FullName})
@@ -86,9 +73,6 @@ export class Modal extends React.Component<ModalProps> {
   render() {
     const {isOpen, onClosed, id} = this.props; //, id, modalTitle, modalMessage
     const {modalData, modalTitle} = this.state; //id,
-    // console.log(1111, modalData)
-    // console.log('modalTitle', modalTitle);
-
 
     return (
       <div>
@@ -96,7 +80,6 @@ export class Modal extends React.Component<ModalProps> {
           onClose={onClosed}
           aria-labelledby="customized-dialog-title"
           open={isOpen}
-
         >
           <BootstrapDialogTitle id="customized-dialog-title" onClose={onClosed}>
             {modalTitle} : {id}

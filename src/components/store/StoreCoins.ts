@@ -1,18 +1,12 @@
-// import { observable, action, makeObservable} from "mobx"
-// import React from "react";
-
 import {makeAutoObservable, observable} from "mobx";
 
 class StoreCoins {
   @observable ModalData: any[] = []
   modalId = 0
-  // modalItem = {}
-
+  public IsLoading: boolean = true
   public FetchUrl = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`
   PreData: [] = []
   ItemData: any
-  public IsLoading: boolean = true
-
   searchItems = []
   searchFind = ''
 
@@ -20,7 +14,6 @@ class StoreCoins {
     makeAutoObservable(this)
   }
 
-// action
   show = () => {
     // ++this.timeUpdate;
     console.log('ModalData', this.ModalData);
@@ -29,8 +22,6 @@ class StoreCoins {
 
   setData = (loadData) => {
     this.ModalData = loadData
-    // this.PreData = this.ModalData
-    // console.log('ModalData:', this.ModalData);
   }
   setPreData = (loadPreData) => {
     this.PreData = loadPreData
@@ -46,7 +37,6 @@ class StoreCoins {
     this.IsLoading = !loadState;
     // console.log('DataData:', this.DataData);
   }
-
 }
+
 export const storeCoins = new StoreCoins();
-// export default StoreCoins();
