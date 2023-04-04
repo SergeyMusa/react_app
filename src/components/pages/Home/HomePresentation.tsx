@@ -4,12 +4,7 @@ import Box from "@mui/material/Box";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import {Container, Grid} from "@mui/material";
-// import Grid from '@mui/material/Unstable_Grid2';
-import {experimentalStyled as styled} from '@mui/material/styles';
-import Paper from "@mui/material/Paper";
-// import IconButton from '@mui/material/IconButton';
-// import StarBorderIcon from '@mui/icons-material/StarBorder';
+import {Container} from "@mui/material";
 
 function srcset(image: string, width: number, height: number, rows = 1, cols = 1) {
   return {
@@ -19,14 +14,6 @@ function srcset(image: string, width: number, height: number, rows = 1, cols = 1
     }&fit=crop&auto=format&dpr=2 2x`,
   };
 }
-
-const Item = styled(Paper)(({theme}) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
 
 export class HomePresentation extends React.Component {
   render() {

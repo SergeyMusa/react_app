@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="clear project">
-      <change afterPath="$PROJECT_DIR$/public/Home/imgApp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pages/Home/HomePresentation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pages/Home/HomePresentation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/pages/Home/imgApp.png" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="edit home page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Home/HomePresentation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home/HomePresentation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/TablesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/TablesList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/type/Type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/type/Type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,14 +175,7 @@
       <workItem from="1679904254365" duration="22780000" />
       <workItem from="1680508386909" duration="15423000" />
       <workItem from="1680594745273" duration="5954000" />
-      <workItem from="1680600725743" duration="13490000" />
-    </task>
-    <task id="LOCAL-00026" summary="step_#3-timer = begin, enable React.StrictMode">
-      <created>1678386967727</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1678386967727</updated>
+      <workItem from="1680600725743" duration="17854000" />
     </task>
     <task id="LOCAL-00027" summary="step_#3-timer = add second">
       <created>1678388282837</created>
@@ -517,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680600013938</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="edit home page">
+      <created>1680615461414</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1680615461416</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +580,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="wip - ERROR" />
     <MESSAGE value="wip - fix ERROR, work with preLoader" />
     <MESSAGE value="step4-make Modal" />
     <MESSAGE value="step4-make Modal=ok, wip" />
@@ -602,6 +604,7 @@
     <MESSAGE value="step Finish - begin compare data &amp; colores" />
     <MESSAGE value="wip" />
     <MESSAGE value="clear project" />
-    <option name="LAST_COMMIT_MESSAGE" value="clear project" />
+    <MESSAGE value="edit home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit home page" />
   </component>
 </project>

@@ -48,20 +48,20 @@ export class CardsListItem extends React.Component<any, any> {
     return (
       <Grid item xs>
         <div className='EmployersList' style={{margin: 'auto'}}>
-          <Card onClick={() => this.props.press(CoinInfo.Id)}>
+          <Card onClick={() => this.props.press(CoinInfo?.Id)}>
 
             <CardHeader
               avatar={
                 <Avatar aria-label="recipe">
                   {/*sx={{bgcolor: deepPurple[500]}}*/}
-                  {DISPLAY.USD.FROMSYMBOL}
+                  {DISPLAY?.USD.FROMSYMBOL}
                 </Avatar>
               }
               action={
                 <IconButton aria-label="settings">
                 </IconButton>
               }
-              title={"id: " + CoinInfo.Id}
+              title={"id: " + CoinInfo?.Id}
               className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green
             />
 
@@ -69,14 +69,14 @@ export class CardsListItem extends React.Component<any, any> {
               component="img"
               sx={{height: 170, width: 170, margin: 'auto'}}
               height='180'
-              image={"https://www.cryptocompare.com/" + CoinInfo.ImageUrl}
-              alt={CoinInfo.Id}
+              image={"https://www.cryptocompare.com/" + CoinInfo?.ImageUrl}
+              alt={CoinInfo?.Id}
 
             />
 
             <CardContent>
               <Typography variant="body2" color="text.secondary" gutterBottom component="div">
-                '{DISPLAY.USD.FROMSYMBOL}'({CoinInfo.Name}) = {RAW.USD.PRICE}
+                '{DISPLAY?.USD.FROMSYMBOL}'({CoinInfo?.Name}) = {RAW?.USD.PRICE}
                 <AttachMoney fontSize="small" sx={{color: green[500]}}/>
               </Typography>
             </CardContent>

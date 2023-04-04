@@ -4,7 +4,8 @@ class StoreCoins {
   @observable ModalData: any[] = []
   modalId = 0
   public IsLoading: boolean = true
-  public FetchUrl = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`
+  // public FetchUrl = `https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD`
+  public FetchUrl = `https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD`
   PreData: [] = []
   ItemData: any
   searchItems = []

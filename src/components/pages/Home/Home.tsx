@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import Button from "@mui/material/Button";
 import {storeTimer} from "../../store/StoreTimer";
 import {HomePresentation} from "./HomePresentation";
+import Button from "@mui/material/Button";
 
 const homeHeader = <h2>TEST-Element</h2>;
 
@@ -18,7 +18,7 @@ export class Home extends React.Component {
         <h3>Home</h3>
         <HomePresentation />
         <br/>
-        {/*<Button variant="contained" onClick={handleOnClick}>go home</Button>*/}
+        <Button variant="contained" onClick={handleOnClick}>go home</Button>
         {homeHeader}
         <Welcome/>
         <Welcome2/>

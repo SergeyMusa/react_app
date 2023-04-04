@@ -32,6 +32,7 @@ export class Tables extends React.Component<any, any> { //propsDataCryptaFromPos
   public async loadData() {
     this.dataData = await new PostData().doFetchData(storeCoins.FetchUrl);
     console.log('load_data...');
+    // console.log(this.dataData);
   }
 
   render() {
