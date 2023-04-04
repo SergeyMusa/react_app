@@ -9,22 +9,20 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import {storeTimer} from "_store/StoreTimer";
-import {Timer4} from "_common/utils/Timer4";
+import {STORE_TIMER} from "_store/StoreTimer";
+import { observer } from "mobx-react";
 
-export class CardsListItemFull extends React.Component<any, any> {
-  classNames = 'priceColor normalColor';
-  preUrl = "https://www.cryptocompare.com/";
-
+@observer
+export class CardFull extends React.Component<any, any> {
   componentDidMount() {
-    storeTimer.doStop();
+    // STORE_TIMER.stop();
   }
 
   componentWillUnmount() {
-    storeTimer.doStart();
-    new Timer4().onClickResume(); // !!! - - - Dont Work
+    // STORE_TIMER.start();
+    // new Timer4().onClickResume(); // !!! - - - Dont Work
     // new Timer4().timerStart();
-    console.log('close_modal');
+    // console.log('close_modal');
   }
 
   render() {
@@ -46,14 +44,14 @@ export class CardsListItemFull extends React.Component<any, any> {
                 </IconButton>
               }
               title={"id: " + CoinInfo?.Id}
-              className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green
+              // className={this.classNames} // ??? будеам менять цвет при повышении или понижении .red .green
             />
 
             <CardMedia
               component="img"
               sx={{height: 170, width: 170, margin: 'auto'}}
               height='180'
-              image={this.preUrl + CoinInfo?.ImageUrl}
+              // image={this.preUrl + CoinInfo?.ImageUrl}
               alt={CoinInfo?.Id}
             />
 

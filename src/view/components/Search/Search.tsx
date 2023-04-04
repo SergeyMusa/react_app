@@ -1,11 +1,11 @@
 import {TextField} from "@mui/material";
 import React from "react";
-import {storeCoins} from "_store/StoreCoins";
+import {STORE_COINS} from "_store/StoreCoins";
 
 const Search = (props?) => {
     // const {items, find} = props;
-    const items  = props.items || storeCoins.searchItems;
-    const find  = storeCoins.searchFind;
+    const items  = props.items || STORE_COINS.searchItems;
+    const find  = STORE_COINS.searchFind;
     const value = '';
 
     const onClick = () => {

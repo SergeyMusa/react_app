@@ -7,8 +7,6 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import {observer} from "mobx-react";
-import {storeCoins} from "_store/StoreCoins";
-import {CardsListItemFull} from "_view/pages/Cards/CardsListItemFull";
 
 const BootstrapDialog = styled(Dialog)(({theme}) => ({
   '& .MuiDialogContent-root': {
@@ -26,13 +24,11 @@ export interface DialogTitleProps {
 }
 
 export interface ModalProps {
-  modalTitle?: string;
-  modalMessage?: any;
-  modalTimer?: number;
+  title?: string;
+  message?: any;
   isOpen: boolean;
   onClosed: () => void;
-  id?: any;
-  // functionTimer: () => void;
+  children: React.ReactNode
 }
 
 function BootstrapDialogTitle(props: DialogTitleProps) {
@@ -44,7 +40,7 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
         <IconButton
           aria-label="close"
           onClick={onClose}
-          sx={{ position: 'absolute', right: 8, top: 8, color: (theme) => theme.palette.grey[500], }} >
+          sx={{position: 'absolute', right: 8, top: 8, color: (theme) => theme.palette.grey[500],}}>
           <CloseIcon/>
         </IconButton>
       ) : null}
@@ -54,45 +50,24 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 @observer
 export class Modal extends React.Component<ModalProps> {
-  state = {
-    id: '',
-    modalData: {},
-    modalTitle: '',
-  }
-
-  componentDidMount() {
-    const { modalId } = storeCoins; // !!! , ModalData < only store ?
-    const data =  storeCoins.ModalData ;
-    let itemData = data.findIndex(data => data.CoinInfo?.Id === modalId);
-    storeCoins.setItemData(data[ itemData ]) ; // !!! а надо ли туда?
-    this.setState({id: modalId})
-    this.setState({modalData: data[ itemData ]})
-    this.setState({modalTitle: data[ itemData ]?.CoinInfo?.FullName})
-  }
-
   render() {
-    const {isOpen, onClosed, id} = this.props; //, id, modalTitle, modalMessage
-    const {modalData, modalTitle} = this.state; //id,
+    const {title, message, isOpen, children, onClosed} = this.props;
 
     return (
-      <div>
-        <BootstrapDialog
-          onClose={onClosed}
-          aria-labelledby="customized-dialog-title"
-          open={isOpen}
-        >
-          <BootstrapDialogTitle id="customized-dialog-title" onClose={onClosed}>
-            {modalTitle} : {id}
-          </BootstrapDialogTitle>
-          <DialogContent dividers sx={{minHeight: 400}}>
-            <Typography gutterBottom component="div">
-              {/*{modalMessage} */}
-              <CardsListItemFull key={id} {...modalData} />
-            </Typography>
-
-          </DialogContent>
-        </BootstrapDialog>
-      </div>
+      <BootstrapDialog
+        onClose={onClosed}
+        aria-labelledby="customized-dialog-title"
+        open={isOpen}
+      >
+        <BootstrapDialogTitle id="customized-dialog-title" onClose={onClosed}>
+          {title}
+        </BootstrapDialogTitle>
+        <DialogContent dividers sx={{minHeight: 400}}>
+          <Typography gutterBottom component="div">
+            {children || message}
+          </Typography>
+        </DialogContent>
+      </BootstrapDialog>
     );
   }
 }

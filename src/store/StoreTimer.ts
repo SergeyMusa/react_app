@@ -1,55 +1,50 @@
-import { observable,  makeAutoObservable} from "mobx"
+import {action, computed, makeObservable, observable} from "mobx"
 
-export class StoreTimer  {
-    @observable timerPauseTime: number = 0
-    @observable timerBeginTime: number = 30
-    @observable timerActive: boolean = false
-    @observable timerVisible: boolean = false
-    @observable timerRepeat: boolean = true
-    public timerMessage: string = "Time's Up"
-    public timerShow = (() => { console.log(`timer4_timerBeginTime=${this.timerBeginTime}_timerPauseTime=${this.timerPauseTime}`) })
-        public timerMakeFun(): void { console.log('>>> timerActive_tst <<<') } //  **** ok
-        // public timerMakeFun(): void { new Cards(storeCoins.FetchUrl).startTimer() }
+export class StoreTimer {
+  constructor() {
+    makeObservable(this)
+  }
 
-    constructor() {
-        makeAutoObservable(this, {        })
-    }
+  @observable private _time = 0;
+  private _timer;
 
-    doStart = () => {
-        this.timerActive = true;
-    }
-    doStop = () => {
-        this.timerActive = false;
-    }
-    doVisible = () => {
-        this.timerVisible = true;
-    }
-    doInVisible = () => {
-        this.timerVisible = false;
-    }
-    doPause = (timePause) => {
-        this.timerPauseTime = timePause;
-        this.timerActive = false;
-    }
 
-    setTimerBeginTime = (timeBegin) => {
-        this.timerBeginTime = timeBegin;
-    }
-    setTimerFunction = (timeFun) => {
-        this.timerMakeFun = timeFun;
-    }
-    setTimerRepeat = () => {
-        this.timerRepeat = !this.timerRepeat;
-    }
-    increment = () => {
-        this.timerBeginTime = this.timerBeginTime < 99 ? this.timerBeginTime + 1 : 99;
-    }
-    decrement = () => {
-        this.timerBeginTime = this.timerBeginTime > 0 ? this.timerBeginTime - 1 : 0;
-    }
-    clearPauseTime = () => {
-        this.timerPauseTime = 0;
-    }
+  @computed
+  public get isEnded() {
+    return this._time < 1;
+  }
+
+  @computed
+  public get timeToEnd() {
+    return this._time;
+  }
+
+  @action
+  public start = (time: any = 15) => {
+    this._time = time;
+    this._timer = setInterval(() => {
+      // if (this.isEnded) {
+      //   this._time = time
+      // }
+      this._time = this._time - 1
+    }, 1000)
+  }
+
+  @action.bound
+  public stop = () => {
+    clearInterval(this._timer)
+    this._time = 0
+  }
+
+  @action.bound
+  public increment() {
+    this._time++;
+  }
+
+  @action.bound
+  public decrement() {
+    this._time--;
+  }
 }
 
-export const storeTimer = new StoreTimer();
+export const STORE_TIMER = new StoreTimer();
