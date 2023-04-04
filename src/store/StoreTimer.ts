@@ -6,7 +6,7 @@ export class StoreTimer {
   }
 
   @observable private _time = 0;
-  private _timer;
+  @observable private _timer;
 
 
   @computed
@@ -19,21 +19,18 @@ export class StoreTimer {
     return this._time;
   }
 
-  @action
+  @action.bound
   public start = (time: any = 15) => {
+    if (this._timer) return;
     this._time = time;
-    this._timer = setInterval(() => {
-      // if (this.isEnded) {
-      //   this._time = time
-      // }
-      this._time = this._time - 1
-    }, 1000)
+    this._timer = setInterval(this.decrement, 1000)
   }
 
   @action.bound
   public stop = () => {
-    clearInterval(this._timer)
-    this._time = 0
+    clearInterval(this._timer);
+    this._timer = undefined;
+    this._time = 0;
   }
 
   @action.bound
