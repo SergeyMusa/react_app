@@ -2,21 +2,16 @@ import React from "react";
 import './App.css';
 import {Route, Routes, Link} from "react-router-dom";
 import Button from '@mui/material/Button';
-
 import {Timers} from "./components/pages/Timers";
 import {Cards} from "./components/pages/Cards/Cards";
-// import Lesson2 from "./components/pages/Lesson";
-import {Home} from "./components/pages/Home";
 import './styles/main.scss'
 import {Header} from "./components/pages/Header";
 import Footer from "./components/pages/Footer";
 import {Container} from "@mui/material";
-import {Tables} from "./components/pages/Table/Tables"; //, createTheme
-
+import {Tables} from "./components/pages/Table/Tables";
+import {Home} from "./components/pages/Home/Home"; //, createTheme
 
 function App() {
-
-
 
     return (
         <div className="App">
@@ -33,7 +28,6 @@ function App() {
                         <Link id="one" to="/Tables">Tables</Link>
 
                         <Link id="one" to="/Timers">Timers</Link>
-                        {/*<Link id="one" to="/Lesson">Lesson</Link>*/}
                     </div>
                 </header>
                 <div className="App-top">
@@ -42,14 +36,9 @@ function App() {
                         <Route path="/Home" element={<Home/>}/>
                         <Route path="/" element={<Cards/>}/>
                         <Route path="/Tables" element={<Tables/>}/>
-                        {/*<Route path="/Lesson" element={<Lesson2/>}/>*/}
                         <Route path="*" element={<Timers/>}/>
-                        {/*<Route path="login" element={<LoginPage />}/>*/}
                     </Routes>
-                    {/*'Lorem ipsum dolor sit amet.'*/}
                     <Button variant="contained" href="/">go home</Button>
-                    {/*  */}
-                    {/*<h4> ... go <Link to="/">home</Link></h4>*/}
                 </div>
                 </Container>
                 <Footer/>

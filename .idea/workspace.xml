@@ -4,33 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip">
-      <change afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemRandom.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/xxx/Counter.ts" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="clear project">
+      <change afterPath="$PROJECT_DIR$/public/Home/imgApp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Home/HomePresentation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Home/HomePresentation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Home/imgApp.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/Cards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Cards/CardsListItemFull.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Modal/Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/Tables.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Table/TablesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Table/TablesList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Timers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Timers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/Store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreTimer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/type/Type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/type/Type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/CompareData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/-CompareData.ts-" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/Counter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/LoaderData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/-LoaderData.ts-" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/PostData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/PostData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/Timer4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Timer4.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/Toggle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Toggle.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/xxx/Lesson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xxx/Lesson.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,42 +73,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/components/pages/Cards&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/musa/GIT/react_app/src/components/pages/Home",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "ts.external.directory.path": "/home/musa/GIT/react_app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/pages/Home" />
       <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
       <recent name="$PROJECT_DIR$/src/components/pages/Modal" />
       <recent name="$PROJECT_DIR$/src/components/store" />
-      <recent name="$PROJECT_DIR$/src/components/pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src/components/pages/Home" />
       <recent name="$PROJECT_DIR$/src/components/xxx" />
       <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
-      <recent name="$PROJECT_DIR$/src/components/store/Loader" />
-      <recent name="$PROJECT_DIR$/src/components/store" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.index.jsx">
@@ -190,14 +171,8 @@
       <workItem from="1679904217171" duration="19000" />
       <workItem from="1679904254365" duration="22780000" />
       <workItem from="1680508386909" duration="15423000" />
-      <workItem from="1680594745273" duration="5128000" />
-    </task>
-    <task id="LOCAL-00025" summary="step_#3-timer = begin, disable React.StrictMode">
-      <created>1678196612262</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1678196612262</updated>
+      <workItem from="1680594745273" duration="5954000" />
+      <workItem from="1680600725743" duration="13490000" />
     </task>
     <task id="LOCAL-00026" summary="step_#3-timer = begin, enable React.StrictMode">
       <created>1678386967727</created>
@@ -535,11 +510,29 @@
       <option name="project" value="LOCAL" />
       <updated>1680533344928</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="clear project">
+      <created>1680600013937</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1680600013938</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
@@ -567,7 +560,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/work" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -584,7 +577,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="wip - rename CardsList" />
     <MESSAGE value="wip - ERROR" />
     <MESSAGE value="wip - fix ERROR, work with preLoader" />
     <MESSAGE value="step4-make Modal" />
@@ -609,6 +601,7 @@
     <MESSAGE value="wip - fix tables props" />
     <MESSAGE value="step Finish - begin compare data &amp; colores" />
     <MESSAGE value="wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip" />
+    <MESSAGE value="clear project" />
+    <option name="LAST_COMMIT_MESSAGE" value="clear project" />
   </component>
 </project>
