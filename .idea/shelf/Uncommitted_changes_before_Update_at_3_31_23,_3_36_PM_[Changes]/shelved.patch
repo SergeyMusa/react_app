@@ -1,0 +1,44 @@
+Index: src/components/store/Timer4.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport Switch from '@mui/material/Switch';\nimport {Badge, ButtonGroup} from \"@mui/material\";\nimport Button from \"@mui/material/Button\";\nimport {AccessTime} from '@mui/icons-material';\nimport AddIcon from '@mui/icons-material/Add';\nimport RemoveIcon from '@mui/icons-material/Remove';\nimport {storeTimer} from \"./StoreTimer\";\nimport Box from \"@mui/material/Box\";\nimport {inputTimer} from \"./type\";\nimport {observer} from \"mobx-react\";\n\n@observer\nexport class Timer4 extends React.Component<inputTimer, any> {\n  timerId: any;\n  constructor(props?: inputTimer) {\n    super(props);\n    this.state = {\n      finishMessage: this.props?.messageTimer || storeTimer.timerMessage,\n      counter4: this.props?.inputTime || storeTimer.timerBeginTime,\n      // counterTemp: storeTimer.timerPauseTime,\n      functionTimer: this.props?.functionTimer || storeTimer.timerMakeFun,\n      invisibleBadge: true,\n    };\n  }\n\n  componentDidMount() {\n    // console.log('Timer_componentDidMount');\n    this.timerStart();\n    this.onClickStart();\n  }\n\n  timerStart = () => {\n    if (storeTimer.timerActive) {\n      // console.log('timerStart', ' timerId = ', this?.timerId)\n      this.timerId = setInterval(this.callbackTimeout, 1000);\n\n    }\n  }\n\n  componentDidUpdate(prevProps: Readonly<inputTimer>, prevState: Readonly<any>, snapshot?: any) {\n    // console.log('Timer_componentDidUpdate');\n  }\n\n  componentWillUnmount() {\n    // console.log('Timer_componentWillUnmount');\n    storeTimer.doStop();\n    clearInterval(this.timerId);\n  }\n\n  callbackTimeout = () => {\n    // ??? возможно утечка памяти в this.state.timer\n    // console.log('---', 'this.timerId ', this.timerId, 'this.state.counter4 ', this.state.counter4, 'Repeat ', storeTimer.timerRepeat )\n\n    this.setState({counter4: (this.state.counter4 - 1)});\n    if (storeTimer.timerActive && storeTimer.timerRepeat && (this.state.counter4 === 0)) {// *** IS FINISH\n      // console.log(' 5 ', this.state.finishMessage);\n      this.onClickStart();\n      storeTimer.timerMakeFun(); // *** Finish действие и стоп\n      // storeTimer.timerShow();\n\n    } else if (!storeTimer.timerRepeat && (this.state.counter4 === 0)) {\n      // console.log(' 7 ', this.state.finishMessage);\n      clearInterval(this.timerId);\n      this.onClickStop();\n      storeTimer.timerMakeFun(); // *** Temp действие и продолжить\n      // storeTimer.timerShow();\n    }\n  }\n\n  onClickStop = () => {\n    storeTimer.clearPauseTime();\n    storeTimer.doStop();\n    clearInterval(this.timerId);\n    this.setState({counter4: 0});\n    this.handleBadgeVisibility();\n  }\n\n  private onClickStart = () => {  // !!! <--------------Work here\n    // console.clear();\n    // console.log('onClickStart', this.timerId);\n    storeTimer.clearPauseTime();\n      // clearInterval(this.timerId);\n    this.setState({counter4: storeTimer.timerBeginTime});\n    if (this.state.counter4 > 0) {\n      storeTimer.doStart();\n      this.handleBadgeInVisibility();\n      this.timerStart(); //return\n    }\n  }\n\n  onClickPause = () => {\n    storeTimer.doPause(this.state.counter4);\n    // this.setState({counterTemp: storeTimer.timerPauseTime}); // ??? is use ?\n    clearInterval(this.timerId);\n    this.handleBadgeVisibility();\n  }\n\n  onClickResume = () => {\n    this.setState({counter4: storeTimer.timerPauseTime});\n    storeTimer.doStart();\n\n    this.handleBadgeInVisibility();\n    this.timerStart(); //return\n  }\n\n  //=================================================================\n  checkSwitch = () => { //event\n    storeTimer.setTimerRepeat();\n  }\n  handleBadgeVisibility = () => {\n    this.setState({invisibleBadge: false});\n  }\n  handleBadgeInVisibility = () => {\n    this.setState({invisibleBadge: true});\n  }\n  onClickPlus = () => {\n    storeTimer.increment();\n    this.handleBadgeVisibility();\n  }\n  onClickMinus = () => {\n    storeTimer.decrement();\n    this.handleBadgeVisibility();\n  }\n\n  render() {\n    // console.log('Timer_render')\n    return (\n      <div className=\"Timer4\">\n        {/*<span>[ counterTemp:{this.state.counterTemp} ]</span><span>   </span>*/}\n        <span>[ counter4:{this.state.counter4} ]</span><span>   </span>\n        <span>[ timerBeginTime:{storeTimer.timerBeginTime} ]</span><span>   </span>\n        <span>[ timerPauseTime:{storeTimer.timerPauseTime} ]</span><span>   </span>\n        <span>[ timerActive:{storeTimer.timerActive} ]</span><span>   </span>\n        <br/>\n        <hr/>\n        <br/>\n        <Box>\n          <Badge\n            anchorOrigin={{\n              vertical: 'top',\n              horizontal: 'left',\n            }}\n            badgeContent={storeTimer.timerBeginTime}\n            color=\"error\"\n            invisible={this.state.invisibleBadge}\n          >\n            <Badge badgeContent={this.state.counter4} showZero color=\"primary\">\n              <AccessTime color=\"action\"/>\n            </Badge>\n          </Badge>\n          <span>   </span>\n          <Button\n            aria-label=\"increase\"\n            onClick={this.onClickPlus}\n            variant=\"contained\"\n          >\n            <AddIcon fontSize=\"small\"/>\n          </Button>\n          <Button\n            aria-label=\"reduce\"\n            onClick={this.onClickMinus}\n            variant=\"contained\"\n          >\n            <RemoveIcon fontSize=\"small\"/>\n          </Button>\n          <FormControlLabel control={<Switch defaultChecked/>}\n                            onChange={this.checkSwitch}\n                            label='repeat'\n                            color={'inherit'}\n          />\n          <ButtonGroup variant=\"contained\" aria-label=\"outlined primary button group\">\n            <Button onClick={this.onClickStart}>Start</Button>\n            <Button onClick={this.onClickStop}>Stop </Button>\n            <Button onClick={this.onClickPause}>Pause</Button>\n            <Button onClick={this.onClickResume}>Resume</Button>\n          </ButtonGroup>\n        </Box>\n      </div>\n    );\n  }\n}
+===================================================================
+diff --git a/src/components/store/Timer4.tsx b/src/components/store/Timer4.tsx
+--- a/src/components/store/Timer4.tsx	
++++ b/src/components/store/Timer4.tsx	
+@@ -6,10 +6,11 @@
+ import {AccessTime} from '@mui/icons-material';
+ import AddIcon from '@mui/icons-material/Add';
+ import RemoveIcon from '@mui/icons-material/Remove';
+-import {storeTimer} from "./StoreTimer";
++// import {storeTimer} from "./StoreTimer";
+ import Box from "@mui/material/Box";
+ import {inputTimer} from "./type";
+ import {observer} from "mobx-react";
++import {StoreTimer} from "./StoreTimer";
+ 
+ @observer
+ export class Timer4 extends React.Component<inputTimer, any> {
+@@ -17,10 +18,10 @@
+   constructor(props?: inputTimer) {
+     super(props);
+     this.state = {
+-      finishMessage: this.props?.messageTimer || storeTimer.timerMessage,
+-      counter4: this.props?.inputTime || storeTimer.timerBeginTime,
++      finishMessage: this.props?.messageTimer || StoreTimer.timerMessage,
++      counter4: this.props?.inputTime || StoreTimer.timerBeginTime,
+       // counterTemp: storeTimer.timerPauseTime,
+-      functionTimer: this.props?.functionTimer || storeTimer.timerMakeFun,
++      functionTimer: this.props?.functionTimer || StoreTimer.timerMakeFun,
+       invisibleBadge: true,
+     };
+   }
+@@ -32,7 +33,7 @@
+   }
+ 
+   timerStart = () => {
+-    if (storeTimer.timerActive) {
++    if (StoreTimer.timerActive) {
+       // console.log('timerStart', ' timerId = ', this?.timerId)
+       this.timerId = setInterval(this.callbackTimeout, 1000);
+ 
