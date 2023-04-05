@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="refactoring: night code">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="refactoring: fix timer">
+      <change afterPath="$PROJECT_DIR$/src/view/screen/Home/assets/imgApp1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/StoreTimer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/CardFull.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/CardFull.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/type/Type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/type/Type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/assets/imgApp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/assets/imgApp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/components/HomePresentation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/components/HomePresentation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Table/Table-info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Table/assets/Table-info.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Table/Tables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Table/TablesList.screen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Table/TablesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,11 +109,11 @@
       <recent name="$PROJECT_DIR$/src/components/pages/Modal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/view/screen/Table/components" />
+      <recent name="$PROJECT_DIR$/src/view/screen/Table/assets" />
       <recent name="$PROJECT_DIR$/src/view/components/LoaderSpiner/assets" />
       <recent name="$PROJECT_DIR$/src/view/components" />
       <recent name="$PROJECT_DIR$/src/view/components/Search" />
-      <recent name="$PROJECT_DIR$/src/view/components/Timer" />
-      <recent name="$PROJECT_DIR$/src/view/screen/CardList/components" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -188,13 +195,6 @@
       <workItem from="1680594745273" duration="5954000" />
       <workItem from="1680600725743" duration="18727000" />
       <workItem from="1680620719110" duration="111000" />
-    </task>
-    <task id="LOCAL-00031" summary="step_#3-timer-ok_almost)">
-      <created>1678480197646</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1678480197646</updated>
     </task>
     <task id="LOCAL-00032" summary="step_#3-table_work">
       <created>1678482430016</created>
@@ -532,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680646372297</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="refactoring: fix timer">
+      <created>1680647176329</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1680647176329</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +599,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="step4-remake Modal=ok+ осталось дату" />
     <MESSAGE value="wip add props to timer" />
     <MESSAGE value="wip remake timer props&amp;store" />
     <MESSAGE value="wip fix err timer4. dont work autostart timer" />
@@ -617,7 +623,8 @@
     <MESSAGE value="refactoring: add patch alias, add webpack config, moving files" />
     <MESSAGE value="refactoring: go go go" />
     <MESSAGE value="refactoring: night code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring: night code" />
+    <MESSAGE value="refactoring: fix timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring: fix timer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
