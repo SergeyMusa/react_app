@@ -35,9 +35,9 @@ export class HomePresentation extends React.Component {
           <div className="HomePresentation">
             <ImageList
               sx={{
-                width: 1100,
-                height: 460,
-                transform: 'translateZ(0)',
+                // width: 1250,
+                height: 470,
+                transform: 'translateZ(0)'
               }}
               rowHeight={235}
               gap={1}
@@ -52,12 +52,13 @@ export class HomePresentation extends React.Component {
                       {...this._setSrc(item.img, 300, 250, rows, cols)}
                       alt={item.title}
                       loading="lazy"
+                      style={{background: 'cover'}}
                     />
                     <ImageListItemBar
                       sx={{
                         background:
                           'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-                          'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+                          'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)'
                       }}
                       title={item.title}
                       position="top"

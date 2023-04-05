@@ -64,17 +64,17 @@ body {
   /*padding: 20px;*/
 }
 
-.poke a {
+.App-Route a {
   margin: auto 10px;
 
   /*padding: 10px;*/
 }
 
-.poke a:visited {
+.App-Route a:visited {
   color: white;
 }
 
-.App-header {
+.App-Header {
   background-color: darkslateblue;
   /*min-height: 100vh;*/
   /*padding-top: -20px;*/

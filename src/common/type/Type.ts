@@ -37,6 +37,8 @@ interface DISPLAY {
   USD: {
     PRICE: string;
     FROMSYMBOL: string,
+    MKTCAP: string,
+    TOTALVOLUME24HTO: string,
   }
 }
 
