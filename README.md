@@ -25,3 +25,5 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+![Alt roadmap](./RoadMap.png?raw=true "RoadMap")
