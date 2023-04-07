@@ -15,5 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
 **RoadMap: >>>**
-
 ![Alt roadmap](./RoadMap.png?raw=true "RoadMap")
+
+**AppDiagram: >>>**
+![Alt diagram](./AppDiagram.png?raw=true "AppDiagram")
