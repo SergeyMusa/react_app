@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="refactoring: add counter Coins">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="refactoring: fix css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/const/Const.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/const/Const.ts" afterDir="false" />
@@ -194,14 +194,7 @@
       <workItem from="1680600725743" duration="18727000" />
       <workItem from="1680620719110" duration="111000" />
       <workItem from="1680708828737" duration="1212000" />
-      <workItem from="1680875811724" duration="31103000" />
-    </task>
-    <task id="LOCAL-00034" summary="remake Timer4 - from fun to class">
-      <created>1678691696266</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1678691696266</updated>
+      <workItem from="1680875811724" duration="31421000" />
     </task>
     <task id="LOCAL-00035" summary="wip dont work">
       <created>1678721574651</created>
@@ -539,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680933246970</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="refactoring: fix css">
+      <created>1680957954186</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1680957954186</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +604,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="wip fix err timer4. dont work autostart timer" />
     <MESSAGE value="wip mobx Modal" />
     <MESSAGE value="wip Modal, Item = ok" />
     <MESSAGE value="remade Tables" />
@@ -629,7 +628,8 @@
     <MESSAGE value="refactoring: fix timer" />
     <MESSAGE value="refactoring: fix tables" />
     <MESSAGE value="refactoring: add counter Coins" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring: add counter Coins" />
+    <MESSAGE value="refactoring: fix css" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring: fix css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
