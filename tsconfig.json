@@ -28,6 +28,9 @@
       ],
       "_common/*": [
         "src/common/*"
+      ],
+      "_dto/*": [
+        "src/common/dto/*"
       ]
     }
   },

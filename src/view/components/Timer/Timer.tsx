@@ -7,7 +7,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import Box from "@mui/material/Box";
 import {observer} from "mobx-react";
 import {STORE_TIMER} from "_store/StoreTimer";
-import {inputTimer} from "_common/type/Type";
+import {inputTimer} from "_common/dto/Type";
 
 @observer
 export class Timer extends React.Component<inputTimer, any> {
