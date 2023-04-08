@@ -4,27 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="refactoring: fix tables">
-      <change afterPath="$PROJECT_DIR$/public/AppDiagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/AppDiagram.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/components/Count/Count.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_31_23,_3_36_PM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_31_23__3_36_PM__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="refactoring: add counter Coins">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/const/Const.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/const/Const.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/type/Type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/dto/Type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/Fetch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/Fetch.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/StoreCoins.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/StoreTimer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/Count/Count.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Count/Count.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/Timer/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Timer/Timer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/CardFull.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/CardFull.component.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/CardListContent.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/CardListContent.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,14 +194,7 @@
       <workItem from="1680600725743" duration="18727000" />
       <workItem from="1680620719110" duration="111000" />
       <workItem from="1680708828737" duration="1212000" />
-      <workItem from="1680875811724" duration="19109000" />
-    </task>
-    <task id="LOCAL-00033" summary="wip ?bugs debug">
-      <created>1678519357898</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1678519357898</updated>
+      <workItem from="1680875811724" duration="31103000" />
     </task>
     <task id="LOCAL-00034" summary="remake Timer4 - from fun to class">
       <created>1678691696266</created>
@@ -550,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680708735340</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="refactoring: add counter Coins">
+      <created>1680933246969</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1680933246970</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,7 +604,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="wip remake timer props&amp;store" />
     <MESSAGE value="wip fix err timer4. dont work autostart timer" />
     <MESSAGE value="wip mobx Modal" />
     <MESSAGE value="wip Modal, Item = ok" />
@@ -640,7 +628,8 @@
     <MESSAGE value="refactoring: night code" />
     <MESSAGE value="refactoring: fix timer" />
     <MESSAGE value="refactoring: fix tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring: fix tables" />
+    <MESSAGE value="refactoring: add counter Coins" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring: add counter Coins" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

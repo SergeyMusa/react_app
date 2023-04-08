@@ -8,7 +8,7 @@ export class Home extends React.Component {
     return (
       <>
         <h3>Home</h3>
-        <HomePresentation/>
+        <HomePresentation />
         <br/>
       </>
     )

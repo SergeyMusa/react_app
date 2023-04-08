@@ -59,19 +59,15 @@ export class TablesComponent extends React.Component {
                 const id = row.CoinInfo.Id;
                 const image = `https://www.cryptocompare.com/${row.CoinInfo?.ImageUrl}` ;
                 const props = row.RAW.USD.PRICE;
-                // const color = this.getColor(props);
                 return (
                 <TableRow
                   key={id}
-                  sx={{'&:last-child td, &:last-child th': {border: 0},
-                      backgroundColor: this.getColor(props)
-                     }}
+                  sx={{'&:last-child td, &:last-child th': {border: 0}}}
                   onClick={() => this.modalOpen(row)}
-                  // onClick={()=>this.props.onClick(row.CoinInfo.Id)}
                 >
                   <TableCell align="right">{index+1}</TableCell>
                   <TableCell component="th" scope="row">{row.CoinInfo.Name}</TableCell>
-                  <TableCell align="right">{row.CoinInfo.Id}</TableCell>
+                  <TableCell align="right" sx={{backgroundColor: this.getColor(props)}}>{row.CoinInfo.Id}</TableCell>
                   <TableCell align="right">
                     <picture>
                       <source srcSet={image}

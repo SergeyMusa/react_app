@@ -22,35 +22,36 @@ export default class Count extends React.Component<any, any> {
   // }
 
   handleChange = (event: SelectChangeEvent) => {
-      this.setState({coinsCount: event.target.value}) ;
-    console.log('coinsCount_1',this.state.coinsCount)
-    STORE_COINS.setCoinsCount(this.state.coinsCount);
-    console.log('coinsCount_2',STORE_COINS.coinsCountd)
+    // console.log('event.target.value', event.target.value)
+    // console.log('coinsCount_0',this.state.coinsCount)
+    this.setState({coinsCount: event.target.value}) ; // !!! err show pre value
+
+    // console.log('coinsCount_1',this.state.coinsCount)
+    STORE_COINS.setCoinsCount(event.target.value);
+    // console.log('coinsCount_2',STORE_COINS.coinsCount)
   };
 
   render() {
+
     return (
-      <div>
-        <FormControl sx={{m: 1, minWidth: 80}} size="small">
+      <>
+        <FormControl sx={{m: 1, minWidth:100}} size="small">
           <InputLabel id="select-autowidth-label">count</InputLabel>
           <Select
             labelId="select-autowidth-label"
             id="select-autowidth"
-            value={this.state.coinsCount}
+            value={STORE_COINS.coinsCount}
             onChange={this.handleChange}
             autoWidth
             label="count"
           >
-            <MenuItem value="">
-              {/*<em>20.. Twenty</em>*/}
-            </MenuItem>
             <MenuItem value={10}>10.. Ten</MenuItem>
             <MenuItem value={20}>20.. Twenty</MenuItem>
             <MenuItem value={50}>50.. Fifty</MenuItem>
             <MenuItem value={99}>99.. Maximum</MenuItem>
           </Select>
         </FormControl>
-      </div>
+      </>
     );
   }
 }

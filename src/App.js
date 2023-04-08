@@ -21,16 +21,16 @@ function App() {
             <Link id="one" to="/Home">Home</Link>
             <Link id="one" to="/">Cards</Link>
             <Link id="one" to="/Tables">Tables</Link>
+            <br/>
           </div>
         </header>
         <div className="App-Main">
-          <br/>
           <Routes>
             <Route path="/Home" element={<Home/>}/>
             <Route path="/" element={<CardListScreen/>}/>
             <Route path="/Tables" element={<TablesListScreen/>}/>
           </Routes>
-          <Button variant="contained" href="/">go home</Button>
+          <Button variant="contained" href="/" sx={{marginTop:2}}>go home</Button>
         </div>
       </Container>
       <Footer/>

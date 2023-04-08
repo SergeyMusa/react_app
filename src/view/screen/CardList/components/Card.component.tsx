@@ -8,7 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
+import Grid from '@mui/material/Unstable_Grid2';
 import {observer} from "mobx-react";
 import {observable} from "mobx";
 import {ResponseData} from "_common/dto/Type";
@@ -32,15 +32,16 @@ export class CardComponent extends React.Component<CardProps> {
     const {CoinInfo, DISPLAY, RAW} = this.props;
 
     return (
-      <Grid item xs>
+      <Grid>
         <Card onClick={() => this.props.press(CoinInfo?.Id)}
               sx={{
-                backgroundColor: this.getColor, width: 300,
+                width: 300,
                 height: 330,
+                margin: 1
               }}>
           <CardHeader
             avatar={
-              <Avatar aria-label="recipe">
+              <Avatar aria-label="recipe" sx={{backgroundColor: this.getColor}}>
                 {DISPLAY?.USD.FROMSYMBOL}
               </Avatar>
             }

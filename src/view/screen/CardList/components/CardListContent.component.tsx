@@ -1,6 +1,7 @@
 import React from "react";
 import {observer} from "mobx-react";
-import {Grid} from "@mui/material";
+// import {Grid} from "@mui/material";
+import Grid from '@mui/material/Unstable_Grid2';
 import {STORE_COINS} from "_store/StoreCoins";
 import {Toggle} from "_common/utils/Toggle";
 import {Modal} from "_view/components/Modal/Modal";
@@ -26,7 +27,7 @@ export class CardListContent extends React.Component<Props> {
   private get _elements() {
     return this.props.data?.map(item => {
       return (
-        <CardComponent key={item.CoinInfo.Id} {...item} press={this.modalOpen}/>
+        <CardComponent key={item.CoinInfo.Id} {...item} press={this.modalOpen} />
       )
     })
   }
@@ -41,12 +42,13 @@ export class CardListContent extends React.Component<Props> {
 
     return (
       <>
-        <Grid container
+        <Grid
+          container
               spacing={1}
-              direction="row"
-              justifyContent="space-evenly"
               alignItems="center"
               mt={1}
+              margin={"1"}
+              sx={{ justifyContent: 'space-around' }}
         >
           {this._elements}
         </Grid>
