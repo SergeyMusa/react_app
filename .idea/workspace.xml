@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip - begin modal in tables">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="refactoring: fix css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/store/StoreCoins.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/const/Const.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/const/Const.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/Count/Count.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Count/Count.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/CardListContent.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/CardListContent.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +65,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2MILDXJ9PXNJpi61UI6s9FO8fWt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -75,7 +82,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/components/pages/Home&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;review&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/view/pages/Cards/components&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -85,28 +93,28 @@
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.TypeScript&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/view/pages/Cards/components" />
       <recent name="$PROJECT_DIR$/src/components/pages/Home" />
       <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
       <recent name="$PROJECT_DIR$/src/components/pages/Table" />
       <recent name="$PROJECT_DIR$/src/components/pages/Modal" />
-      <recent name="$PROJECT_DIR$/src/components/store" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src/components/pages/Home" />
-      <recent name="$PROJECT_DIR$/src/components/xxx" />
-      <recent name="$PROJECT_DIR$/src/components/pages/Cards" />
-      <recent name="$PROJECT_DIR$/src/components/pages/Table" />
+      <recent name="$PROJECT_DIR$/src/view/screen/Table/components" />
+      <recent name="$PROJECT_DIR$/src/view/screen/Table/assets" />
+      <recent name="$PROJECT_DIR$/src/view/components/LoaderSpiner/assets" />
+      <recent name="$PROJECT_DIR$/src/view/components" />
+      <recent name="$PROJECT_DIR$/src/view/components/Search" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.index.jsx">
+  <component name="RunManager" selected="npm.start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -131,10 +139,26 @@
         <option name="ReactNativePackager" enabled="true" />
       </method>
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="Node.js.index.jsx" />
+      <item itemvalue="npm.start" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -169,55 +193,8 @@
       <workItem from="1680594745273" duration="5954000" />
       <workItem from="1680600725743" duration="18727000" />
       <workItem from="1680620719110" duration="111000" />
-    </task>
-    <task id="LOCAL-00028" summary="step_#3-timer = ui ok">
-      <created>1678463010766</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1678463010766</updated>
-    </task>
-    <task id="LOCAL-00029" summary="step_#3-timer = crash Table? not errors">
-      <created>1678465556764</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1678465556764</updated>
-    </task>
-    <task id="LOCAL-00030" summary="wip">
-      <created>1678474387896</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1678474387896</updated>
-    </task>
-    <task id="LOCAL-00031" summary="step_#3-timer-ok_almost)">
-      <created>1678480197646</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1678480197646</updated>
-    </task>
-    <task id="LOCAL-00032" summary="step_#3-table_work">
-      <created>1678482430016</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1678482430016</updated>
-    </task>
-    <task id="LOCAL-00033" summary="wip ?bugs debug">
-      <created>1678519357898</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1678519357898</updated>
-    </task>
-    <task id="LOCAL-00034" summary="remake Timer4 - from fun to class">
-      <created>1678691696266</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1678691696266</updated>
+      <workItem from="1680708828737" duration="1212000" />
+      <workItem from="1680875811724" duration="31421000" />
     </task>
     <task id="LOCAL-00035" summary="wip dont work">
       <created>1678721574651</created>
@@ -513,7 +490,56 @@
       <option name="project" value="LOCAL" />
       <updated>1680619749971</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="refactoring: add patch alias, add webpack config, moving files">
+      <created>1680627673926</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1680627673927</updated>
+    </task>
+    <task id="LOCAL-00078" summary="refactoring: go go go">
+      <created>1680631221382</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1680631221382</updated>
+    </task>
+    <task id="LOCAL-00079" summary="refactoring: night code">
+      <created>1680646372297</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1680646372297</updated>
+    </task>
+    <task id="LOCAL-00080" summary="refactoring: fix timer">
+      <created>1680647176329</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1680647176329</updated>
+    </task>
+    <task id="LOCAL-00081" summary="refactoring: fix tables">
+      <created>1680708735339</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1680708735340</updated>
+    </task>
+    <task id="LOCAL-00082" summary="refactoring: add counter Coins">
+      <created>1680933246969</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1680933246970</updated>
+    </task>
+    <task id="LOCAL-00083" summary="refactoring: fix css">
+      <created>1680957954186</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1680957954186</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,6 +564,11 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="origin/review" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="HEAD" />
                 </option>
               </RecentGroup>
@@ -556,7 +587,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/review" />
                       </list>
                     </value>
                   </entry>
@@ -573,13 +604,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="step4-make Modal" />
-    <MESSAGE value="step4-make Modal=ok, wip" />
-    <MESSAGE value="step4-make Modal=ok+ осталось дату" />
-    <MESSAGE value="step4-remake Modal=ok+ осталось дату" />
-    <MESSAGE value="wip add props to timer" />
-    <MESSAGE value="wip remake timer props&amp;store" />
-    <MESSAGE value="wip fix err timer4. dont work autostart timer" />
     <MESSAGE value="wip mobx Modal" />
     <MESSAGE value="wip Modal, Item = ok" />
     <MESSAGE value="remade Tables" />
@@ -598,6 +622,24 @@
     <MESSAGE value="clear project" />
     <MESSAGE value="edit home page" />
     <MESSAGE value="wip - begin modal in tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip - begin modal in tables" />
+    <MESSAGE value="refactoring: add patch alias, add webpack config, moving files" />
+    <MESSAGE value="refactoring: go go go" />
+    <MESSAGE value="refactoring: night code" />
+    <MESSAGE value="refactoring: fix timer" />
+    <MESSAGE value="refactoring: fix tables" />
+    <MESSAGE value="refactoring: add counter Coins" />
+    <MESSAGE value="refactoring: fix css" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring: fix css" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/view/components/LoaderSpiner/LoaderSpiner.tsx</url>
+          <line>11</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

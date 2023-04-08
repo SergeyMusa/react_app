@@ -1,49 +1,41 @@
 import React from "react";
-import './App.css';
-import {Route, Routes, Link} from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
 import Button from '@mui/material/Button';
-import {Timers} from "./components/pages/Timers";
-import {Cards} from "./components/pages/Cards/Cards";
-import './styles/main.scss'
-import {Header} from "./components/pages/Header";
-import Footer from "./components/pages/Footer";
+import './assets/styles/main.scss'
 import {Container} from "@mui/material";
-import {Tables} from "./components/pages/Table/Tables";
-import {Home} from "./components/pages/Home/Home"; //, createTheme
+import {CardListScreen} from "_view/screen/CardList/CardList.screen";
+import {Home} from "_view/screen/Home/Home";
+import {TablesListScreen} from "_view/screen/Table/TablesList.screen";
+import {Header} from "_view/components/Header/Header";
+import Footer from "_view/components/Footer/Footer";
+import {Timer} from "_view/components/Timer/Timer";
 
 function App() {
-
-    return (
-        <div className="App">
-            <Header/>
-            <Container
-                sx={{mt: '1rem'}}
-                maxWidth={false}
-            >
-                <header className="App-header">
-                    <h1>In God We Trust</h1>
-                    <div className="poke">
-                        <Link id="one" to="/Home">нe_Home</Link>
-                        <Link id="one" to="/">Cards</Link>
-                        <Link id="one" to="/Tables">Tables</Link>
-
-                        <Link id="one" to="/Timers">Timers</Link>
-                    </div>
-                </header>
-                <div className="App-top">
-                    <br/>
-                    <Routes>
-                        <Route path="/Home" element={<Home/>}/>
-                        <Route path="/" element={<Cards/>}/>
-                        <Route path="/Tables" element={<Tables/>}/>
-                        <Route path="*" element={<Timers/>}/>
-                    </Routes>
-                    <Button variant="contained" href="/">go home</Button>
-                </div>
-                </Container>
-                <Footer/>
+  return (
+    <div className="App">
+      <Header/>
+      <Container sx={{mt: '1rem'}} maxWidth={false}>
+        <header className="App-Header">
+          <h1>In God We Trust</h1>
+          <div className="App-Route">
+            <Link id="one" to="/Home">Home</Link>
+            <Link id="one" to="/">Cards</Link>
+            <Link id="one" to="/Tables">Tables</Link>
+            <br/>
+          </div>
+        </header>
+        <div className="App-Main">
+          <Routes>
+            <Route path="/Home" element={<Home/>}/>
+            <Route path="/" element={<CardListScreen/>}/>
+            <Route path="/Tables" element={<TablesListScreen/>}/>
+          </Routes>
+          <Button variant="contained" href="/" sx={{marginTop:2}}>go home</Button>
         </div>
-);
+      </Container>
+      <Footer/>
+    </div>
+  );
 }
 
 export default App;

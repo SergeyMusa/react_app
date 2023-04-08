@@ -1,0 +1,107 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  /*height: 100vh;*/
+  /*color: #e3e3f3;*/
+  /*flex-direction: column;*/
+  /*padding-bottom: 20px;*/
+  min-height: 90%;
+  /*display: grid;*/
+  /*grid-template-rows: auto 1fr auto;*/
+  /*padding-bottom: 30px;*/
+  background: #e3e3f3;
+
+  /* justify-content: center; */
+  /* box-sizing: border-box; */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+header {
+  background: #adadf1;
+}
+.footer {
+  display: grid;
+  margin-top: 100px;
+  padding: 0;
+  background-color: #aaa2b2;
+  /* Позиционируем footer внизу main */
+  /*position: absolute;*/
+  bottom: 0;
+  width: 100vw;
+  /* Высота footer */
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  /*background: black;*/
+}
+.no-scroll::-webkit-scrollbar {
+  width: 0;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+body {
+  /*margin: 20px 20px ;*/
+  /*padding: 20px;*/
+}
+
+.App-Route a {
+  margin: auto 10px;
+
+  /*padding: 10px;*/
+}
+
+.App-Route a:visited {
+  color: white;
+}
+
+.App-Header {
+  background-color: darkslateblue;
+  /*min-height: 100vh;*/
+  /*padding-top: -20px;*/
+  min-height: 14vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
