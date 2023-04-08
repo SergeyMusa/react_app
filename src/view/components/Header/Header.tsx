@@ -2,6 +2,7 @@ import React from "react";
 import {AppBar, Toolbar, Typography} from "@mui/material";
 import {observer} from "mobx-react";
 import {Timer} from "../Timer/Timer";
+import Count from "_view/components/Count/Count";
 
 @observer
 export class Header extends React.Component {
@@ -10,7 +11,8 @@ export class Header extends React.Component {
     return (
       <div className={'header'}>
         <AppBar position={'static'}>
-          <Toolbar>
+          <Toolbar color="primary">
+            {<Count/>}
             <Typography
               fontSize={'18px'}
               variant={'h6'}

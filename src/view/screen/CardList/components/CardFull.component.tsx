@@ -18,7 +18,8 @@ export class CardFull extends React.Component<CardProps> {
     return (
       <Grid item xs>
         <CardComponent {...this.props} />
-        <h3>Тута был БОБЕР!</h3>
+        <p>NetHashesPerSecond - {this.props.CoinInfo?.NetHashesPerSecond}</p>
+      {/* more Info in dto */}
       </Grid>
     )
   }

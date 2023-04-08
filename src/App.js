@@ -7,7 +7,7 @@ import {CardListScreen} from "_view/screen/CardList/CardList.screen";
 import {Home} from "_view/screen/Home/Home";
 import {TablesListScreen} from "_view/screen/Table/TablesList.screen";
 import {Header} from "_view/components/Header/Header";
-import Footer from "../src/view/components/Footer/Footer";
+import Footer from "_view/components/Footer/Footer";
 import {Timer} from "_view/components/Timer/Timer";
 
 function App() {

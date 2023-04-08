@@ -1,5 +1,5 @@
 import {action, makeAutoObservable, observable} from "mobx";
-import {ResponseData} from "_common/type/Type";
+import {ResponseData} from "_common/dto/Type";
 
 class StoreCoins {
   constructor() {
@@ -7,12 +7,19 @@ class StoreCoins {
   }
 
   @observable public CoinsList: ResponseData[] = []
+  @observable public coinsCount: string;
   public searchItems: any;
   public searchFind: any;
 
   @action
   setData = (loadData: ResponseData[]) => {
     this.CoinsList = loadData
+  }
+
+  @action
+  setCoinsCount = (loadCount: string) => {
+    this.coinsCount = loadCount;
+    console.log('coinsCount', this.coinsCount)
   }
 }
 

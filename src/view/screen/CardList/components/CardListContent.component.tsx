@@ -5,7 +5,7 @@ import {STORE_COINS} from "_store/StoreCoins";
 import {Toggle} from "_common/utils/Toggle";
 import {Modal} from "_view/components/Modal/Modal";
 import {CardComponent} from "_view/screen/CardList/components/Card.component";
-import {ResponseData} from "_common/type/Type";
+import {ResponseData} from "_common/dto/Type";
 import {CardFull} from "./CardFull.component";
 import {computed, observable} from "mobx";
 

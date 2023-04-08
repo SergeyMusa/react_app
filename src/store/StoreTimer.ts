@@ -20,7 +20,7 @@ export class StoreTimer {
   }
 
   @action.bound
-  public start = (time: any = 15) => {
+  public start = (time: any = 60) => {
     if (this._timer) return;
     this._time = time;
     this._timer = setInterval(this.decrement, 1000)
@@ -35,12 +35,13 @@ export class StoreTimer {
 
   @action.bound
   public increment() {
-    this._time++;
+    this._time = this._time < 99 ? this._time + 1 : 99;
+
   }
 
   @action.bound
   public decrement() {
-    this._time--;
+    this._time = this._time > 0 ? this._time - 1 : 0;
   }
 }
 

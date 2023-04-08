@@ -10,7 +10,7 @@ import {observer} from "mobx-react";
 import {STORE_COINS} from "_store/StoreCoins";
 import {Modal} from "_view/components/Modal/Modal";
 import {Toggle} from "_common/utils/Toggle";
-import {ResponseData} from "_common/type/Type";
+import {ResponseData} from "_common/dto/Type";
 import {observable} from "mobx";
 import {CardFull} from "_view/screen/CardList/components/CardFull.component";
 

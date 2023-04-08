@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import {observer} from "mobx-react";
 import {observable} from "mobx";
-import {ResponseData} from "_common/type/Type";
+import {ResponseData} from "_common/dto/Type";
 
 interface Props {
   press?(id: string): void

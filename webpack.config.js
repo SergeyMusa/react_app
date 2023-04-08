@@ -16,6 +16,7 @@ module.exports = {
       _common: path.resolve(__dirname, 'src/common/'),
       _view: path.resolve(__dirname, 'src/view/'),
       _store: path.resolve(__dirname, 'src/store/'),
+      _dto: path.resolve(__dirname, 'src/common/dto/'),
     },
   },
   devServer: {
