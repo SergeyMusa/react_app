@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="refactoring: fix css">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="main: preFinish">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/const/Const.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/const/Const.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/Count/Count.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Count/Count.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/CardListContent.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/CardListContent.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/StoreTimer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/Timer/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Timer/Timer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,14 +188,8 @@
       <workItem from="1680600725743" duration="18727000" />
       <workItem from="1680620719110" duration="111000" />
       <workItem from="1680708828737" duration="1212000" />
-      <workItem from="1680875811724" duration="31421000" />
-    </task>
-    <task id="LOCAL-00035" summary="wip dont work">
-      <created>1678721574651</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1678721574651</updated>
+      <workItem from="1680875811724" duration="32262000" />
+      <workItem from="1680958818709" duration="4328000" />
     </task>
     <task id="LOCAL-00036" summary="made table - style=ok">
       <created>1678731364843</created>
@@ -539,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680957954186</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="main: preFinish">
+      <created>1680958450192</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1680958450192</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +599,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="wip mobx Modal" />
     <MESSAGE value="wip Modal, Item = ok" />
     <MESSAGE value="remade Tables" />
     <MESSAGE value="fix bugs ui modal" />
@@ -629,7 +623,8 @@
     <MESSAGE value="refactoring: fix tables" />
     <MESSAGE value="refactoring: add counter Coins" />
     <MESSAGE value="refactoring: fix css" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring: fix css" />
+    <MESSAGE value="main: preFinish" />
+    <option name="LAST_COMMIT_MESSAGE" value="main: preFinish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
