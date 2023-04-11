@@ -4,13 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip: fix timer, stay only func Load">
-      <change afterPath="$PROJECT_DIR$/src/common/errors/ErrorBoundary.js" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip: fix timer func Load">
+      <change afterPath="$PROJECT_DIR$/src/view/screen/Home/assets/imgProj_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/screen/Home/assets/imgProj_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/const/Const.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/const/Const.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/utils/Fetch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/Fetch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/StoreCoins.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/StoreTimer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/Count/Count.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/CountLoadCoins/CountLoadCoins.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/Search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Search/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/components/Timer/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Timer/Timer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/CardList.screen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/CardList.screen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/assets/imgApp1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/components/HomePresentation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/components/HomePresentation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/screen/Table/TablesList.screen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Table/TablesList.screen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +44,8 @@
         <option value="tsconfig.json" />
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -58,11 +72,14 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/common/utils/Fetch.ts" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2MILDXJ9PXNJpi61UI6s9FO8fWt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -80,6 +97,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;review&quot;,
+    &quot;js.buildTools.gulp.gulp_package_dir&quot;: &quot;/usr/local/lib/node_modules/gulp&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/view/pages/Cards/components&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -87,10 +105,11 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,
+    &quot;nodejs.mocha.mocha_node_package_dir&quot;: &quot;&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.TypeScript&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Shelf.Project.Settings&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -136,6 +155,15 @@
         <option name="ReactNativePackager" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -158,6 +186,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="" />
@@ -192,14 +223,10 @@
       <workItem from="1680620719110" duration="111000" />
       <workItem from="1680708828737" duration="1212000" />
       <workItem from="1680875811724" duration="32262000" />
-      <workItem from="1680958818709" duration="14934000" />
-    </task>
-    <task id="LOCAL-00037" summary="wip">
-      <created>1678735509137</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1678735509137</updated>
+      <workItem from="1680958818709" duration="19170000" />
+      <workItem from="1681128706479" duration="876000" />
+      <workItem from="1681203827847" duration="8209000" />
+      <workItem from="1681212970737" duration="3013000" />
     </task>
     <task id="LOCAL-00038" summary="wip modify timer3">
       <created>1678775645662</created>
@@ -537,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680963239361</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="wip: fix timer func Load">
+      <created>1681118537466</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1681118537466</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +636,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="remade Tables" />
     <MESSAGE value="fix bugs ui modal" />
     <MESSAGE value="fix bugs timer" />
     <MESSAGE value="wip rename store to storeTimer" />
@@ -627,7 +660,8 @@
     <MESSAGE value="refactoring: fix css" />
     <MESSAGE value="main: preFinish" />
     <MESSAGE value="wip: fix timer, stay only func Load" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip: fix timer, stay only func Load" />
+    <MESSAGE value="wip: fix timer func Load" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip: fix timer func Load" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

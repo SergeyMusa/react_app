@@ -4,31 +4,26 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import {MenuItem, Select, SelectChangeEvent} from "@mui/material";
 import {STORE_COINS} from "_store/StoreCoins";
-import {string} from "prop-types";
+import {computed} from "mobx";
 
 
 @observer
-export default class Count extends React.Component<any, any> {
+export default class CountLoadCoins extends React.Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
-      coinsCount: '20'
+      coinsCount: '2'
     };
   }
-  //
-  // componentDidMount() {
-  //   console.log('COUNT', this.state.coinsCount);
-  //   STORE_COINS.setCoinsCount(this.state.coinsCount);
-  // }
+  @computed
+  public setCoinsCount() {
+    this.setState({coinsCount:  '30'}) ;
+  }
 
   handleChange = (event: SelectChangeEvent) => {
-    // console.log('event.target.value', event.target.value)
-    // console.log('coinsCount_0',this.state.coinsCount)
-    this.setState({coinsCount: event.target.value}) ; // !!! err show pre value
-
-    // console.log('coinsCount_1',this.state.coinsCount)
+    this.setState({coinsCount: event.target.value}) ;
     STORE_COINS.setCoinsCount(event.target.value);
-    // console.log('coinsCount_2',STORE_COINS.coinsCount)
+    // STORE_TIMER.start();// ??? check it
   };
 
   render() {
@@ -47,8 +42,8 @@ export default class Count extends React.Component<any, any> {
           >
             <MenuItem value={10}>10.. Ten</MenuItem>
             <MenuItem value={20}>20.. Twenty</MenuItem>
-            <MenuItem value={50}>50.. Fifty</MenuItem>
-            <MenuItem value={99}>99.. Maximum</MenuItem>
+            <MenuItem value={30}>30.. Thirty</MenuItem>
+            {/*<MenuItem value={99}>99.. Maximum</MenuItem>*/}
           </Select>
         </FormControl>
       </>

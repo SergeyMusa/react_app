@@ -1,11 +1,11 @@
 import {ResponseData} from "_common/dto/Type";
-import {URL_COINS} from "_common/const/Const";
+// import {URL_COINS} from "_common/const/Const";
+import {STORE_COINS} from "_store/StoreCoins";
 
-export async function doFetchData(URL_COINSs: string): Promise<ResponseData[]> {
+export async function doFetchData(URL_COINS: string): Promise<ResponseData[]> {
   try {
-    // const response = await fetch(URL_COINSs);
-    const response = await fetch(URL_COINS);
-    console.log(response);
+    const response = await fetch(URL_COINS || STORE_COINS.URL_COINSS);
+    // console.log('response',response);
     const data = await response.json()
     return data.Data;
   } catch (error) {

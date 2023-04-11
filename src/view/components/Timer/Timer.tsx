@@ -19,10 +19,7 @@ export class Timer extends React.Component<inputTimer, any> {
     return (
       <Box>
         <Badge
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'left',
-          }}
+          anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
           badgeContent={STORE_TIMER.timeRepeat}
           color="error"
           invisible={STORE_TIMER.badgeInVisible}

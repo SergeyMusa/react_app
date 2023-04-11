@@ -9,7 +9,6 @@ export class Home extends React.Component {
       <>
         <h3>Home</h3>
         <HomePresentation />
-        <br/>
       </>
     )
   }

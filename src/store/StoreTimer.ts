@@ -1,6 +1,5 @@
 import {action, computed, makeObservable, observable} from "mobx"
 import {doFetchData} from "_common/utils/Fetch";
-import {URL_COINS} from "_common/const/Const";
 import {STORE_COINS} from "_store/StoreCoins";
 import {Toggle} from "_common/utils/Toggle";
 
@@ -8,10 +7,10 @@ export class StoreTimer {
   public _isBusy = new Toggle(false);
   public _init = true;
   constructor() {
-    makeObservable(this)
+    makeObservable(this);
   }
 
-  @observable public timeRepeat = 10;
+  @observable public timeRepeat = 45;
   @observable private _time = 0;
   @observable private _timer;
 
@@ -32,7 +31,7 @@ export class StoreTimer {
     if (this._time <= 0) {
       this.stop();
       this.start(this.timeRepeat);
-      this.loadData().then(() => { // ??? DEL IT, remake
+      this.loadData().then(() => { // ??? remake IT
       });
     }
 
@@ -79,7 +78,7 @@ export class StoreTimer {
   private async loadData() {
     this._isBusy.open()
     try {
-      const data = await doFetchData(URL_COINS);
+      const data = await doFetchData(STORE_COINS.URL_COINSS);
       STORE_COINS.setData(data);
     } finally {
       this.changeIsBusy();
