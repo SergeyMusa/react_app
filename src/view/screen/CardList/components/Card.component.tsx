@@ -25,20 +25,15 @@ export class CardComponent extends React.Component<CardProps> {
 
   componentDidMount() {
     // Либо инициализируем цену и не меняем, либо меняем в getColor, тогда инициализировать не нужно
-    this.initPrice = this.props.RAW.USD.PRICE
+    this.initPrice = this.props?.RAW.USD.PRICE
   }
 
   render() {
-    const {CoinInfo, DISPLAY, RAW} = this.props;
-
+    const {CoinInfo, DISPLAY, RAW} = this.props ;
     return (
       <Grid>
         <Card onClick={() => this.props.press(CoinInfo?.Id)}
-              sx={{
-                width: 300,
-                height: 330,
-                margin: 1
-              }}>
+              sx={{ width: 300, height: 330, margin: 1 }}>
           <CardHeader
             avatar={
               <Avatar aria-label="recipe" sx={{backgroundColor: this.getColor}}>
@@ -70,7 +65,7 @@ export class CardComponent extends React.Component<CardProps> {
   }
 
   private get getColor() {
-    const price = this.props.RAW.USD.PRICE
+    const price = this.props.RAW?.USD.PRICE
     let color: string
 
     if (!this.initPrice) {
