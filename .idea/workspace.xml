@@ -4,27 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="wip: fix timer func Load">
-      <change afterPath="$PROJECT_DIR$/src/view/screen/Home/assets/imgProj_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/screen/Home/assets/imgProj_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="Finish">
+      <change afterPath="$PROJECT_DIR$/demo/AppDiagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/RoadMap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/Screenshot_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/Screenshot_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/Screenshot_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/Screenshot_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/Screenshot_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/simplescreenrecorder.mkv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/const/Const.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/const/Const.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/Fetch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/Fetch.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/StoreCoins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/StoreCoins.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/StoreTimer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/StoreTimer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/Count/Count.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/CountLoadCoins/CountLoadCoins.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/Search/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Search/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/components/Timer/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/components/Timer/Timer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/CardList.screen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/CardList.screen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/CardList/components/Card.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/assets/imgApp1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/components/HomePresentation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/components/HomePresentation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/Table/TablesList.screen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Table/TablesList.screen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Table/components/Tables.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDiagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadMap.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="review" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,7 +100,7 @@
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Shelf.Project.Settings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -130,7 +121,7 @@
       <recent name="$PROJECT_DIR$/src/view/components/Search" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Node.js.index.jsx">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -227,6 +218,9 @@
       <workItem from="1681128706479" duration="876000" />
       <workItem from="1681203827847" duration="8209000" />
       <workItem from="1681212970737" duration="3013000" />
+      <workItem from="1681368860065" duration="928000" />
+      <workItem from="1681370524818" duration="3250000" />
+      <workItem from="1681379743706" duration="1579000" />
     </task>
     <task id="LOCAL-00038" summary="wip modify timer3">
       <created>1678775645662</created>
@@ -596,6 +590,16 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="origin/review" />
                 </option>
               </RecentGroup>
@@ -619,7 +623,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/review" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -662,16 +666,5 @@
     <MESSAGE value="wip: fix timer, stay only func Load" />
     <MESSAGE value="wip: fix timer func Load" />
     <option name="LAST_COMMIT_MESSAGE" value="wip: fix timer func Load" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/view/components/LoaderSpiner/LoaderSpiner.tsx</url>
-          <line>11</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
