@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -13,24 +13,20 @@ or [http://localhost:8080](http://localhost:8080) to view it in your browser.
 ### `npm run build`
 
 
-**RoadMap: >>>**
+### RoadMap: >>>
 ![Alt roadmap](./demo/RoadMap.png?raw=true "RoadMap")
 
-**AppDiagram: >>>**
+### *AppDiagram: >>>*
 ![Alt diagram](./demo/AppDiagram.png?raw=true "AppDiagram")
 
-[![Demo Doccou alpha](./demo/simplescreenrecorder.mp4)
-**Demo: >>>**
+### **Demo: >>>**
 <details>
 <summary>demo Screenshots and Screencast</summary>
 
-**video: >**
-# video :p
-https://user-images.githubusercontent.com/78234427/231738009-7edda8ed-40ab-4805-b4b6-1721c114f970.mp4
-[![Demo Doccou alpha](./demo/simplescreenrecorder.mp4)]
-![Watch the video2](./demo/simplescreenrecorder.mp4)
+#### *video: >*
+ https://user-images.githubusercontent.com/78234427/231738009-7edda8ed-40ab-4805-b4b6-1721c114f970.mp4
  
-**img: >**
+#### **img: >**
  ![Alt Screenshot_1](./demo/Screenshot_1.png?raw=true "Screenshot_1")
  ![Alt Screenshot_2](./demo/Screenshot_2.png?raw=true "Screenshot_2")
  ![Alt Screenshot_3](./demo/Screenshot_3.png?raw=true "Screenshot_3")
