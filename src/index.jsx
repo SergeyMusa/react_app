@@ -3,6 +3,7 @@ import {BrowserRouter} from "react-router-dom";
 import App from './App';
 import * as ReactDOMClient from 'react-dom/client';
 import {createTheme, ThemeProvider} from "@mui/material";
+import '../public/index.css';
 
 const theme = createTheme({
   palette: {

@@ -7,7 +7,8 @@ module.exports = {
     main: path.resolve(__dirname, './src/index.jsx'),
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    // path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './build'),
     filename: 'index.bundle.js',
   },
   resolve: {
@@ -45,7 +46,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'css-modules-typescript-loader'],
       },
       {
-        test: /\.(jpg|jpeg|png|gif|mp3|svg|ttf)$/,
+        test: /\.(jpg|jpeg|png|gif|mp3|svg|ttf|ico)$/,
         use: ['file-loader'],
       },
       {
