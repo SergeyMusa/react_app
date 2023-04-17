@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="add build">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="edit css">
+      <change afterPath="$PROJECT_DIR$/dist/0db0e643cd49be0e9b69af8b8affec4a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/884b434913086736576e4647ad20210d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/f5a7606d39710e5239508f2fd973c0db.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/index.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/react_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/react_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/main.scss.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/main.css.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/assets/HomePresentation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/assets/HomePresentation.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +50,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -213,20 +223,8 @@
       <workItem from="1681370524818" duration="3250000" />
       <workItem from="1681379743706" duration="2869000" />
       <workItem from="1681733462616" duration="271000" />
-    </task>
-    <task id="LOCAL-00041" summary="wip-tables=ok">
-      <created>1678874749672</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1678874749672</updated>
-    </task>
-    <task id="LOCAL-00042" summary="remade Cards=ok took out-fetch load">
-      <created>1678877808192</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1678877808192</updated>
+      <workItem from="1681733755336" duration="2429000" />
+      <workItem from="1681737434286" duration="207000" />
     </task>
     <task id="LOCAL-00043" summary="wip clear proj">
       <created>1678879473204</created>
@@ -557,7 +555,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681733614068</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="add build">
+      <created>1681733802572</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1681733802573</updated>
+    </task>
+    <task id="LOCAL-00091" summary="add build">
+      <created>1681734231744</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1681734231744</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +644,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="wip with timer start fun" />
     <MESSAGE value="timer=ok load data" />
     <MESSAGE value="wip - modal work  componentDidMount" />
     <MESSAGE value="wip - debug timer" />
@@ -657,6 +668,7 @@
     <MESSAGE value="add demo" />
     <MESSAGE value="add demo video" />
     <MESSAGE value="add build" />
-    <option name="LAST_COMMIT_MESSAGE" value="add build" />
+    <MESSAGE value="edit css" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit css" />
   </component>
 </project>
