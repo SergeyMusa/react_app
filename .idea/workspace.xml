@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="add demo video">
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="add build">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,13 +212,7 @@
       <workItem from="1681368860065" duration="928000" />
       <workItem from="1681370524818" duration="3250000" />
       <workItem from="1681379743706" duration="2869000" />
-    </task>
-    <task id="LOCAL-00040" summary="wip">
-      <created>1678801150693</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1678801150693</updated>
+      <workItem from="1681733462616" duration="271000" />
     </task>
     <task id="LOCAL-00041" summary="wip-tables=ok">
       <created>1678874749672</created>
@@ -555,7 +550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681383655401</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="add build">
+      <created>1681733614067</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1681733614068</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +632,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="wip rename store to storeTimer" />
     <MESSAGE value="wip with timer start fun" />
     <MESSAGE value="timer=ok load data" />
     <MESSAGE value="wip - modal work  componentDidMount" />
@@ -655,6 +656,7 @@
     <MESSAGE value="wip: fix timer func Load" />
     <MESSAGE value="add demo" />
     <MESSAGE value="add demo video" />
-    <option name="LAST_COMMIT_MESSAGE" value="add demo video" />
+    <MESSAGE value="add build" />
+    <option name="LAST_COMMIT_MESSAGE" value="add build" />
   </component>
 </project>
