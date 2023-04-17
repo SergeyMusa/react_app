@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="Finish">
-      <change afterPath="$PROJECT_DIR$/demo/AppDiagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/RoadMap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/Screenshot_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/Screenshot_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/Screenshot_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/Screenshot_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/Screenshot_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/simplescreenrecorder.mkv" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="add demo video">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDiagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RoadMap.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,21 +210,7 @@
       <workItem from="1681212970737" duration="3013000" />
       <workItem from="1681368860065" duration="928000" />
       <workItem from="1681370524818" duration="3250000" />
-      <workItem from="1681379743706" duration="1579000" />
-    </task>
-    <task id="LOCAL-00038" summary="wip modify timer3">
-      <created>1678775645662</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1678775645662</updated>
-    </task>
-    <task id="LOCAL-00039" summary="wip tables&amp;cards remade to ts">
-      <created>1678788450387</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1678788450387</updated>
+      <workItem from="1681379743706" duration="2869000" />
     </task>
     <task id="LOCAL-00040" summary="wip">
       <created>1678801150693</created>
@@ -565,7 +541,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681118537466</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="add demo">
+      <created>1681381627226</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1681381627227</updated>
+    </task>
+    <task id="LOCAL-00088" summary="add demo video">
+      <created>1681383655401</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1681383655401</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,8 +630,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="fix bugs ui modal" />
-    <MESSAGE value="fix bugs timer" />
     <MESSAGE value="wip rename store to storeTimer" />
     <MESSAGE value="wip with timer start fun" />
     <MESSAGE value="timer=ok load data" />
@@ -665,6 +653,8 @@
     <MESSAGE value="main: preFinish" />
     <MESSAGE value="wip: fix timer, stay only func Load" />
     <MESSAGE value="wip: fix timer func Load" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip: fix timer func Load" />
+    <MESSAGE value="add demo" />
+    <MESSAGE value="add demo video" />
+    <option name="LAST_COMMIT_MESSAGE" value="add demo video" />
   </component>
 </project>
