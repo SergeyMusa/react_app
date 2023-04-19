@@ -20,6 +20,8 @@ or [http://localhost:8080](http://localhost:8080) to view it in your browser.
 ![Alt diagram](./demo/AppDiagram.png?raw=true "AppDiagram")
 
 ### **Demo: >>>**
+Open [https://react-rgwr.onrender.com/](https://react-rgwr.onrender.com/) to view it in your browser.
+
 <details>
 <summary>demo Screenshots and Screencast</summary>
 
