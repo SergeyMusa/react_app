@@ -17,6 +17,7 @@
     "create-react-app": "^1.2.1",
     "css-modules-typescript-loader": "^4.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "json-loader": "^0.5.7",
     "lodash": "^4.17.21",
     "lorem-ipsum": "^2.0.8",
     "mobx": "^6.8.0",
