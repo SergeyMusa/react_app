@@ -1,12 +1,20 @@
 import {action, computed, makeObservable, observable} from "mobx"
+import {doFetchData} from "_common/utils/Fetch";
+import {STORE_COINS} from "_store/StoreCoins";
+import {Toggle} from "_common/utils/Toggle";
 
 export class StoreTimer {
+  public _isBusy = new Toggle(false);
+  public _init = true;
   constructor() {
-    makeObservable(this)
+    makeObservable(this);
   }
 
+  @observable public timeRepeat = 45;
   @observable private _time = 0;
   @observable private _timer;
+
+  @observable public badgeInVisible = false;
 
 
   @computed
@@ -16,32 +24,65 @@ export class StoreTimer {
 
   @computed
   public get timeToEnd() {
+    if (this._time === null) {
+      this.stop();
+      return this._time;
+    }
+    if (this._time <= 0) {
+      this.stop();
+      this.start(this.timeRepeat);
+      this.loadData().then(() => { // ??? remake IT
+      });
+    }
+
     return this._time;
   }
 
   @action.bound
-  public start = (time: any = 60) => {
-    if (this._timer) return;
+  public start = (time: any = this.timeRepeat) => {
+    if (this._time > 0) return;
     this._time = time;
-    this._timer = setInterval(this.decrement, 1000)
+    this._timer = setInterval(this.decrementTime, 1000)
   }
 
   @action.bound
   public stop = () => {
     clearInterval(this._timer);
     this._timer = undefined;
-    this._time = 0;
+    this._time = null;
+    this.badgeInVisible = false;
   }
 
   @action.bound
   public increment() {
-    this._time = this._time < 99 ? this._time + 1 : 99;
-
+    this.timeRepeat = this.timeRepeat < 99 ? this.timeRepeat + 1 : 99;
+    this.badgeInVisible = false;
   }
 
   @action.bound
   public decrement() {
+    this.timeRepeat = this.timeRepeat > 0 ? this.timeRepeat - 1 : 0;
+    this.badgeInVisible = false;
+  }
+  @action.bound
+  public decrementTime() {
     this._time = this._time > 0 ? this._time - 1 : 0;
+    this.badgeInVisible = true;
+  }
+
+  @action.bound
+  public changeIsBusy() {
+    this._isBusy.close();
+  }
+
+  private async loadData() {
+    this._isBusy.open()
+    try {
+      const data = await doFetchData(STORE_COINS.URL_COINSS);
+      STORE_COINS.setData(data);
+    } finally {
+      this.changeIsBusy();
+    }
   }
 }
 

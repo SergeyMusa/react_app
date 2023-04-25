@@ -10,15 +10,15 @@ const Search = (props?) => {
 
     const onClick = () => {
         console.log('onChange');
-        if (find.length === 0) {
-            console.log('Search__no_input', items);
-            return items;
-
-            // console.log('Search__ok', find);
-            return items.filter(item => {
-                return items.indexOf(find) > -1
-            })
-        }
+        // if (find.length === 0) {
+        //     console.log('Search__no_input', items);
+        //     return items;
+        //
+        //     // console.log('Search__ok', find);
+        //     return items.filter(item => {
+        //         return items.indexOf(find) > -1
+        //     })
+        // }
     }
 
     return  <TextField

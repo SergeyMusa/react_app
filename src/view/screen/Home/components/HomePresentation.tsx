@@ -15,19 +15,21 @@ const itemData = [
     featured: true,
   },
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-    author: '@bkristastucchio',
+    img: require('../assets/imgProj_1.png').default,
+    title: 'imgProj_1',
+    author: '@MuSa',
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-    author: '@helloimnik',
+    // img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+    img: require('../assets/imgProj_2.png').default,
+    title: 'imgProj_2',
+    author: '@MuSa',
   },
 ];
 
 @observer
 export class HomePresentation extends React.Component {
+  STORE
   render() {
     return (
       <Container>

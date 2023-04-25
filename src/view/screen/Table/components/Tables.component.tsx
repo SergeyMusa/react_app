@@ -21,10 +21,6 @@ export class TablesComponent extends React.Component {
   @observable private _currentCard: ResponseData;
   private toggle = new Toggle(false)
 
-  componentDidMount() {
-    // Либо инициализируем цену и не меняем, либо меняем в getColor, тогда инициализировать не нужно
-    // this.initPrice = this.props.RAW.USD.PRICE
-  }
   modalOpen (row: any) {
     this._currentCard = row;
     this.toggle.open();
@@ -32,9 +28,7 @@ export class TablesComponent extends React.Component {
   }
 
   render() {
-    // const {CoinInfo, DISPLAY, RAW} = this._data;
     const {toggle} = this;
-
     return (
       <>
         <TableContainer component={Paper}>
@@ -93,8 +87,8 @@ export class TablesComponent extends React.Component {
       </>
     );
   }
-  private getColor(props) { //get
-    const price = props; //this._data.RAW.USD.PRICE
+  private getColor(props) {
+    const price = props;
     let color: string
 
     if (!this.initPrice) {
