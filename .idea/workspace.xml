@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="edit css">
-      <change afterPath="$PROJECT_DIR$/src/assets/json/plug.json" afterDir="false" />
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="add plug json if err load">
+      <change afterPath="$PROJECT_DIR$/src/view/screen/404/Screen404.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/screen/404/assets/i.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/screen/404/assets/img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/screen/404/components/Inet404.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/screen/404/components/Wanted404.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/const/Const.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/const/Const.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/Fetch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/Fetch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/screen/Home/components/HomePresentation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/components/HomePresentation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,38 +77,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "review",
-    "js.buildTools.gulp.gulp_package_dir": "/usr/local/lib/node_modules/gulp",
-    "last_opened_file_path": "/home/musa/GIT/react_app/src/common/const",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "",
-    "nodejs.mocha.mocha_node_package_dir": "",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "/home/musa/GIT/react_app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;review&quot;,
+    &quot;js.buildTools.gulp.gulp_package_dir&quot;: &quot;/usr/local/lib/node_modules/gulp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/musa/GIT/react_app/src/view/screen/404/components&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;&quot;,
+    &quot;nodejs.mocha.mocha_node_package_dir&quot;: &quot;&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/musa/GIT/react_app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/view/screen/404/components" />
       <recent name="$PROJECT_DIR$/src/common/const" />
       <recent name="$PROJECT_DIR$/src/store" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src/view/pages/Cards/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/common/utils" />
@@ -218,14 +221,8 @@
       <workItem from="1681733462616" duration="271000" />
       <workItem from="1681733755336" duration="2429000" />
       <workItem from="1681737434286" duration="4477000" />
-      <workItem from="1681894922954" duration="7930000" />
-    </task>
-    <task id="LOCAL-00045" summary="wip - rename CardsList">
-      <created>1678951308612</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1678951308612</updated>
+      <workItem from="1681894922954" duration="8988000" />
+      <workItem from="1681906843612" duration="9744000" />
     </task>
     <task id="LOCAL-00046" summary="wip - ERROR">
       <created>1678960473726</created>
@@ -563,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681741484347</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="add plug json if err load">
+      <created>1681903134452</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1681903134452</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,7 +642,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="timer=ok load data" />
     <MESSAGE value="wip - modal work  componentDidMount" />
     <MESSAGE value="wip - debug timer" />
     <MESSAGE value="wip - timer=ok" />
@@ -663,6 +666,7 @@
     <MESSAGE value="add demo video" />
     <MESSAGE value="add build" />
     <MESSAGE value="edit css" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit css" />
+    <MESSAGE value="add plug json if err load" />
+    <option name="LAST_COMMIT_MESSAGE" value="add plug json if err load" />
   </component>
 </project>

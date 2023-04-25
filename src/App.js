@@ -8,6 +8,7 @@ import {Home} from "_view/screen/Home/Home";
 import {TablesListScreen} from "_view/screen/Table/TablesList.screen";
 import {Header} from "_view/components/Header/Header";
 import Footer from "_view/components/Footer/Footer";
+import {Screen404} from "_view/screen/404/Screen404";
 // import {Timer} from "_view/components/Timer/Timer";
 
 function App() {
@@ -19,18 +20,19 @@ function App() {
           <h1>In God We Trust</h1>
           <div className="App-Route">
             <Link id="one" to="/Home">Home</Link>
-            <Link id="one" to="/">Cards</Link>
-            <Link id="one" to="/Tables">Tables</Link>
+            <Link id="two" to="/">Cards</Link>
+            <Link id="three" to="/Tables">Tables</Link>
             <br/>
-          </div>
+           </div>
         </header>
         <div className="App-Main">
           <Routes>
             <Route path="/Home" element={<Home/>}/>
             <Route path="/" element={<CardListScreen/>}/>
             <Route path="/Tables" element={<TablesListScreen/>}/>
+            <Route path="*" element={<Screen404/>}/>
           </Routes>
-          <Button variant="contained" href="/" sx={{marginTop:2}}>go home</Button>
+          <Button onClick={() => {window.scrollTo(0, 0)}} variant="contained" sx={{marginTop:2}}>go up</Button>
         </div>
       </Container>
       <Footer/>

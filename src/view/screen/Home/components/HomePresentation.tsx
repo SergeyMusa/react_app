@@ -29,6 +29,7 @@ const itemData = [
 
 @observer
 export class HomePresentation extends React.Component {
+  STORE
   render() {
     return (
       <Container>
