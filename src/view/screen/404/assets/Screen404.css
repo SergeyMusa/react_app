@@ -1,0 +1,39 @@
+.HomePresentation {
+    margin-left: 5px;
+}
+
+.border {
+    border: thick double #32a1ce;
+}
+.imgWanted{
+    /*background: blueviolet;*/
+    position: relative;
+    height: 30%;
+    width: 50%;
+
+    background: url("_view/screen/404/assets/wanted.jpeg"),
+    url("_view/screen/404/assets/btc.png");
+    background-size:contain;
+    /*background-position:top;*/
+    /*background: cover;*/
+}
+
+.text {
+    /*backgroundImage: "_view/screen/404/assets/btc.png";*/
+
+    font-size: 38px;
+    text-align: center;
+    background-color: rgba(0,0,0,0);
+    color: blueviolet ;
+
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    z-index: 10;
+}
+.imgCoin {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    z-index: 10;
+}
