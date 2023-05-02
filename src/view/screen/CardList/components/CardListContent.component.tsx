@@ -9,6 +9,8 @@ import {CardComponent} from "_view/screen/CardList/components/Card.component";
 import {ResponseData} from "_common/dto/Type";
 import {CardFull} from "./CardFull.component";
 import {computed, observable} from "mobx";
+import Button from "@mui/material/Button";
+import {Forward10} from "@mui/icons-material";
 
 interface Props {
   data: ResponseData[]
@@ -37,6 +39,11 @@ export class CardListContent extends React.Component<Props> {
     this.toggle.open();
   }
 
+  private loadNext () {
+    console.log('disabled=',STORE_COINS.coinsLoadDisable)
+    STORE_COINS.loadNextCoinsCount() ;
+  }
+
   render() {
     const {toggle} = this;
 
@@ -51,10 +58,17 @@ export class CardListContent extends React.Component<Props> {
               sx={{ justifyContent: 'space-around' }}
         >
           {this._elements}
+
         </Grid>
         <Modal title={'modalTitle'} isOpen={toggle.isOpen} onClosed={toggle.close}>
           <CardFull {...this._currentCard} />
         </Modal>
+        <Button onClick={() => this.loadNext()}
+                disabled = {STORE_COINS.coinsLoadDisable}
+                size={"medium"} variant="contained" sx={{marginTop:2}} >
+          <Forward10 />
+        </Button>
+
       </>
     )
   }

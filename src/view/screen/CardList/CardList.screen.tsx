@@ -16,24 +16,20 @@ export class CardListScreen extends React.Component {
   }
 
   startTimer() {
-    STORE_TIMER.start();
     this._init = false;
+    STORE_TIMER.start();
   }
 
   public render() {
     return (
       <div className="cards">
-        <h3>Cards</h3>
-        <button onClick={() => this.startTimer()}>[ LOAD ]</button>
-
         <ErrorBoundary>
           <Search props={"xxx"}/>
         </ErrorBoundary>
-
         {
-          STORE_TIMER.changeIsBusy && this._init
+          STORE_COINS.changeIsBusy
             ? <LoaderSpinner/>
-            : <ErrorBoundary> <CardListContent data={STORE_COINS.CoinsList}/> </ErrorBoundary>
+            : <CardListContent data={STORE_COINS.CoinsList}/>
         }
       </div>
     )

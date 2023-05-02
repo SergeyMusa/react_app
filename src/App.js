@@ -9,21 +9,23 @@ import {TablesListScreen} from "_view/screen/Table/TablesList.screen";
 import {Header} from "_view/components/Header/Header";
 import Footer from "_view/components/Footer/Footer";
 import {Screen404} from "_view/screen/404/Screen404";
-// import {Timer} from "_view/components/Timer/Timer";
+import {ArrowCircleUp, ExpandLess} from "@mui/icons-material";
+import Box from "@mui/material/Box";
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Container sx={{mt: '1rem'}} maxWidth={false}>
+      {/*<Container sx={{mt: '1rem', mb:1}} maxWidth={false}>*/}
+      <Container sx={{mb: 1}}>
         <header className="App-Header">
-          <h1>In God We Trust</h1>
+          <div><h1>In God We Trust</h1></div>
           <div className="App-Route">
             <Link id="one" to="/Home">Home</Link>
             <Link id="two" to="/">Cards</Link>
             <Link id="three" to="/Tables">Tables</Link>
             <br/>
-           </div>
+          </div>
         </header>
         <div className="App-Main">
           <Routes>
@@ -32,7 +34,14 @@ function App() {
             <Route path="/Tables" element={<TablesListScreen/>}/>
             <Route path="*" element={<Screen404/>}/>
           </Routes>
-          <Button onClick={() => {window.scrollTo(0, 0)}} variant="contained" sx={{marginTop:2}}>go up</Button>
+          <div className="right" >
+            <Button
+              onClick={() => {window.scrollTo(0, 0)}}
+              variant="contained"
+              sx={{marginTop: 2, width:70}}>
+              <ExpandLess/>
+            </Button>
+          </div>
         </div>
       </Container>
       <Footer/>
