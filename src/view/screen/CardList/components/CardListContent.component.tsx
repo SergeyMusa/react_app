@@ -21,13 +21,23 @@ export class CardListContent extends React.Component<Props> {
   constructor(props) {
     super(props);
   }
+  private coinsData: any = this.props.data; // ??? remake any
+
+componentDidMount() {
+    if (this.coinsData?.length <= 0) {
+      console.log('!!!_props.data=', this.props.data);
+      const data = require('/src/assets/json/plug.json');
+      this.coinsData = data;
+    }
+}
 
   @observable private _currentCard: ResponseData;
   private toggle = new Toggle(false)
 
   @computed
   private get _elements() {
-    return this.props.data?.map(item => {
+    // console.log('>>>>>',this.props.data)
+    return this.coinsData.map(item => {
       return (
         <CardComponent key={item.CoinInfo.Id} {...item} press={this.modalOpen} />
       )
@@ -39,14 +49,14 @@ export class CardListContent extends React.Component<Props> {
     this.toggle.open();
   }
 
-  private loadNext () {
-    console.log('disabled=',STORE_COINS.coinsLoadDisable)
-    STORE_COINS.loadNextCoinsCount() ;
-  }
+  // private loadNext () {
+  //   console.log('disabled=',STORE_COINS.coinsLoadDisable)
+  //   STORE_COINS.loadNextCoinsCount() ;
+  // }
 
   render() {
     const {toggle} = this;
-
+    // console.log('>>>', STORE_COINS.URL_COINSS)
     return (
       <>
         <Grid
@@ -63,7 +73,8 @@ export class CardListContent extends React.Component<Props> {
         <Modal title={'modalTitle'} isOpen={toggle.isOpen} onClosed={toggle.close}>
           <CardFull {...this._currentCard} />
         </Modal>
-        <Button onClick={() => this.loadNext()}
+        {/*<Button onClick={() => this.loadNext()}*/}
+        <Button onClick={() => STORE_COINS.loadNextCoinsCount()}
                 disabled = {STORE_COINS.coinsLoadDisable}
                 size={"medium"} variant="contained" sx={{marginTop:2}} >
           <Forward10 />

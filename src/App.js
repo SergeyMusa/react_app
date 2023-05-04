@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useTransition} from "react";
 import {Link, Route, Routes} from "react-router-dom";
 import Button from '@mui/material/Button';
 import './assets/styles/main.css'
@@ -13,11 +13,17 @@ import {ArrowCircleUp, ExpandLess} from "@mui/icons-material";
 import Box from "@mui/material/Box";
 
 function App() {
+  const {i18n, t} = useTransition();
+  const changeLang = (language) => {
+    // let i18n = useTransition();
+    i18n.changeLang(language);
+  }
+
   return (
     <div className="App">
       <Header/>
       {/*<Container sx={{mt: '1rem', mb:1}} maxWidth={false}>*/}
-      <Container sx={{mb: 1}}>
+      <Box sx={{mb: 1}}>
         <header className="App-Header">
           <div><h1>In God We Trust</h1></div>
           <div className="App-Route">
@@ -27,6 +33,10 @@ function App() {
             <br/>
           </div>
         </header>
+
+        <button onClick={() => changeLang("en")}>EN</button>
+        <button onClick={() => changeLang("ru")}>RU</button>
+
         <div className="App-Main">
           <Routes>
             <Route path="/Home" element={<Home/>}/>
@@ -43,7 +53,7 @@ function App() {
             </Button>
           </div>
         </div>
-      </Container>
+      </Box>
       <Footer/>
     </div>
   );

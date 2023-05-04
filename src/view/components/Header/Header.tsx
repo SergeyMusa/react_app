@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useTransition} from "react";
 import {AppBar, Toolbar, Typography} from "@mui/material";
 import {observer} from "mobx-react";
 import {Timer} from "../Timer/Timer";
@@ -12,9 +12,11 @@ import Button from "@mui/material/Button";
 
 @observer
 export class Header extends React.Component {
+
   private clickDownload () {
     STORE_COINS.loadData().then();
   }
+
   public render() {
     return (
       <div className={'header'}>
@@ -36,6 +38,7 @@ export class Header extends React.Component {
                   <Typography fontSize={'18px'} variant={'h6'} component={'span'} >
                     MuSa_App
                   </Typography>
+
               </Grid>
               <Grid item xs alignItems="center"  sx={{mt:1}} textAlign={"right"}>
                   {<Timer/>}

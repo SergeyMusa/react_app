@@ -9,14 +9,14 @@ import ErrorBoundary from "_common/errors/ErrorBoundary";
 
 @observer
 export class CardListScreen extends React.Component {
-  private _init = true;
+  // private _init = true;
 
   componentDidMount() {
     this.startTimer();
   }
 
   startTimer() {
-    this._init = false;
+    // this._init = false;
     STORE_TIMER.start();
   }
 
