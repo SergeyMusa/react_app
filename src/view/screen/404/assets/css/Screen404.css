@@ -1,6 +1,8 @@
 @font-face {
     font-family: 'OldTownNormal';
-    src: local('OldTownNormal'), url(Old-Town-Normal.ttf) format('truetype');
+    src: local('OldTownNormal'), url(../fonts/Old-Town-Normal.ttf) format('truetype');
+    font-style: normal;
+    font-weight: normal;
 }
 
 /*@import url('https://fonts.googleapis.com/css?family=Instrument Serif');*/
@@ -39,7 +41,7 @@
 
 .textName {
     /*font-family: 'Instrument Serif', serif ;*/
-    font-family: 'Instrument Serif', serif;
+    font-family: 'OldTownNormal', serif;
     font-size: 3.5vw;
     text-align: center;
     /*background-color: #ca2128;*/

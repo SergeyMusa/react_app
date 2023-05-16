@@ -41,8 +41,8 @@ export class CardComponent extends React.Component<CardProps> {
               </Avatar>
             }
             action={
-              <IconButton aria-label="settings">
-              </IconButton>
+              <IconButton aria-label="settings" />
+              // </IconButton>
             }
             title={"id: " + CoinInfo?.Id}
           />

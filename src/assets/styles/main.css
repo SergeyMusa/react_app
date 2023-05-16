@@ -50,6 +50,10 @@ header a:hover {
 }
 .App {
   text-align: center;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .App-logo {
@@ -89,6 +93,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 1vmin);
   color: white;
+
 }
 
 .App-link {
@@ -111,3 +116,27 @@ code {
   monospace;
 }
 
+.App-Main {
+  height: 100%;
+  line-height: 1;
+
+  padding: 30px;
+  flex: 1 1 auto;
+}
+
+/*.wrapper_app{*/
+/*  min-height: 100%;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*} */
+
+/*.header_app{*/
+/*  padding: 20px;*/
+/*}*/
+/*.main_app {*/
+/*  padding: 30px;*/
+/*  flex: 1 1 auto;*/
+/*}*/
+/*.footer_app {*/
+/*  padding: 20px;*/
+/*}*/

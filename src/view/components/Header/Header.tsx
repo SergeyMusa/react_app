@@ -5,19 +5,38 @@ import {Timer} from "../Timer/Timer";
 import CountLoadCoins from "_view/components/CountLoadCoins/CountLoadCoins";
 import Grid from "@mui/material/Grid";
 import { Downloading } from "@mui/icons-material";
-import Icon from '@mui/material/Icon';
+// import Icon from '@mui/material/Icon';
 import {STORE_COINS} from "_store/StoreCoins";
 import Button from "@mui/material/Button";
+//---
+import * as locales from '@mui/material/locale';
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+
+type SupportedLocales = keyof typeof locales;
 
 
 @observer
-export class Header extends React.Component {
+export class Header extends React.Component <any, any> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      locale: 'enUS'
+    };
+  }
+
+  handleClick = (lng) => { // !!!remake
+    this.setState({ locale: lng})
+
+  }
 
   private clickDownload () {
     STORE_COINS.loadData().then();
   }
 
   public render() {
+
     return (
       <div className={'header'}>
         <AppBar position={'static'}>
@@ -40,10 +59,33 @@ export class Header extends React.Component {
                   </Typography>
 
               </Grid>
-              <Grid item xs alignItems="center"  sx={{mt:1}} textAlign={"right"}>
+              <Grid item xs alignItems="right"  sx={{mt:1}} textAlign={"center"}>
                   {<Timer/>}
               </Grid>
+
+
+
+
             </Grid>
+            {/*<Grid item xs alignItems="right"  sx={{mt:1, justifyContent: 'flex-end'}} textAlign={"right"}>*/}
+            <Box >
+              {/*<ThemeProvider theme={themeWithLocale}>*/}
+              <Autocomplete
+                options={Object.keys(locales)}
+                getOptionLabel={(key) => `${key.substring(0, 2)}-${key.substring(2, 4)}`}
+                style={{width:110}}
+                value={this.state.locale}
+                disableClearable
+                onChange={(event: any, newValue: string | null) => {
+                  this.handleClick(newValue as SupportedLocales);
+                }}
+                renderInput={(params) => (
+                  <TextField {...params} label="Locale" fullWidth/>
+                )}
+              />
+              {/*</ThemeProvider>*/}
+            </Box>
+            {/*</Grid>*/}
           </Toolbar>
         </AppBar>
       </div>

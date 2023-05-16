@@ -10,8 +10,8 @@ import background from "_view/screen/404/assets/wanted.jpg";
 // @ts-ignore
 import coin from "_view/screen/404/assets/btc.png";
 import Box from "@mui/material/Box";
-import './assets/Screen404.css';
-import './assets/Old-Town-Normal.ttf'
+import './assets/css/Screen404.css';
+import './assets/fonts/Old-Town-Normal.ttf'
 
 @observer
 export class Screen404 extends React.Component<any, any> {
@@ -38,12 +38,14 @@ export class Screen404 extends React.Component<any, any> {
 
     let ImageUrl = coin.CoinInfo.ImageUrl
     let coinImage = ImageUrl.substring(ImageUrl.length, ImageUrl.lastIndexOf("/")+1);
+    // img: require('../assets/imgProj_1.png').default,
+
     // console.log('x-', ImageUrl.lastIndexOf("/") );
     // console.log('coinImage', coinImage)
 
     this.coinPrice = coinPrice;
     this.coinName = coinName;
-    this.coinImage = `../assets/${coinImage}`;
+    this.coinImage = require(`./assets/${coinImage}`);
 
     console.log(coinName, coinPrice, coinImage)
   }
