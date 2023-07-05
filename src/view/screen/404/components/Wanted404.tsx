@@ -3,6 +3,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 // @ts-ignore
 // import img2 from '../assets/i.webp';
+
 import img2 from '../assets/img1.jpg';
 // import companyLogo from "_view/screen/404/assets/img1.jpg";
 

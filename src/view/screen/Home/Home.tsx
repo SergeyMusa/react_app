@@ -9,7 +9,6 @@ export class Home extends React.Component {
     STORE_TIMER.stop();
     return (
       <>
-        <h3>Home</h3>
         <HomePresentation />
       </>
     )
