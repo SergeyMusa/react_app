@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="refactoring: fix css">
+=======
     <list default="true" id="724db092-77ce-4751-ac2c-90687941c0d1" name="Changes" comment="add plug json if err load">
       <change afterPath="$PROJECT_DIR$/src/view/screen/404/Screen404.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/view/screen/404/assets/i.webp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/view/screen/404/assets/img1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/view/screen/404/components/Inet404.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/view/screen/404/components/Wanted404.tsx" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/screen/Home/Home.tsx" afterDir="false" />
@@ -210,6 +214,86 @@
       <workItem from="1680600725743" duration="18727000" />
       <workItem from="1680620719110" duration="111000" />
       <workItem from="1680708828737" duration="1212000" />
+<<<<<<< HEAD
+      <workItem from="1680875811724" duration="31421000" />
+    </task>
+    <task id="LOCAL-00035" summary="wip dont work">
+      <created>1678721574651</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1678721574651</updated>
+    </task>
+    <task id="LOCAL-00036" summary="made table - style=ok">
+      <created>1678731364843</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1678731364843</updated>
+    </task>
+    <task id="LOCAL-00037" summary="wip">
+      <created>1678735509137</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1678735509137</updated>
+    </task>
+    <task id="LOCAL-00038" summary="wip modify timer3">
+      <created>1678775645662</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1678775645662</updated>
+    </task>
+    <task id="LOCAL-00039" summary="wip tables&amp;cards remade to ts">
+      <created>1678788450387</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1678788450387</updated>
+    </task>
+    <task id="LOCAL-00040" summary="wip">
+      <created>1678801150693</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1678801150693</updated>
+    </task>
+    <task id="LOCAL-00041" summary="wip-tables=ok">
+      <created>1678874749672</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1678874749672</updated>
+    </task>
+    <task id="LOCAL-00042" summary="remade Cards=ok took out-fetch load">
+      <created>1678877808192</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1678877808192</updated>
+    </task>
+    <task id="LOCAL-00043" summary="wip clear proj">
+      <created>1678879473204</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1678879473204</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Timers = ok, only autostart &amp; +/- observ">
+      <created>1678905040715</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1678905040715</updated>
+    </task>
+    <task id="LOCAL-00045" summary="wip - rename CardsList">
+      <created>1678951308612</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1678951308612</updated>
+=======
       <workItem from="1680875811724" duration="32262000" />
       <workItem from="1680958818709" duration="19170000" />
       <workItem from="1681128706479" duration="876000" />
@@ -223,6 +307,7 @@
       <workItem from="1681737434286" duration="4477000" />
       <workItem from="1681894922954" duration="8988000" />
       <workItem from="1681906843612" duration="9744000" />
+>>>>>>> main
     </task>
     <task id="LOCAL-00046" summary="wip - ERROR">
       <created>1678960473726</created>
@@ -490,6 +575,9 @@
       <option name="project" value="LOCAL" />
       <updated>1680957954186</updated>
     </task>
+<<<<<<< HEAD
+    <option name="localTasksCounter" value="84" />
+=======
     <task id="LOCAL-00084" summary="main: preFinish">
       <created>1680958450192</created>
       <option name="number" value="00084" />
@@ -568,6 +656,7 @@
       <updated>1681903134452</updated>
     </task>
     <option name="localTasksCounter" value="95" />
+>>>>>>> main
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -642,6 +731,17 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+<<<<<<< HEAD
+    <MESSAGE value="wip mobx Modal" />
+    <MESSAGE value="wip Modal, Item = ok" />
+    <MESSAGE value="remade Tables" />
+    <MESSAGE value="fix bugs ui modal" />
+    <MESSAGE value="fix bugs timer" />
+    <MESSAGE value="wip rename store to storeTimer" />
+    <MESSAGE value="wip with timer start fun" />
+    <MESSAGE value="timer=ok load data" />
+=======
+>>>>>>> main
     <MESSAGE value="wip - modal work  componentDidMount" />
     <MESSAGE value="wip - debug timer" />
     <MESSAGE value="wip - timer=ok" />
@@ -659,6 +759,20 @@
     <MESSAGE value="refactoring: fix tables" />
     <MESSAGE value="refactoring: add counter Coins" />
     <MESSAGE value="refactoring: fix css" />
+<<<<<<< HEAD
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring: fix css" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/view/components/LoaderSpiner/LoaderSpiner.tsx</url>
+          <line>11</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+=======
     <MESSAGE value="main: preFinish" />
     <MESSAGE value="wip: fix timer, stay only func Load" />
     <MESSAGE value="wip: fix timer func Load" />
@@ -668,5 +782,6 @@
     <MESSAGE value="edit css" />
     <MESSAGE value="add plug json if err load" />
     <option name="LAST_COMMIT_MESSAGE" value="add plug json if err load" />
+>>>>>>> main
   </component>
 </project>

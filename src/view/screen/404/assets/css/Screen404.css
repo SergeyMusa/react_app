@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'OldTownNormal';
+    src: local('OldTownNormal'), url(../fonts/Old-Town-Normal.ttf) format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+/*@import url('https://fonts.googleapis.com/css?family=Instrument Serif');*/
+/*Instrument Serif*/
+
+.wrapper {
+    background-color: #ca2128;
+    display: flex;
+    align-items: flex-end;
+    /*background-image: url(http://ipic.su/img/img7/fs/Screenshotfrom2020-06-0313-18-56.1591179558.png);*/
+    /*background-image: url(./wanted.jpg);*/
+    /*height: 400px;*/
+    flex-wrap: wrap;
+}
+
+.border {
+    border: thick double #32a1ce;
+}
+.imgWanted{
+    /*background: blueviolet;*/
+    /*position: relative;*/
+    height: 30%;
+    width: 50%;
+    display: flex;
+    /*flex-direction: column;*/
+    flex-basis: 50%;
+    flex: 0.3vh;
+    justify-content: center;
+
+    /*background: url("_view/screen/404/assets/wanted.jpg"),*/
+    /*url("_view/screen/404/assets/btc.png");*/
+    /*background-size:contain;*/
+    /*background-position:top;*/
+    z-index: 30;
+}
+
+.textName {
+    /*font-family: 'Instrument Serif', serif ;*/
+    font-family: 'OldTownNormal', serif;
+    font-size: 3.5vw;
+    text-align: center;
+    /*background-color: #ca2128;*/
+    color: #ecd6ad ;
+
+    position: absolute;
+    top: 22.5%;
+    left: 47%;
+    z-index: 10;
+}
+
+.textCost {
+    /*font-family: 'OldTownNormal', 'Instrument Serif', serif;*/
+    font-family: 'Instrument Serif', serif;
+    font-size: 5vw;
+    text-align: center;
+    /*background-color: #ecd6ad;*/
+    color: rgb(202,33,40) ;
+
+    position: absolute;
+    bottom: 4.5%;
+    left: 60%;
+    z-index: 10;
+}
+
+.imgCoin {
+    /*background: url("_view/screen/404/assets/eth.png");*/
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    z-index: 20;
+
+}

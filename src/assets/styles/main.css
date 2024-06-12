@@ -17,6 +17,20 @@ body {
 header {
   background: #adadf1;
 }
+header a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+}
+header a:hover {
+  /*font-size: 1.1em;*/
+  transition: 0.5s;
+}
+.right{
+  width: auto;
+  text-align: right;
+}
+
 .footer {
   display: grid;
   margin-top: 100px;
@@ -36,6 +50,10 @@ header {
 }
 .App {
   text-align: center;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .App-logo {
@@ -62,24 +80,28 @@ body {
 .App-Route a:visited {
   color: white;
 }
+.App-Route a:hover {
+  color: black;
+}
 
 .App-Header {
   background-color: darkslateblue;
-  /*min-height: 100vh;*/
-  /*padding-top: -20px;*/
-  min-height: 14vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 1vmin);
   color: white;
+
 }
 
 .App-link {
   color: #61dafb;
 }
-
+.App-Route {
+  margin-bottom: 10px ;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -94,3 +116,27 @@ code {
   monospace;
 }
 
+.App-Main {
+  height: 100%;
+  line-height: 1;
+
+  padding: 30px;
+  flex: 1 1 auto;
+}
+
+/*.wrapper_app{*/
+/*  min-height: 100%;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*} */
+
+/*.header_app{*/
+/*  padding: 20px;*/
+/*}*/
+/*.main_app {*/
+/*  padding: 30px;*/
+/*  flex: 1 1 auto;*/
+/*}*/
+/*.footer_app {*/
+/*  padding: 20px;*/
+/*}*/
